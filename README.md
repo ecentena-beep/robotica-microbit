@@ -7,7 +7,7 @@ presentación navegable.
 
 ## Ver el sitio
 
-👉 *(acá va la dirección de GitHub Pages una vez publicado)*
+👉 **https://ecentena-beep.github.io/robotica-microbit/**
 
 También funciona sin conexión: descargá el repositorio y abrí `index.html`.
 
