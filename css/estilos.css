@@ -227,6 +227,63 @@ pre code{ background:none; border:none; padding:0; }
 .tarjeta h3{ margin-bottom:.35em; }
 .tarjeta p{ font-size: calc(var(--u) * .92); color: var(--texto-suave); margin:0; }
 
+/* ---------- Fichas de proyecto (Módulo 2) ---------- */
+
+/* Línea de datos: modalidad, duración, número de actividad */
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6em;
+  align-items:center;
+  margin-bottom:1em;
+}
+.meta .dato{
+  font-size: calc(var(--u) * .8);
+  color: var(--texto-suave);
+  background: var(--superficie);
+  border:1px solid var(--borde);
+  border-radius:999px;
+  padding:.35em 1em;
+}
+
+/* Chip de nivel de dificultad, con el color que usa el cuaderno */
+.nivel{
+  font-size: calc(var(--u) * .72);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:700;
+  border-radius:999px;
+  padding:.4em 1.1em;
+  color:#06091a;
+}
+.nivel.baja{       background: #6ee7a8; }
+.nivel.intermedia{ background: var(--alerta); }
+.nivel.avanzada{   background: #ff7b7b; }
+
+/* Tarjeta que resume una actividad del cuaderno */
+.tarjeta .meta{ margin: .6em 0 0; }
+.tarjeta .meta .dato{ font-size: calc(var(--u) * .72); padding:.25em .8em; }
+
+/* Lista de materiales, más compacta y en columnas */
+.materiales{
+  columns: 2;
+  column-gap: 2.5em;
+  font-size: calc(var(--u) * .92);
+  list-style:none;
+  margin-left:0;
+}
+.materiales li{
+  break-inside: avoid;
+  padding-left:1.4em;
+  position:relative;
+  margin-bottom:.45em;
+}
+.materiales li::before{
+  content:"\25AB";
+  position:absolute; left:0;
+  color: var(--acento);
+}
+
 /* Cita destacada */
 .cita{
   border-left:4px solid var(--acento);
@@ -306,7 +363,14 @@ pre code{ background:none; border:none; padding:0; }
 }
 .video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
 
-/* Tabla */
+/* Tabla — la caja con scroll la crea app.js automáticamente */
+.tabla-scroll{
+  overflow-x:auto;
+  max-width:100%;
+  margin:1em 0;
+}
+.tabla-scroll table{ min-width: 520px; margin:0; }
+
 .slide table{
   border-collapse:collapse;
   width:100%;

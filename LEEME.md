@@ -7,6 +7,7 @@ doble clic en `index.html`.
 
 ```
 index.html      ← Módulo 1: la placa micro:bit (29 slides)
+modulo2.html    ← Módulo 2: tipos de proyectos (32 slides)
 css/estilos.css ← todo el diseño (colores, tamaños, layouts)
 js/app.js       ← navegación (no hay que tocarlo para agregar contenido)
 media/          ← videos locales (NO se publican; ver nota abajo)
@@ -143,12 +144,30 @@ excluidos del repositorio por peso y por derechos de autor.
 </video>
 ```
 
-**Tabla**
+**Tabla** — en celulares se desliza sola; no hace falta hacer nada.
 ```html
 <table>
   <thead><tr><th>Columna</th><th>Columna</th></tr></thead>
   <tbody><tr><td>Dato</td><td>Dato</td></tr></tbody>
 </table>
+```
+
+**Ficha de actividad** (Módulo 2) — la línea de datos y el chip de nivel.
+```html
+<div class="meta">
+  <span class="dato">👥 Grupal</span>
+  <span class="dato">⏱ 90 minutos</span>
+  <span class="nivel avanzada">Avanzada</span>
+</div>
+```
+Los niveles son `baja`, `intermedia` y `avanzada`.
+
+**Lista de materiales** (a dos columnas)
+```html
+<ul class="materiales">
+  <li>2 placas micro:bit</li>
+  <li>2 cables cocodrilo</li>
+</ul>
 ```
 
 ## Cambiar los colores
@@ -158,9 +177,9 @@ color de títulos, viñetas, bordes y barra de progreso en todo el sitio.
 
 ## Módulos siguientes
 
-Para un módulo nuevo, copiá `index.html` a `modulo2.html` y cambiá el
-`data-deck="microbit-modulo2"` del `<body>` — así cada deck recuerda su propia posición
-por separado.
+Para un módulo nuevo, copiá `modulo2.html` a `modulo3.html` y cambiá el
+`data-deck="microbit-modulo3"` del `<body>` — así cada deck recuerda su propia posición
+por separado. Después agregá el enlace en la slide de cierre del módulo anterior.
 
 ## Los videos
 

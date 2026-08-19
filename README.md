@@ -3,7 +3,8 @@
 Material de clase de robótica para estudiantes de educación media, en formato de
 presentación navegable.
 
-**Módulo 1 — La placa programable micro:bit** · 29 slides
+- **Módulo 1 — La placa programable micro:bit** · 29 slides
+- **Módulo 2 — Tipos de proyectos** · 32 slides
 
 ## Ver el sitio
 
@@ -11,7 +12,7 @@ presentación navegable.
 
 También funciona sin conexión: descargá el repositorio y abrí `index.html`.
 
-## Contenido del Módulo 1
+## Módulo 1 — La placa programable
 
 - Qué es una placa programable y para qué sirve
 - Historia: de Seymour Papert a Arduino y micro:bit
@@ -21,6 +22,16 @@ También funciona sin conexión: descargá el repositorio y abrí `index.html`.
 - Caso práctico: una luminaria automatizada, del sensor al código
 - Proyectos con recursos integrados y externos
 - Actividad «Manos en el proyecto»: los espacios verdes y la tecnología
+
+## Módulo 2 — Tipos de proyectos
+
+- De la actividad suelta al proyecto: qué los diferencia
+- Los Objetivos de Desarrollo Sostenible como punto de partida
+- Niveles de dificultad y anatomía de una actividad
+- Proyecto «Nuestro centro educativo»: plantas, residuos, accesibilidad y recreación
+- Proyecto «Pulseras que nos cuidan»: temperatura, pasos, alimentación e hidratación
+- Seis ideas cortas en video de Ceibal STEM
+- Rúbrica de evaluación y coevaluación del equipo
 
 ## Cómo se usa
 
@@ -42,8 +53,11 @@ La guía completa para editarlo está en [LEEME.md](LEEME.md).
 
 ## Créditos
 
-Contenido basado en el *Micro:manual 1 — La placa programable* y el *Cuaderno de
-actividades micro:bit*, elaborados por **Ceibal** y **Chicos Net**
-([ceibal.edu.uy/microbit](https://ceibal.edu.uy/microbit/)).
+Contenido basado en materiales de **Ceibal** ([ceibal.edu.uy/microbit](https://ceibal.edu.uy/microbit/)):
+
+- *Micro:manual 1 — La placa programable*, elaborado junto a **Chicos Net**
+- *Cuaderno de actividades micro:bit* — Actividades para Educación Básica Integrada
+- *Cuaderno de proyectos micro:bit* — Proyectos para Educación Media (2023),
+  de Elisa Cristi, María Elisa Ferenczi y Alicia Ferrando
 
 Videos incrustados de los canales Ceibal STEM y STEAM Thinking.

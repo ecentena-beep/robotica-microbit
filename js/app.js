@@ -232,6 +232,23 @@
     xInicio = yInicio = null;
   }, { passive: true });
 
+  /* ---------- Tablas anchas en celulares ----------
+     Una tabla de 3 o 4 columnas no entra en una pantalla angosta. En vez de
+     que se desborde el slide entero, se la envuelve en una caja que se
+     desliza sola. Se hace acá para que valga para cualquier tabla que se
+     agregue después, sin tener que acordarse de envolverla a mano. */
+  function envolverTablas() {
+    slides.forEach(function (s) {
+      s.querySelectorAll("table").forEach(function (tabla) {
+        if (tabla.parentNode.classList.contains("tabla-scroll")) return;
+        var caja = document.createElement("div");
+        caja.className = "tabla-scroll";
+        tabla.parentNode.insertBefore(caja, tabla);
+        caja.appendChild(tabla);
+      });
+    });
+  }
+
   /* ---------- Cambios de #numero en la URL ----------
      Necesario para que funcione compartir un slide puntual: si alguien ya
      tiene la página abierta y pega un enlace con otro #, el navegador no
@@ -246,6 +263,7 @@
   });
 
   /* ---------- Arranque ---------- */
+  envolverTablas();
   construirIndice();
   mostrar(posicionInicial(), false);
 })();

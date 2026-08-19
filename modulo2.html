@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robótica con micro:bit — Módulo 2</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-deck="microbit-modulo2">
+
+<div id="barra-progreso"></div>
+
+<main id="escenario">
+
+  <!-- ========================================================
+       1 · PORTADA
+       ======================================================== -->
+  <section class="slide portada" data-titulo="Portada">
+    <span class="etiqueta">Módulo 2</span>
+    <h1>Tipos de proyectos</h1>
+    <p class="subtitulo">De la actividad suelta al proyecto con sentido: qué podemos construir
+    con micro:bit y para qué.</p>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.85); margin-top:2em;">
+      Usá las flechas <kbd>&larr;</kbd> <kbd>&rarr;</kbd> para avanzar &nbsp;·&nbsp; <kbd>H</kbd> para ver la ayuda
+    </p>
+  </section>
+
+  <!-- ========================================================
+       2 · RECORRIDO
+       ======================================================== -->
+  <section class="slide" data-titulo="Qué vamos a ver">
+    <span class="etiqueta">Recorrido</span>
+    <h2>Qué vamos a ver</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">🧭</span>
+        <h3>Cómo es un proyecto</h3>
+        <p>Sus partes, sus niveles de dificultad y cómo se evalúa.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🏫</span>
+        <h3>Nuestro centro educativo</h3>
+        <p>Cuatro actividades para hacer del liceo un lugar más sostenible.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">⌚</span>
+        <h3>Pulseras que nos cuidan</h3>
+        <p>Cinco actividades para construir una pulsera inteligente.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">💡</span>
+        <h3>Ideas para inspirarse</h3>
+        <p>Seis proyectos cortos en video para arrancar hoy mismo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3 · DE LA ACTIVIDAD AL PROYECTO
+       ======================================================== -->
+  <section class="slide" data-titulo="De la actividad al proyecto">
+    <span class="etiqueta">Concepto</span>
+    <h2>¿Qué diferencia hay entre una actividad y un proyecto?</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>Una actividad</h3>
+        <p>Resuelve <strong>una cosa</strong>: encender un LED, mostrar la temperatura,
+        contar pasos. Dura una clase.</p>
+      </div>
+      <div>
+        <h3>Un proyecto</h3>
+        <p>Encadena varias actividades hacia <strong>un problema real</strong>. Cada una
+        agrega una pieza, y al final hay algo que funciona y le sirve a alguien.</p>
+      </div>
+    </div>
+    <div class="destacado">
+      <p style="margin:0;">
+        En este módulo vemos <strong>dos proyectos</strong> compuestos por
+        <strong>nueve actividades</strong> en total. Se pueden hacer completos, o tomar
+        actividades sueltas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4 · CITA WARLICK
+       ======================================================== -->
+  <section class="slide" data-titulo="Cita: D. Warlick">
+    <span class="etiqueta">Para pensar</span>
+    <blockquote class="cita">
+      «Necesitamos la tecnología en cada aula y en la mano de cada estudiante y cada docente,
+      porque es la pluma y el papel de nuestro tiempo, y porque es la lente a través de la que
+      experimentamos gran parte de nuestro mundo.»
+      <span class="autor">D. Warlick</span>
+    </blockquote>
+  </section>
+
+  <!-- ========================================================
+       5 · LOS ODS COMO PUNTO DE PARTIDA
+       ======================================================== -->
+  <section class="slide" data-titulo="Los ODS como punto de partida">
+    <span class="etiqueta">De dónde salen los proyectos</span>
+    <h2>De un problema real, no de un ejercicio</h2>
+    <p>
+      En 2015 la ONU estableció <strong>17 Objetivos de Desarrollo Sostenible</strong> para
+      erradicar la pobreza, proteger el planeta y asegurar la prosperidad de todos.
+      Los dos proyectos de este módulo salen de ahí:
+    </p>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">🏙️</span>
+        <h3>ODS 11 · Ciudades y comunidades sostenibles</h3>
+        <p>Da origen al proyecto «Nuestro centro educativo».</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">❤️</span>
+        <h3>ODS 3 · Salud y bienestar</h3>
+        <p>Da origen al proyecto «Pulseras que nos cuidan».</p>
+      </div>
+    </div>
+    <div class="destacado compacto" style="margin-top:1.1em;">
+      <p style="margin:0;">
+        No alcanza con que identifiquemos los problemas: la idea es <em>actuar</em> para resolverlos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       6 · NIVELES DE DIFICULTAD
+       ======================================================== -->
+  <section class="slide" data-titulo="Niveles de dificultad">
+    <span class="etiqueta">Cómo elegir</span>
+    <h2>Tres niveles de dificultad</h2>
+    <p>No hace falta experiencia previa. Cada actividad indica su nivel, así se puede empezar
+    por lo simple e ir subiendo.</p>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="nivel baja">Baja</span>
+        <p style="margin-top:.9em;">Primeros pasos con la placa. Se usan los componentes que ya
+        vienen integrados.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="nivel intermedia">Intermedia</span>
+        <p style="margin-top:.9em;">Se suman componentes externos, condicionales y comparación
+        de valores.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="nivel avanzada">Avanzada</span>
+        <p style="margin-top:.9em;">Varias placas comunicándose por radio, variables y funciones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       7 · ANATOMÍA DE UNA ACTIVIDAD
+       ======================================================== -->
+  <section class="slide" data-titulo="Cómo está armada una actividad">
+    <span class="etiqueta">Estructura</span>
+    <h2>Cómo está armada cada actividad</h2>
+    <p>Todas siguen el mismo esquema, así que una vez que entendés una, entendés todas:</p>
+    <ol class="pasos">
+      <li><p style="margin:0;"><strong>Objetivo</strong> — qué se busca que aprendan.</p></li>
+      <li><p style="margin:0;"><strong>Espacios curriculares</strong> — con qué materias se conecta.</p></li>
+      <li><p style="margin:0;"><strong>Contenidos micro:bit</strong> — qué funciones de la placa se usan.</p></li>
+      <li><p style="margin:0;"><strong>Materiales</strong> — la lista concreta de lo que hay que conseguir.</p></li>
+      <li><p style="margin:0;"><strong>Desarrollo</strong> — cómo se trabaja y ejemplo de solución.</p></li>
+      <li><p style="margin:0;"><strong>Ficha de trabajo y coevaluación</strong> — para los estudiantes.</p></li>
+    </ol>
+  </section>
+
+  <!-- ========================================================
+       8 · PROYECTO 1 — PORTADA DE SECCIÓN
+       ======================================================== -->
+  <section class="slide portada" data-titulo="▸ Proyecto 1: Nuestro centro educativo">
+    <span class="etiqueta">Proyecto 1</span>
+    <h1>Nuestro centro educativo</h1>
+    <p class="subtitulo">Modificar espacios del liceo para acercarlo a una comunidad sostenible.</p>
+    <div class="meta" style="justify-content:center; margin-top:1.5em;">
+      <span class="dato">⏱ 11 horas</span>
+      <span class="dato">4 actividades</span>
+      <span class="dato">ODS 11</span>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       9 · PROYECTO 1 — LOS CUATRO EJES
+       ======================================================== -->
+  <section class="slide" data-titulo="Proyecto 1: los cuatro ejes">
+    <span class="etiqueta">Proyecto 1</span>
+    <h2>Cuatro espacios para intervenir</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">🌱</span>
+        <h3>Espacios verdes</h3>
+        <p>Actividad 37 · Plantas:bit</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">♻️</span>
+        <h3>Tratamiento de residuos</h3>
+        <p>Actividad 38 · Clasificando residuos</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">♿</span>
+        <h3>Accesibilidad</h3>
+        <p>Actividad 39 · Timbre inclusivo</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🎵</span>
+        <h3>Recreación y deportes</h3>
+        <p>Actividad 40 · Pisadas que suenan</p>
+      </div>
+    </div>
+    <div class="destacado compacto" style="margin-top:1.1em;">
+      <p style="margin:0;">
+        Son <em>disparadoras</em>: la idea es que surjan otras a partir de lo que propongan
+        los estudiantes. Después se puede ampliar al barrio o a la ciudad.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       10 · ACTIVIDAD 37 — PLANTAS:BIT
+       ======================================================== -->
+  <section class="slide" data-titulo="37 · Plantas:bit">
+    <span class="etiqueta">Actividad 37</span>
+    <h2>Plantas:bit</h2>
+    <div class="meta">
+      <span class="dato">👥 Grupal</span>
+      <span class="dato">⏱ 45 minutos</span>
+    </div>
+    <p><strong>Objetivo:</strong> reconocer la importancia de los espacios verdes y construir un
+    dispositivo que permita mejorar su cuidado.</p>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>El problema</h3>
+        <p style="margin:0;">Si vamos a tener plantas en el liceo, ¿cómo sabemos
+        <em>cuándo hay que regarlas</em>? La placa tiene que avisarnos.</p>
+      </div>
+      <div>
+        <h3>Contenidos micro:bit</h3>
+        <ul class="limpia" style="font-size:calc(var(--u)*.92);">
+          <li>Pines y condicionales</li>
+          <li>Reproducción de sonidos</li>
+          <li>Sensores de temperatura y luz</li>
+          <li>Plus: mensajes por radio</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       11 · CÓMO FUNCIONA EL SENSOR DE HUMEDAD
+       ======================================================== -->
+  <section class="slide" data-titulo="37 · El truco del sensor de humedad">
+    <span class="etiqueta">Actividad 37</span>
+    <h2>El truco: la tierra como interruptor</h2>
+    <p class="grande">
+      La <strong>tierra húmeda conduce</strong> la corriente eléctrica. La <strong>tierra seca no</strong>.
+    </p>
+    <ol class="pasos">
+      <li><p style="margin:0;">Clavamos <strong>dos clavos</strong> en la maceta, sin que se toquen entre sí.</p></li>
+      <li><p style="margin:0;">Los conectamos a la placa con <strong>cables cocodrilo</strong>.</p></li>
+      <li><p style="margin:0;">Tierra húmeda → circuito <em>cerrado</em> → el pin 1 figura como presionado.</p></li>
+      <li><p style="margin:0;">Tierra seca → circuito <em>abierto</em> → el pin 1 no está presionado → <strong>suena el aviso</strong>.</p></li>
+    </ol>
+    <div class="destacado aviso">
+      <p style="margin:0;">
+        💡 No hay una única forma de programarlo ni de dar el aviso. Que cada equipo defienda
+        su idea y elija la que más le guste.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       12 · MATERIALES ACTIVIDAD 37
+       ======================================================== -->
+  <section class="slide" data-titulo="37 · Materiales">
+    <span class="etiqueta">Actividad 37</span>
+    <h2>Qué hay que conseguir</h2>
+    <ul class="materiales">
+      <li>2 placas micro:bit por equipo</li>
+      <li>MakeCode (computadora o tablet)</li>
+      <li>2 cables con pinzas cocodrilo</li>
+      <li>2 clavos</li>
+      <li>Plantas (por lo menos una)</li>
+      <li>Buzzer</li>
+    </ul>
+    <div class="destacado" style="margin-top:1.2em;">
+      <h3 style="margin-top:0;">Los dos «plus» para quien termine antes</h3>
+      <p style="margin:0;">
+        <strong>1.</strong> Que la placa muestre además la temperatura y el nivel de luz al
+        apretar los botones.<br>
+        <strong>2.</strong> Que mande el aviso <em>por radio</em> a otra micro:bit usada como pulsera.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       13 · ACTIVIDAD 38 — CLASIFICANDO RESIDUOS
+       ======================================================== -->
+  <section class="slide" data-titulo="38 · Clasificando residuos">
+    <span class="etiqueta">Actividad 38</span>
+    <h2>Clasificando residuos</h2>
+    <p><strong>Objetivo:</strong> reflexionar sobre el impacto de la cantidad de residuos que
+    generamos y sobre la importancia de reducirlos, reciclarlos y reutilizarlos.</p>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>Qué se construye</h3>
+        <p style="margin:0;">Un <strong>póster interactivo</strong> donde los residuos aparecen
+        agrupados por categoría. Cada grupo se asocia a un botón o pin de una micro:bit.</p>
+        <p style="margin-top:.7em;">Al elegir una categoría, la placa <em>manda un número por radio</em>
+        y solo el recipiente correcto enciende su LED.</p>
+      </div>
+      <div>
+        <h3>Materiales</h3>
+        <ul class="limpia" style="font-size:calc(var(--u)*.9);">
+          <li>3 placas micro:bit</li>
+          <li>4 cables cocodrilo</li>
+          <li>2 LED + 2 resistencias</li>
+          <li>½ cartulina y fibras</li>
+          <li>2 recipientes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="destacado aviso compacto">
+      <p style="margin:0;">
+        ⚠️ Las resistencias dependen del LED: <strong>10 Ω</strong> para verdes o azules,
+        <strong>100 Ω</strong> para rojos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       14 · ACTIVIDAD 39 — TIMBRE INCLUSIVO
+       ======================================================== -->
+  <section class="slide" data-titulo="39 · Timbre inclusivo">
+    <span class="etiqueta">Actividad 39</span>
+    <h2>Timbre inclusivo</h2>
+    <div class="meta">
+      <span class="dato">👥 Grupal</span>
+      <span class="dato">⏱ 90 minutos</span>
+      <span class="dato">Equipos de 3</span>
+    </div>
+    <p><strong>Objetivo:</strong> que todas las personas tengan accesibilidad en todos los
+    espacios del centro educativo.</p>
+    <div class="destacado">
+      <p style="margin:0;">
+        El timbre común deja afuera a las <strong>personas con problemas de audición</strong>.
+        La solución: un timbre que además <em>avise con luz</em>.
+      </p>
+    </div>
+    <h3>Se programa por etapas</h3>
+    <ol class="pasos" style="font-size:calc(var(--u)*.95);">
+      <li><p style="margin:0;">Medir y mostrar los <strong>segundos</strong> transcurridos.</p></li>
+      <li><p style="margin:0;">Medir y mostrar los <strong>minutos</strong>.</p></li>
+      <li><p style="margin:0;">Mostrar una <strong>cara feliz</strong> al llegar la hora del recreo.</p></li>
+      <li><p style="margin:0;">Encender el <strong>LED</strong> junto con el aviso.</p></li>
+    </ol>
+  </section>
+
+  <!-- ========================================================
+       15 · ACTIVIDAD 40 — PISADAS QUE SUENAN
+       ======================================================== -->
+  <section class="slide" data-titulo="40 · Pisadas que suenan">
+    <span class="etiqueta">Actividad 40</span>
+    <h2>Pisadas que suenan</h2>
+    <div class="meta">
+      <span class="dato">👥 Grupal</span>
+      <span class="dato">⏱ 225 minutos</span>
+      <span class="dato">Equipos de 4</span>
+      <span class="nivel avanzada">La más ambiciosa</span>
+    </div>
+    <p class="grande">Un <strong>teclado musical para pies</strong>, construido en el piso:
+    se pisan las teclas y suenan las notas.</p>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>Cómo se trabaja</h3>
+        <p style="margin:0;">Cada equipo hace un <em>prototipo</em>. Después el grupo entero
+        elige el mejor modelo y lo construye en <strong>tamaño real</strong>.</p>
+      </div>
+      <div>
+        <h3>Materiales</h3>
+        <ul class="limpia" style="font-size:calc(var(--u)*.9);">
+          <li>4 placas micro:bit</li>
+          <li>14 cables cocodrilo</li>
+          <li>Parlante</li>
+          <li>Papel aluminio (conductor)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       16 · PROYECTO 2 — PORTADA DE SECCIÓN
+       ======================================================== -->
+  <section class="slide portada" data-titulo="▸ Proyecto 2: Pulseras que nos cuidan">
+    <span class="etiqueta">Proyecto 2</span>
+    <h1>Pulseras que nos cuidan</h1>
+    <p class="subtitulo">Construir una pulsera inteligente que ayude a cuidar la salud y el bienestar.</p>
+    <div class="meta" style="justify-content:center; margin-top:1.5em;">
+      <span class="dato">⏱ 15 horas</span>
+      <span class="dato">5 actividades</span>
+      <span class="dato">ODS 3</span>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       17 · PROYECTO 2 — CÓMO ESTÁ PENSADO
+       ======================================================== -->
+  <section class="slide" data-titulo="Proyecto 2: cómo está pensado">
+    <span class="etiqueta">Proyecto 2</span>
+    <h2>Una función por vez, y al final todas juntas</h2>
+    <p class="grande">
+      En las <strong>primeras cuatro actividades</strong> se hace una pulsera con
+      <em>una sola</em> funcionalidad. La <strong>quinta</strong> reúne las cuatro en una sola pulsera.
+    </p>
+    <div class="destacado">
+      <p style="margin:0;">
+        Es la mejor parte del proyecto: los estudiantes descubren que un programa grande
+        no se escribe de una vez, sino <strong>juntando piezas que ya funcionan</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       18 · ACTIVIDADES 41-44
+       ======================================================== -->
+  <section class="slide" data-titulo="41 a 44 · Las cuatro funciones">
+    <span class="etiqueta">Actividades 41 a 44</span>
+    <h2>Las cuatro funciones de la pulsera</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">🌡️</span>
+        <h3>41 · Temperatura</h3>
+        <p>Al apretar un botón informa la temperatura del patio: dice si hay que abrigarse
+        para salir.</p>
+        <div class="meta"><span class="dato">Grupal</span><span class="dato">135 min</span></div>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">👟</span>
+        <h3>42 · Pasos</h3>
+        <p>Muestra una cara feliz al llegar a los 12.000 pasos, y el conteo al apretar un botón.</p>
+        <div class="meta"><span class="dato">Individual</span><span class="dato">135 min</span></div>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🍎</span>
+        <h3>43 · ¿Qué comemos?</h3>
+        <p>Da información sobre el contenido de los alimentos que se venden en la cantina.</p>
+        <div class="meta"><span class="dato">Grupal</span><span class="dato">180 min</span></div>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">💧</span>
+        <h3>44 · ¡No te olvides del agua!</h3>
+        <p>Hora por medio muestra un mensaje recordando tomar agua.</p>
+        <div class="meta"><span class="dato">Duplas</span><span class="dato">90 min</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       19 · ACTIVIDAD 45 — CUATRO EN UNO
+       ======================================================== -->
+  <section class="slide" data-titulo="45 · Cuatro en uno">
+    <span class="etiqueta">Actividad 45</span>
+    <h2>Cuatro en uno</h2>
+    <div class="meta">
+      <span class="dato">👥 Grupal</span>
+      <span class="dato">⏱ 135 minutos</span>
+      <span class="nivel avanzada">Cierre del proyecto</span>
+    </div>
+    <p><strong>Objetivo:</strong> profundizar conceptos de programación reuniendo en una sola
+    pulsera las cuatro funcionalidades trabajadas.</p>
+    <h3>Todo lo que se pone en juego</h3>
+    <ul class="materiales">
+      <li>Variables</li>
+      <li>Condicionales</li>
+      <li>Comparación de valores</li>
+      <li>Utilización de botones</li>
+      <li>Sensor de temperatura</li>
+      <li>Acelerómetro</li>
+      <li>Mensajes por radio</li>
+      <li>Operaciones matemáticas</li>
+      <li>Conexión y encendido de LED</li>
+      <li><strong>Funciones</strong></li>
+    </ul>
+  </section>
+
+  <!-- ========================================================
+       20 · TABLA RESUMEN
+       ======================================================== -->
+  <section class="slide" data-titulo="Resumen de las 9 actividades">
+    <span class="etiqueta">De un vistazo</span>
+    <h2>Las nueve actividades</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Actividad</th><th>Modalidad</th><th>Duración</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>37</td><td>Plantas:bit</td><td>Grupal</td><td>45 min</td></tr>
+        <tr><td>38</td><td>Clasificando residuos</td><td>—</td><td>—</td></tr>
+        <tr><td>39</td><td>Timbre inclusivo</td><td>Grupal</td><td>90 min</td></tr>
+        <tr><td>40</td><td>Pisadas que suenan</td><td>Grupal</td><td>225 min</td></tr>
+        <tr><td>41</td><td>Temperatura</td><td>Grupal</td><td>135 min</td></tr>
+        <tr><td>42</td><td>Pasos</td><td>Individual</td><td>135 min</td></tr>
+        <tr><td>43</td><td>¿Qué comemos?</td><td>Grupal</td><td>180 min</td></tr>
+        <tr><td>44</td><td>¡No te olvides del agua!</td><td>Duplas</td><td>90 min</td></tr>
+        <tr><td>45</td><td>Cuatro en uno</td><td>Grupal</td><td>135 min</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ========================================================
+       21 · IDEAS EN VIDEO — PRESENTACIÓN
+       ======================================================== -->
+  <section class="slide" data-titulo="▸ Ideas para hacer con micro:bit">
+    <span class="etiqueta">Ceibal STEM</span>
+    <h2>Seis ideas para arrancar hoy</h2>
+    <p class="subtitulo">Proyectos cortos, en video, paso a paso. Sirven para probar la placa
+    antes de meterse en un proyecto largo.</p>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="icono">🧲</span><h3>Tesoro magnético</h3><p>Un juego usando la brújula.</p></div>
+      <div class="tarjeta"><span class="icono">🏹</span><h3>Catapulta</h3><p>Física y medición en movimiento.</p></div>
+      <div class="tarjeta"><span class="icono">🔬</span><h3>Turbidímetro</h3><p>Medir qué tan turbia está el agua.</p></div>
+      <div class="tarjeta"><span class="icono">⛵</span><h3>Barco</h3><p>Construcción y control.</p></div>
+      <div class="tarjeta"><span class="icono">🧭</span><h3>Brújula</h3><p>El sensor magnético de la placa.</p></div>
+      <div class="tarjeta"><span class="icono">🥁</span><h3>Personaje de candombe</h3><p>Sonido y cultura uruguaya.</p></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       22-27 · LOS SEIS VIDEOS
+       ======================================================== -->
+  <section class="slide" data-titulo="Video · Tesoro magnético">
+    <span class="etiqueta">Idea 1</span>
+    <h2>Tesoro magnético</h2>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/_ot2ShusfDE"
+              title="Cómo jugar al Tesoro Magnético con micro:bit" data-pausable="si"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="slide" data-titulo="Video · Catapulta">
+    <span class="etiqueta">Idea 2</span>
+    <h2>Catapulta</h2>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/JfAxGtvX9G0"
+              title="Cómo construir una catapulta con micro:bit" data-pausable="si"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="slide" data-titulo="Video · Turbidímetro">
+    <span class="etiqueta">Idea 3</span>
+    <h2>Turbidímetro</h2>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/VAwL4uDTJyE"
+              title="Cómo construir un turbidímetro con micro:bit" data-pausable="si"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="slide" data-titulo="Video · Barco">
+    <span class="etiqueta">Idea 4</span>
+    <h2>Barco</h2>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/GJtejLILrns"
+              title="Cómo crear un barco con micro:bit" data-pausable="si"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="slide" data-titulo="Video · Brújula">
+    <span class="etiqueta">Idea 5</span>
+    <h2>Brújula</h2>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/XkwMLA5G3Lo"
+              title="Cómo crear una brújula con micro:bit" data-pausable="si"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="slide" data-titulo="Video · Personaje de candombe">
+    <span class="etiqueta">Idea 6</span>
+    <h2>Personaje de candombe</h2>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/dKJ71n-gaus"
+              title="Cómo crear un personaje de candombe con micro:bit" data-pausable="si"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       28 · CÓMO SE EVALÚA
+       ======================================================== -->
+  <section class="slide" data-titulo="Cómo se evalúa">
+    <span class="etiqueta">Evaluación</span>
+    <h2>Tres competencias a observar</h2>
+    <p class="subtitulo">Según la Red Global de Aprendizajes. Es independiente de la evaluación
+    de los contenidos de cada materia.</p>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">💬</span>
+        <h3>Comunicación</h3>
+        <p>Comunicarse de manera efectiva para diversas audiencias, con una amplia gama de
+        herramientas, incluidas las digitales.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">✨</span>
+        <h3>Creatividad</h3>
+        <p>Formular preguntas investigables, generar ideas nuevas y transformarlas en acciones
+        con impacto social.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🤝</span>
+        <h3>Colaboración</h3>
+        <p>Trabajar en equipo de forma interdependiente, aprender de los demás y tomar
+        decisiones desafiantes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       29 · LOS TRES NIVELES DE LA RÚBRICA
+       ======================================================== -->
+  <section class="slide" data-titulo="La rúbrica">
+    <span class="etiqueta">Evaluación</span>
+    <h2>Tres niveles para cada competencia</h2>
+    <table>
+      <thead>
+        <tr><th></th><th>Avanzado</th><th>En desarrollo</th><th>Evidencia limitada</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Comunicación</strong></td>
+          <td>Comunica con eficiencia y calidad, y explica su proceso de aprendizaje.</td>
+          <td>Comunica sus logros de forma eficiente pero genérica.</td>
+          <td>Comunica sus logros con un nivel superficial.</td>
+        </tr>
+        <tr>
+          <td><strong>Creatividad</strong></td>
+          <td>Crea soluciones innovadoras considerando múltiples perspectivas.</td>
+          <td>Imagina ideas nuevas pero no las concreta; termina usando soluciones existentes.</td>
+          <td>Recurre a soluciones preexistentes. No considera viables las ideas propias.</td>
+        </tr>
+        <tr>
+          <td><strong>Colaboración</strong></td>
+          <td>Es responsable de que el proceso colaborativo funcione. Escucha y aprende de sus pares.</td>
+          <td>Se enfoca en el resultado, pero las decisiones clave quedan en uno o dos integrantes.</td>
+          <td>No manifiesta interés en escuchar o aprender de sus pares.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ========================================================
+       30 · COEVALUACIÓN
+       ======================================================== -->
+  <section class="slide" data-titulo="Coevaluación del equipo">
+    <span class="etiqueta">Para los estudiantes</span>
+    <h2>Coevaluación: cómo trabajamos</h2>
+    <p>Al terminar cada actividad, el equipo se puntúa del <strong>1 al 5</strong>:</p>
+    <ul class="limpia" style="font-size:calc(var(--u)*1.1);">
+      <li>La actividad fue interesante y nos motivó.</li>
+      <li>Todo el equipo aportó ideas.</li>
+      <li>Trabajamos respetuosamente y nos escuchamos.</li>
+      <li>Logramos programar la micro:bit.</li>
+      <li>Aprendimos y conocimos nuevas funciones de la placa.</li>
+    </ul>
+    <div class="destacado compacto">
+      <p style="margin:0;">
+        Ojo con la cuarta: <em>que el programa no haya funcionado no significa que la actividad
+        haya fracasado</em>. Equivocarse es parte del proceso.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       31 · MANOS A LA OBRA
+       ======================================================== -->
+  <section class="slide" data-titulo="Actividad: elegí tu proyecto">
+    <span class="etiqueta">Ahora ustedes</span>
+    <h2>Elijan su proyecto</h2>
+    <p class="grande">En equipos, elijan una de las nueve actividades —o inventen una propia—
+    y respondan:</p>
+    <ol class="pasos">
+      <li><p style="margin:0;"><strong>¿Qué problema resuelve?</strong> ¿A quién del liceo le sirve?</p></li>
+      <li><p style="margin:0;"><strong>¿Qué mide o detecta?</strong> Es decir, cuál es la entrada.</p></li>
+      <li><p style="margin:0;"><strong>¿Cómo avisa o actúa?</strong> Es decir, cuál es la salida.</p></li>
+      <li><p style="margin:0;"><strong>¿Qué materiales necesitan?</strong> Hagan la lista completa.</p></li>
+      <li><p style="margin:0;"><strong>Dibujen un bosquejo</strong> de cómo se va a construir y cómo va a funcionar.</p></li>
+    </ol>
+  </section>
+
+  <!-- ========================================================
+       32 · CIERRE
+       ======================================================== -->
+  <section class="slide portada cierre" data-titulo="Para seguir">
+    <span class="etiqueta">Para seguir</span>
+    <h1>A construir</h1>
+    <p class="subtitulo">Todo el material, para descargar y llevarse.</p>
+    <div class="tarjetas" style="max-width:900px; margin-top:.8em;">
+      <div class="tarjeta">
+        <span class="icono">📗</span>
+        <h3>Cuaderno de proyectos</h3>
+        <p><a href="docs/Cuadernos-Microbit_Proyectos-Media.pdf" target="_blank" style="color:var(--acento);">Proyectos para Educación Media (PDF)</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">📒</span>
+        <h3>Cuaderno de actividades</h3>
+        <p><a href="docs/Cuadernos-Microbit_Actividades.pdf" target="_blank" style="color:var(--acento);">Las 36 actividades (PDF)</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">▶️</span>
+        <h3>Ideas en video</h3>
+        <p><a href="https://www.youtube.com/playlist?list=PL65Zsdp0e9GpZXnJtmYy0IwVo0FrRmwtK" target="_blank" style="color:var(--acento);">La lista completa de Ceibal STEM</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">⬅️</span>
+        <h3>Módulo 1</h3>
+        <p><a href="index.html" style="color:var(--acento);">La placa programable micro:bit</a></p>
+      </div>
+    </div>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.75); margin-top:1.4em;">
+      Cuaderno de proyectos micro:bit · Ceibal, Laboratorios Digitales (2023).
+      Autoras: Elisa Cristi, María Elisa Ferenczi y Alicia Ferrando.
+    </p>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     INTERFAZ DE NAVEGACIÓN
+     ============================================================ -->
+
+<button class="zona-clic izq" aria-label="Slide anterior"></button>
+<button class="zona-clic der" aria-label="Slide siguiente"></button>
+
+<div id="titulo-deck">Robótica con micro:bit · Módulo 2</div>
+
+<div id="controles">
+  <span id="contador">1 / 1</span>
+  <button class="btn" id="btn-indice"   title="Índice (O)"          aria-label="Índice">☰</button>
+  <button class="btn" id="btn-anterior" title="Anterior (&larr;)"   aria-label="Anterior">‹</button>
+  <button class="btn" id="btn-siguiente" title="Siguiente (&rarr;)" aria-label="Siguiente">›</button>
+  <button class="btn" id="btn-pantalla" title="Pantalla completa (F)" aria-label="Pantalla completa">⛶</button>
+</div>
+
+<!-- Índice -->
+<div id="indice">
+  <h2>Índice del módulo</h2>
+  <ul id="lista-indice"></ul>
+</div>
+
+<!-- Ayuda de teclado -->
+<div id="ayuda">
+  <div class="panel">
+    <h2>Atajos de teclado</h2>
+    <dl>
+      <dt><kbd>&rarr;</kbd> <kbd>espacio</kbd></dt><dd>Siguiente slide</dd>
+      <dt><kbd>&larr;</kbd></dt><dd>Slide anterior</dd>
+      <dt><kbd>Inicio</kbd> / <kbd>Fin</kbd></dt><dd>Primera / última slide</dd>
+      <dt><kbd>O</kbd></dt><dd>Abrir el índice</dd>
+      <dt><kbd>F</kbd></dt><dd>Pantalla completa</dd>
+      <dt><kbd>H</kbd></dt><dd>Mostrar esta ayuda</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Cerrar paneles</dd>
+      <dt><kbd>Ctrl</kbd>+<kbd>P</kbd></dt><dd>Guardar todo como PDF</dd>
+    </dl>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
