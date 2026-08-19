@@ -1,0 +1,508 @@
+/* ============================================================
+   Robótica — Estilos del deck de slides
+   Todo el aspecto visual se controla desde las variables de :root
+   ============================================================ */
+
+:root{
+  /* Paleta */
+  --fondo:        #0b1020;
+  --fondo-2:      #131a33;
+  --superficie:   rgba(255,255,255,.05);
+  --borde:        rgba(255,255,255,.12);
+  --texto:        #e8ecf8;
+  --texto-suave:  #9aa6c9;
+  --acento:       #35e0c8;
+  --acento-2:     #6c8cff;
+  --alerta:       #ffb454;
+
+  /* Tipografía */
+  --fuente: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --fuente-mono: "Cascadia Code", Consolas, "Courier New", monospace;
+
+  /* Escala: se ajusta al tamaño de la ventana */
+  --u: clamp(14px, 1.35vw, 22px);
+
+  --radio: 18px;
+  --sombra: 0 18px 50px rgba(0,0,0,.45);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html,body{ height:100%; }
+
+body{
+  font-family: var(--fuente);
+  color: var(--texto);
+  background:
+    radial-gradient(1200px 800px at 15% -10%, #1d2a55 0%, transparent 60%),
+    radial-gradient(900px 700px at 110% 110%, #143f45 0%, transparent 55%),
+    var(--fondo);
+  overflow:hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   ESCENARIO Y SLIDES
+   ============================================================ */
+
+#escenario{
+  position:relative;
+  height:100vh;
+  width:100vw;
+  overflow:hidden;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  padding: 5vh 7vw 11vh;
+  overflow-y:auto;
+  animation: entrar .45s ease both;
+}
+
+.slide.activa{ display:flex; }
+
+/* Al retroceder, la animación entra desde el otro lado */
+.slide.activa.hacia-atras{ animation: entrar-atras .45s ease both; }
+
+@keyframes entrar{
+  from{ opacity:0; transform: translateX(38px); }
+  to  { opacity:1; transform: none; }
+}
+@keyframes entrar-atras{
+  from{ opacity:0; transform: translateX(-38px); }
+  to  { opacity:1; transform: none; }
+}
+
+/* ---------- Tipografía dentro de las slides ---------- */
+
+.slide h1{
+  font-size: calc(var(--u) * 3.1);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin-bottom: .4em;
+}
+.slide h2{
+  font-size: calc(var(--u) * 2.1);
+  line-height:1.15;
+  letter-spacing:-.015em;
+  margin-bottom:.55em;
+}
+.slide h3{
+  font-size: calc(var(--u) * 1.25);
+  margin-bottom:.5em;
+  color: var(--acento);
+}
+.slide p{
+  font-size: calc(var(--u) * 1.05);
+  line-height:1.65;
+  max-width: 60ch;
+  color: var(--texto);
+  margin-bottom:.8em;
+}
+.slide p.grande{ font-size: calc(var(--u) * 1.35); }
+
+.subtitulo{
+  color: var(--texto-suave);
+  font-size: calc(var(--u) * 1.15);
+  max-width: 55ch;
+}
+
+/* Etiqueta de sección arriba del título */
+.etiqueta{
+  display:inline-block;
+  align-self:flex-start;
+  font-size: calc(var(--u) * .72);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color: var(--acento);
+  border:1px solid var(--acento);
+  border-radius:999px;
+  padding:.45em 1.1em;
+  margin-bottom:1.4em;
+  opacity:.9;
+}
+
+/* Listas */
+.slide ul, .slide ol{
+  font-size: calc(var(--u) * 1.05);
+  line-height:1.6;
+  max-width:62ch;
+  margin: .2em 0 1em 1.1em;
+}
+.slide li{ margin-bottom:.6em; }
+.slide ul.limpia{ list-style:none; margin-left:0; }
+.slide ul.limpia li{
+  padding-left: 1.9em;
+  position:relative;
+}
+.slide ul.limpia li::before{
+  content:"\25B8";
+  position:absolute; left:0; top:0;
+  color: var(--acento);
+  font-size:1.1em;
+}
+
+strong{ color:#fff; }
+em{ color: var(--acento); font-style:normal; font-weight:600; }
+
+code{
+  font-family: var(--fuente-mono);
+  background: rgba(255,255,255,.08);
+  border:1px solid var(--borde);
+  border-radius:6px;
+  padding:.12em .45em;
+  font-size:.9em;
+}
+pre{
+  font-family: var(--fuente-mono);
+  background: #06091a;
+  border:1px solid var(--borde);
+  border-left:4px solid var(--acento);
+  border-radius: 12px;
+  padding: 1.1em 1.3em;
+  overflow-x:auto;
+  font-size: calc(var(--u) * .82);
+  line-height:1.55;
+  max-width:100%;
+}
+pre code{ background:none; border:none; padding:0; }
+
+/* ============================================================
+   LAYOUTS REUTILIZABLES
+   ============================================================ */
+
+/* Portada / slide de sección: todo centrado */
+.slide.portada{
+  align-items:center;
+  text-align:center;
+  justify-content:center;
+}
+.slide.portada .etiqueta{ align-self:center; }
+.slide.portada p{ margin-left:auto; margin-right:auto; }
+.slide.portada h1{
+  font-size: calc(var(--u) * 4);
+  background: linear-gradient(100deg, var(--texto) 20%, var(--acento) 60%, var(--acento-2) 100%);
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent;
+}
+
+/* Slide de cierre: mismo estilo de portada pero más compacto,
+   porque además lleva tarjetas de recursos */
+.slide.cierre h1{ font-size: calc(var(--u) * 3); }
+.slide.cierre .tarjeta{ padding: 1.1em 1.2em; }
+.slide.cierre .tarjeta .icono{ font-size: calc(var(--u) * 1.5); }
+
+/* Dos columnas */
+.dos-columnas{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3vw;
+  align-items:center;
+}
+
+/* Rejilla de tarjetas */
+.tarjetas{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 1.4rem;
+  margin-top:1rem;
+  /* width:100% es necesario en los slides centrados (.portada), donde el
+     contenedor flex no estira a los hijos y la rejilla crecería a max-content */
+  width:100%;
+}
+.tarjeta{
+  background: var(--superficie);
+  border:1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.6em 1.5em;
+  backdrop-filter: blur(6px);
+  transition: transform .2s ease, border-color .2s ease;
+}
+.tarjeta:hover{ transform: translateY(-4px); border-color: var(--acento); }
+.tarjeta .icono{ font-size: calc(var(--u) * 2); display:block; margin-bottom:.35em; }
+.tarjeta h3{ margin-bottom:.35em; }
+.tarjeta p{ font-size: calc(var(--u) * .92); color: var(--texto-suave); margin:0; }
+
+/* Cita destacada */
+.cita{
+  border-left:4px solid var(--acento);
+  padding-left:1.2em;
+  font-size: calc(var(--u) * 1.5);
+  line-height:1.4;
+  font-style:italic;
+  max-width:50ch;
+}
+.cita .autor{
+  display:block;
+  margin-top:.7em;
+  font-size: calc(var(--u) * .85);
+  font-style:normal;
+  color: var(--texto-suave);
+}
+
+/* Caja de aviso / dato clave */
+.destacado{
+  background: linear-gradient(120deg, rgba(53,224,200,.12), rgba(108,140,255,.12));
+  border:1px solid var(--acento);
+  border-radius: var(--radio);
+  padding:1.3em 1.6em;
+  margin:1em 0;
+  max-width:65ch;
+}
+/* Variante de una sola línea, para slides que ya tienen mucho contenido */
+.destacado.compacto{
+  padding: .8em 1.2em;
+}
+.destacado.compacto p{ font-size: calc(var(--u) * .92); }
+
+.destacado.aviso{
+  border-color: var(--alerta);
+  background: linear-gradient(120deg, rgba(255,180,84,.14), rgba(255,180,84,.04));
+}
+
+/* Imágenes */
+.slide figure{ margin: 1em 0; max-width:100%; }
+.slide img{
+  max-width:100%;
+  max-height:52vh;
+  border-radius: var(--radio);
+  border:1px solid var(--borde);
+  box-shadow: var(--sombra);
+  display:block;
+}
+.slide figcaption{
+  color: var(--texto-suave);
+  font-size: calc(var(--u) * .82);
+  margin-top:.6em;
+}
+
+/* Video local (archivo .mp4 en la carpeta media/) */
+.slide video{
+  width:100%;
+  max-width: 900px;
+  max-height: 56vh;
+  border-radius: var(--radio);
+  border:1px solid var(--borde);
+  box-shadow: var(--sombra);
+  background:#000;
+}
+
+/* Video / iframe embebido */
+.video{
+  position:relative;
+  width:100%;
+  /* El 99vh limita el ANCHO para que, con relación 16:9, el alto no pase
+     de ~56vh y el video entre siempre sin scroll */
+  max-width: min(900px, 99vh);
+  aspect-ratio: 16/9;
+  border-radius: var(--radio);
+  overflow:hidden;
+  border:1px solid var(--borde);
+  box-shadow: var(--sombra);
+}
+.video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+/* Tabla */
+.slide table{
+  border-collapse:collapse;
+  width:100%;
+  max-width: 900px;
+  font-size: calc(var(--u) * .92);
+  margin:1em 0;
+}
+.slide th, .slide td{
+  text-align:left;
+  padding:.8em 1em;
+  border-bottom:1px solid var(--borde);
+}
+.slide th{ color: var(--acento); text-transform:uppercase; letter-spacing:.08em; font-size:.85em; }
+.slide tbody tr:hover{ background: var(--superficie); }
+
+/* Pasos numerados */
+.pasos{ counter-reset: paso; list-style:none; margin-left:0; }
+.pasos li{
+  counter-increment: paso;
+  position:relative;
+  padding-left:3.2em;
+  margin-bottom:1.1em;
+}
+.pasos li::before{
+  content: counter(paso);
+  position:absolute; left:0; top:-.1em;
+  width:2.2em; height:2.2em;
+  display:grid; place-items:center;
+  border-radius:50%;
+  background: linear-gradient(135deg, var(--acento), var(--acento-2));
+  color:#06091a;
+  font-weight:700;
+  font-size:.9em;
+}
+
+/* ============================================================
+   NAVEGACIÓN E INTERFAZ
+   ============================================================ */
+
+#barra-progreso{
+  position:fixed; top:0; left:0;
+  height:4px; width:0%;
+  background: linear-gradient(90deg, var(--acento), var(--acento-2));
+  z-index:50;
+  transition: width .35s cubic-bezier(.4,0,.2,1);
+}
+
+#controles{
+  position:fixed;
+  bottom:2.2vh; right:2.5vw;
+  display:flex; align-items:center; gap:.55rem;
+  z-index:50;
+}
+
+.btn{
+  width:2.6rem; height:2.6rem;
+  display:grid; place-items:center;
+  border-radius:50%;
+  border:1px solid var(--borde);
+  background: rgba(255,255,255,.06);
+  color: var(--texto);
+  font-size:1.05rem;
+  cursor:pointer;
+  backdrop-filter: blur(8px);
+  transition: background .18s, border-color .18s, transform .18s;
+}
+.btn:hover{ background: rgba(255,255,255,.14); border-color: var(--acento); transform: translateY(-2px); }
+.btn:disabled{ opacity:.28; cursor:default; transform:none; }
+
+#contador{
+  font-variant-numeric: tabular-nums;
+  color: var(--texto-suave);
+  font-size:.9rem;
+  padding: 0 .6rem;
+  user-select:none;
+}
+
+#titulo-deck{
+  position:fixed;
+  bottom:2.6vh; left:2.5vw;
+  color: var(--texto-suave);
+  font-size:.85rem;
+  letter-spacing:.05em;
+  z-index:50;
+  user-select:none;
+}
+
+/* Zonas laterales para avanzar con clic */
+.zona-clic{
+  position:fixed; top:0; bottom:0;
+  width:9vw;
+  z-index:40;
+  cursor:pointer;
+  border:0; background:transparent;
+}
+.zona-clic.izq{ left:0; }
+.zona-clic.der{ right:0; }
+
+/* ---------- Vista índice (tecla O) ---------- */
+#indice{
+  position:fixed; inset:0;
+  background: rgba(6,9,26,.96);
+  backdrop-filter: blur(10px);
+  z-index:60;
+  padding: 6vh 6vw;
+  overflow-y:auto;
+  display:none;
+}
+#indice.abierto{ display:block; }
+#indice h2{ font-size:1.6rem; margin-bottom:1.5rem; }
+#lista-indice{ display:grid; gap:.5rem; list-style:none; margin:0; }
+#lista-indice li{ margin:0; }
+#lista-indice button{
+  width:100%; text-align:left;
+  background: var(--superficie);
+  border:1px solid var(--borde);
+  border-radius:12px;
+  padding:.9em 1.2em;
+  color: var(--texto);
+  font-family:inherit;
+  font-size:1rem;
+  cursor:pointer;
+  display:flex; gap:1.2em; align-items:center;
+  transition: border-color .18s, background .18s;
+}
+#lista-indice button:hover{ border-color: var(--acento); background: rgba(53,224,200,.08); }
+#lista-indice button.actual{ border-color: var(--acento); }
+#lista-indice .num{ color: var(--acento); font-variant-numeric: tabular-nums; min-width:2.2em; }
+
+/* ---------- Ayuda de teclado ---------- */
+#ayuda{
+  position:fixed; inset:0;
+  background: rgba(6,9,26,.94);
+  backdrop-filter: blur(10px);
+  z-index:70;
+  display:none;
+  place-items:center;
+  padding:4vw;
+}
+#ayuda.abierto{ display:grid; }
+#ayuda .panel{
+  background: var(--fondo-2);
+  border:1px solid var(--borde);
+  border-radius: var(--radio);
+  padding:2.4em 2.8em;
+  max-width:520px;
+}
+#ayuda h2{ margin-bottom:1.2rem; font-size:1.4rem; }
+#ayuda dl{ display:grid; grid-template-columns:auto 1fr; gap:.8em 1.4em; align-items:center; }
+#ayuda dt{ text-align:right; }
+#ayuda dd{ color: var(--texto-suave); }
+kbd{
+  font-family: var(--fuente-mono);
+  background: rgba(255,255,255,.1);
+  border:1px solid var(--borde);
+  border-bottom-width:2px;
+  border-radius:6px;
+  padding:.2em .6em;
+  font-size:.85em;
+}
+
+/* Pantallas bajas (proyectores 1024x768, notebooks chicas):
+   se recorta el margen para que entre más contenido sin scroll */
+@media (max-height: 800px){
+  .slide{ padding: 3.5vh 7vw 9.5vh; }
+}
+
+/* ============================================================
+   RESPONSIVE (celulares / tablets)
+   ============================================================ */
+@media (max-width: 820px){
+  :root{ --u: 15px; }
+  .slide{ padding: 7vh 6vw 13vh; }
+  .dos-columnas{ grid-template-columns:1fr; gap:1.6rem; }
+  .slide h1{ font-size: calc(var(--u) * 2.4); }
+  .slide.portada h1{ font-size: calc(var(--u) * 2.8); }
+  .zona-clic{ width:14vw; }
+  #titulo-deck{ display:none; }
+}
+
+/* ============================================================
+   IMPRESIÓN -> guardar como PDF (Ctrl+P)
+   ============================================================ */
+@media print{
+  body{ background:#fff; color:#111; overflow:visible; }
+  #controles, #barra-progreso, .zona-clic, #indice, #ayuda, #titulo-deck{ display:none !important; }
+  #escenario{ height:auto; overflow:visible; }
+  .slide{
+    display:flex !important;
+    position:relative;
+    inset:auto;
+    height: 100vh;
+    page-break-after: always;
+    animation:none;
+    color:#111;
+  }
+  .slide h1, .slide h2, .slide p, .slide li{ color:#111; }
+  .slide.portada h1{ -webkit-text-fill-color:#111; color:#111; }
+}

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robótica con micro:bit — Módulo 1</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-deck="microbit-modulo1">
+
+<div id="barra-progreso"></div>
+
+<main id="escenario">
+
+  <!-- ========================================================
+       1 · PORTADA
+       ======================================================== -->
+  <section class="slide portada" data-titulo="Portada">
+    <span class="etiqueta">Módulo 1</span>
+    <h1>Robótica con micro:bit</h1>
+    <p class="subtitulo">La placa programable: de qué está hecha, cómo piensa y qué podemos construir con ella.</p>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.85); margin-top:2em;">
+      Usá las flechas <kbd>&larr;</kbd> <kbd>&rarr;</kbd> para avanzar &nbsp;·&nbsp; <kbd>H</kbd> para ver la ayuda
+    </p>
+  </section>
+
+  <!-- ========================================================
+       2 · RECORRIDO
+       ======================================================== -->
+  <section class="slide" data-titulo="Qué vamos a ver">
+    <span class="etiqueta">Recorrido</span>
+    <h2>Qué vamos a ver</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">🔌</span>
+        <h3>Placas programables</h3>
+        <p>Qué son, para qué sirven y cómo llegaron al aula.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">💻</span>
+        <h3>micro:bit es una computadora</h3>
+        <p>Entrada, proceso y salida en una placa del tamaño de una tarjeta.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🌡️</span>
+        <h3>Sensores y actuadores</h3>
+        <p>Cómo la placa lee el entorno y cómo actúa sobre él.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🛠️</span>
+        <h3>Manos en el proyecto</h3>
+        <p>Del concepto a una idea propia para construir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3 · ¿QUÉ SON LAS PLACAS PROGRAMABLES?
+       ======================================================== -->
+  <section class="slide" data-titulo="¿Qué es una placa programable?">
+    <span class="etiqueta">Concepto</span>
+    <h2>¿Qué es una placa programable?</h2>
+    <p class="grande">
+      Es un dispositivo que contiene un <strong>microcontrolador</strong> (un microchip) capaz de
+      <em>ejecutar instrucciones</em> que nosotros le escribimos desde un entorno de programación.
+    </p>
+    <div class="destacado">
+      <p style="margin:0;">
+        Como pueden procesar información, se las considera <strong>micro computadoras</strong>.
+        Al programarlas, convertimos objetos comunes en dispositivos «inteligentes».
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4 · SENSAR → PROCESAR → ACTUAR
+       ======================================================== -->
+  <section class="slide" data-titulo="Sensar, procesar, actuar">
+    <span class="etiqueta">Concepto</span>
+    <h2>¿Qué son capaces de hacer?</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">👁️</span>
+        <h3>1. Leer el entorno</h3>
+        <p>Sensan variables como la luz, la temperatura o la humedad.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🧠</span>
+        <h3>2. Procesar</h3>
+        <p>El controlador trabaja con la información que recibió.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">⚡</span>
+        <h3>3. Operar en el entorno</h3>
+        <p>Encienden un LED, emiten un sonido o activan un motor.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.6em;">
+      Es decir: las placas son un <strong>sistema de control</strong> que nos permite
+      <em>automatizar un proceso</em>.
+    </p>
+  </section>
+
+  <!-- ========================================================
+       5 · LA PLACA ES EL CORAZÓN
+       ======================================================== -->
+  <section class="slide" data-titulo="El corazón del proyecto">
+    <span class="etiqueta">Concepto</span>
+    <h2>La placa es el corazón del proyecto</h2>
+    <div class="dos-columnas">
+      <div>
+        <p>
+          Todo lo que armemos alrededor de una placa —componentes externos, cables, cartón,
+          madera, materiales reciclados— <strong>moldeará nuestra creación</strong>.
+        </p>
+        <p>
+          La placa es el <em>componente central</em> de cualquier proyecto que implique
+          procesamiento de datos.
+        </p>
+      </div>
+      <div>
+        <div class="destacado">
+          <p style="margin:0;">
+            Podemos pensarla como la <strong>«inteligencia»</strong> que articula lo que construimos,
+            tome o no la forma de un robot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       6 · LÍNEA DE TIEMPO
+       ======================================================== -->
+  <section class="slide" data-titulo="Historia: 3 puntos de inflexión">
+    <span class="etiqueta">Un poco de historia</span>
+    <h2>Tres puntos de inflexión</h2>
+    <ol class="pasos">
+      <li>
+        <h3>Los primeros dispositivos</h3>
+        <p style="margin:0;">Finales de los años 60. Su referente fue <strong>Seymour Papert</strong>,
+        que llevó la programación a las manos de los niños.</p>
+      </li>
+      <li>
+        <h3>La irrupción de Arduino</h3>
+        <p style="margin:0;">Plataforma de hardware y software <em>libre</em>, adoptada por múltiples
+        fabricantes. Expandió la robótica más allá del ámbito educativo.</p>
+      </li>
+      <li>
+        <h3>La difusión de micro:bit</h3>
+        <p style="margin:0;">Más pequeña, más fácil de conectar y de programar. Cambió el acceso a
+        estos dispositivos en la escuela y el liceo.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ========================================================
+       7 · CITA DE PAPERT
+       ======================================================== -->
+  <section class="slide" data-titulo="Cita: Seymour Papert">
+    <span class="etiqueta">Construyendo metodología</span>
+    <blockquote class="cita">
+      «¿La computadora programa al niño o el niño programa a la computadora?»
+      <span class="autor">La pregunta que Seymour Papert comenzó a hacerse a finales de los años sesenta.</span>
+    </blockquote>
+    <p style="margin-top:1.6em;">
+      La respuesta que buscamos: que la fabricación a escala personal, la programación y la
+      informática física desplacen el foco del <strong>consumo pasivo</strong> hacia la
+      <em>creación activa</em>.
+    </p>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.8);">
+      Idea desarrollada en <em>Inventar para aprender</em> (Libow Martínez y Stager).
+    </p>
+  </section>
+
+  <!-- ========================================================
+       8 · ¿POR QUÉ MICRO:BIT?
+       ======================================================== -->
+  <section class="slide" data-titulo="¿Por qué micro:bit?">
+    <span class="etiqueta">La placa que vamos a usar</span>
+    <h2>¿Por qué micro:bit?</h2>
+    <p>
+      Fue diseñada para que, <strong>solo conectando un cable USB</strong>, ya se puedan encender las
+      luces y medir la luz, la temperatura y la inclinación. Sin ninguna otra conexión.
+    </p>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="icono">🧩</span><h3>Fácil de programar</h3><p>Con bloques, sin escribir código al inicio.</p></div>
+      <div class="tarjeta"><span class="icono">📦</span><h3>Componentes integrados</h3><p>Sensores y actuadores ya vienen en la placa.</p></div>
+      <div class="tarjeta"><span class="icono">🔗</span><h3>Fácil de conectar</h3><p>Se le suman componentes externos sin complicaciones.</p></div>
+      <div class="tarjeta"><span class="icono">💲</span><h3>Bajo costo</h3><p>Accesible para trabajar en grupo en el aula.</p></div>
+    </div>
+    <div class="destacado compacto" style="margin-top:1.1em;">
+      <p style="margin:0;">Cuanto más <em>intuitiva</em> es una placa y su lenguaje de programación,
+      más sencilla será de abordar.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       9 · VIDEO: ¿QUÉ ES LA PLACA MICRO:BIT?
+       ======================================================== -->
+  <section class="slide" data-titulo="Video: ¿Qué es micro:bit?">
+    <span class="etiqueta">Video</span>
+    <h2>¿Qué es la placa micro:bit?</h2>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/rGVJtPt01gc"
+              title="¿Qué es la placa micro:bit?"
+              data-pausable="si"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       10 · ¿QUÉ ES UNA COMPUTADORA?
+       ======================================================== -->
+  <section class="slide" data-titulo="Ampliar qué es una computadora">
+    <span class="etiqueta">Pensemos juntos</span>
+    <h2>¿Qué es, en realidad, una computadora?</h2>
+    <p>
+      Solemos imaginar un equipo de escritorio o una notebook. Pero existen muchas computadoras
+      con formatos poco convencionales que nos acompañan todos los días:
+    </p>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="icono">🍳</span><h3>Cocinar</h3><p>Hornos eléctricos programables, robots de cocina.</p></div>
+      <div class="tarjeta"><span class="icono">⌚</span><h3>Hacer ejercicio</h3><p>Relojes inteligentes.</p></div>
+      <div class="tarjeta"><span class="icono">📱</span><h3>Comunicarnos</h3><p>El teléfono celular.</p></div>
+    </div>
+    <div class="destacado" style="margin-top:1.5em;">
+      <p style="margin:0;">
+        Una computadora es todo dispositivo que permite una <strong>entrada de datos</strong>,
+        los <strong>procesa</strong> y presenta los resultados por un dispositivo de <strong>salida</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       11 · EJEMPLO: LA COMPUTADORA QUE MULTIPLICA
+       ======================================================== -->
+  <section class="slide" data-titulo="Ejemplo: computadora que multiplica">
+    <span class="etiqueta">Actividad de análisis</span>
+    <h2>Una computadora que solo multiplica</h2>
+    <p>Imaginemos una computadora cuya única tarea es calcular el producto entre dos números.</p>
+    <table>
+      <thead>
+        <tr><th>Entrada</th><th>Proceso</th><th>Salida</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>¿Qué datos tenemos que ingresar?</td>
+          <td>¿En qué consistirá el procesamiento?</td>
+          <td>¿Qué vamos a visualizar?</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="destacado aviso">
+      <p style="margin:0;">
+        🤔 <strong>Para discutir:</strong> ahora pensá lo mismo, pero si esa computadora fuese una
+        placa micro:bit. ¿Cómo ingresarías los números? ¿Dónde verías el resultado?
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       12 · ANATOMÍA DE LA PLACA
+       ======================================================== -->
+  <section class="slide" data-titulo="Anatomía de la placa">
+    <span class="etiqueta">Hardware</span>
+    <h2>Las partes de micro:bit</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>Al frente</h3>
+        <ul class="limpia">
+          <li><strong>25 luces LED</strong> en matriz de 5×5</li>
+          <li><strong>2 botones</strong> (A y B)</li>
+          <li><strong>Logo táctil</strong> <em>(solo V2)</em></li>
+          <li><strong>Indicador de micrófono</strong> <em>(solo V2)</em></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Atrás y en los bordes</h3>
+        <ul class="limpia">
+          <li><strong>Procesador</strong></li>
+          <li><strong>Brújula y acelerómetro</strong></li>
+          <li><strong>Antena de radio</strong></li>
+          <li><strong>Conector USB</strong> y <strong>toma de batería</strong></li>
+          <li><strong>Botón de reinicio</strong></li>
+          <li><strong>Altavoz</strong> y <strong>micrófono</strong> <em>(solo V2)</em></li>
+          <li><strong>Pines</strong>: 0, 1, 2, 3V y GND + conector de borde</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       13 · V1 vs V2
+       ======================================================== -->
+  <section class="slide" data-titulo="V1 vs V2">
+    <span class="etiqueta">Versiones</span>
+    <h2>¿Qué cambia entre la V1 y la V2?</h2>
+    <table>
+      <thead>
+        <tr><th>Componente</th><th>V1</th><th>V2</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Matriz de 25 LED</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Botones A y B</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Brújula y acelerómetro</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Sensores de luz y temperatura</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Pines y conector de borde</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Altavoz integrado</td><td>—</td><td>✅</td></tr>
+        <tr><td>Micrófono</td><td>—</td><td>✅</td></tr>
+        <tr><td>Logo táctil</td><td>—</td><td>✅</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ========================================================
+       14 · ENTRADA / PROCESO / SALIDA — EL ESQUEMA
+       ======================================================== -->
+  <section class="slide" data-titulo="Entrada, proceso y salida">
+    <span class="etiqueta">El corazón del módulo</span>
+    <h2>Entrada &rarr; Proceso &rarr; Salida</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">📥</span>
+        <h3>Entrada</h3>
+        <p>Recibir datos a través de sensores u otros dispositivos de ingreso.</p>
+        <p style="margin-top:.8em; color:var(--texto);">Sensores integrados · pulsadores · pines · sensores externos</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">⚙️</span>
+        <h3>Proceso</h3>
+        <p>Se realizan operaciones sobre los datos obtenidos.</p>
+        <p style="margin-top:.8em; color:var(--texto);">El <strong>código</strong> que nosotros escribimos</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">📤</span>
+        <h3>Salida</h3>
+        <p>Se muestran los resultados del proceso mediante actuadores.</p>
+        <p style="margin-top:.8em; color:var(--texto);">Matriz de LED · parlante (V2) · actuadores externos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       15 · LAS 3 ENTRADAS DE MICRO:BIT
+       ======================================================== -->
+  <section class="slide" data-titulo="Las 3 entradas de micro:bit">
+    <span class="etiqueta">Entrada</span>
+    <h2>micro:bit tiene tres formas de entrada</h2>
+    <ol class="pasos">
+      <li>
+        <h3>Sensores integrados</h3>
+        <p style="margin:0;">Toman información del entorno —luz, temperatura, movimiento— y la
+        transforman en <em>datos numéricos</em> que se pueden procesar.</p>
+      </li>
+      <li>
+        <h3>Botones o pulsadores integrados</h3>
+        <p style="margin:0;">Los botones A y B, que permiten que la persona interactúe directamente.</p>
+      </li>
+      <li>
+        <h3>Pines</h3>
+        <p style="margin:0;">Las tiras doradas de la parte inferior. Permiten conectar más dispositivos
+        de entrada y <strong>expandir las posibilidades</strong> de la placa y de nuestros proyectos.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ========================================================
+       16 · PROCESO Y SALIDA EN MICRO:BIT
+       ======================================================== -->
+  <section class="slide" data-titulo="Proceso y salida en micro:bit">
+    <span class="etiqueta">Proceso y salida</span>
+    <h2>¿Y cómo procesa y responde?</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>⚙️ El proceso</h3>
+        <p>Se da por medio del <strong>microprocesador</strong> de la placa. Ahí se realiza todo el
+        procesamiento de la información que recibe.</p>
+      </div>
+      <div>
+        <h3>📤 La salida</h3>
+        <ul class="limpia">
+          <li>Una <strong>matriz de 25 LED</strong> que muestra textos e imágenes simples.</li>
+          <li>Un <strong>altavoz</strong> capaz de reproducir sonidos <em>(V2)</em>.</li>
+          <li>Con los <strong>pines</strong>: auriculares, pantallas o motores.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="destacado" style="margin-top:1.2em;">
+      <p style="margin:0;">
+        Reconocimos entrada, proceso y salida en micro:bit. Estamos en condiciones de afirmar que
+        <strong>efectivamente se trata de una computadora</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       17 · ¿QUÉ ES UN SENSOR?
+       ======================================================== -->
+  <section class="slide" data-titulo="¿Qué es un sensor?">
+    <span class="etiqueta">Componentes</span>
+    <h2>¿Qué es un sensor?</h2>
+    <p class="grande">
+      Un dispositivo capaz de <strong>registrar cambios</strong> en los fenómenos del entorno —la luz,
+      la temperatura, el volumen del sonido, el movimiento— y transformar esas lecturas en
+      <em>valores numéricos</em> que el procesador puede manipular.
+    </p>
+    <div class="destacado">
+      <p style="margin:0;">
+        micro:bit tiene sensores integrados, y también permite conectar sensores externos por medio
+        de sus <strong>pines</strong> o de una <strong>placa de expansión</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       18 · ¿QUÉ ES UN ACTUADOR?
+       ======================================================== -->
+  <section class="slide" data-titulo="¿Qué es un actuador?">
+    <span class="etiqueta">Componentes</span>
+    <h2>¿Qué es un actuador?</h2>
+    <p class="grande">
+      Un componente electrónico que, a diferencia del sensor, <strong>acciona sobre el entorno</strong>
+      en vez de tomar datos de él. Lo más habitual es que lo haga mediante el
+      <em>movimiento</em>, el <em>sonido</em> o la <em>luz</em>.
+    </p>
+    <div class="destacado">
+      <p style="margin:0;">
+        Los actuadores más comunes: <strong>LED</strong>, <strong>buzzers</strong>,
+        <strong>motores</strong> y <strong>pantallas LCD</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       19 · SENSOR vs ACTUADOR
+       ======================================================== -->
+  <section class="slide" data-titulo="Sensor vs actuador">
+    <span class="etiqueta">Comparación</span>
+    <h2>Sensor y actuador, cara a cara</h2>
+    <table>
+      <thead>
+        <tr><th></th><th>Sensor</th><th>Actuador</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>¿Qué hace?</strong></td><td>Toma datos del entorno</td><td>Acciona sobre el entorno</td></tr>
+        <tr><td><strong>Dirección</strong></td><td>Entorno &rarr; placa</td><td>Placa &rarr; entorno</td></tr>
+        <tr><td><strong>Etapa</strong></td><td>Entrada</td><td>Salida</td></tr>
+        <tr><td><strong>Ejemplos</strong></td><td>Luz, temperatura, sonido, movimiento</td><td>LED, buzzer, motor, pantalla LCD</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ========================================================
+       20 · CASO: LUMINARIA AUTOMATIZADA
+       ======================================================== -->
+  <section class="slide" data-titulo="Caso: luminaria automatizada">
+    <span class="etiqueta">Caso práctico</span>
+    <h2>Una luminaria automatizada</h2>
+    <p>Una luz que se enciende sola cuando oscurece. Veamos sus tres etapas:</p>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">📥</span>
+        <h3>Entrada</h3>
+        <p>El sensor de luz integrado detecta el nivel de luz y devuelve valores entre
+        <strong>0 y 255</strong>.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">⚙️</span>
+        <h3>Proceso</h3>
+        <p>Se compara ese valor y se programa una <strong>condición</strong> a cumplir cuando el
+        valor sea bajo.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">📤</span>
+        <h3>Salida</h3>
+        <p>Al cumplirse la condición, se <strong>enciende la matriz de LED</strong> de la placa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       21 · LA ENTRADA EN MAKECODE
+       ======================================================== -->
+  <section class="slide" data-titulo="La entrada en MakeCode">
+    <span class="etiqueta">Programación</span>
+    <h2>La entrada en MakeCode</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <p>
+          La categoría <strong>«Entrada»</strong> contiene los bloques que almacenan la información
+          de los distintos dispositivos de entrada.
+        </p>
+        <p>
+          <em>Su forma indica el tipo de dato:</em> los bloques <strong>redondeados</strong>
+          corresponden a sensores analógicos.
+        </p>
+      </div>
+      <div class="destacado">
+        <h3 style="margin-top:0;">Nivel de luz</h3>
+        <p style="margin:0;">
+          Es información de tipo <strong>analógica</strong>: su valor puede variar
+          entre <strong>0</strong> y <strong>255</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       22 · ANALIZAR LOS DATOS ANTES DE PROGRAMAR
+       ======================================================== -->
+  <section class="slide" data-titulo="Analizar el sensor primero">
+    <span class="etiqueta">Buena práctica</span>
+    <h2>Antes de programar: analizá el sensor</h2>
+    <p>
+      Al comenzar a trabajar con un sensor, hay que analizar los datos que brinda
+      <strong>en el contexto donde se va a usar el proyecto</strong>.
+    </p>
+    <ol class="pasos">
+      <li><p style="margin:0;">Escribí un programa que muestre el nivel de luz en la pantalla.</p></li>
+      <li><p style="margin:0;">Anotá los valores <strong>máximo y mínimo</strong> en el espacio real donde funcionará el sistema.</p></li>
+      <li><p style="margin:0;">Recién ahí elegí el valor de tu condición.</p></li>
+    </ol>
+    <div class="destacado aviso">
+      <p style="margin:0;">
+        ⚠️ Los valores de la lectura pueden verse condicionados por múltiples factores.
+        Un umbral que funciona en el salón puede fallar en el patio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       23 · PROCESO Y SALIDA EN CÓDIGO
+       ======================================================== -->
+  <section class="slide" data-titulo="El código del proyecto">
+    <span class="etiqueta">Programación</span>
+    <h2>El proceso, en código</h2>
+    <p>
+      Los datos del sensor pasan por un <strong>operador de comparación</strong>
+      (categoría «Lógica» de MakeCode), dentro de una <em>sentencia condicional doble</em>:
+    </p>
+<pre><code>para siempre:
+    si (nivel de luz &lt; 50) entonces
+        mostrar LEDs        ← salida: se enciende
+    si no
+        borrar pantalla     ← salida: se apaga</code></pre>
+    <p>
+      Si el nivel de luz es menor a 50, se encienden los LED. De lo contrario, se borran.
+      Ese encendido y apagado <strong>es la etapa de salida</strong>.
+    </p>
+  </section>
+
+  <!-- ========================================================
+       24 · CONCLUSIONES
+       ======================================================== -->
+  <section class="slide" data-titulo="Conclusiones">
+    <span class="etiqueta">Para recordar</span>
+    <h2>Conclusiones del módulo</h2>
+    <ul class="limpia" style="font-size:calc(var(--u)*1.15);">
+      <li>micro:bit es un dispositivo que funciona sobre la base de un sistema de
+          <strong>entrada, proceso y salida</strong>.</li>
+      <li>Los dispositivos de entrada o salida pueden estar <strong>integrados</strong> a la placa o
+          ser <strong>externos</strong>, conectados mediante los pines o una placa de expansión.</li>
+      <li>El <strong>código</strong> corresponde a la etapa de proceso: ahí se realizan las
+          operaciones lógicas, matemáticas o de comparación con los datos de la entrada.</li>
+    </ul>
+  </section>
+
+  <!-- ========================================================
+       25 · PROYECTOS CON RECURSOS INTEGRADOS
+       ======================================================== -->
+  <section class="slide" data-titulo="Proyectos: recursos integrados">
+    <span class="etiqueta">Inspiración</span>
+    <h2>Proyectos solo con la placa</h2>
+    <p class="subtitulo">Usando únicamente los componentes integrados:</p>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="icono">⚖️</span><h3>Balanza</h3><p>Con el acelerómetro.</p></div>
+      <div class="tarjeta"><span class="icono">👟</span><h3>Contador de pasos</h3><p>Detecta el movimiento al caminar.</p></div>
+      <div class="tarjeta"><span class="icono">🪂</span><h3>Paracaídas</h3><p>Con medidor de tiempo en vuelo.</p></div>
+      <div class="tarjeta"><span class="icono">🌱</span><h3>Medición de humedad</h3><p>Del suelo de una maceta.</p></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       26 · PROYECTOS CON RECURSOS EXTERNOS
+       ======================================================== -->
+  <section class="slide" data-titulo="Proyectos: recursos externos">
+    <span class="etiqueta">Inspiración</span>
+    <h2>Proyectos con componentes externos</h2>
+    <p class="subtitulo">Sumando sensores y actuadores a través de los pines:</p>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="icono">🚦</span><h3>Señal luminosa</h3><p>LEDs externos controlados por la placa.</p></div>
+      <div class="tarjeta"><span class="icono">🦾</span><h3>Robot con brazo</h3><p>Brazo automatizado con motores.</p></div>
+      <div class="tarjeta"><span class="icono">💧</span><h3>Sistema de riego</h3><p>Riega según la humedad del suelo.</p></div>
+      <div class="tarjeta"><span class="icono">🔐</span><h3>Cerradura electrónica</h3><p>Proyecto de la Escuela Técnica Superior de Paysandú.</p></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       27 · ACTIVIDAD 4 — MANOS EN EL PROYECTO
+       ======================================================== -->
+  <section class="slide" data-titulo="Actividad: Manos en el proyecto">
+    <span class="etiqueta">Actividad 4</span>
+    <h2>Manos en el proyecto</h2>
+    <p class="grande">Eje: <em>«Los espacios verdes y la tecnología»</em></p>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>Condiciones que podemos medir</h3>
+        <ul class="limpia">
+          <li>Humedad del suelo</li>
+          <li>Luminosidad</li>
+          <li>Temperatura del ambiente</li>
+          <li>Amplitud del espacio donde sembrar</li>
+          <li>Lluvias</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Las tres preguntas</h3>
+        <ol class="pasos" style="font-size:calc(var(--u)*1);">
+          <li><p style="margin:0;"><strong>Sensores:</strong> ¿qué leemos o medimos del entorno?</p></li>
+          <li><p style="margin:0;"><strong>Control:</strong> ¿qué proceso nos gustaría controlar?</p></li>
+          <li><p style="margin:0;"><strong>Actuadores:</strong> ¿de qué forma accionamos en el entorno?</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       28 · VIDEO: CLASE 1
+       ======================================================== -->
+  <section class="slide" data-titulo="Video: Clase 1 para principiantes">
+    <span class="etiqueta">Video</span>
+    <h2>micro:bit para principiantes</h2>
+    <p class="subtitulo">Descubrí tu miniordenador.</p>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/5J3aVSQcksM"
+              title="Clase 1 · MICROBIT para principiantes"
+              data-pausable="si"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       29 · CIERRE Y RECURSOS
+       ======================================================== -->
+  <section class="slide portada cierre" data-titulo="Para seguir">
+    <span class="etiqueta">Para seguir</span>
+    <h1>¡A construir!</h1>
+    <p class="subtitulo">Compartí tus ideas y divertite con micro:bit.</p>
+    <div class="tarjetas" style="max-width:900px; margin-top:.8em;">
+      <div class="tarjeta">
+        <span class="icono">📘</span>
+        <h3>Micro:manual 1</h3>
+        <p><a href="docs/Micro_manual-1_La-placa-programable.pdf" target="_blank" style="color:var(--acento);">La placa programable (PDF)</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">📒</span>
+        <h3>Cuaderno de actividades</h3>
+        <p><a href="docs/Cuadernos-Microbit_Actividades.pdf" target="_blank" style="color:var(--acento);">23 actividades para el aula (PDF)</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🌐</span>
+        <h3>Ceibal micro:bit</h3>
+        <p><a href="https://ceibal.edu.uy/microbit/" target="_blank" style="color:var(--acento);">ceibal.edu.uy/microbit</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🧱</span>
+        <h3>MakeCode</h3>
+        <p><a href="https://makecode.microbit.org/" target="_blank" style="color:var(--acento);">Programá tu placa online</a></p>
+      </div>
+    </div>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.75); margin-top:1.4em;">
+      Material elaborado en conjunto por Ceibal y Chicos Net.
+    </p>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     INTERFAZ DE NAVEGACIÓN
+     ============================================================ -->
+
+<button class="zona-clic izq" aria-label="Slide anterior"></button>
+<button class="zona-clic der" aria-label="Slide siguiente"></button>
+
+<div id="titulo-deck">Robótica con micro:bit · Módulo 1</div>
+
+<div id="controles">
+  <span id="contador">1 / 1</span>
+  <button class="btn" id="btn-indice"   title="Índice (O)"          aria-label="Índice">☰</button>
+  <button class="btn" id="btn-anterior" title="Anterior (&larr;)"   aria-label="Anterior">‹</button>
+  <button class="btn" id="btn-siguiente" title="Siguiente (&rarr;)" aria-label="Siguiente">›</button>
+  <button class="btn" id="btn-pantalla" title="Pantalla completa (F)" aria-label="Pantalla completa">⛶</button>
+</div>
+
+<!-- Índice -->
+<div id="indice">
+  <h2>Índice del módulo</h2>
+  <ul id="lista-indice"></ul>
+</div>
+
+<!-- Ayuda de teclado -->
+<div id="ayuda">
+  <div class="panel">
+    <h2>Atajos de teclado</h2>
+    <dl>
+      <dt><kbd>&rarr;</kbd> <kbd>espacio</kbd></dt><dd>Siguiente slide</dd>
+      <dt><kbd>&larr;</kbd></dt><dd>Slide anterior</dd>
+      <dt><kbd>Inicio</kbd> / <kbd>Fin</kbd></dt><dd>Primera / última slide</dd>
+      <dt><kbd>O</kbd></dt><dd>Abrir el índice</dd>
+      <dt><kbd>F</kbd></dt><dd>Pantalla completa</dd>
+      <dt><kbd>H</kbd></dt><dd>Mostrar esta ayuda</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Cerrar paneles</dd>
+      <dt><kbd>Ctrl</kbd>+<kbd>P</kbd></dt><dd>Guardar todo como PDF</dd>
+    </dl>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

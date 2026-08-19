@@ -1,0 +1,16 @@
+# Los videos se sirven desde YouTube, no se publican en el repositorio.
+# Los archivos siguen en la carpeta media/ de tu computadora para poder
+# usar el deck sin internet, pero no se suben a GitHub.
+media/*.mp4
+media/*.mov
+media/*.avi
+media/*.mkv
+
+# Archivos de Windows / OneDrive
+Thumbs.db
+desktop.ini
+*.tmp
+~$*
+
+# Configuración local del entorno de desarrollo
+.claude/
