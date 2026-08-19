@@ -232,6 +232,19 @@
     xInicio = yInicio = null;
   }, { passive: true });
 
+  /* ---------- Cambios de #numero en la URL ----------
+     Necesario para que funcione compartir un slide puntual: si alguien ya
+     tiene la página abierta y pega un enlace con otro #, el navegador no
+     recarga, así que hay que reaccionar al cambio a mano.
+     La guardia (indice !== actual) evita un bucle infinito, porque mostrar()
+     también reescribe el hash. */
+  window.addEventListener("hashchange", function () {
+    var n = parseInt(location.hash.replace("#", ""), 10);
+    if (isNaN(n) || n < 1 || n > slides.length) return;
+    var indice = n - 1;
+    if (indice !== actual) mostrar(indice, indice < actual);
+  });
+
   /* ---------- Arranque ---------- */
   construirIndice();
   mostrar(posicionInicial(), false);
