@@ -1,0 +1,906 @@
+[
+ {
+  "n": 1,
+  "titulo": "Música:bit",
+  "pag_inicio": 14,
+  "pag_fin": 16,
+  "modalidad": "Individual",
+  "duracion": 45,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "S Estimular la identificación y creación de melodías para sonorizar diferentes situaciones o emociones de un audiovisual. Promover el uso y conocimiento de los bloques de música de MakeCode.",
+  "espacios": [
+   "Espacio creativo - artístico · El montaje audiovisual digital · El lenguaje cinematográfico"
+  ],
+  "contenidos": [
+   "Mostrar led o mostrar ícono",
+   "Comenzar melodía",
+   "Tocar melodía",
+   "Fijar volumen"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Parlante o buzzer",
+   "Cables cocodrilo 14 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Para la sonorización de un audiovisual realizado con estudiantes, la placa micro:bit puede ser útil para producir melodías. NOTA PARA DOCENTES: Será de gran utilidad crear en el aula un guion técnico previo, en formato de tabla, para detallar ubicación, planos a utilizar, acciones correspondientes a cada escena del audiovisual, presencia o ausencia de sonidos y diálogos. En la etapa de preproducción se pueden explorar melodías predeterminadas que se encuentran en el entorno de programación MakeCode y seleccionar aquellas que puedan relacionarse con diversas situaciones o emociones del guion. También es posible crear melodías propias o efectos sonoros simples que serán probados durante el rodaje e integrados al audiovisual en la etapa de posproducción. Dentro de la categoría MÚSICA se encuentran los siguientes bloques para investigar: Permite seleccionar una melodía de la galería, regular su duración (velocidad) y a su vez crear melodías propias con 8 notas musicales. Permite seleccionar una melodía de una lista y definir si se repite para siempre, una vez o en segundo plano. Permite reproducir una nota musical, la nota seleccionada y por el tiempo (pulso) definido. Varios bloques colocados en forma sucesiva permiten reproducir una melodía creada. Una vez descargada la melodía a la placa micro:bit es recomendable asociarla con un texto, para facilitar su identificación. Para ello se utiliza el bloque mostrar cadena de la categoría BÁSICO. 15 ¿SABÍAS QUE... a la película animada Enredados de Disney le corresponde el título del primer musical animado enteramente por computadora? Todas sus canciones son digitales. Fuente: Revista Fotogramas: 15 cosas que no sabías de las bandas sonoras de Disney. PLUS: En el marco del proyecto «Beethoven 2020», el colectivo docente de la Escuela de educación artística n.º 129 «Jaurés Lamarque Pons» de Salto junto con la maestra dinamizadora Liliana Fernández crearon el libro digital Experimenta con el sonido, vinculando el lenguaje musical y su transcripción en MakeCode. En él se encuentran composiciones musicales creadas y ejecutadas por estudiantes, con su correspondiente programación en MakeCode.",
+  "archivo": "actividades/01-musica-bit.html",
+  "slides": 8
+ },
+ {
+  "n": 2,
+  "titulo": "Semáforo peatonal",
+  "pag_inicio": 17,
+  "pag_fin": 19,
+  "modalidad": "Individual",
+  "duracion": 45,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "Estimular la creación de un semáforo peatonal como señal de tránsito vertical y luminosa.",
+  "espacios": [
+   "Espacio Ciencias Sociales y Humanidades · Señales de tránsito en la vía pública, señales verticales",
+   "Espacio creativo - artístico · La estética en los mensajes publicitarios y sus intenciones",
+   "Espacio de comunicación · Sistema de escritura · Aspectos pragmáticos"
+  ],
+  "contenidos": [
+   "Para siempre",
+   "Mostrar ícono",
+   "Mostrar led o mostrar cadena",
+   "Pausa"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Cartulina y marcadores 17"
+  ],
+  "desarrollo": "Proponer el desafío de crear con la placa micro:bit un semáforo peatonal que señale cuándo cruzar y cuándo no. NOTA PARA DOCENTES: Proponer crear previamente el diseño del semáforo, para luego realizar la programación (funcionamiento del semáforo, tipo de íconos a utilizar, tiempo durante el cual se visibilizará cada señal). Para programar la placa se deberá ingresar al entorno de programación MakeCode, a la categoría BÁSICO y allí seleccionar en el bloque mostrar ícono las señales a utilizar. Luego de cada señal se coloca un bloque de pausa. NOTA PARA DOCENTES: Crear semáforos con la placa micro:bit y cartulina, agregarlos en una maqueta del barrio, compartir los semáforos en un foro en CREA o en un muro digital (Padlet, por ejemplo). Siempre es importante que el grupo de estudiantes p­ ueda compartir los diseños entre sus integrantes y con su docente. ¿SABÍAS QUE... los indicadores para los cruces peatonales no llegaron hasta la década de 1950, cuando la masificación de los vehículos en las calles hizo necesario regular a peatones y vehículos de manera conjunta? 18 cuaderno micro:bit | 2023 PLUS: Otras opciones posibles son: usar dos placas para un semáforo (vinculadas por radio o con funcionamiento alternado), crear otro tipo de imágenes o palabras. PARA SEGUIR TRABAJANDO: Continuar profundizando en la realización de otros tipos de semáforos para peatones. Ver actividad 13 «Semáforo con cuenta regresiva».",
+  "archivo": "actividades/02-semaforo-peatonal.html",
+  "slides": 7
+ },
+ {
+  "n": 3,
+  "titulo": "Adivina, adivinador, ¿qué animal es?",
+  "pag_inicio": 20,
+  "pag_fin": 23,
+  "modalidad": "Individual",
+  "duracion": 60,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "Promover la búsqueda y jerarquización de la información para realizar con la placa micro:bit un juego que permita identificar la fauna de diferentes áreas protegidas.",
+  "espacios": [
+   "Espacio científico matemático · La protección de flora y fauna",
+   "Espacio de comunicación · La lectura hipermedial"
+  ],
+  "contenidos": [
+   "Si agitado (usando las opciones: logo hacia arriba, pantalla hacia arriba, pantalla hacia abajo, inclinar)",
+   "Mostrar cadena"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Página web del Álbum de flora, fauna y antropología del Museo de Historia Natural del Uruguay 20 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Se considera necesario que se cuente con conocimientos previos sobre áreas protegidas y sus características. En esta actividad lúdica se podrá profundizar en torno a la fauna que habita estas áreas protegidas y los riesgos en que se encuentran muchos de estos animales autóctonos. Se seleccionará y definirá para cada estudiante un animal con determinado nivel de riesgo de extinción que habite en el área protegida elegida. Se investigará sobre las principales características de dicho animal para definir categoría, alimentación y actividad. Se utilizará para ello el buscador de fauna del siguiente recurso web: Álbum de flora, fauna y antropología del Uruguay. Con esa información se programará la placa para que al colocarla en distintas posiciones se visualicen en la pantalla las características investigadas. Deberá seleccionarse en la categoría ENTRADA el bloque si agitado y elegir las opciones: logo hacia arriba, inclinar a la derecha o a la izquierda, pantalla hacia arriba, pantalla hacia abajo. Cuando se cumplan estas acciones, la placa mostrará en la pantalla un mensaje indicando la categoría a la que pertenece el animal o su actividad o su forma de alimentación. El bloque pantalla hacia abajo en el ejemplo se usa para comprobar la respuesta de cada estudiante (al colocar la pantalla hacia abajo la placa desplegará el nombre del animal que cumple dichas características, en este caso, el guazubirá). Una vez programadas las placas micro:bit, se propondrá realizar un juego en el grupo: se intercambiarán todas las placas (o serán presentadas en la pantalla en caso de realizarse un encuentro virtual) y tendrán el desafío de descubrir de qué animal se trata. Escribir en el buscador del Álbum web de fauna autóctona las características que van siendo descubiertas al mover 21 la placa ayudará a identificar el animal, como se muestra en las imágenes siguientes (no olvidar que los datos de estado de conservación y el área protegida fueron dados inicialmente por cada docente). ¿SABÍAS QUE... en Uruguay, en el departamento de Río Negro, desde el año 2000 y financiado por empresas forestales, hay un criadero de animales autóctonos en peligro de extinción? Su objetivo es reintroducir en la naturaleza estos animales, y ya lo han logrado con cientos de coatíes, cocodrilos, pecaríes de collar (desaparecidos hace más de cien años) y otras muchas especies. Fuente: Portal de información y noticias sobre conservación y ciencias ambientales Mongabay: Uruguay apuesta por recuperar fauna autóctona con la cría en cautiverio, octubre de 2019. PLUS: Se podrían utilizar más sensores para ingresar más información sobre el animal (botones A, B, A+B, PIN 0). PARA SEGUIR TRABAJANDO: Ver la actividad 35 «Animales con ­movimiento», donde se podrán crear animales de la fauna autóctona con movimiento. 22 cuaderno micro:bit | 2023",
+  "archivo": "actividades/03-adivina-adivinador-que-animal-es.html",
+  "slides": 9
+ },
+ {
+  "n": 4,
+  "titulo": "TQM, jugando con abreviaturas",
+  "pag_inicio": 24,
+  "pag_fin": 26,
+  "modalidad": null,
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "",
+  "objetivo": "S Propiciar la creación y explicación de abreviaturas personales. Incentivar la exploración de algunas funcionalidades de la placa micro:bit y su programación en MakeCode.",
+  "espacios": [
+   "Espacio de comunicación · Las abreviaturas y siglas"
+  ],
+  "contenidos": [
+   "Uso de botones A y B",
+   "Si agitado",
+   "PIN 0 y GND",
+   "Mostrar cadena"
+  ],
+  "materiales": [
+   "Placa micro:bit (1 por equipo)",
+   "Entorno de programación MakeCode (computadora)",
+   "Cuaderno para hacer matemática en sexto (Educación Primaria) 24 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Esta propuesta permite a cada integrante del equipo trabajar un contenido programático e integrar el uso de la placa micro:bit, explorar sus partes, entre estas, algunos sensores y actuadores (ver especificaciones en el Glosario). Se propone realizar una actividad para conocer las ideas previas de cada estudiante respecto a las abreviaturas. Cada equipo deberá seleccionar cinco abreviaturas personales y programarlas. Estas se podrán leer en la pantalla led según la acción realizada: al presionar el botón A, al presionar el botón B, al presionar el botón A y B juntos, al agitar, al presionar el PIN 0 y la tierra GND. Si se intercambian las placas entre los equipos, se podrán observar las abreviaturas de los compañeros, identificarlas y explicar su formación. El equipo que presente abreviaturas más originales podría ser el ganador. Si es de interés, se puede continuar con la propuesta presentada en el Cuaderno para leer y escribir en sexto, página 45. ¿SABÍAS QUE... las abreviaturas fueron muy empleadas en Grecia y por el Imperio romano? Tanto fue su uso en documentos oficiales que se llegó a abusar de ellas, y el emperador Justiniano se vio obligado a prohibir su empleo porque hacía casi imposible comprender el mensaje escrito. Fuente: Enciclopedia Concepto: Abreviaturas. 25 PLUS: Integrar más abreviaturas explorando las diferentes opciones del acelerómetro (si agitado).",
+  "archivo": "actividades/04-tqm-jugando-con-abreviaturas.html",
+  "slides": 7
+ },
+ {
+  "n": 5,
+  "titulo": "Tiro al blanco",
+  "pag_inicio": 27,
+  "pag_fin": 31,
+  "modalidad": null,
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "",
+  "objetivo": "Promover la producción e interpretación de números de un tiro al blanco representados mediante notación científica.",
+  "espacios": [
+   "Espacio científico matemático · Notación científica",
+   "Espacio científico matemático · Los circuitos eléctricos"
+  ],
+  "contenidos": [
+   "Al presionarse pin P0",
+   "Mostrar número",
+   "Mostrar ícono"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Cuaderno para hacer matemática en sexto (Educación Primaria)",
+   "Cartón o cartulina",
+   "Marcadores, papel aluminio",
+   "Cables cocodrilo",
+   "Pelotita pequeña de goma o espumaplast 27"
+  ],
+  "desarrollo": "Forma de trabajo: Se recomienda realizar grupos de 4 a 6 personas. Se propone que, a partir de la actividad de la página 21 del Cuaderno para hacer matemática en sexto, se complemente la propuesta mediante la creación de un juego de tiro al blanco cuyos números estén representados con notación científica. En esta actividad se utilizá cartón ya que es un material aislante y papel de aluminio ya que es un material conductor. Cada estudiante creará con cartón uno de los sectores del tablero. Luego, los equipos reunirán las creaciones individuales para generar un tiro al blanco grupal. La originalidad de este tiro al blanco consiste en que se podrá visualizar el puntaje obtenido integrándole la micro:bit. Con la placa se construirá un circuito eléctrico, el cual estará abierto en la zona donde debe golpear una pelotita. Cuando esta impacta, el circuito se cierra y se visualiza un elemento en la pantalla. Para crear los sectores del tablero, cada estudiante deberá acordar y definir con el equipo los siguientes aspectos: • el número que cada uno representará • qué forma y tamaño tendrá la zona donde golpea la pelotita (sector del tablero) • el material a utilizar (materiales conductores y aislantes) A continuación, se sugiere un ejemplo de tablero posible. Se pliega un cartón y en su parte externa se escribe el número correspondiente utilizando notación científica. Para armar el circuito eléctrico, en la parte interior del cartón se coloca papel aluminio según lo indicado en la figura 1. Finalmente, se coloca un cable cocodrilo en el PIN 0 de la micro:bit y otro en GND. Como se aprecia en la figura 2, cada cable se pinza en una franja de aluminio, de modo que el circuito se encuentra abierto, ya que las franjas 28 cuaderno micro:bit | 2023 no tienen contacto. Cuando la pelotita golpea en el cartón superior, ambos cartones se tocan y el circuito se cierra (el aluminio del cartón superior debe abarcar ambas franjas de aluminio del cartón inferior para poder ­cerrar el circuito). Figura 1 Figura 2 Se reúnen finalmente las creaciones individuales para componer el tablero grupal del tiro al blanco. NOTA PARA DOCENTES: Dado que habrá varios cables y que se conectarán las baterías para suministrar energía a la micro:bit, será importante acordar grupalmente dónde ubicar dichos elementos para protegerlos del impacto de la pelotita (abajo, detrás del tablero, etc.). 29 Una vez construidos los sectores del tablero, cada estudiante deberá programar las placas micro:bit. Se podrá sugerir que al acertar el tiro la micro:bit muestre el número correspondiente a la notación científica. Para mostrar el número, se deberá seleccionar el bloque mostrar número de la categoría BÁSICO. Este se ubicará dentro del bloque al presionar pin P0 de la categoría ENTRADA. Otra opción es proponer que se complejice la propuesta y sugerir que la micro:bit muestre únicamente un ícono como señal de haber acertado el tiro. De esta forma, al momento de jugar, cada estudiante deberá interpretar autónomamente el número correspondiente a la notación científica que fue golpeada con la pelotita. La programación es similar a la anterior, sustituyendo mostrar número por mostrar ícono. ¿SABÍAS QUE... el deporte de tiro al blanco con dardos tiene sus antecedentes alrededor del año 1314, cuando se los mencionó por primera vez en los libros de historia? Se dice que, entre batalla y batalla, los soldados aburridos se ocupaban de otras tareas, y una de ellas era competir lanzando astillas y otros materiales punzantes a las tapas de los barriles de vino. Este juego se fue perfeccionando hasta el que se conoce hoy en día y se llama dardo deportivo. Fuente: Wikipedia: Dardos. 30 cuaderno micro:bit | 2023 PLUS: Se podría generar un tablero con más sectores, donde cada estudiante pueda conectar su micro:bit a dos circuitos y, por tanto, a dos números del tablero. Para ello deberá realizar la programación antes explicada para el pin P0 y con otro valor para el pin P1. Se deberá ser cuidadoso en la realización y conexión de cada una de las partes del tablero y será necesario utilizar cuatro cables cocodrilo.",
+  "archivo": "actividades/05-tiro-al-blanco.html",
+  "slides": 11
+ },
+ {
+  "n": 6,
+  "titulo": "Póster interactivo",
+  "pag_inicio": 32,
+  "pag_fin": 35,
+  "modalidad": "Individual",
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "«No hay mejor aprendizaje que el de la propia experiencia» — Lev Vygotsky OBJETIVOS Promover la indag",
+  "objetivo": "S Promover la indagación y la experimentación como método de aprendizaje. Presentar los nuevos aprendizajes por medio de un producto interactivo.",
+  "espacios": [
+   "Espacio técnico tecnológico · Presentación de trabajos · Programación y placas programables"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Programación y utilización de los botones A y B",
+   "PLUS: Programación y utilización de los pines 0, 1 y 2"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "1/2 cartulina",
+   "Marcadores o lápices de colores",
+   "Un lápiz 32 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Se sugiere generar espacios que permitan indagar y experimentar con la finalidad de descubrir y apropiarse de los diferentes contenidos vinculados a la propuesta. Proponemos programar la micro:bit en el entorno MakeCode. A partir del tema que se desee trabajar, se escribirán tres preguntas que servirán como disparadoras de la indagación y experimentación. Se propondrá elegir una pregunta, encontrar su respuesta y, sobre esa base, elaborar un póster que ilustre su descubrimiento. A dicho póster se deberá incorporar una micro:bit. Se dibujarán flechas que asocien diferentes contenidos del póster con alguno de los botones de la placa. La pantalla de la micro:bit permite desplegar textos, números e imágenes. Al presionar cada uno de los botones (A, B, A+B), la micro:bit desplegará algún dato o imagen que ampliará la información del contenido asociado. EJEMPLO PLUS: Plantear la siguiente pregunta: ¿Qué puedes hacer si los botones de la micro:bit no son suficientes para explicar todos los contenidos de tu póster? 33 Se espera que propongan la utilización de los pines 0, 1 y 2, de tal forma que al presionarlos se desplieguen en pantalla nuevas explicaciones. En caso de que no descubran la solución, se deberá oficiar de guía para que lo hagan. NOTA PARA DOCENTES: Si se cuenta con cables cocodrilo, pueden conectarse botones, construidos con materiales buenos conductores, a los pines de la placa. FICHA DE TRABAJO Póster interactivo ¡Nuestro mundo está lleno de interrogantes y secretos por descubrir! Elige una de las preguntas que te entregó tu docente y descubre su respuesta. Podrás consultar libros, Internet, revistas y otras fuentes. También podrás realizar entrevistas, pruebas y experimentos si es necesario. Pregunta elegida Elabora un póster que ilustre tu trabajo, incorpora la micro:bit y dibuja flechas que asocien diferentes contenidos del póster con alguno de los botones de la placa. Al presionar cada uno de los botones (A, B, A+B), la micro:bit desplegará algún dato o imagen que amplíe la información del contenido asociado. Boceto Dibuja tus ideas 34 cuaderno micro:bit | 2023",
+  "archivo": "actividades/06-poster-interactivo.html",
+  "slides": 8
+ },
+ {
+  "n": 7,
+  "titulo": "Otra forma de comunicarnos",
+  "pag_inicio": 36,
+  "pag_fin": 40,
+  "modalidad": "Individual",
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "«Escribimos para saborear la vida dos veces, en el momento y en retrospectiva» — Anaïs Nin OBJETIVOS Propiciar el aprendi",
+  "objetivo": "S Propiciar el aprendizaje de contenidos por medio de la creación de juegos. Conocer la importancia del proceso de comunicación y de los códigos que se utilizan. Conocer las características y los aportes de algunas civilizaciones antiguas.",
+  "espacios": [
+   "Espacio Ciencias Sociales y Humanidades · Las civilizaciones antiguas. Egipto",
+   "Espacio de comunicación · La comunicación humana",
+   "Espacio técnico tecnológico · Programación y placas programables · Taller de construcción de juegos"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Botones"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Placa micro:bit (no indispensable)",
+   "Lápiz 36 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Se propone programar en el entorno de programación MakeCode. No es necesario contar con la placa micro:bit para realizar esta actividad, ya que está pensada para que cada estudiante programe, vea sus resultados y los comparta utilizando el simulador del entorno MakeCode. Partiendo de las características del sistema de escritura utilizado en Egipto, se propondrá crear un juego. Cada participante deberá pensar un mensaje e inventar cuatro signos que le permitan comunicarlo. Luego construirá un programa que despliegue en la pantalla de la micro:bit el mensaje codificado con los nuevos signos y una pista que ayude a decodificarlo. Una vez finalizados los programas, cada participante compartirá los enlaces a estos y registrará los nombres de quienes logren descifrar su mensaje. Esta instancia se puede llevar adelante desde la virtualidad. Ganará quien descifre más mensajes. CONSTRUCCIÓN DEL PROGRAMA Los botones de la micro:bit se pueden programar para que, cuando sean presionados, esta despliegue textos, números o imágenes en su pantalla. Se solicitará a cada estudiante que programe la micro:bit de tal forma que: • al presionar los botones A y B se despliegue en pantalla el mensaje escrito con los signos antes diseñados • al presionar el botón A se muestre una pista que permita descifrar el mensaje 37 Los programas que se construyen en MakeCode pueden ser compartidos por medio de enlaces, lo que simplifica el trabajo a distancia. Por más información puede consultarse el apartado Referencias técnicas. PLUS: Plantear la siguiente pregunta: ¿Existen otras civilizaciones que hayan inventado su propio sistema de escritura? NOTA PARA DOCENTES: Si se necesita crear un signo grande y el tamaño de la pantalla de la micro:bit no resulta suficiente, pueden utilizarse los bloques de la categoría IMÁGENES. Por más información puede consultarse el apartado Referencias técnicas. FICHA DE TRABAJO OTRA FORMA DE COMUNICARNOS. Aproximadamente en el año 3000 a. C., los egipcios inventaron un sistema de escritura. Utilizaban signos que representaban objetos, ideas o sonidos. Un gran número de sus inscripciones perduraron en el tiempo y, gracias a eso, hemos podido conocer su cultura. ¡Crea un juego! Cada participante pensará un mensaje e inventará cuatro signos que le permitan comunicarlo. Luego programará la placa micro:bit para que despliegue el mensaje codificado y una ayuda para descifrarlo. Cuando se finalice la programación se compartirán los enlaces con el resto. Ganará quien descifre más mensajes. Construcción del juego Piensa un mensaje que desees comunicar. Mensaje: 38 cuaderno micro:bit | 2023 Coloreando los cuadrados, diseña cuatro signos que te permitan comunicar tu mensaje (cada signo deberá tener un significado). Significado: Significado: Significado: Significado: Construye un programa para la placa micro:bit que: • al presionar los botones A y B despliegue en la pantalla tu mensaje escrito con tus signos • al presionar el botón A muestre en la pantalla una pista que ayudará a que otras personas puedan adivinar el significado Pista: ¡Comparte el enlace de tu programa y comienza a descifrar los mensajes de los demás participantes! ¡No olvides registrar los nombres de quienes descifren el tuyo! 39",
+  "archivo": "actividades/07-otra-forma-de-comunicarnos.html",
+  "slides": 10
+ },
+ {
+  "n": 8,
+  "titulo": "Morfemas",
+  "pag_inicio": 41,
+  "pag_fin": 45,
+  "modalidad": "Individual",
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "«Los límites de mi lenguaje son los límites de mi mundo» — Ludwig Wittgenstein OBJETIVOS Enriquecer",
+  "objetivo": "S Enriquecer el léxico necesario para una buena comunicación mientras se construye un juego. Introducir el concepto de probabilidad.",
+  "espacios": [
+   "Espacio de comunicación · Morfemas derivativos",
+   "Espacio científico matemático · Probabilidad",
+   "Espacio técnico tecnológico · Programación y placas programables · Taller de construcción de juegos"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Botones",
+   "Obtener valores numéricos en forma aleatoria",
+   "Plus: variables y listas, condicionales, comparación de valores"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit (no indispensable)",
+   "Cartulina (no indispensable)",
+   "Marcadores (no indispensable)",
+   "Un lápiz",
+   "Una hoja 41"
+  ],
+  "desarrollo": "Forma de trabajo: Se propone programar en el entorno MakeCode. No es necesario contar con la placa micro:bit para realizar esta actividad, ya que es posible programar y ver los resultados en el simulador del entorno MakeCode. Plantear la creación de un juego: a partir de un prefijo y un sufijo determinados por la placa micro:bit, cada participante deberá escribir la mayor cantidad de palabras que contengan el sufijo o el prefijo elegidos. Se deberán crear cinco tarjetas con un sufijo y cinco con un prefijo cada una. Además, es necesario que las tarjetas estén numeradas del 1 al 5. Se numerarán prefijos y sufijos por separado. La micro:bit permite desplegar valores en forma aleatoria. 1 azo 2 ito 3 ísimo 4 oso 5 dora 1 semi 2 anti 3 hipo 4 infra 5 tele Una vez creadas las tarjetas, construir un programa tal que: • al presionar el botón A se despliegue aleatoriamente un número que determinará la tarjeta de un prefijo • al presionar el botón B se determine la tarjeta de un sufijo 42 cuaderno micro:bit | 2023 A la hora de jugar, alguien que el grupo elija se encargará de medir el tiempo transcurrido y de presionar los botones de la placa micro:bit. Antes de iniciar el cronómetro, se presionará el botón A y después el botón B. De esa forma, teniendo en cuenta los valores desplegados en pantalla y el número de cada tarjeta, quienes juegan ya sabrán con qué prefijo y con qué sufijo deberán crear las palabras. Cuando se inicie el cronómetro, dispondrán de dos minutos para escribir la mayor cantidad de palabras que contengan el prefijo o el sufijo que fue asignado. Después de jugar algunas partidas, llega la hora de Matemática. Plantear las siguientes preguntas: Al presionar el botón A, • ¿cuántos son los resultados posibles? • ¿cuál es la probabilidad de obtener el número 3? PLUS 1: Proponer al grupo de estudiantes modificar el programa creado anteriormente para que, al presionar los botones A y B en forma simultánea, se inicie un cronómetro que se detendrá al llegar a los dos minutos. PLUS 2: Pedir que, en lugar de desplegar los números de cada tarjeta, la placa despliegue el prefijo y el sufijo con que se jugará. 43 NOTA PARA DOCENTES: Tarjetas en línea: si el grupo de estudiantes va a jugar a distancia, en lugar de crear las tarjetas en papel o cartulina, se pueden elaborar en formato digital. Para ello se recomienda utilizar la herramienta Padlet: https://es.padlet. com/dashboard. Esta herramienta permite crear un enlace para compartir las tarjetas. FICHA DE TRABAJO Morfemas Los prefijos se ubican delante de algunas palabras y los sufijos al final de estas. Al ubicarlos se forman nuevas palabras, llamadas palabras derivadas. ¡Construye un juego con palabras derivadas! Objetivo del juego Escribir la mayor cantidad de palabras que contengan un sufijo o un prefijo que serán determinados por la micro:bit. Construcción Paso 1: Elaboración de tarjetas: Elabora cinco tarjetas con un sufijo diferente cada una y cinco con un prefijo diferente. Paso 2: Programación de la micro:bit: Programa la placa de tal forma que, tanto al presionar solo el botón A como al presionar solo el botón B, despliegue un número aleatorio entre 1 y 5. 44 cuaderno micro:bit | 2023 1 _____ 2 ____ 3 ____ 4 ____ 5 ____ 1 ____ 2 ____ 3 ____ 4 ____ 5 ____ Reglas del juego • Todas las personas que quieran participar pueden hacerlo. • Deberán elegir a alguien que se encargará de medir el tiempo t­ranscurrido y de presionar los botones de la micro:bit. • Al inicio del juego, la persona elegida presionará el botón A y buscará la tarjeta de prefijos identificada con el número que desplegó la placa. Ese será el prefijo con el que se jugará. De la misma forma, se seleccionará la tarjeta del sufijo presionando el botón B. • Luego iniciará un cronómetro que deberá ser detenido una vez que hayan transcurrido dos minutos. • Durante los dos minutos de juego, cada participante deberá escribir la mayor cantidad de palabras que contengan el sufijo o el prefijo seleccionados. • Ganará quien haya escrito la mayor cantidad de palabras.",
+  "archivo": "actividades/08-morfemas.html",
+  "slides": 11
+ },
+ {
+  "n": 9,
+  "titulo": "Morfemas gráficos",
+  "pag_inicio": 46,
+  "pag_fin": 49,
+  "modalidad": "Individual",
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "«La creatividad es la inteligencia divirtiéndose» — Albert Einstein OBJETIVOS Fomentar la cr",
+  "objetivo": "S Fomentar la creatividad y el gusto por la creación de dibujos mientras se juega. Promover la imagen como herramienta de comunicación.",
+  "espacios": [
+   "Espacio creativo - artístico · Imagen y realidad",
+   "Espacio técnico tecnológico · Programación y placas programables · Comunicación e imagen · Taller de construcción de juegos"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Botones",
+   "Valores numéricos aleatorios",
+   "Control individual de los led de la pantalla",
+   "Iteraciones"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "Hojas",
+   "Lápiz de dibujo",
+   "Lápices de colores 46 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Se propone programar en el entorno MakeCode. No es necesario contar con la placa para realizar esta actividad, ya que es posible programar y ver los resultados en el simulador del entorno MakeCode. En esta actividad se deberá crear un juego. Cada participante contará con diez minutos para realizar un dibujo partiendo de una imagen (formada por diez led) que será determinada aleatoriamente por la micro:bit. Una vez transcurrido el tiempo, cada participante deberá explicar qué idea transmite el dibujo creado. Una persona designada como jurado decidirá quién ganó la partida. PROGRAMACIÓN El siguiente programa enciende un único led en forma aleatoria. Puede encontrarse más información sobre este tema en el apartado Referencias técnicas. Cada estudiante deberá programar la placa de tal forma que, al presionar alguno de sus botones, despliegue una imagen que se formará encendiendo aleatoriamente diez led de la pantalla. Debido a que es necesario encender diez led, la acción del programa que se muestra en la imagen anterior debe repetirse diez veces. Podrán hacer uso del bloque repetir para obtener las imágenes deseadas: 47 PLUS: Pedir a cada estudiante que modifique el programa anterior de tal forma que cada imagen que despliega la placa posea un nivel de brillo determinado aleatoriamente. Esto indicará la gama de colores que cada estudiante podrá utilizar a la hora de crear su dibujo. EJEMPLO • Brillo bajo: solo colores fríos • Brillo alto: solo colores cálidos FICHA DE TRABAJO Morfemas gráficos. Por medio de las imágenes los seres humanos podemos comunicar información, ideas, críticas y sentimientos. Te proponemos crear un juego en el que podrás desarrollar tu creatividad y expresar tus ideas por medio de dibujos. Deberás crear un dibujo partiendo de una imagen formada por diez puntos. Esta imagen será determinada por la micro:bit en forma aleatoria. Creación del juego Programar la placa micro:bit de manera tal que, al presionar alguno de sus botones, despliegue una imagen formada por diez puntos (led). Al presionar el otro botón se borrará la pantalla, dejándola lista para una nueva partida. 48 cuaderno micro:bit | 2023 Reglas del juego • Todas las personas que quieran participar pueden hacerlo. • Se deberá elegir a alguien que oficiará de jurado, se encargará de presionar los botones de la placa y medirá el tiempo transcurrido. • En cada partida, cada participante contará con materiales para realizar su dibujo. • Para iniciar una partida, el jurado presionará el botón que despliega la imagen aleatoria en la pantalla. Cada participante contará diez minutos para comunicar una idea por medio de un dibujo que deberá contener la imagen desplegada. • Una vez transcurrido el tiempo, el jurado dará por finalizada la ­partida y elegirá a la persona ganadora luego de que cada p­ articipante explique cuál es la idea transmitida. A medida que juegues, realiza un registro: Ganador de cada partida Ideas transmitidas",
+  "archivo": "actividades/09-morfemas-graficos.html",
+  "slides": 9
+ },
+ {
+  "n": 10,
+  "titulo": "Notas musicales",
+  "pag_inicio": 50,
+  "pag_fin": 52,
+  "modalidad": "Individual",
+  "duracion": 90,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "«La música es el territorio donde nada nos hace daño» — Andrés Calamaro OBJETIVOS Fomentar el in",
+  "objetivo": "S Fomentar el interés y la comprensión de la lectoescritura musical. Introducir una nueva modalidad de componer y reproducir melodías.",
+  "espacios": [
+   "Espacio creativo - artístico · Cualidades del sonido · Lectoescritura musical · Nuevas fuentes generadoras de sonido · Acercamiento a la composición musical asistida por computadora",
+   "Espacio técnico tecnológico · Programación y placas programables"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Reproducción de sonidos",
+   "Acelerómetro"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit (no indispensable)",
+   "2 cables con pinzas cocodrilo (no indispensable)",
+   "Auricular, parlante o buzzer (no indispensable)",
+   "Lápiz 50 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Se sugiere programar la placa micro:bit en el entorno de programación MakeCode. En caso de no contar con la placa, con los cables requeridos o con una salida de audio, se podrá ejecutar el programa en el simulador de dicho entorno. Se propone generar espacios donde se puedan intercambiar ideas, sugerencias y opiniones sobre los trabajos. Actividad: Se planteará la programación de la micro:bit de tal forma que, cada vez que sea agitada, reproduzca una serie de notas musicales mientras despliega en pantalla la figura musical que representa la duración de cada nota. La micro:bit cuenta con un acelerómetro que permite detectar cada vez que la placa está siendo agitada. En la categoría MÚSICA de MakeCode, cada estudiante encontrará bloques que le permitirán reproducir diferentes notas musicales, determinando su altura y tiempo. En dicho programa, también es posible diseñar diferentes imágenes y desplegarlas en la pantalla. EJEMPLO Por más información puede consultarse el apartado Referencias técnicas. 51 PLUS: Pedir a cada estudiante que cree y escriba una melodía en un pentagrama. Luego entregará su trabajo a alguien más de la clase para que lo reproduzca en su micro:bit. FICHA DE TRABAJO NOTA: Se propone crear un dispositivo que sirva como ayuda para aprender las notas musicales. Programa la micro:bit de manera tal que, cada vez que sea agitada, reproduzca una serie de notas musicales. Cada vez que una nota sea reproducida, deberá desplegarse en pantalla la forma musical que representa su duración. ¿Qué bloques utilizarás? Cuando hayas finalizado tu programa, piensa una idea que puedas compartir con el resto de la clase y que les ayude a resolver esta actividad. Tu idea:",
+  "archivo": "actividades/10-notas-musicales.html",
+  "slides": 8
+ },
+ {
+  "n": 11,
+  "titulo": "El barrio de nuestro centro educativo",
+  "pag_inicio": 53,
+  "pag_fin": 57,
+  "modalidad": "Grupal",
+  "duracion": 135,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "S Observar e Identificar características de diferentes paisajes. Conocer e interpretar correctamente los elementos que componen un mapa.",
+  "espacios": [
+   "Espacio Ciencias Sociales y Humanidades · El paisaje local. Componentes físicos y humanos interrelacionados · Espacio científico matemático · Circunferencia",
+   "Espacio técnico tecnológico · Programación y placas programables"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Brújula · Grados a los que se encuentra el norte",
+   "Plus · Botones · Pines",
+   "Nota para docentes · Comparaciones · Condicionales · Variables"
+  ],
+  "materiales": [
+   "Mapas impresos del barrio del centro educativo (uno por equipo)",
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "Marcadores 53"
+  ],
+  "desarrollo": "Forma de trabajo: Se sugiere plantear esta actividad en forma grupal. Se considera adecuado asignar tres estudiantes por equipo. Incentivar a explorar e investigar para resolver el desafío. Organizar algunos paseos por el barrio para observar, sacar fotografías y registrar información. Promover el aprendizaje colaborativo por medio del intercambio de ideas y descubrimientos entre los equipos. Se propone programar en el entorno MakeCode. Actividad: Proponer que se destaquen en un mapa del barrio del centro educativo los componentes físicos y humanos que caracterizan a los paisajes del lugar. Utilizar para ello los signos adecuados; si es necesario, se podrán diseñar signos propios. Pedir asimismo que se marquen los puntos cardinales en el mapa. Luego solicitar que programen e incorporen la micro:bit de forma tal que indique cuántos grados se debe girar el mapa para que esté correctamente orientado. PROGRAMACIÓN La micro:bit posee un magnetómetro que permite encontrar el norte ­geográfico. Puede consultarse el apartado Referencias técnicas para conocer más sobre la forma de uso del magnetómetro. 54 cuaderno micro:bit | 2023 El programa que se muestra en la imagen permite saber cuántos grados se debe girar la placa para que su logo apunte hacia el norte. Si se ubica la micro:bit con su logo coincidiendo con el norte marcado en el mapa, se podrá saber cuánto debe girarse para orientarlo correctamente. Deberás tener en cuenta que el magnetómetro es muy sensible. Cuando el logo de la placa apunte hacia el norte, difícilmente el valor devuelto sea exactamente 0. 350° N 10° N 280° 80° O E O E 260° 100° S 190° S 170° Será necesario establecer rangos de valores, por ejemplo, si la dirección de la brújula es mayor que 350º o menor que 10º, entonces el mapa estará orientado correctamente. PLUS: Pedir a cada estudiante que modifique el programa ya creado para que, al presionar los botones o los pines de la micro:bit, se despliegue información que complemente el mapa. 55 NOTA PARA DOCENTES: Al transferir a la placa un programa que hace uso del magnetómetro, esta se debe calibrar. Más información en el apartado Referencias técnicas. En lugar de desplegar los grados que se debe girar el mapa, es posible mostrar flechas que indiquen la dirección norte. FICHA DE TRABAJO El barrio de nuestro centro educativo Nombre del equipo Integrantes Te invito a explorar y conocer mejor el lugar donde se encuentra nuestro centro educativo. Salida didáctica Mientras recorremos la zona, observa los diferentes paisajes. Identifica los componentes físicos y humanos que posee cada uno de ellos. Saca fotos y registra tus observaciones. Trabajando con el mapa En el mapa que se te entregó agrega, por medio de signos, los componentes que observaste durante la salida didáctica. Si lo deseas, puedes diseñar nuevos signos. No olvides marcar los puntos cardinales. Micro:bit Programa la micro:bit e incorpórala en tu mapa, de forma tal que indique cuántos grados se debe girar para que se oriente correctamente. Completa: Si el logo está orientado hacia el norte, los valores que la micro:bit devuelve son: Si el logo está orientado hacia el sur, los valores que la micro:bit devuelve son: Si el logo está orientado hacia el este, los valores que la micro:bit devuelve son: Si el logo está orientado hacia el oeste, los valores que la micro:bit devuelve son: 56 cuaderno micro:bit | 2023 Pide a los demás equipos que te muestren sus trabajos y completa: Sugerencias para los demás equipos Nombre de equipo: Sugerencia: Nombre de equipo: Sugerencia: Nombre de equipo: Sugerencia: Nombre de equipo: Sugerencia: Nombre de equipo: Sugerencia: Nombre de equipo: Sugerencia: Nombre de equipo: Sugerencia: Ideas que se nos ocurrieron al ver los otros trabajos Nombre de equipo: Idea: Nombre de equipo: Idea: Nombre de equipo: Idea: Nombre de equipo: Idea: Nombre de equipo: Idea: Nombre de equipo: Idea: Nombre de equipo: Idea:",
+  "archivo": "actividades/11-el-barrio-de-nuestro-centro-educativo.html",
+  "slides": 11
+ },
+ {
+  "n": 12,
+  "titulo": "Modelo: energía térmica y temperatura",
+  "pag_inicio": 58,
+  "pag_fin": 62,
+  "modalidad": "Individual",
+  "duracion": 60,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "S Estimular la creación de un simulador que modelice el movimiento de las partículas según distintas temperaturas. Promover el uso de condicionales y bloques de comparación para establecer rangos en MakeCode.",
+  "espacios": [
+   "Espacio científico matemático · La energía interna de los sistemas. La energía térmica y la temperatura"
+  ],
+  "contenidos": [
+   "Sensor de temperatura",
+   "Mostrar led",
+   "Ajustar brillo",
+   "Pausa",
+   "Condicional si verdadero entonces",
+   "Usar comparaciones · Mayor que · Menor que · Mayor que y menor que"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora) 58 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Se considera que previamente a proponer esta actividad se debería introducir la idea de modelo cinético molecular. NOTA PARA DOCENTES: Uruguay Educa presenta una propuesta docente de enseñanza aprendizaje que permite a cada estudiante partir de sus ideas previas y explorar en forma secuenciada los conceptos de energía térmica, temperatura y calor. A su vez, se podrían realizar actividades con el cuerpo, representando en forma grupal las partículas y cómo se comportan a distintas temperaturas. Para la programación de esta simulación es importante comenzar por su diseño previo. Las siguientes preguntas podrán ser utilizadas como guía: • ¿Qué se simulará? El movimiento de las partículas a distintas temperaturas. Los LED de la pantalla representarán las partículas. • ¿Cómo se simulará el movimiento? La transición de LED encendidos y apagados, el tiempo de espera entre uno y otro y el ajuste de brillo generarán la ilusión de movimiento. • ¿Qué intervalos de temperatura se utilizarán? En función de la sustancia seleccionada se acordarán los rangos en los cuales se observará mayor o menor movimiento de las partículas, teniendo en cuenta que el rango de temperatura del simulador de la micro:bit es de -5 º C a 50 º C. • Al momento de crear la simulación, y para facilitar la comprensión de cada estudiante, se podrá seleccionar el rango de temperatura y asociarlo al estado de agregación de la sustancia. Por ejemplo, si la sustancia es agua, se podrá modelizar primero el movimiento de las partículas en estado sólido o en estado líquido para posteriormente reunir ambas programaciones en un único modelo (no se considera el estado gaseoso por el rango de temperatura del simulador de la micro:bit). NOTA PARA DOCENTES: En este caso, definir un rango de temperatura para el estado sólido y dos rangos para el estado líquido permitirá simular el aumento progresivo de movimiento en las partículas. 59 • Cada estudiante debe ingresar a MakeCode y explorar los siguientes bloques: Este bloque transforma la programación en un bucle que se repite constantemente. Las luces encendidas representan las partículas. El cambio de un bloque mostrar LED a otro permitirá simular el movimiento de estas. La pausa define el tiempo de presentación de determinada imagen en la pantalla. A mayor valor, más lentitud de la animación. El sensor de temperatura habilita el uso de este dato. Modificando su valor se puede dar más o menos brillo a los LED de la pantalla para simular la vibración de las partículas en el estado sólido. El condicional permite definir la simulación a presentar mientras se cumple con la condición programada en el botón verdadero. Uno de los valores debe ser el bloque temperatura y el otro el valor mínimo o máximo definido para presentar determinada animación. Se debe seleccionar en la lista la opción deseada. Este bloque de comparación se ubicará dentro del verdadero. Permite definir en el estado líquido un intervalo entre dos valores de temperatura. Este bloque booleano se ubicará dentro del verdadero. 60 cuaderno micro:bit | 2023 ¿SABÍAS QUE… la temperatura mínima teórica se conoce como el cero absoluto y su valor es -273,15 ºC? Según la mecánica clásica, a dicha temperatura cesa el movimiento interno de los átomos o moléculas que constituyen la materia. Según la mecánica cuántica, aun en el cero absoluto habría cierta energía de movimiento que no podrá eliminarse, denominada energía de punto cero. El cero absoluto es el punto de partida para la escala Kelvin. Fuente: Portal de la Universidad Nacional del Litoral, Argentina: De qué se trata el cero absoluto, 2 de agosto de 2017. PLUS: Se puede sustituir el uso de varios bloques mostrar LED por una única imagen de mayor tamaño, utilizando dentro de la categoría IMÁGENES los siguientes bloques: En este bloque se realiza la representación de las partículas y se coloca en el espacio rojo del siguiente bloque (myImage) para que se deslice por la pantalla y presente la animación. El resto de los valores no se modifican, excepto que la imagen deba pasar más rápido o más lento. 61",
+  "archivo": "actividades/12-modelo-energia-termica-y-temperatura.html",
+  "slides": 11
+ },
+ {
+  "n": 13,
+  "titulo": "Semáforo con cuenta regresiva",
+  "pag_inicio": 63,
+  "pag_fin": 66,
+  "modalidad": "Individual",
+  "duracion": 60,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "Estimular a cada estudiante a modelizar un semáforo peatonal luminoso que integre una cuenta regresiva.",
+  "espacios": [
+   "Espacio Ciencias Sociales y Humanidades · Señales de tránsito en la vía pública. Señales verticales"
+  ],
+  "contenidos": [
+   "Para siempre",
+   "Mostrar ícono o mostrar led",
+   "Pausa",
+   "Crear variable",
+   "Mostrar número",
+   "Repetir"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Cartulina",
+   "Marcadores 63"
+  ],
+  "desarrollo": "Proponer a cada estudiante el desafío de crear con la micro:bit un semáforo peatonal que indique mediante íconos cuándo se puede cruzar y cuándo no. Al habilitar el cruce debe mostrar también una cuenta regresiva. Para crear la primera parte del semáforo se sugiere realizar previamente la actividad 2 «Semáforo peatonal». Al programar la cuenta regresiva, cada estudiante debe ingresar a M­ akeCode y en la categoría VARIABLES crear una variable llamada «cuenta regresiva». Esto generará automáticamente los bloques establecer cuenta regresiva y cambiar cuenta regresiva. Se sugiere establecer el inicio de la cuenta regresiva en 9, ya que un 10 se movería por la pantalla de la micro:bit confundiendo al peatón. Será necesario también ingresar a la categoría BUCLES para utilizar el bloque repetir y a la categoría BÁSICO para acceder a los bloques mostrar número y pausa. Se detalla a continuación la programación de la cuenta regresiva. Bloque para fijar el inicio de la cuenta regresiva Repite el proceso para lograr la cuenta regresiva 1 a 1 Bloque para visualizar el i­nicio de la cuenta regresiva Variación de 1 segundo entre un número y otro 64 cuaderno micro:bit | 2023 NOTA PARA DOCENTES: Este semáforo también se puede agregar en la maqueta del barrio, se puede compartir en un foro en CREA o en un muro digital como video. Es importante que cada estudiante pueda compartir sus diseños con sus pares y con su docente. ¿SABÍAS QUE… diversas investigaciones han demostrado que la luz intermitente y el color amarillo de los semáforos no tienen ningún efecto sobre los peatones, pero que mantener fijos los colores rojo y verde, agregando el tiempo disponible para cruzar o no, reduce y previene accidentes de tránsito? Fuentes: Montevideo decide 2019: semáforo con cronómetro. Agencia Iberoamericana para la Difusión de la Ciencia y la Tecnología: Luz intermitente en semáforos. PLUS: Otra posible opción es usar dos placas para un semáforo (vinculadas por radio o con funcionamiento alternado); una mostrará en la pantalla los íconos y la otra mostrará la cuenta regresiva. PARA SEGUIR TRABAJANDO: Continuar profundizando en la realización de otros tipos de semáforos para peatones. Ver actividad 14 «Semáforo con alerta sonora». 65",
+  "archivo": "actividades/13-semaforo-con-cuenta-regresiva.html",
+  "slides": 9
+ },
+ {
+  "n": 14,
+  "titulo": "Semáforo con alerta sonora",
+  "pag_inicio": 67,
+  "pag_fin": 70,
+  "modalidad": "Individual",
+  "duracion": 60,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "Estimular a cada estudiante a modelizar un semáforo peatonal luminoso que integre una cuenta regresiva y una alerta sonora.",
+  "espacios": [
+   "Espacio Ciencias Sociales y Humanidades · Señales de tránsito en la vía pública. Señales verticales",
+   "Artístico. Música · Los elementos determinantes de la polución sonora"
+  ],
+  "contenidos": [
+   "Para siempre",
+   "Mostrar ícono o mostrar led",
+   "Crear variable",
+   "Mostrar número",
+   "Repetir",
+   "Comenzar melodía",
+   "Detener melodía"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Buzzer o parlantes",
+   "Cables cocodrilo 67"
+  ],
+  "desarrollo": "Proponer el desafío de crear con la micro:bit un semáforo peatonal que señale con dos íconos cuándo se puede cruzar y cuándo no. Al habilitar el cruce deberá mostrar una cuenta regresiva y emitir un sonido para alertar al peatón. Para crear el semáforo peatonal con cuenta regresiva, se sugiere realizar previamente la actividad 13 «Semáforo con cuenta regresiva». Para programar la alerta, se deberá ingresar a MakeCode y seleccionar en la categoría MÚSICA el bloque comenzar melodía. En dicho bloque, elegir la melodía (ej.: funk) e indicar que la acción es por siempre. Para finalizar la alerta, seleccionar el bloque stop melody. NOTA PARA DOCENTES: Este semáforo se puede compartir en un foro en CREA o en un muro digital como video. Es importante que cada estudiante pueda compartir sus diseños con sus pares y con su docente. 68 cuaderno micro:bit | 2023 En caso de crear el semáforo con cartulina, se aconseja integrarle un buzzer o un pequeño parlante para lograr escuchar el sonido de alerta y darle autonomía respecto a la computadora. Debe recordarse que la placa micro:bit V1 no produce sonidos si no está conectada a un buzzer o a un parlante, como se explica en especificaciones técnicas de reproducción de sonidos. ¿SABÍAS QUE… los semáforos de este tipo, con adaptación sonora, fueron creados para facilitar el cruce de los peatones ciegos o con baja visión? La alerta sonora avisa el momento adecuado para el cruce. Las personas invidentes logran mayor autonomía, pero hay calles con demasiado ruido donde no se pueden instalar, y en otros lugares generan una nueva contaminación sonora. Por eso, en Sevilla, España, se han creado semáforos inteligentes que, mediante una app conectada al Bluetooth del celular, advierten al peatón respecto al lugar donde está el semáforo y el momento del cruce con una alerta que solo escucha el peatón. Fuente: Revista Dirección General de Tránsito de España: Semáforos inteligentes para invidentes, junio de 2018. PLUS: Agregar a la programación la posibilidad de apretar un botón para comenzar el proceso del semáforo con alerta sonora. PARA SEGUIR TRABAJANDO: Puede crearse un nuevo semáforo que integre el uso de luces LED. 69",
+  "archivo": "actividades/14-semaforo-con-alerta-sonora.html",
+  "slides": 8
+ },
+ {
+  "n": 15,
+  "titulo": "Cubreasiento inteligente",
+  "pag_inicio": 71,
+  "pag_fin": 76,
+  "modalidad": "Grupal",
+  "duracion": 90,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "«El tránsito en tus manos»",
+  "objetivo": "S Estimular la creación de un dispositivo que permita identificar cuando una persona se sienta en el automóvil. Incentivar el uso de la comunicación por radio de las placas micro:bit para iniciar la alerta cinturón (actividad 32, del proyecto 1 «El tránsito en tus manos»).",
+  "espacios": [
+   "Espacio Ciencias Sociales y Humanidades · Las normas de tránsito",
+   "Espacio científico matemático · Los circuitos eléctricos"
+  ],
+  "contenidos": [
+   "Para siempre, condicional si verdadero entonces",
+   "Si P0 está presionado",
+   "Mostrar ícono",
+   "Radio establecer grupo",
+   "Radio enviar cadena",
+   "Al recibir radio received String",
+   "Comparación « « = « »"
+  ],
+  "materiales": [
+   "2 placas micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Cables cocodrilo",
+   "Papel aluminio",
+   "Cartón",
+   "Espumaplast 71"
+  ],
+  "desarrollo": "Esta propuesta enriquece la actividad 32 «Alerta cinturón» al sugerir crear un dispositivo que permita detectar automáticamente a la persona que usará el cinturón de seguridad. Para determinar su presencia , se construirá un sensor de presión mediante la elaboración de un circuito eléctrico con una placa micro:bit. • Si la persona se sienta o se apoya sobre el sensor de presión, el ­circuito se cierra, lo cual activa el envío de una señal por radio. Cuando esta es captada por la micro:bit de la alerta cinturón, se inicia el funcionamiento de la alerta. • Cuando el asiento está vacío, el circuito queda abierto, no se emite señal, por lo que no se inicia la alerta. En una primera etapa, el desafío para cada estudiante estará en el diseño de dicho dispositivo. Las siguientes preguntas pueden guiar la reflexión: • ¿Dónde se ubicará el dispositivo? Podrá estar colocado en el respaldo o en el asiento de la persona que viaja en el vehículo, activándose al sentir la presión del cuerpo al apoyarse o sentarse. • ¿Qué materiales se utilizarán? Los materiales deberán ser suficientemente resistentes y flexibles para resistir cierta presión y recobrar luego su forma inicial. Asimismo, para armar el circuito eléctrico, algunos materiales deberán ser aislantes (ej.: cartón) y otros conductores de electricidad (ej.: papel aluminio). • ¿Qué partes tendrá el dispositivo y cómo funcionará? Al trabajar en equipos, cada estudiante podrá intercambiar ideas y crear distintos diseños. Uno posible podría incluir la micro:bit, el portapilas, cables cocodrilo y dos cartones con zonas con papel aluminio. En las siguientes imágenes se explica el funcionamiento de cada parte: 72 cuaderno micro:bit | 2023 Figura 1: Dos cartones con una zona que conduce la electricidad y la otra no. Al colocar un cartón sobre el otro, la espumaplast los mantiene separados cuando no hay presión. Figura 2: Para armar el circuito, se coloca un cable cocodrilo en el PIN 0 de la micro:bit y otro en GND. Los cables se vinculan luego al cartón inferior, pinzando por separado las franjas con aluminio (el circuito se encuentra abierto, ya que las franjas no están en contacto). Figura 3: Circuito finalizado. Cuando se ejerce presión, el papel aluminio del cartón superior toca las franjas de papel aluminio del cartón inferior cerrando el circuito. En este ejemplo se observa que ambos cables cocodrilo están en el cartón inferior. Por ello, el papel aluminio está dividido para que el circuito se cierre cuando el papel aluminio del cartón superior haga contacto y los una. Otra opción podría ser que ambos cartones tuvieran una única franja de aluminio, en dicho caso sería necesario colocar un cable cocodrilo en el cartón superior y otro en el cartón inferior. NOTA PARA DOCENTES: Para cuidar tanto la comodidad de la persona como los materiales a utilizar, se sugiere diseñar una estructura (cubreasiento) que pueda contener el dispositivo de presión. Para la programación, se debe tener en cuenta que se van a programar dos placas: la que sensa la presión del pasajero (micro:bit 1, emisor) y la que activa la alerta cinturón (micro:bit 2, receptor). Las placas se comunicarán mediante señales de radio (ver Referencias técnicas: intercambiar mensajes por medio de señales de radio). MICRO:BIT 1: En la categoría RADIO seleccionar el bloque radio establecer grupo y digitar un número por el cual las placas se van a conectar (en este ejemplo se eligió el número 14). Dicho bloque se coloca dentro del bloque al iniciar de la categoría BÁSICO. Esta programación deberá realizarse 73 también en la micro:bit 2 para que ambas placas pertenezcan a un mismo grupo y puedan comunicarse. Se utiliza también el bloque radio enviar cadena de la categoría RADIO para que al cumplir determinada condición envíe un mensaje a la otra micro:bit. El bloque condicional si verdadero entonces se obtiene de la categoría LÓGICA y la opción «verdadero» se modificará por el bloque si P0 está presionado de la categoría ENTRADA (para que la placa identifique el circuito eléctrico que pasa por el PIN 0). Se sugiere agregar a esta programación un bloque de mostrar ícono (categoría BÁSICO) que indique que el programa se ha iniciado. MICRO:BIT 2: Para que la placa reciba la información e inicie la alerta cinturón se debe modificar parte de la programación realizada en la actividad 32, del proyecto 1 «El tránsito en tus manos». Al igual que en la micro:bit 1, en la micro:bit 2 la programación debe iniciar con el bloque radio establecer grupo de la categoría RADIO para que las placas puedan comunicarse. Es muy importante que ambas placas tengan el mismo número. Luego se debe cambiar el bloque para siempre por dos bloques nuevos: • el bloque al recibir radio, de la categoría RADIO; • un condicional si verdadero entonces, de la categoría LÓGICA, donde la opción «verdadero» se va a modificar por el bloque de comparación para cadenas de texto « « = « » sustituyendo las comillas por las opciones que se observan en la imagen: 74 cuaderno micro:bit | 2023 En estos bloques se colocará la programación del cinturón, como se observa en la siguiente imagen: ¿SABÍAS QUE... en la revista digital de National Geographic hay una interesante cronología de cómo surge la inteligencia artificial? En 1956 nace este término. El informático John McCarthy es quien lo acuñó por primera vez, durante una conferencia en Darmouth. Fuente: Portal de National Geographic España: Breve historia visual de la inteligencia artificial, agosto de 2019. PLUS: Para seguir mejorando este cubreasiento inteligente se puede pensar cómo hacer para que las luces LED de la micro:bit se apaguen mientras el asiento está desocupado. Para resolverlo se tendrá que investigar el bloque borrar pantalla de la categoría BÁSICO. 75",
+  "archivo": "actividades/15-cubreasiento-inteligente.html",
+  "slides": 13
+ },
+ {
+  "n": 16,
+  "titulo": "Prevención de incendios",
+  "pag_inicio": 77,
+  "pag_fin": 81,
+  "modalidad": "Individual",
+  "duracion": 45,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "S Estimular la creación de una alerta para prevenir incendios forestales en áreas protegidas. Incentivar el uso del sensor de temperatura y la comunicación por radio de las placas micro:bit.",
+  "espacios": [
+   "Espacio científico matemático · La protección de flora y fauna"
+  ],
+  "contenidos": [
+   "Al iniciar",
+   "Para siempre",
+   "Radio establecer grupo",
+   "Mostrar número",
+   "Temperatura (º C)",
+   "Radio enviar número",
+   "Pausa",
+   "Al recibir radio receivedNumber",
+   "Condicional si verdadero entonces",
+   "Comparación mayor que",
+   "Mostrar led",
+   "Mostrar ícono"
+  ],
+  "materiales": [
+   "2 placas micro:bit",
+   "Entorno de programación MakeCode (computadora) 77"
+  ],
+  "desarrollo": "La prevención, alerta y respuesta a los incendios forestales es una temática para abordar en el momento de considerar posibles acciones para proteger la flora y la fauna de un área protegida. Entre los distintos factores que pueden iniciar un incendio, las altas temperaturas ambientales aumentan el riesgo de que esto ocurra. En esta actividad, se propone crear una alarma de incendio que utilice dos placas: • La placa 1 se colocará en el monte del área protegida, en un árbol próximo al suelo, y medirá la temperatura (ver Glosario: sensor de temperatura). • La placa 2 la tendrá el guardaparque. Mediante señales de radio recibirá el valor de la temperatura sensado por la placa 1 y mostrará en la pantalla LED una advertencia en caso de que exista riesgo de incendio. Aclaración: la distancia máxima de transmisión por radio entre las placas, sin obstáculos que interfieran en la comunicación, es de 70 m. Por lo tanto, se programarán dos placas: la micro:bit 1 o placa emisora, y la micro:bit 2 o placa receptora (ver Referencias técnicas: intercambiar mensajes por medio de señales de radio). MICRO:BIT 1 Como se observa en la imagen, al programar la placa es necesario: • Fijar el grupo de radio, que se repetirá en la placa 2. • Sensar la temperatura y mostrarla utilizando los bloques mostrar número y temperatura (ºC). • Enviar el valor de la temperatura, para lo cual será necesario selec- cionar de la categoría RADIO el bloque radio enviar número y colocar en lugar del 0 el bloque temperatura (ºC). • Establecer un intervalo de 1 segundo para sensar la temperatura, utilizando el bloque pausa. 78 cuaderno micro:bit | 2023 MICRO:BIT 2 Al programar la placa es necesario: • Fijar la placa al mismo grupo de radio que la placa 1. • En la categoría RADIO, seleccionar el bloque al recibir radio received- Number para recibir el valor de la temperatura enviado por la placa 1. • La alerta que emitirá la placa dependerá del valor de temperatura elegido como riesgo de incendio. Se seleccionará de la categoría L­ ÓGICA el bloque de comparación si verdadero entonces para establecer dicho rango. La opción «verdadero» se sustituirá por el bloque de comparación mayor que. Los valores a comparar se visualizan en la siguiente imagen: NOTA PARA DOCENTES: La temperatura que define el riesgo de incendio es un aspecto a investigar, ya que variará según distintos factores. Por ejemplo: la ubicación geográfica del área protegida, las condiciones meteorológicas, entre otros (en la imagen se eligió el valor 30 ºC). • Mediante los bloques mostrar número, mostrar LED y mostrar ícono se visualizará la temperatura y se mostrará la alerta correspondiente, según exista o no riesgo de incendio. En la imagen se representó fuego, el cual simula estar en movimiento mediante el uso de dos bloques de pausa. 79 ¿SABÍAS QUE… en Uruguay hay una ley que determina que cada año, desde el 15 de noviembre hasta la segunda quincena de abril del año siguiente, está prohibido realizar fuegos y quemas al aire libre en todo el país? El objetivo de esta ley es prevenir los incendios forestales durante la época en que las condiciones meteorológicas como las altas temperaturas y la baja humedad (entre otros factores) aumentan el riesgo de que ocurran. Fuente: Dirección Nacional de Impresiones y Publicaciones Oficiales: En Uruguay existe una ley donde se regula la prevención de incendios forestales, setiembre de 2021 80 cuaderno micro:bit | 2023 PLUS: Para mejorar esta alerta se podría agregar el uso de un sensor de humedad, el cual, junto con el sensor de temperatura, permitiría al guardaparque estimar con mayor precisión el riesgo de incendio. Para realizar el sensor de humedad, recurre a la actividad 37 «Plantas:bit».",
+  "archivo": "actividades/16-prevencion-de-incendios.html",
+  "slides": 11
+ },
+ {
+  "n": 17,
+  "titulo": "La ruleta del saber",
+  "pag_inicio": 82,
+  "pag_fin": 85,
+  "modalidad": "Grupal",
+  "duracion": 60,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "S Propiciar la creación de una ruleta que interrogue sobre un tema de estudio. Realizar una primera aproximación al uso de un servo motor.",
+  "espacios": [
+   "Espacio científico matemático · Las áreas protegidas",
+   "Espacio científico matemático · El grado como unidad de medida de los ángulos"
+  ],
+  "contenidos": [
+   "Al presionarse el botón A",
+   "El botón B",
+   "Set servo P0 angle to 90º",
+   "Escoger al azar de 0 a 10"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Servo motor",
+   "Cable cocodrilo-header pin",
+   "Cartulinas de colores",
+   "Marcadores 82 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Una vez realizadas distintas actividades para profundizar en la temática de áreas protegidas, se propondrá crear una ruleta del saber con la micro:bit, que cumpla las siguientes condiciones: • Tener una superficie dividida en sectores. Cada sector presentará pre- guntas creadas por estudiantes, vinculadas al tema áreas protegidas. NOTA PARA DOCENTES: Se podrá asignar a cada equipo un área protegida, de modo que se generen tantas ruletas como equipos/ áreas protegidas haya en el aula. Se podrá también proponer un área protegida en particular y acordar para cada equipo un animal o vegetal de esta, a partir del cual crear las preguntas. • La flecha que gira debe estar programada de tal forma que elige al azar un sector a señalar. Generar una instancia previa de diseño permitirá a cada estudiante intercambiar ideas y generar acuerdos sobre el material a utilizar y la forma de automatizar el giro. Se presentará entonces un servo motor y se dialogará sobre las características de este. El rango de giro de 0 a 180º determinará entonces la necesidad de crear una ruleta de 180º. A partir de dicha información, podrán decidir la cantidad de preguntas a crear y calcular la amplitud angular que tendrá cada sector. 83 POSIBLE EJEMPLO DE RULETA Una vez creada la ruleta, se realizará la conexión del motor con la placa y en MakeCode se deberá agregar la extensión Servos para comenzar la programación. En las Referencias técnicas (servo motor) se encuentra la descripción de ambos procedimientos. Para iniciar el giro de la ruleta se propondrá utilizar los botones A y B: • Mediante el botón A se establecerá la posición inicial de la flecha en 0º, aspecto que será fundamental conocer para definir en qué posición se colocará el motor. • Mediante el botón B se establecerá el giro al azar. En la categoría SERVOS se seleccionará el bloque set servo P0 angle to 90º. En el valor 90º se ubicará el bloque escoge al azar de 0 a 10 de la categoría MATEMÁTICA. El 10 se sustituirá por el mayor valor de giro posible, el cual será 180º. NOTA PARA DOCENTES: Dado que el giro es al azar, la flecha podría volver a posicionarse en un mismo sector más de una vez. Previendo esta situación, cada sector podría estar referenciado únicamente con un color y tener más de una pregunta para realizar. Esta propuesta se podría utilizar con otras áreas del conocimiento que interese evaluar, para conocer el nivel de conceptualización de cada estudiante sobre los contenidos trabajados. 84 cuaderno micro:bit | 2023 ¿SABÍAS QUE... el casino del Líbano batió el récord Guinness al contar con la ruleta más grande del mundo? Es una ruleta de techo interactiva, con un diámetro de casi 9 metros. Se caracteriza por una interacción técnica directa. La gente puede jugar con ella a través de un botón electrónico que la controla de forma remota (inalámbrica). Fuente: Portal Odiaspora: Casino del Líbano: Ruleta más grande del mundo. PLUS: Colocar en el extremo del motor una flecha doble y realizar una ruleta circular que en los extremos tenga los números 1 y 2. Agregar a la programación del motor el bloque mostrar número y el número será un número al azar entre 1 y 2. Entonces, según el número que se visualice en la pantalla LED, se deberá contestar la pregunta del extremo indicado por la flecha que tenga dicho número. Esto permite duplicar la cantidad de preguntas usando un giro de 180º. Otra opción: Se puede crear una ruleta totalmente digital sin usar el motor. Para esto se realiza la ruleta en cartón, señalando las diferentes secciones, y se coloca la micro:bit en el centro. El dibujo de una flecha en la pantalla LED señalará la pregunta en cada oportunidad. PARA SEGUIR TRABAJANDO: En la actividad 35 «Animales con movimiento» del proyecto «Con ojos de guardaparque» se puede continuar profundizando el uso del servo motor.",
+  "archivo": "actividades/17-la-ruleta-del-saber.html",
+  "slides": 11
+ },
+ {
+  "n": 18,
+  "titulo": "Dado versus dado «arreglado»",
+  "pag_inicio": 86,
+  "pag_fin": 89,
+  "modalidad": "Duplas",
+  "duracion": 60,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "S Estimular la creación de dados virtuales mediante los cuales experimentar, comparar resultados y reflexionar sobre la equiprobabilidad de sucesos. Incentivar el uso de variables y condicionales en MakeCode.",
+  "espacios": [
+   "Espacio científico matemático · Estadística y probabilidad"
+  ],
+  "contenidos": [
+   "Uso de botones A y B",
+   "Mostrar número",
+   "Escoger al azar",
+   "Mostrar led",
+   "Crear variable",
+   "Condicional si verdadero entonces",
+   "Comparación «0 = 0»"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Cuaderno para hacer matemática en quinto, CEIP 86 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "En forma previa a realizar los experimentos aleatorios con dados propuestos en la pág. 32 del Cuaderno para hacer matemática en quinto, invitar a cada estudiante a programar dos dados: uno común con números y otro «arreglado» con constelaciones (se denomina «arreglado», ya que se mantienen las constelaciones 1, 3, 4, 5, se elimina la correspondiente al 2 y la constelación correspondiente al 6 aparece dos veces). DADO COMÚN: para programarlo, cada estudiante debe ingresar a MakeCode y elegir en la categoría BÁSICO el bloque mostrar número. En la categoría MATEMÁTICA elegirá el bloque escoger al azar de … a …, ingresando los valores 1 y 6 en los espacios destinados para los números. Para activar el dado utilizará el bloque al presionar el botón A de la categoría ENTRADA. DADO «ARREGLADO»: El dado se activa con un botón distinto a A, pudiendo ser, por ejemplo, B. A diferencia del dado común, en la categoría VARIABLES es necesario crear la variable «número» para obtener el bloque establecer número para… y vincularlo con el bloque escoger al azar. En la categoría LÓGICA se obtiene el condicional si verdadero entonces y la comparación 0 = 0. Se coloca sobre la palabra verdadero el bloque de comparación 0 = 0. Se modifica el primer 0 con la variable «número» y el segundo 0 con el número correspondiente a la constelación. 87 Finalmente, se utiliza el bloque mostrar led de la categoría BÁSICO para crear la constelación. Es necesario repetir este procedimiento para los restantes números del dado o duplicar los bloques y modificarlos. IMPORTANTE: No debe olvidarse que el dado «arreglado» debe mostrar la constelación 6 tanto con el número 2 como con el número 6. ¿SABÍAS QUE... los dados son viejísimos? Uno de los dados más antiguos se encontró en una tumba mesopotámica datada del siglo XXIV a. C., aunque se cree que en esa época su uso estaba vinculado a ritos adivinatorios, eran objetos mágicos. Otro dato interesante es que el orden de las caras de un dado no es aleatorio, aunque lo parece: las caras opuestas siempre suman siete (6-1, 5-2, 3-4). Fuente: El octavo distrito: 5 curiosidades sobre dados. 88 cuaderno micro:bit | 2023 PLUS: Previo a realizar este dado con 6 opciones se puede programar como si fuera una moneda y verificar qué sucede cuando tenemos dos opciones: cara y número. Otra idea: Automatizar el dado para una cantidad mayor de tiradas. Para esto deberá agregarse el bloque repetir de la categoría BUCLE para iterar la cantidad de veces deseadas. Considerando que a veces las constelaciones se repiten, se deberá experimentar con la programación para resolver esta dificultad. Pista: revisar la categoría BÁSICO, bloques borrar pantalla y pausa.",
+  "archivo": "actividades/18-dado-versus-dado-arreglado.html",
+  "slides": 9
+ },
+ {
+  "n": 19,
+  "titulo": "Buena postura",
+  "pag_inicio": 90,
+  "pag_fin": 93,
+  "modalidad": "Individual",
+  "duracion": 90,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "«Enseñar no es transferir conocimiento, sino crear las posibilidades para su propia producción o construcción» — Paulo Freire re e 119 ACTIVIDAD BUENA PO",
+  "objetivo": "Promover la importancia del cuidado de nuestro cuerpo al hacer uso de diferentes tecnologías.",
+  "espacios": [
+   "Espacio de desarrollo personal y conciencia corporal · Correcta postura",
+   "Espacio científico matemático · Importancia de la postura erguida",
+   "Espacio técnico tecnológico · Programación y placas programables · Uso responsable de la tecnología"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Acelerómetro · Rotación",
+   "Plus · Condicionales · Comparación de valores · Variables · Conexión de LED · Salidas de sonido",
+   "Nota para docentes · Radio"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "Elementos para adherir la micro:bit a la ropa (puede ser velcro, cinta u otro material)",
+   "Plus 2 · 2 cables con pinzas cocodrilo · Auricular, parlante o buzzer 90 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "FORMA DE TRABAJO Se propone programar en el entorno MakeCode. Se sugiere generar los espacios necesarios para que cada estudiante indague y experimente en busca de soluciones. En esta actividad se trabajará la importancia de una correcta postura a la hora de utilizar la computadora, el celular u otras tecnologías. ACTIVIDAD Se propondrá crear un dispositivo que incorpore la micro:bit y permita al usuario saber si su postura corporal, al utilizar su computadora, celular u otro, es o no correcta. Cada estudiante deberá indagar y así determinar qué solución implementar. Luego de ampliar sus conocimientos sobre el tema, se espera que frente a la necesidad de mantener ciertas partes del cuerpo en determinada posición, piense en una solución en la que la micro:bit se ubique en la ropa y sense la inclinación en grados. De esta forma podrá saber, por ejemplo, si la espalda está a 90º con respecto al suelo. En caso de surgir soluciones diferentes, no se descartarán, y se acompañará en la construcción de estas. EJEMPLO DE SOLUCIÓN El acelerómetro de la micro:bit permite conocer la inclinación en la que se encuentra la placa, devolviendo valores entre -180 y 180 (ver el apartado de Referencias técnicas: Inclinación). Este programa despliega los grados de inclinación de la micro:bit con respecto del suelo. Si se ubica la placa en la espalda, por ejemplo, se podrá saber si su posición es correcta o no. 91 Teniendo en cuenta que el acelerómetro es muy sensible, resulta imposible obtener exactamente los 90º, por lo que se sugiere asumir que la placa está en una correcta inclinación cuando se encuentra entre 80º y 100º. PLUS 1: Solicitar que modifiquen el programa anterior de tal forma que, en lugar de desplegar los grados en pantalla, despliegue imágenes indicando si la postura es correcta o no. PLUS 2: En lugar de desplegar imágenes en pantalla, hacer que la micro:bit emita un sonido si la posición no es correcta (ver actividad 2 «Semáforo peatonal»). NOTA PARA DOCENTES. Las micro:bit pueden intercambiar mensajes por medio de señales de radio, por lo que la inclinación que detecte una placa puede ser enviada a otra que se encuentre a menos de 100 m. En el apartado Referencias técnicas se encuentra más información. FICHA DE TRABAJO BUENA POSTURA ¿Durante cuántas horas del día utilizas el celular, la computadora o algún otro dispositivo? Cuando se hace uso de estas tecnologías, es necesario cuidar la postura corporal, ya que de lo contrario puede resultar perjudicial para nuestro cuerpo. Investiga y completa Daños que puede causar una postura inadecuada al utilizar la computadora, el celular u otros Dibuja un esquema que represente la postura correcta 92 cuaderno micro:bit | 2023 DESAFÍO Construye con la micro:bit un dispositivo que se pueda ubicar en la ropa e indique si la postura corporal del usuario, al utilizar su computadora, celular u otro, es o no correcta. Antes de programar, responde: ¿En qué parte del cuerpo se deberá ubicar el dispositivo? Describe cómo será el funcionamiento de tu dispositivo ¿Qué deberá medir la micro:bit? ¿Qué sensor vas a utilizar? ¡Construye tu programa y prueba su funcionamiento!",
+  "archivo": "actividades/19-buena-postura.html",
+  "slides": 10
+ },
+ {
+  "n": 20,
+  "titulo": "¡Que no caiga!",
+  "pag_inicio": 94,
+  "pag_fin": 99,
+  "modalidad": "Individual",
+  "duracion": 135,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "«Los juegos son la forma más elevada de la investigación» — Albert Einstein OBJETIVO Comprender la c",
+  "objetivo": "Comprender la causa de determinados fenómenos cotidianos mientras se juega.",
+  "espacios": [
+   "Espacio científico matemático · Equilibrio",
+   "Espacio técnico tecnológico · Programación y placas programables · Taller de construcción de juegos"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Acelerómetro · Posición de la placa",
+   "Condicionales (opcional)",
+   "Plus · Variables · Botones"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "Esfera de espumaplast",
+   "Mondadientes",
+   "Goma eva, papel glacé, lana, etc. (no indispensable) 94 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Se propone programar en el entorno MakeCode. Si bien se brinda un ejemplo de construcción, se recomienda dar libertad a cada estudiante en su trabajo. No debe olvidarse que todo error propicia nuevos aprendizajes. Actividad: En esta actividad se propone construir un juego de equilibrio en el que cada estudiante podrá analizar la forma en la que interactúan diferentes fuerzas sobre un cuerpo. Deberá crear un muñeco con base esférica, al que se le puedan colgar aritos en sus brazos. Durante el juego, se contará con un minuto para ubicar la mayor cantidad de aritos posible en los brazos del muñeco, con una sola mano y cuidando que mantenga el equilibrio. Este muñeco contará con una micro:bit que al inicio de cada partida desplegará una cara feliz. Si alguien hace que el muñeco pierda el equilibrio, la placa desplegará una cara triste. En dicho caso, si aún no ha transcurrido un minuto, su oponente ganará cinco puntos. Si logra que el muñeco no caiga durante el minuto de juego, obtendrá cinco puntos por cada arito. Los puntajes se registrarán en una hoja. Al presionar el botón A se desplegará nuevamente una cara feliz, quedando lista la micro:bit para otro juego. 95 CONSTRUCCIÓN DEL PROGRAMA La micro:bit posee un acelerómetro que permite obtener datos relacionados con su posición en el espacio. Así se puede saber si la placa está inclinada o si su pantalla está completamente puesta hacia arriba o hacia abajo. Teniendo en cuenta el lugar y la forma en la que se sugiere ubicar la micro:bit, será muy sencillo saber si el muñeco está o no en equilibrio, pues, al caer, la placa quedará con su pantalla hacia arriba, hacia abajo o inclinada hacia un costado. Dependiendo de la posición de la micro:bit, se desplegará una cara feliz o una cara triste. OTRA SOLUCIÓN POSIBLE 96 cuaderno micro:bit | 2023 PLUS 1: Plantear una modificación del programa creado, para que la micro:bit despliegue la cara triste solo si el muñeco perdió el equilibrio antes de que transcurriera el minuto de juego. PLUS 2: Proponer a cada estudiante crear un nuevo programa que permita llevar un registro de los puntos de cada participante. Este programa se deberá ejecutar en otra placa o en el simulador de MakeCode. Cuando se presione el botón A, dicho programa sumará cinco puntos a cada participante A. De la misma manera, cuando se presione el botón B, sumará puntos a cada participante B. NOTA PARA DOCENTES: En el apartado Referencias técnicas se encuentra información útil sobre variables, sobre cómo crear un contador de puntos y cómo medir el tiempo transcurrido. FICHA DE TRABAJO ¡Que no caiga! ¿Has pensado por qué algunos cuerpos se mantienen en equilibrio a pesar de contar con una superficie de apoyo muy pequeña? ¿Cuándo se puede decir que un cuerpo está en equilibrio? Te proponemos crear un juego de equilibrio. Deberás construir un muñeco al que se le puedan colgar aritos en sus brazos. Su base será esférica, por lo que tendrá dificultades para mantener el equilibrio. Durante la partida, cada participante contará con un minuto para ubicar en los brazos del muñeco la mayor cantidad de aritos que le sea posible, con una sola mano y cuidando que no pierda el equilibrio. Tendrás que incorporar una micro:bit que desplegará una cara feliz mientras el muñeco esté en equilibrio y una cara triste cuando caiga. Si cae antes de que transcurra el minuto de juego, tu oponente obtendrá cinco puntos; de lo contrario, cada arito suma cinco puntos para ti. Te recomendamos llevar un registro de los puntajes. Participarán dos personas. 97 Antes de comenzar a jugar, será necesario acordar el número de partidas a realizar. Construcción del muñeco Corta una esfera de espumaplast por la mitad. Haz un espacio para ubicar las pilas en el interior de la esfera. Utiliza mondadientes para unir las mitades. Ubica la micro:bit como se indica en la imagen. Si piensas que existe una mejor forma de construir tu muñeco, ¡ponla en práctica! ¡Inventa! ¡Prueba alternativas! Corta los aritos y decora tu muñeco como lo desees. PROGRAMACIÓN DE LA MICRO:BIT Completa: El sensor que utilizaré es el Se desplegará una cara triste cuando la micro:bit Escribe los pasos que debe seguir tu programa: Dibuja los bloques que utilizarás: 98 cuaderno micro:bit | 2023",
+  "archivo": "actividades/20-que-no-caiga.html",
+  "slides": 11
+ },
+ {
+  "n": 21,
+  "titulo": "Búsqueda de tarjetas",
+  "pag_inicio": 100,
+  "pag_fin": 104,
+  "modalidad": "Grupal",
+  "duracion": 90,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "«Todos los aprendizajes más importantes de la vida se hacen jugando» — Francesco Tonucci OBJETIVOS Propiciar ap",
+  "objetivo": "S Propiciar aprendizajes de diversos contenidos por medio del juego. Incorporar la micro:bit como herramienta que permite resolver problemas.",
+  "espacios": [
+   "Cada docente podrá elegir qué contenidos trabajar.",
+   "Espacio científico matemático · Concepto de fuerza · Tipos de interacciones",
+   "Espacio técnico tecnológico · Programación y placas programables · Taller de construcción de juegos"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Brújula",
+   "Fuerza magnética",
+   "Comparación de valores",
+   "Condicionales"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "Imanes pequeños",
+   "Cartulina",
+   "Marcadores 100 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Esta actividad puede realizarse al aire libre. Se sugiere generar espacios que permitan a cada estudiante indagar y experimentar con la finalidad de descubrir y apropiarse de los diferentes contenidos vinculados a la propuesta. Se recomienda presentar la micro:bit como una herramienta que permite resolver el juego. Será necesario utilizarla y aprender su uso para lograr resolver el desafío planteado. Se propone programar en el entorno MakeCode. ¡JUGAR MIENTRAS SE APRENDE! En esta actividad se podrá elegir el tema a trabajar. Diseñar tarjetas que contengan un enunciado, el fragmento de un texto, una palabra o parte de una imagen. Al unir las tarjetas será posible formar un texto, armar una imagen o un esquema vinculado al tema elegido. Se deberá pegar un imán en el dorso de las tarjetas y luego se esconderán en diferentes lugares. Formar equipos de tres. computadora su función es procesar información está compuesta por software hardware Todos los equipos programarán sus placas micro:bit (una por cada integrante) de tal forma que les permitan encontrar las tarjetas escondidas. Cuando alguien encuentre una tarjeta, su equipo recibirá cinco puntos. Una vez que se hayan encontrado todas las tarjetas, todos los equipos deberán trabajar en conjunto para armar el texto, la imagen o el esquema. 101 Si un equipo no participa en la etapa final, perderá todos los puntos antes obtenidos. EJEMPLO DE SOLUCIÓN La micro:bit posee un magnetómetro que funciona como brújula. Este permite medir la intensidad de los campos magnéticos en los que se encuentra y, por lo tanto, detectar la presencia de imanes. Así será posible encontrar las tarjetas escondidas. Más información puede encontrarse en el Glosario y en el apartado de ­Referencias técnicas. En esta solución, la micro:bit desplegará una cara feliz cuando el valor detectado sea mayor a 80, indicando que se ha encontrado un campo magnético; de lo contrario, desplegará una cara triste. La cifra utilizada como límite (80) variará dependiendo de las características de los imanes a utilizar. PLUS: Asignarle un tema a cada equipo y solicitarles que ahora ellos diseñen sus propias tarjetas. Posteriormente, cada equipo podrá esconder sus tarjetas para que los demás puedan buscarlas. Invitar a repensar las reglas del juego. 102 cuaderno micro:bit | 2023 FICHA DE TRABAJO Búsqueda de tarjetas Nombre del equipo Integrantes ¡Invito a buscar algunas tarjetas que están escondidas! Cada equipo obtendrá cinco puntos por tarjeta encontrada. Para que sea más sencilla la tarea, se ha pegado un imán detrás de cada una de ellas. La micro:bit posee un magnetómetro que podrán utilizar para encontrar dichos imanes y, por lo tanto, las tarjetas. Busca la respuesta: ¿Qué es un magnetómetro? Prueba el magnetómetro Antes de elaborar el programa que te permitirá buscar las tarjetas, construye el siguiente programa y prueba el funcionamiento del magnetómetro. Observa los valores que la micro:bit despliega en pantalla cuando está cerca de un imán y cuando no es así. Completa: Si un imán está cerca, los valores que despliega la micro:bit son: ¡Prepara tu placa para jugar y juega! Construye un programa que despliegue una cara feliz cuando un imán esté cerca de la micro:bit y una cara triste cuando no sea así. Cuando hayan aparecido todas las tarjetas Entre todos los equipos deberán unir las tarjetas encontradas para formar un texto, una imagen o un esquema vinculado al tema que se está trabajando. Si un equipo no participa, perderá todos los puntos obtenidos. 103 Asigna menciones a los demás equipos Mención 1 «Buen trabajo de equipo» Equipo: Mención 2 «Respeto» Equipo: Mención 3 «Buenas ideas» Equipo: Mención 4 «Ayuda a otros equipos» Equipo: Mención 5 «Buena programación» Equipo: Mención 6 Equipo: «Buena organización en su trabajo» Asigna una mención a tu equipo Mención 7",
+  "archivo": "actividades/21-busqueda-de-tarjetas.html",
+  "slides": 11
+ },
+ {
+  "n": 22,
+  "titulo": "Aula sostenible",
+  "pag_inicio": 105,
+  "pag_fin": 110,
+  "modalidad": "Grupal",
+  "duracion": 225,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "«El objetivo de la ciencia no debe ser conquistar la naturaleza, sino poder vivir con ella» — Barry Commoner OBJETIVO Promover el uso",
+  "objetivo": "Promover el uso responsable de la energía y reflexionar sobre el daño que causa el ser humano al ambiente.",
+  "espacios": [
+   "Espacio Ciencias Sociales y Humanidades · Fuentes de energía: crisis y alternativas",
+   "Espacio creativo - artístico · Diseño y tecnología",
+   "Espacio científico matemático · La luz · Temperatura",
+   "Espacio científico matemático · Noción de relación de orden",
+   "Espacio técnico tecnológico · Programación y placas programables"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Botones",
+   "Sensor de temperatura",
+   "Sensor de luz",
+   "Condicionales",
+   "Comparación de valores",
+   "Plus · Escritura digital en pines 0, 1 y 2"
+  ],
+  "materiales": [
+   "Cartón, cartulina o similar",
+   "Pegamento",
+   "Tijera",
+   "Marcadores",
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "Plus · LED · Resistencias · Cables con pinzas cocodrilo 105"
+  ],
+  "desarrollo": "Forma de trabajo: Esta propuesta ofrece una buena herramienta para promover el aprendizaje colaborativo y el pensamiento de diseño. Se recomienda generar espacios que propicien la discusión, la experimentación y el aprendizaje colaborativo. Se propone programar en el entorno MakeCode. Actividad: Esta actividad está dividida en cuatro etapas que permiten que se integren progresivamente los diferentes contenidos a trabajar. Etapas 1 y 2: La micro:bit tiene incorporados un sensor de temperatura y un sensor de luz. En esta etapa, cada estudiante se familiarizará con el uso de dichos sensores. Los datos que deberán registrarse en estas etapas serán útiles para resolver las etapas posteriores. Etapa 3: A partir del Objetivo de Desarrollo Sostenible 12 propuesto por la ONU, «Producción y consumo sostenibles», plantear la construcción de un dispositivo que ayude al consumo responsable de energía. La placa deberá: • Desplegar la temperatura ambiente al presionar el botón B. Eso permitirá saber si es necesario apagar los calefactores o el sistema de refrigeración. • Recordar, desplegando un mensaje, abrir las cortinas durante el día para aprovechar la luz solar. • Solo si está nublado y la luz solar no es suficiente, encender todos los LED de su pantalla para iluminar. En este momento, cada estudiante tendrá que comparar valores. Se podrá ayudar con los registros realizados en las dos etapas anteriores. 106 cuaderno micro:bit | 2023 Etapa 4: ¡Diseña una clase nueva! En esta etapa, se sugiere seguir los pasos del proceso del pensamiento de diseño: • Empatizar - definir · Las respuestas a las preguntas planteadas en la etapa 3 ayudarán a profundizar en los contenidos y ver con claridad el problema a resolver • Idear · Decidir cómo debe ser el aula, qué características debe tener, dónde debe ubicarse la Micro:bit con el programa antes creado y realizar un boceto • Prototipar y testear · Construir la maqueta siguiendo lo decidido antes, asignando roles a cada integrante y registrando el proceso de construcción · Realizar todas las pruebas que sean necesarias PLUS: Conectar varios LED, ubicarlos en algunos lugares de la maqueta y controlar su encendido con la micro:bit. Para conectar correctamente los LED consultar el apartado Referencias técnicas. 107 FICHA DE TRABAJO Aula sostenible Nombre del equipo Integrantes Temperatura Programa tu micro:bit de tal manera que, al presionar el botón A, despliegue la temperatura ambiente. Cuando hayas finalizado tu programa, recorre diferentes lugares midiendo la temperatura en cada uno de ellos y registra los valores. Lugar Temperatura Completa: Es necesario calefaccionar un lugar si: Es necesario refrigerar un lugar si: Rango de temperatura ideal: ¿En qué unidad realiza la micro:bit las mediciones de temperatura? ¿Dónde está ubicado el sensor de temperatura? temperatura < … temperatura >… Luz Programa tu micro:bit de manera que siempre despliegue el nivel de luz ambiente. Realiza diferentes mediciones y registra los valores obtenidos. Mide dentro de una caja, cerca de la ventana, debajo de tu mesa y en otros lugares que se te ocurran. Lugar Nivel de luz 108 cuaderno micro:bit | 2023 Completa Si es de día Si es de noche ¿En qué unidades se mide el nivel de luz? nivel de luz >... nivel de luz < ... Objetivo 12 El consumo de energía produce daños al medioambiente, por lo que la Organización de Naciones Unidas (ONU) propone a la humanidad «producción y consumo responsables». Completa las siguientes frases: La ONU es Los Objetivos de Desarrollo Sostenible sirven para El consumo de energía daña el medioambiente porque El consumo responsable significa Programa la micro:bit de tal forma que ayude a que en tu aula se realice un consumo responsable de energía. La placa deberá: • Al presionar el botón B, desplegará la temperatura ambiente. Eso permitirá saber si es necesario apagar los calefactores o el sistema de refrigeración. • Recordar, desplegando un mensaje, abrir las cortinas durante el día para aprovechar la luz solar. • Solo si está nublado y la luz solar no es suficiente, encender todos los LED de su pantalla para iluminar. Pensando en el Objetivo 12 propuesto por la ONU, diseña un aula sostenible. Problema a resolver: ¿Cómo debería ser el diseño de tu clase para que El aula debería tener: el uso responsable de energía sea óptimo? El aula no debería tener: Las ventanas deberían estar en: Construye un boceto a escala de tu idea. Indica en dicho boceto dónde ubicarías la micro:bit con el programa antes realizado. ¡Cuando finalices tu boceto construye una maqueta! 109",
+  "archivo": "actividades/22-aula-sostenible.html",
+  "slides": 12
+ },
+ {
+  "n": 23,
+  "titulo": "Dado de palabras",
+  "pag_inicio": 111,
+  "pag_fin": 115,
+  "modalidad": "Individual",
+  "duracion": 45,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "",
+  "objetivo": "S Incentivar el uso de la tecnología para crear un juego donde se demuestren los conocimientos adquiridos sobre formas no personales del verbo.",
+  "espacios": [
+   "Espacio de comunicación · Las formas no personales del verbo: infinitivo, gerundio, participio"
+  ],
+  "contenidos": [
+   "Al iniciar, establecer lista de texto para matriz de..",
+   "Lista obtener el valor en 0",
+   "Si agitado",
+   "Crear variable",
+   "Escoger al azar",
+   "Mostrar cadena",
+   "Al presionarse botón A, B o A+B",
+   "Condicional si verdadero entonces",
+   "Comparación «0 = 0»",
+   "Mostrar ícono"
+  ],
+  "materiales": [
+   "Placa micro:bit",
+   "Entorno de programación MakeCode (computadora)",
+   "Cuaderno para leer y escribir en sexto, CEIP 111"
+  ],
+  "desarrollo": "A partir de la propuesta de la actividad de la página 22 del Cuaderno para leer y escribir en sexto (donde se debe completar una tabla con las formas no personales de los verbos destacadas en los afiches), se propondrá realizar un juego con infinitivos, gerundios y participios. Mediante la lectura de un nuevo texto propuesto, cada estudiante podrá buscar estas formas verbales y crear tres listas de palabras con las formas no personales del verbo (lista 1: infinitivos, lista 2: gerundios, lista 3: participios). Luego deberá ingresar las palabras a la micro:bit y programar la placa para mostrar al azar cada una de ellas. Al jugar, deberá presionar un botón para indicar a qué categoría corresponde la palabra presentada y la micro:bit verificará si la respuesta es o no correcta. A continuación, se desarrollará el ejemplo de programación utilizando las palabras presentes en la tabla de la página ya citada. En la categoría ARREGLOS (ver Glosario), se seleccionará el bloque establecer lista de texto para matriz de … y se lo ubicará dentro del bloque al iniciar de la categoría BÁSICO. Al presionar sobre lista de texto se desplegará la opción «nueva variable». Allí se deberá crear la variable «infinitivo» (corresponde a la lista de palabras 1) y sustituir las letras a, b, c por las palabras correspondientes a dicha categoría. El mismo procedimiento se realizará para «gerundio» (lista de palabras 2) y «participio» (lista de palabras 3). 112 cuaderno micro:bit | 2023 Para generar el dado de palabras se utilizará el bloque si agitado de la categoría ENTRADA. Se creará una nueva variable denominada «dado» definiéndose la elección de las listas de palabras (infinitivo, gerundio o participio) mediante el bloque escoger al azar de 1 a 3. Se programará luego la elección al azar de la palabra a mostrar de cada una de las listas. En la siguiente imagen se ejemplifica la programación para mostrar las palabras correspondientes a la lista 1, «infinitivo». En dicho ejemplo se coloca un condicional y se sustituye verdadero por un bloque de comparación «0 = 0» de la categoría LÓGICA. El primer 0 se sustituye por la variable «dado» y el segundo 0 por uno de los valores de lista de palabras (1 para «infinitivo», 2 para «gerundio» y 3 para «participio»). Para programar la palabra a mostrar se deberá seleccionar el bloque mostrar cadena sustituyendo el texto por el bloque lista obtener el valor en 0. 113 La variable «lista» se sustituye por «infinitivo» y en lugar del 0 se coloca el bloque escoger al azar. Es importante considerar que dentro del arreglo correspondiente a «infinitivo» hay tres elementos ordenados a partir de la posición cero. Volver Posición 0 Descubrir Posición 1 Armar Posición 2 Por esta razón, al editar el bloque escoger al azar se establece un rango de 0 a 2. El «infinitivo» será seleccionado al azar de la posición 0, 1 o 2. Como muestra la siguiente imagen, el procedimiento realizado para «infinitivo» se repite para «gerundio» y «participio». Finalmente, se programarán los botones para validar la respuesta. Si se considera que es un infinitivo (1), se debe apretar el botón A, si es gerundio (2) el botón B y si es participio (3) el botón A + B. Si se presiona el botón correcto en relación con la palabra visualizada, la placa mostrará un tic y si no una cruz, como se observa en la imagen: 114 cuaderno micro:bit | 2023 ¿SABÍAS QUE... en español hay formas verbales que admiten dos participios? Por ejemplo: imprimir (imprimido - impreso); freír (freído - frito); atender (atento - atendido); despertar (despertado - despierto). Fuente: Enciclopedia online de ejemplos: Verbos en participio PLUS: Esta propuesta podría adaptarse a temas de distintas áreas del conocimiento. Por ejemplo, podrían generarse arreglos correspondientes a otros tipos de palabras (sustantivos, adjetivos y verbos), números que sean divisibles entre..., números que sean múltiplos de..., elementos de la célula animal y vegetal, entre otros.",
+  "archivo": "actividades/23-dado-de-palabras.html",
+  "slides": 11
+ },
+ {
+  "n": 24,
+  "titulo": "Micro:pedaleando en Scratch",
+  "pag_inicio": 116,
+  "pag_fin": 120,
+  "modalidad": null,
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "",
+  "objetivo": "S Incentivar la programación de un videojuego que permita integrar lo aprendido sobre la circulación en bicicleta por la vía pública.",
+  "espacios": [
+   "Espacio Ciencias Sociales y Humanidades · Las normas de tránsito: la responsabilidad y seguridad en la vía pública · Las normas básicas de circulación para peatones y birrodados"
+  ],
+  "contenidos": [
+   "Inclinar hacia",
+   "Mostrar"
+  ],
+  "materiales": [
+   "Computadora con Windows y Bluetooth",
+   "Programa Scratch 3.0",
+   "Placa micro:bit",
+   "Cartón",
+   "Cinta papel 116 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Para profundizar lo trabajado en la actividad 31 «Ciclistas que se cuidan», del proyecto 2 «El tránsito en tus manos», se propondrá la creación de un videojuego en Scratch, en el cual una persona ciclista transite con su bicicleta por la vía pública. La siguiente información podrá ser de utilidad para profundizar conocimientos sobre los espacios de la vía pública que están habilitados para el tránsito seguro de bicicletas, consultar: • Intendencia de Montevideo, movilidad, tipos de infraestructura • Intendencia de Montevideo, Mapa Interactivo Generar una instancia previa de diseño permitirá intercambiar ideas y establecer acuerdos sobre: • Qué infraestructura se representará y cuáles son sus características (zona 30, ciclovía sin separador físico, ciclovía protegida, bicisenda); • Qué normas debe cumplir la persona ciclista para transitar correc- tamente (señalizaciones verticales u horizontales, uso del casco, entre otras); • Qué obstáculos podrá enfrentar la persona ciclista (elementos en el camino, peatones que cruzan, etc.) y cómo incidirán en un posible puntaje; • Cómo se simulará el movimiento (qué objetos se mueven, cuáles quedan estáticos, para qué se mueven). A partir de las ideas de cada estudiante, se podrá proponer integrar al videojuego el uso de la micro:bit. Tal como se planteó en la actividad 31 «Ciclistas que se cuidan», la placa cuenta con un acelerómetro que permite identificar si está inclinada hacia un lado u otro. Mediante su uso, cada participante podrá «transformarse» en la persona ciclista y realizar acciones físicas que inicien el movimiento en la pantalla. NOTA PARA DOCENTES: La creación de un manubrio de cartón sobre el cual se pueda colocar la micro:bit hará más ágil el juego. 117 Para iniciar la programación en Scratch 3.0 cada estudiante deberá conectar la micro:bit siguiendo las indicaciones dadas en las Referencias técnicas (conectar la placa micro:bit a Scratch 3.0). Luego se deberán identificar los diferentes elementos del videojuego para realizar su diseño y programación en forma ordenada. A continuación, se detalla un posible ejemplo de videojuego, en el cual un ciclista transita por una bicisenda de doble circulación. • ESCENARIO. Representará el pasto ubicado a los lados de la bicisenda, sin movimiento. No está asociado a ningún código. • OBJETO BICISENDA. Con la opción «pinta» se debe dibujar la bicisenda. Se recomienda ampliarla en forma previa, escribiendo un valor superior a 100 en la opción «tamaño». Esto permitirá que la bicisenda pueda moverse sin llegar rápidamente al final de esta. Es conveniente fijar al inicio de la programación la posición del objeto bicisenda en las coordenadas x-y. El movimiento se simulará cambiando la posición del objeto en el eje y. Cuando la bicisenda llegue a cierta ubicación en dicho eje (en el ejemplo y = -227) volverá al punto de inicio. OBJETO PIEDRA. Este objeto se puede dibujar u obtener de la galería. Será un obstáculo que la persona deberá evitar para no perder el juego. Para visibilizar el puntaje se debe crear la variable «puntaje» y establecer su valor inicial, que irá disminuyendo cuando la persona no logre evadir la piedra. Luego se simulará el movimiento de la piedra, que tendrá una programación similar al movimiento de la bicisenda. Para que la piedra aparezca en distintos lugares, se definirán posiciones aleatorias para las coordenadas x-y. A continuación, se programará que cada vez que el objeto ciclista toque el objeto piedra se descuente 1 punto sumando -1. 118 cuaderno micro:bit | 2023 Por último, cuando la variable «puntaje» = 0, debe enviar un mensaje para mostrar el objeto GAME OVER y detener el juego. OBJETO GAME OVER. Este objeto se puede dibujar. Se debe esconder el objeto al iniciar el juego y mostrarlo al recibir el mensaje de fin de juego cuando la variable «puntaje» = 0. OBJETO CICLISTA. Se puede utilizar una imagen de Internet o dibujar el objeto. Es conveniente fijar su posición en las coordenadas x-y, al inicio de la programación. El uso del bloque al inclinar hacia de la categoría m­ icro:bit permitirá definir en qué dirección se inclina la placa. Al dibujar una flecha en el bloque mostrar se favorece la visualización del movimiento. Para lograr que la persona ciclista se desplace hacia la derecha o la izquierda se deberá definir un valor a sumar en el eje x (en el ejemplo, se suma -50 para ir hacia la izquierda y 50 para ir hacia la derecha). 119 Es importante recordar que el diseño del videojuego dependerá de las decisiones tomadas por la dupla de estudiantes. ¿SABÍAS QUE... hay muchísimos tipos de videojuegos y con objetivos muy diferentes? Pero la creación de uno implica muchísimas competencias que deben considerarse: promueve el trabajo en equipo, exige el diseño y prototipado de la idea, definición de roles entre los miembros del grupo, el ensayo y error como parte del proceso y la satisfacción de la tarea lograda cuando se comparte con otros. PLUS: Para continuar mejorando la propuesta del juego se puede agregar la opción de descontar puntos si la persona ciclista circula por la otra vía de la bicisenda o si se sale del camino.",
+  "archivo": "actividades/24-micro-pedaleando-en-scratch.html",
+  "slides": 13
+ },
+ {
+  "n": 25,
+  "titulo": "¿Se divide?",
+  "pag_inicio": 121,
+  "pag_fin": 125,
+  "modalidad": "Individual",
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "«En mi humilde opinión, todas las cosas de este mundo ocurren matemáticamente» — Descartes OBJETIVO Incorporar conceptos",
+  "objetivo": "Incorporar conceptos vinculados a la divisibilidad en el conjunto de los números naturales y a la probabilidad.",
+  "espacios": [
+   "Espacio científico matemático · Divisibilidad en el conjunto de los números naturales",
+   "Espacio técnico tecnológico · Programación y placas programables"
+  ],
+  "contenidos": [
+   "Desplegar valores en pantalla",
+   "Escoger números al azar",
+   "Resto de la división entera",
+   "Variables",
+   "Condicionales",
+   "Comparación de valores",
+   "Nota para docentes · Funciones"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit (no indispensable) 121"
+  ],
+  "desarrollo": "Forma de trabajo: Se propone programar en el entorno MakeCode. Propiciar espacios en los que cada estudiante pueda experimentar e indagar en busca de diferentes soluciones. Aprovechar los errores para generar nuevas instancias de aprendizaje. Actividad: Esta actividad comienza con una pregunta disparadora que permitirá indagar y reflexionar sobre el concepto de divisibilidad en el conjunto de los números naturales. Una vez que se haya encontrado la respuesta a la pregunta, se invitará a programar la micro:bit de forma tal que: • al presionar el botón A despliegue un valor natural entre 1 y 100; • al presionar el botón B indique si el valor desplegado es divisible entre 2. Se deberá correr el programa en la placa y registrar los valores que resulten ser divisibles entre 2. Luego, se planteará modificar el programa para determinar qué valores son divisibles entre 3, 4 y otros números. Posteriormente, se solicitará que se identifiquen patrones entre los valores divisibles por un mismo número. Será un buen momento para retomar los criterios de divisibilidad. Para finalizar, se propone plantear algunas preguntas que permitirán introducir conceptos vinculados a la probabilidad. Ejemplo de solución: Se deberán obtener valores al azar y guardarlos en una variable, para luego determinar si son divisibles o no. En el apartado de Referencias técnicas puede obtenerse más información. En el ejemplo de solución se guarda un valor escogido al azar entre 1 y 100, en una variable llamada «valorA». Para determinar si un valor es divisible o no entre otro, basta con analizar el resto de la división entera que puede obtenerse utilizando el siguiente bloque: 122 cuaderno micro:bit | 2023 PLUS: Crear un juego utilizando el programa antes construido. Solicitarles que detallen el objetivo y las reglas. NOTA PARA DOCENTES: Puede pedirse crear una función que determine si un valor es divisible entre otro. Consultar el apartado Referencias técnicas. FICHA DE TRABAJO ¿Se divide? Investiga: Dados dos valores pertenecientes al conjunto de los naturales, ¿cuándo podemos decir que uno es divisible entre otro? 123 Desafío Te proponemos programar la micro:bit de manera tal que indique si un valor elegido al azar es divisible entre 2. Tu programa deberá realizar lo siguiente: • al presionar el botón A desplegar aleatoriamente un valor natural entre 1 y 100; • al presionar el botón B indique si el valor desplegado es divisible entre 2. Cuando finalices tu programa, ejecútalo y registra los valores que resulten ser divisibles entre 2. Divisibles entre 2 Modifica tu programa con la finalidad de identificar qué valores son divisibles entre otros números y completa las siguientes tablas: Divisibles entre __ Divisibles entre __ Divisibles entre __ Divisibles entre __ En cada una de las tablas observa los valores que registraste y busca alguna característica que tengan en común entre ellos. Características Divisibles entre 2 Divisibles entre __ Divisibles entre __ Divisibles entre __ Divisibles entre __ En tu programa: • ¿Qué probabilidad existe de que el valor escogido al azar sea 100? • ¿Qué probabilidad existe de que el valor escogido al azar sea divisible entre 2? • ¿Qué probabilidad existe de que el valor elegido al azar sea divisible entre 5? 124 cuaderno micro:bit | 2023",
+  "archivo": "actividades/25-se-divide.html",
+  "slides": 10
+ },
+ {
+  "n": 26,
+  "titulo": "¡Dime hacia dónde!",
+  "pag_inicio": 126,
+  "pag_fin": 131,
+  "modalidad": null,
+  "duracion": null,
+  "nivel": null,
+  "encabezado_confiable": false,
+  "epigrafe": "«A menudo damos a los niños respuestas que recordar en lugar de problemas a resolver» — Roger Lewin OBJETIVO Construir un juego",
+  "objetivo": "Construir un juego que permita desarrollar determinadas capacidades corporales.",
+  "espacios": [
+   "Espacio de desarrollo personal y conciencia corporal · Desarrollo corporal. Velocidad de reacción",
+   "Espacio técnico tecnológico · Programación y placas programables · Taller de construcción de juegos"
+  ],
+  "contenidos": [
+   "Categoría de bloques JUEGO · Crear un objeto · Mover un objeto · Si objeto 1 tocando objeto 2",
+   "Condicionales",
+   "Desplegar información en pantalla",
+   "Escoger valores al azar",
+   "Variables",
+   "Acelerómetro · Si agitado · Si inclinado hacia la derecha · Si inclinado hacia la izquierda · Si pantalla hacia arriba · Si pantalla hacia abajo · Si logo hacia arriba · Si logo hacia abajo",
+   "Plus · Cuenta regresiva en la categoría de bloques JUEGO"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "Cinta para construir una vincha y ubicar la micro:bit en la frente 126 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Esta actividad se debe plantear en forma grupal, asignando dos estudiantes por equipo. Se sugiere llevar adelante esta propuesta al aire libre o en un lugar amplio que permita moverse sin interferir con la actividad de los demás. La solución que se brinda es solamente un ejemplo. Es importante que se experimenten y creen soluciones diferentes, además de aprovechar los errores para generar nuevos aprendizajes. Se propone programar en el entorno MakeCode. Actividad: En esta actividad se deberá crear un juego para luego ponerlo en práctica. En dicho juego participarán equipos conformados por dos integrantes, uno será guía y el otro deberá ubicar la micro:bit en su frente utilizando una vincha. Un led encendido representará al personaje del juego. En la micro:bit es posible simular su desplazamiento a lo largo de la pantalla. Orientado por la persona guía y mediante diferentes movimientos, como inclinar la cabeza, saltar u otros, quien tenga la placa en su frente deberá mover al personaje hasta llegar a la meta, que estará representada por otro led. Cada vez que se inicie una partida, tanto el personaje como la meta aparecerán en una posición aleatoria. Los equipos contarán con diez segundos para llegar a su objetivo. Ganarán un punto solamente si lo logran en ese tiempo. Todos los equipos jugarán en forma simultánea y se podrán realizar todas las partidas que deseen. Se nombrará a una persona delegada que se encargará de medir el tiempo y registrar los puntajes en una hoja. PROGRAMACIÓN La categoría JUEGO de MakeCode permite crear diferentes objetos que serán representados por led. Estos objetos podrán ser desplazados a lo largo de la pantalla, se podrá controlar la posición en la que se encuentran, será 127 posible sumar o restar puntos, tiempos y muchas cosas más. Para profundizar en el tema se puede consultar el apartado Referencias técnicas. En este caso, será necesario crear dos objetos; uno será el personaje y otro representará la meta a la que se debe llegar. Si se desea que el personaje aparezca en diferentes posiciones al inicio de cada partida, se puede utilizar el bloque escoger al azar que se encuentra en la categoría MATEMÁTICA. Este programa crea un objeto llamado «personaje» y le asigna una ubicación al azar, tanto en x como en y. Para desplazar al personaje por medio de diferentes movimientos de la placa, se puede utilizar el acelerómetro de la micro:bit. Ejemplo de solución Al inicio de cada partida, tanto el personaje como la meta aparecerán en una ubicación aleatoria. Cada vez que el jugador salte, agitará la placa y logrará que el personaje aumente en 1 su posición en y. Al inclinar la placa a la derecha aumentará en 1 el valor de x, y al inclinarla a la izquierda, lo disminuirá en 1. Cuando incline su cabeza hacia atrás, la pantalla quedará hacia arriba, por lo que el personaje disminuirá en 1 su posición en y. Si el personaje coincide con la meta, la placa desplegará una cara feliz. En ese caso, el equipo ganará un punto si lo logró dentro del tiempo establecido (10 segundos). 128 cuaderno micro:bit | 2023 PLUS: Modificar el programa de tal forma que la micro:bit controle la duración del juego. Transcurridos 10 segundos, la placa dará por terminado el juego. FICHA DE TRABAJO ¡Dime hacia dónde! Nombre del equipo Integrantes ¡PRUEBA TU VELOCIDAD DE REACCIÓN! Utilizando una micro:bit, se propone crear un juego en el que se podrá medir la velocidad de reacción. En la pantalla de la micro:bit se encenderán dos led, uno representará al personaje del juego y el otro será la meta a la que este personaje debe 129 llegar. Cada vez que se inicie una partida, tanto el personaje como la meta deberán aparecer en lugares aleatorios. Dicho personaje se desplazará en diferentes direcciones, dependiendo del movimiento que se realice con la micro:bit. Por ejemplo, al agitarla, podría deslizarse un lugar hacia abajo. Cada equipo estará conformado por dos participantes. Una persona oficiará de guía y la otra, llevando la micro:bit en su frente, deberá seguir las instrucciones brindadas por su guía. Quien lleva la placa, siguiendo las indicaciones y por medio de diferentes movimientos como inclinar la cabeza, saltar, mirar hacia arriba y otros, deberá lograr que el personaje llegue a la meta antes de que transcurran 10 segundos. Si lo logra, el equipo obtendrá un punto. Todos los equipos jugarán simultáneamente. Una persona delegada será la encargada de medir el tiempo y registrar los puntajes obtenidos. Podrán jugar todas las partidas que deseen. ¿CÓMO SERÁ TU PROGRAMA? Movimiento del personaje Bajar un lugar Subir un lugar Desplazarse un lugar hacia la derecha Desplazarse un lugar hacia la izquierda Si el personaje llega a la meta, la micro:bit desplegará ¡Programa y juega! Movimiento de la micro:bit 130 cuaderno micro:bit | 2023",
+  "archivo": "actividades/26-dime-hacia-donde.html",
+  "slides": 12
+ },
+ {
+  "n": 27,
+  "titulo": "Sorteo de flechas",
+  "pag_inicio": 132,
+  "pag_fin": 137,
+  "modalidad": "Grupal",
+  "duracion": 135,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "«La educación no es llenar un cubo, sino encender un fuego» — William Butler Yeats OBJETIVO Practicar",
+  "objetivo": "Practicar la creación de enunciados e incorporar nuevo vocabulario en inglés.",
+  "espacios": [
+   "Espacio de comunicación · Escritura de enunciados · Animales",
+   "Espacio técnico tecnológico · Programación y placas programables"
+  ],
+  "contenidos": [
+   "Desplegar flechas en pantalla",
+   "Botones",
+   "Números aleatorios",
+   "Variables (si el docente lo considera oportuno puede introducir el concepto de listas)",
+   "Condicionales",
+   "Comparación de valores",
+   "Nota para docentes · Categoría ARREGLOS · Categoría IMÁGENES"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit",
+   "Cartulina",
+   "Marcadores",
+   "Imágenes de animales",
+   "Hojas",
+   "Lápiz de escribir 132 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Se sugiere plantear esta actividad en forma grupal, con dos estudiantes por equipo. Generar un ambiente que haga posible el intercambio de ideas y el apoyo entre pares. Se propone programar en el entorno MakeCode. Actividad: Los equipos deberán programar la micro:bit para que cada vez que se presione el botón A se despliegue una flecha que señale hacia un lugar aleatorio: arriba, abajo, izquierda y derecha. Entregar a cada equipo cuatro imágenes sobre animales. Se deberá rodear la micro:bit con las imágenes recibidas, de la siguiente manera: imagen 1 imagen 2 imagen 3 imagen 4 Al presionar el botón A, se deberá escribir un enunciado en inglés sobre la imagen que resulte señalada por la flecha. Este paso se repetirá dos veces más. Cuando todos los equipos hayan terminado de escribir los tres enunciados, se podrán intercambiar las imágenes para redactar otros tres. Se propone una coevaluación de los trabajos. Finalizada esta, se recomienda leer los resultados, realizar correcciones y sugerencias. PROGRAMACIÓN: Existen varias formas de resolver el problema. A continuación se explica una de ellas. 133 Cada vez que se presione el botón A, se deberá guardar en una variable un valor obtenido al azar (comprendido entre 1 y 4). Al respecto se puede consultar el apartado Referencias técnicas). En el programa que se muestra en la siguiente imagen, el valor se guarda en una variable llamada «sorteo». Asociar cada valor numérico a una flecha diferente. Si el valor guardado en la variable es 1, se deberá desplegar la flecha asociada con ese valor, y así sucesivamente. 1 2 3 4 MakeCode ofrece imágenes prediseñadas de flechas, por lo que no será necesario diseñarlas. En la imagen se muestra la flecha denominada «Norte». Este programa despliega una flecha «Norte» si el valor guardado en la variable «sorteo» es igual a 1. 134 cuaderno micro:bit | 2023 Ejemplo de solución PLUS: Modificar la programación de la placa para que despliegue ocho flechas diferentes en lugar de cuatro. Solicitar que piensen en qué otras modificaciones le realizarían a la actividad. NOTA PARA DOCENTES: Para realizar el programa de esta actividad, también se puede utilizar un arreglo. Puede profundizarse en el tema consultando el Glosario y el apartado Referencias técnicas. FICHA DE TRABAJO Sorteo de flechas Nombre del equipo Integrantes ¡En esta actividad las flechas determinarán qué deben hacer! 135 ¡Podrán practicar la escritura de enunciados en inglés! Deberán rodear la micro:bit con las imágenes que recibieron. imagen 1 imagen 2 imagen 3 imagen 4 Al presionar el botón A, la placa desplegará en forma aleatoria una flecha que señalará alguna de las cuatro imágenes. Tendrán que escribir un enunciado sobre la imagen señalada. Luego repetirán dos veces más el paso anterior. Cuando hayan escrito los tres enunciados, pidan otras imágenes para escribir otros tres. Paso 1: Antes de construir el programa que necesitan para realizar la actividad, descubran qué hace cada uno de los siguientes programas. ¿Han descubierto algo que les pueda servir para construir su programa? 136 cuaderno micro:bit | 2023 Paso 2: ¡Es hora de programar! ¿Qué hará su programa? Paso 3: ¡Comiencen a escribir enunciados! Intercambien sus enunciados con otro equipo. Deberán evaluar el trabajo de sus pares. Para ello, completen la siguiente rúbrica: Cumplimiento de la consigna Nos faltó realizar algunos pasos Escritura de enunciados Varios errores Creatividad Escasa Sugerencias Nos faltó realizar un paso Solo algunos errores Buena",
+  "archivo": "actividades/27-sorteo-de-flechas.html",
+  "slides": 10
+ },
+ {
+  "n": 28,
+  "titulo": "Distancia",
+  "pag_inicio": 138,
+  "pag_fin": 144,
+  "modalidad": "Grupal",
+  "duracion": 90,
+  "nivel": null,
+  "encabezado_confiable": true,
+  "epigrafe": "«La educación verdadera es praxis, reflexión y acción del hombre sobre el mundo para transformarlo» — Paulo Freire 28 ACTIVIDAD D I S TA N C I",
+  "objetivo": "Promover el cuidado de la salud y la prevención de enfermedades.",
+  "espacios": [
+   "Espacio científico matemático · Acciones de prevención · Infecciones",
+   "Espacio técnico tecnológico · Programación y placas programables"
+  ],
+  "contenidos": [
+   "Desplegar datos en pantalla",
+   "Condicionales",
+   "Comparación de valores",
+   "Radio · Enviar y recibir mensaje · Intensidad de la señal"
+  ],
+  "materiales": [
+   "Entorno de programación MakeCode (computadora o tablet)",
+   "Micro:bit (una por cada estudiante) 138 cuaderno micro:bit | 2023"
+  ],
+  "desarrollo": "Forma de trabajo: Se sugiere plantear esta actividad en forma grupal. Se considera adecuado asignar cuatro estudiantes por equipo. Esta actividad puede realizarse al aire libre. Se espera que se indague y experimente con la finalidad de descubrir y apropiarse de los diferentes contenidos vinculados a la propuesta. Se propone programar en el entorno MakeCode. Actividad: Proponer la construcción, utilizando la micro:bit, de un dispositivo que se pueda llevar en la ropa e indique si otra persona se encuentra a menos de dos metros de distancia. Cada equipo programará tantas placas como integrantes tenga para que luego todos participen de las pruebas. Programación: Las placas micro:bit pueden intercambiar mensajes por medio de señales de radio. Cuando reciben un mensaje, es posible saber qué tan cerca se encuentra el emisor, dependiendo de la intensidad de la señal recibida. Programando una micro:bit que emita mensajes y otra que despliegue la intensidad con que los recibe, será posible realizar mediciones de distancia y saber cuál es la intensidad de la señal cuando el emisor se encuentra a menos de dos metros. Para profundizar en este tema puede consultarse el apartado Referencias técnicas. EJEMPLO DE SOLUCIÓN En esta solución todos deberán llevar una micro:bit en su ropa. Quienes tengan una placa con el programa emisor siempre enviarán un valor numérico y no sabrán si alguien se ha acercado. Quienes tengan el programa receptor podrán saber cuándo algún emisor está a menos de dos metros. Si reciben un mensaje con intensidad de señal mayor a -70, la placa desplegará una cruz como alerta. En caso contrario mostrará un signo de verificación indicando que todo está en orden. 139 emisor receptor PLUS: Modificar el dispositivo descrito, de tal forma que, cada vez que el usuario se encuentre a menos de dos metros de otra persona, también reproduzca un sonido. Al respecto puede consultarse información útil en el apartado Referencias técnicas. NOTA PARA DOCENTES: Con este mismo programa se puede organizar una búsqueda de tesoros. Cada tesoro debe estar representado por una micro:bit, que emitirá un mensaje, por ejemplo, «Tesoro 1». Las placas de los buscadores medirán la intensidad de la señal desplegando diferentes mensajes en la pantalla. FICHA DE TRABAJO Distancia Nombre del equipo Integrantes Si bien todos sabemos que se recomienda mantener distancia con otras personas para cuidar nuestra salud, en algunas ocasiones es difícil calcularla. 140 cuaderno micro:bit | 2023 Les proponemos crear un dispositivo que puedan llevar en la ropa y muestre el nombre de las personas que se encuentran a menos de 2 metros de ustedes. La micro:bit es una buena herramienta para resolver este desafío. Paso 1: Experimentar. ¿Qué hacen los siguientes programas? Opciones para la placa emisora Opciones para la placa receptora Paso 2: Analizar la información. Midan distancias, comparen valores y completen la tabla siguiente. Distancia entre emisor y receptor Intensidad de señal Paso 3: Pensar. ¿Qué debe hacer el programa? Paso 4: ¡Es hora de construir el programa! 141",
+  "archivo": "actividades/28-distancia.html",
+  "slides": 10
+ }
+]

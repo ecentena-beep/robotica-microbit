@@ -8,6 +8,8 @@ doble clic en `index.html`.
 ```
 index.html      ← Módulo 1: la placa micro:bit (29 slides)
 modulo2.html    ← Módulo 2: tipos de proyectos (32 slides)
+actividades.html← menú de las 28 actividades del cuaderno
+actividades/    ← una página por actividad (GENERADAS, no editar a mano)
 css/estilos.css ← todo el diseño (colores, tamaños, layouts)
 js/app.js       ← navegación (no hay que tocarlo para agregar contenido)
 media/          ← videos locales (NO se publican; ver nota abajo)
@@ -174,6 +176,29 @@ Los niveles son `baja`, `intermedia` y `avanzada`.
 
 Todo está al principio de `css/estilos.css`, en `:root`. Cambiando `--acento` cambia el
 color de títulos, viñetas, bordes y barra de progreso en todo el sitio.
+
+## Las páginas de actividades
+
+Las 28 páginas de `actividades/` y el menú `actividades.html` **no se editan a mano**:
+están generadas a partir del PDF del cuaderno con dos scripts de Python
+(`generar.py` y `menu.py`). Si hay que cambiar algo, se cambia en el script y se
+regenera todo, si no el próximo cambio pisa las correcciones.
+
+Los datos de cada actividad viven en `actividades.json`: número, título, modalidad,
+duración, nivel, objetivo, espacios curriculares, contenidos micro:bit, materiales y
+desarrollo.
+
+### Datos que faltan
+
+El PDF original dibuja **todas las variantes superpuestas** de modalidad y duración, y
+tapa las que no corresponden pintándolas de blanco. Al extraer el texto salen las dos
+mezcladas («GInrduipvaidlual»), así que en 9 actividades no se pudo saber cuál es:
+**4, 5, 6, 7, 8, 9, 24, 25 y 26**. Esas aparecen marcadas con «⚠ a confirmar».
+
+El **nivel de dificultad** (baja / intermedia / avanzada) está en el PDF como una línea
+de color, no como texto, y no se pudo leer para ninguna actividad. El campo `nivel` de
+`actividades.json` está en `null`; cuando se complete, el chip de color aparece solo en
+el menú y en la portada de cada actividad.
 
 ## Módulos siguientes
 

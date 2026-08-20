@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micro:pedaleando en Scratch — Actividad 24</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body data-deck="actividad-24">
+
+<div id="barra-progreso"></div>
+
+<main id="escenario">
+  <section class="slide portada" data-titulo="Portada">
+    <span class="etiqueta">Actividad 24</span>
+    <h1>Micro:pedaleando en Scratch</h1>
+    <div class="meta" style="justify-content:center;"><span class="dato" title="El PDF original dibuja las variantes superpuestas y no permite leer cuál corresponde">⚠ A confirmar</span></div>
+    
+  </section>
+  <section class="slide" data-titulo="Objetivo">
+    <span class="etiqueta">Actividad 24</span>
+    <h2>¿Para qué esta actividad?</h2>
+    <p class="grande">S Incentivar la programación de un videojuego que permita integrar lo aprendido sobre la circulación en bicicleta por la vía pública.</p>
+  </section>
+  <section class="slide" data-titulo="Contenidos">
+    <span class="etiqueta">Actividad 24</span>
+    <h2>Qué se trabaja</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>Espacios curriculares</h3>
+        <ul class="limpia"><li>Espacio Ciencias Sociales y Humanidades · Las normas de tránsito: la responsabilidad y seguridad en la vía pública · Las normas básicas de circulación para peatones y birrodados</li></ul>
+      </div>
+      <div>
+        <h3>Contenidos micro:bit</h3>
+        <ul class="limpia"><li>Inclinar hacia</li><li>Mostrar</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="slide" data-titulo="Materiales">
+    <span class="etiqueta">Actividad 24</span>
+    <h2>Qué hay que conseguir</h2>
+    <ul class="materiales"><li>Computadora con Windows y Bluetooth</li><li>Programa Scratch 3.0</li><li>Placa micro:bit</li><li>Cartón</li><li>Cinta papel 116 cuaderno micro:bit | 2023</li></ul>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (1/8)">
+    <span class="etiqueta">Desarrollo (1/8)</span>
+    <h2>Cómo se hace</h2>
+    <p>Para profundizar lo trabajado en la actividad 31 «Ciclistas que se cuidan», del proyecto 2 «El tránsito en tus manos», se propondrá la creación de un videojuego en Scratch, en el cual una persona ciclista transite con su bicicleta por la vía pública.</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (2/8)">
+    <span class="etiqueta">Desarrollo (2/8)</span>
+    <h2>Cómo se hace</h2>
+    <p>La siguiente información podrá ser de utilidad para profundizar conocimientos sobre los espacios de la vía pública que están habilitados para el tránsito seguro de bicicletas, consultar: • Intendencia de Montevideo, movilidad, tipos de infraestructura • Intendencia de Montevideo, Mapa Interactivo Generar una instancia previa de diseño permitirá intercambiar ideas y establecer acuerdos sobre: • Qué infraestructura se representará y cuáles son sus características (zona 30, ciclovía sin separador físico, ciclovía protegida, bicisenda); • Qué normas debe cumplir la persona ciclista para transitar correc- tamente (señalizaciones verticales u horizontales, uso del casco, entre otras); • Qué obstáculos podrá enfrentar la persona ciclista (elementos en el camino, peatones que cruzan, etc.) y cómo incidirán en un posible puntaje; • Cómo se simulará el movimiento (qué objetos se mueven, cuáles quedan estáticos, para qué se mueven).</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (3/8)">
+    <span class="etiqueta">Desarrollo (3/8)</span>
+    <h2>Cómo se hace</h2>
+    <p>A partir de las ideas de cada estudiante, se podrá proponer integrar al videojuego el uso de la micro:bit. Tal como se planteó en la actividad 31 «Ciclistas que se cuidan», la placa cuenta con un acelerómetro que permite identificar si está inclinada hacia un lado u otro. Mediante su uso, cada participante podrá «transformarse» en la persona ciclista y realizar acciones físicas que inicien el movimiento en la pantalla. NOTA PARA DOCENTES: La creación de un manubrio de cartón sobre el cual se pueda colocar la micro:bit hará más ágil el juego. 117 Para iniciar la programación en Scratch 3.0 cada estudiante deberá conectar la micro:bit siguiendo las indicaciones dadas en las Referencias técnicas (conectar la placa micro:bit a Scratch 3.0).</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (4/8)">
+    <span class="etiqueta">Desarrollo (4/8)</span>
+    <h2>Cómo se hace</h2>
+    <p>Luego se deberán identificar los diferentes elementos del videojuego para realizar su diseño y programación en forma ordenada. A continuación, se detalla un posible ejemplo de videojuego, en el cual un ciclista transita por una bicisenda de doble circulación. • ESCENARIO. Representará el pasto ubicado a los lados de la bicisenda, sin movimiento. No está asociado a ningún código. • OBJETO BICISENDA. Con la opción «pinta» se debe dibujar la bicisenda. Se recomienda ampliarla en forma previa, escribiendo un valor superior a 100 en la opción «tamaño». Esto permitirá que la bicisenda pueda moverse sin llegar rápidamente al final de esta. Es conveniente fijar al inicio de la programación la posición del objeto bicisenda en las coordenadas x-y.</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (5/8)">
+    <span class="etiqueta">Desarrollo (5/8)</span>
+    <h2>Cómo se hace</h2>
+    <p>El movimiento se simulará cambiando la posición del objeto en el eje y. Cuando la bicisenda llegue a cierta ubicación en dicho eje (en el ejemplo y = -227) volverá al punto de inicio. OBJETO PIEDRA. Este objeto se puede dibujar u obtener de la galería. Será un obstáculo que la persona deberá evitar para no perder el juego. Para visibilizar el puntaje se debe crear la variable «puntaje» y establecer su valor inicial, que irá disminuyendo cuando la persona no logre evadir la piedra. Luego se simulará el movimiento de la piedra, que tendrá una programación similar al movimiento de la bicisenda. Para que la piedra aparezca en distintos lugares, se definirán posiciones aleatorias para las coordenadas x-y.</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (6/8)">
+    <span class="etiqueta">Desarrollo (6/8)</span>
+    <h2>Cómo se hace</h2>
+    <p>A continuación, se programará que cada vez que el objeto ciclista toque el objeto piedra se descuente 1 punto sumando -1. 118 cuaderno micro:bit | 2023 Por último, cuando la variable «puntaje» = 0, debe enviar un mensaje para mostrar el objeto GAME OVER y detener el juego. OBJETO GAME OVER. Este objeto se puede dibujar. Se debe esconder el objeto al iniciar el juego y mostrarlo al recibir el mensaje de fin de juego cuando la variable «puntaje» = 0. OBJETO CICLISTA. Se puede utilizar una imagen de Internet o dibujar el objeto. Es conveniente fijar su posición en las coordenadas x-y, al inicio de la programación. El uso del bloque al inclinar hacia de la categoría m­ icro:bit permitirá definir en qué dirección se inclina la placa.</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (7/8)">
+    <span class="etiqueta">Desarrollo (7/8)</span>
+    <h2>Cómo se hace</h2>
+    <p>Al dibujar una flecha en el bloque mostrar se favorece la visualización del movimiento. Para lograr que la persona ciclista se desplace hacia la derecha o la izquierda se deberá definir un valor a sumar en el eje x (en el ejemplo, se suma -50 para ir hacia la izquierda y 50 para ir hacia la derecha). 119 Es importante recordar que el diseño del videojuego dependerá de las decisiones tomadas por la dupla de estudiantes. ¿SABÍAS QUE... hay muchísimos tipos de videojuegos y con objetivos muy diferentes?</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (8/8)">
+    <span class="etiqueta">Desarrollo (8/8)</span>
+    <h2>Cómo se hace</h2>
+    <p>Pero la creación de uno implica muchísimas competencias que deben considerarse: promueve el trabajo en equipo, exige el diseño y prototipado de la idea, definición de roles entre los miembros del grupo, el ensayo y error como parte del proceso y la satisfacción de la tarea lograda cuando se comparte con otros. PLUS: Para continuar mejorando la propuesta del juego se puede agregar la opción de descontar puntos si la persona ciclista circula por la otra vía de la bicisenda o si se sale del camino.</p>
+  </section>
+  <section class="slide" data-titulo="Autoevaluación">
+    <span class="etiqueta">Para cerrar</span>
+    <h2>Autoevaluación</h2>
+    <p>Evaluá tu trabajo del <strong>1 al 5</strong> (1 el más bajo, 5 el más alto):</p>
+    <ul class="limpia" style="font-size:calc(var(--u)*1.05);">
+      <li>La actividad fue interesante y me motivó.</li>
+      <li>Pedí ayuda para salir adelante cuando no sabía resolverlo.</li>
+      <li>Busqué información por mi cuenta.</li>
+      <li>Logré programar la micro:bit.</li>
+      <li>Aprendí y conocí nuevas funciones de la placa.</li>
+    </ul>
+    <p style="margin-top:1.4em;">
+      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todas las actividades</a>
+    </p>
+  </section>
+</main>
+
+<button class="zona-clic izq" aria-label="Slide anterior"></button>
+<button class="zona-clic der" aria-label="Slide siguiente"></button>
+
+<div id="titulo-deck"><a href="../actividades.html" style="color:inherit;">&larr; Todas las actividades</a></div>
+
+<div id="controles">
+  <span id="contador">1 / 1</span>
+  <button class="btn" id="btn-indice"   title="Índice (O)"            aria-label="Índice">☰</button>
+  <button class="btn" id="btn-anterior" title="Anterior (&larr;)"     aria-label="Anterior">‹</button>
+  <button class="btn" id="btn-siguiente" title="Siguiente (&rarr;)"   aria-label="Siguiente">›</button>
+  <button class="btn" id="btn-pantalla" title="Pantalla completa (F)" aria-label="Pantalla completa">⛶</button>
+</div>
+
+<div id="indice"><h2>Índice de la actividad</h2><ul id="lista-indice"></ul></div>
+
+<div id="ayuda"><div class="panel"><h2>Atajos de teclado</h2><dl>
+<dt><kbd>&rarr;</kbd> <kbd>espacio</kbd></dt><dd>Siguiente</dd>
+<dt><kbd>&larr;</kbd></dt><dd>Anterior</dd>
+<dt><kbd>O</kbd></dt><dd>Índice</dd>
+<dt><kbd>F</kbd></dt><dd>Pantalla completa</dd>
+<dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
+</dl></div></div>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

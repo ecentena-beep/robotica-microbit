@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dado de palabras — Actividad 23</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body data-deck="actividad-23">
+
+<div id="barra-progreso"></div>
+
+<main id="escenario">
+  <section class="slide portada" data-titulo="Portada">
+    <span class="etiqueta">Actividad 23</span>
+    <h1>Dado de palabras</h1>
+    <div class="meta" style="justify-content:center;"><span class="dato">🙋 Individual</span> <span class="dato">⏱ 45 minutos</span></div>
+    
+  </section>
+  <section class="slide" data-titulo="Objetivo">
+    <span class="etiqueta">Actividad 23</span>
+    <h2>¿Para qué esta actividad?</h2>
+    <p class="grande">S Incentivar el uso de la tecnología para crear un juego donde se demuestren los conocimientos adquiridos sobre formas no personales del verbo.</p>
+  </section>
+  <section class="slide" data-titulo="Contenidos">
+    <span class="etiqueta">Actividad 23</span>
+    <h2>Qué se trabaja</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>Espacios curriculares</h3>
+        <ul class="limpia"><li>Espacio de comunicación · Las formas no personales del verbo: infinitivo, gerundio, participio</li></ul>
+      </div>
+      <div>
+        <h3>Contenidos micro:bit</h3>
+        <ul class="limpia"><li>Al iniciar, establecer lista de texto para matriz de..</li><li>Lista obtener el valor en 0</li><li>Si agitado</li><li>Crear variable</li><li>Escoger al azar</li><li>Mostrar cadena</li><li>Al presionarse botón A, B o A+B</li><li>Condicional si verdadero entonces</li><li>Comparación «0 = 0»</li><li>Mostrar ícono</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="slide" data-titulo="Materiales">
+    <span class="etiqueta">Actividad 23</span>
+    <h2>Qué hay que conseguir</h2>
+    <ul class="materiales"><li>Placa micro:bit</li><li>Entorno de programación MakeCode (computadora)</li><li>Cuaderno para leer y escribir en sexto, CEIP 111</li></ul>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (1/6)">
+    <span class="etiqueta">Desarrollo (1/6)</span>
+    <h2>Cómo se hace</h2>
+    <p>A partir de la propuesta de la actividad de la página 22 del Cuaderno para leer y escribir en sexto (donde se debe completar una tabla con las formas no personales de los verbos destacadas en los afiches), se propondrá realizar un juego con infinitivos, gerundios y participios. Mediante la lectura de un nuevo texto propuesto, cada estudiante podrá buscar estas formas verbales y crear tres listas de palabras con las formas no personales del verbo (lista 1: infinitivos, lista 2: gerundios, lista 3: participios). Luego deberá ingresar las palabras a la micro:bit y programar la placa para mostrar al azar cada una de ellas.</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (2/6)">
+    <span class="etiqueta">Desarrollo (2/6)</span>
+    <h2>Cómo se hace</h2>
+    <p>Al jugar, deberá presionar un botón para indicar a qué categoría corresponde la palabra presentada y la micro:bit verificará si la respuesta es o no correcta. A continuación, se desarrollará el ejemplo de programación utilizando las palabras presentes en la tabla de la página ya citada. En la categoría ARREGLOS (ver Glosario), se seleccionará el bloque establecer lista de texto para matriz de … y se lo ubicará dentro del bloque al iniciar de la categoría BÁSICO. Al presionar sobre lista de texto se desplegará la opción «nueva variable». Allí se deberá crear la variable «infinitivo» (corresponde a la lista de palabras 1) y sustituir las letras a, b, c por las palabras correspondientes a dicha categoría.</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (3/6)">
+    <span class="etiqueta">Desarrollo (3/6)</span>
+    <h2>Cómo se hace</h2>
+    <p>El mismo procedimiento se realizará para «gerundio» (lista de palabras 2) y «participio» (lista de palabras 3). 112 cuaderno micro:bit | 2023 Para generar el dado de palabras se utilizará el bloque si agitado de la categoría ENTRADA. Se creará una nueva variable denominada «dado» definiéndose la elección de las listas de palabras (infinitivo, gerundio o participio) mediante el bloque escoger al azar de 1 a 3. Se programará luego la elección al azar de la palabra a mostrar de cada una de las listas. En la siguiente imagen se ejemplifica la programación para mostrar las palabras correspondientes a la lista 1, «infinitivo». En dicho ejemplo se coloca un condicional y se sustituye verdadero por un bloque de comparación «0 = 0» de la categoría LÓGICA.</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (4/6)">
+    <span class="etiqueta">Desarrollo (4/6)</span>
+    <h2>Cómo se hace</h2>
+    <p>El primer 0 se sustituye por la variable «dado» y el segundo 0 por uno de los valores de lista de palabras (1 para «infinitivo», 2 para «gerundio» y 3 para «participio»). Para programar la palabra a mostrar se deberá seleccionar el bloque mostrar cadena sustituyendo el texto por el bloque lista obtener el valor en 0. 113 La variable «lista» se sustituye por «infinitivo» y en lugar del 0 se coloca el bloque escoger al azar. Es importante considerar que dentro del arreglo correspondiente a «infinitivo» hay tres elementos ordenados a partir de la posición cero. Volver Posición 0 Descubrir Posición 1 Armar Posición 2 Por esta razón, al editar el bloque escoger al azar se establece un rango de 0 a 2. El «infinitivo» será seleccionado al azar de la posición 0, 1 o 2.</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (5/6)">
+    <span class="etiqueta">Desarrollo (5/6)</span>
+    <h2>Cómo se hace</h2>
+    <p>Como muestra la siguiente imagen, el procedimiento realizado para «infinitivo» se repite para «gerundio» y «participio». Finalmente, se programarán los botones para validar la respuesta. Si se considera que es un infinitivo (1), se debe apretar el botón A, si es gerundio (2) el botón B y si es participio (3) el botón A + B. Si se presiona el botón correcto en relación con la palabra visualizada, la placa mostrará un tic y si no una cruz, como se observa en la imagen: 114 cuaderno micro:bit | 2023 ¿SABÍAS QUE... en español hay formas verbales que admiten dos participios? Por ejemplo: imprimir (imprimido - impreso); freír (freído - frito); atender (atento - atendido); despertar (despertado - despierto).</p>
+  </section>
+  <section class="slide" data-titulo="Desarrollo (6/6)">
+    <span class="etiqueta">Desarrollo (6/6)</span>
+    <h2>Cómo se hace</h2>
+    <p>Fuente: Enciclopedia online de ejemplos: Verbos en participio PLUS: Esta propuesta podría adaptarse a temas de distintas áreas del conocimiento. Por ejemplo, podrían generarse arreglos correspondientes a otros tipos de palabras (sustantivos, adjetivos y verbos), números que sean divisibles entre..., números que sean múltiplos de..., elementos de la célula animal y vegetal, entre otros.</p>
+  </section>
+  <section class="slide" data-titulo="Autoevaluación">
+    <span class="etiqueta">Para cerrar</span>
+    <h2>Autoevaluación</h2>
+    <p>Evaluá tu trabajo del <strong>1 al 5</strong> (1 el más bajo, 5 el más alto):</p>
+    <ul class="limpia" style="font-size:calc(var(--u)*1.05);">
+      <li>La actividad fue interesante y me motivó.</li>
+      <li>Pedí ayuda para salir adelante cuando no sabía resolverlo.</li>
+      <li>Busqué información por mi cuenta.</li>
+      <li>Logré programar la micro:bit.</li>
+      <li>Aprendí y conocí nuevas funciones de la placa.</li>
+    </ul>
+    <p style="margin-top:1.4em;">
+      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todas las actividades</a>
+    </p>
+  </section>
+</main>
+
+<button class="zona-clic izq" aria-label="Slide anterior"></button>
+<button class="zona-clic der" aria-label="Slide siguiente"></button>
+
+<div id="titulo-deck"><a href="../actividades.html" style="color:inherit;">&larr; Todas las actividades</a></div>
+
+<div id="controles">
+  <span id="contador">1 / 1</span>
+  <button class="btn" id="btn-indice"   title="Índice (O)"            aria-label="Índice">☰</button>
+  <button class="btn" id="btn-anterior" title="Anterior (&larr;)"     aria-label="Anterior">‹</button>
+  <button class="btn" id="btn-siguiente" title="Siguiente (&rarr;)"   aria-label="Siguiente">›</button>
+  <button class="btn" id="btn-pantalla" title="Pantalla completa (F)" aria-label="Pantalla completa">⛶</button>
+</div>
+
+<div id="indice"><h2>Índice de la actividad</h2><ul id="lista-indice"></ul></div>
+
+<div id="ayuda"><div class="panel"><h2>Atajos de teclado</h2><dl>
+<dt><kbd>&rarr;</kbd> <kbd>espacio</kbd></dt><dd>Siguiente</dd>
+<dt><kbd>&larr;</kbd></dt><dd>Anterior</dd>
+<dt><kbd>O</kbd></dt><dd>Índice</dd>
+<dt><kbd>F</kbd></dt><dd>Pantalla completa</dd>
+<dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
+</dl></div></div>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

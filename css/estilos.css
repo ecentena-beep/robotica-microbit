@@ -42,6 +42,125 @@ body{
 }
 
 /* ============================================================
+   PÁGINA NORMAL (menú de actividades)
+   El deck bloquea el scroll; estas páginas lo necesitan.
+   ============================================================ */
+
+body.pagina{ overflow:auto; height:auto; min-height:100%; }
+
+.envoltorio{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 5vh 5vw 8vh;
+}
+
+.encabezado-menu{ margin-bottom: 2.5rem; }
+.encabezado-menu h1{
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin-bottom:.35em;
+  background: linear-gradient(100deg, var(--texto) 20%, var(--acento) 65%, var(--acento-2) 100%);
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent;
+}
+.encabezado-menu p{ color: var(--texto-suave); max-width:70ch; line-height:1.65; }
+.migas{
+  font-size:.85rem;
+  color: var(--texto-suave);
+  margin-bottom:1.6rem;
+}
+.migas a{ color: var(--acento); text-decoration:none; }
+.migas a:hover{ text-decoration:underline; }
+
+/* ---------- Filtros ---------- */
+.filtros{
+  display:flex; flex-wrap:wrap; gap:.5rem; align-items:center;
+  margin: 2rem 0 1.2rem;
+  padding-bottom:1.2rem;
+  border-bottom:1px solid var(--borde);
+}
+.filtros .titulo-filtro{
+  font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;
+  color: var(--texto-suave); margin-right:.4rem;
+}
+.filtro{
+  font-family:inherit;
+  font-size:.88rem;
+  border:1px solid var(--borde);
+  background: var(--superficie);
+  color: var(--texto);
+  border-radius:999px;
+  padding:.45em 1.1em;
+  cursor:pointer;
+  transition: border-color .18s, background .18s, color .18s;
+}
+.filtro:hover{ border-color: var(--acento); }
+.filtro[aria-pressed="true"]{
+  background: var(--acento);
+  border-color: var(--acento);
+  color:#06091a;
+  font-weight:600;
+}
+#recuento{ color: var(--texto-suave); font-size:.88rem; margin-left:auto; }
+
+/* ---------- Rejilla de actividades ---------- */
+.rejilla-actividades{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap:1.2rem;
+}
+.ficha{
+  display:flex; flex-direction:column;
+  background: var(--superficie);
+  border:1px solid var(--borde);
+  border-radius: var(--radio);
+  padding:1.4em 1.5em;
+  text-decoration:none;
+  color:inherit;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.ficha:hover{
+  transform: translateY(-4px);
+  border-color: var(--acento);
+  background: rgba(53,224,200,.06);
+}
+.ficha[hidden]{ display:none; }
+.ficha .numero{
+  font-variant-numeric: tabular-nums;
+  font-size:.8rem;
+  letter-spacing:.14em;
+  color: var(--acento);
+  margin-bottom:.5em;
+}
+.ficha h3{
+  font-size:1.12rem;
+  line-height:1.25;
+  color: var(--texto);
+  margin-bottom:.7em;
+}
+.ficha .resumen{
+  font-size:.9rem;
+  line-height:1.55;
+  color: var(--texto-suave);
+  margin-bottom:1em;
+  flex:1;
+}
+.ficha .pie{
+  display:flex; flex-wrap:wrap; gap:.4rem; align-items:center;
+  margin-top:auto;
+}
+.etiqueta-chica{
+  font-size:.74rem;
+  border:1px solid var(--borde);
+  border-radius:999px;
+  padding:.3em .8em;
+  color: var(--texto-suave);
+}
+.etiqueta-chica.dudosa{ border-color: var(--alerta); color: var(--alerta); }
+.ficha .nivel{ font-size:.68rem; padding:.32em .9em; }
+
+/* ============================================================
    ESCENARIO Y SLIDES
    ============================================================ */
 
@@ -84,6 +203,13 @@ body{
   line-height:1.05;
   letter-spacing:-.02em;
   margin-bottom: .4em;
+}
+
+/* Títulos largos sin espacios (p. ej. «Micro:pedaleando») se parten
+   en vez de desbordar la pantalla en celulares */
+.slide h1, .slide h2, .slide h3, .ficha h3{
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .slide h2{
   font-size: calc(var(--u) * 2.1);

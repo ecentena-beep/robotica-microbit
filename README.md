@@ -5,6 +5,7 @@ presentación navegable.
 
 - **Módulo 1 — La placa programable micro:bit** · 29 slides
 - **Módulo 2 — Tipos de proyectos** · 32 slides
+- **Las 28 actividades** · una ficha navegable por actividad, con menú y filtros
 
 ## Ver el sitio
 
@@ -32,6 +33,13 @@ También funciona sin conexión: descargá el repositorio y abrí `index.html`.
 - Proyecto «Pulseras que nos cuidan»: temperatura, pasos, alimentación e hidratación
 - Seis ideas cortas en video de Ceibal STEM
 - Rúbrica de evaluación y coevaluación del equipo
+
+## Las 28 actividades
+
+El *Cuaderno de actividades micro:bit* separado en fichas independientes. El menú
+([actividades.html](actividades.html)) permite filtrar por modalidad y entrar a cualquiera
+sin haber hecho las anteriores. Cada ficha trae objetivo, espacios curriculares,
+contenidos micro:bit, materiales, desarrollo y autoevaluación.
 
 ## Cómo se usa
 
