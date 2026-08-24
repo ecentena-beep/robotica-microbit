@@ -6,8 +6,10 @@ doble clic en `index.html`.
 ## Estructura
 
 ```
-index.html      ← Módulo 1: la placa micro:bit (29 slides)
-modulo2.html    ← Módulo 2: tipos de proyectos (32 slides)
+index.html      ← menú principal del sitio
+modulo1.html    ← Módulo 1: la placa micro:bit (29 slides)
+modulo2.html    ← Módulo 2: tipos de proyectos (14 slides)
+comunidad.html  ← Módulo 3: Comunidad Robótica de Betel (el blog)
 actividades.html← menú de las 28 actividades del cuaderno
 actividades/    ← una página por actividad (GENERADAS, no editar a mano)
 css/estilos.css ← todo el diseño (colores, tamaños, layouts)
@@ -177,6 +179,45 @@ Los niveles son `baja`, `intermedia` y `avanzada`.
 Todo está al principio de `css/estilos.css`, en `:root`. Cambiando `--acento` cambia el
 color de títulos, viñetas, bordes y barra de progreso en todo el sitio.
 
+## Comunidad Robótica de Betel (Módulo 3)
+
+El blog donde los estudiantes cuentan sus proyectos. Antes de escribir tienen que poner
+nombre y apellido, que queda firmando la publicación y guardado en su navegador para no
+tener que repetirlo.
+
+### Cómo está resuelto el guardado
+
+GitHub Pages sirve archivos estáticos: **no puede guardar** lo que escriben. Por eso
+`comunidad.html` tiene arriba de todo un bloque `CONFIG` con dos modos:
+
+- **`local`** (el que está puesto): guarda en el navegador de cada uno. Cada estudiante ve
+  solo lo suyo. La página muestra un aviso naranja diciéndolo. Sirve para probar y para
+  que escriban el borrador.
+- **`compartido`**: manda cada publicación a un formulario de Google y muestra las que
+  vos aprobaste en una planilla.
+
+### Pasar a modo compartido
+
+1. Creá un formulario de Google con cinco preguntas de texto, en este orden:
+   **Nombre**, **Apellido**, **Titulo**, **Texto**, **Enlace**.
+2. En el formulario, abrí «Vista previa», clic derecho → «Inspeccionar», y buscá el
+   atributo `name="entry.XXXXXXX"` de cada campo. Anotá los cinco números.
+3. La URL para enviar es la del formulario cambiando `/viewform` por `/formResponse`.
+4. En «Respuestas» → «Vincular a Hojas de cálculo». En esa planilla agregá una columna
+   más y usala para marcar lo aprobado.
+5. Creá una segunda hoja que traiga solo lo aprobado, y publicala:
+   Archivo → Compartir → **Publicar en la web** → esa hoja → formato **CSV**.
+6. Pegá todo en el `CONFIG` de `comunidad.html` y poné `modo: "compartido"`.
+
+La planilla es tu **filtro de moderación**: nada aparece en el sitio hasta que lo marcás.
+
+### Dos cosas a decidir antes de abrirlo a los estudiantes
+
+- **Nombre y apellido completos en un sitio público.** Son menores. Se puede pedir nombre
+  y la inicial del apellido, o un apodo de clase. El formulario y el sitio funcionan igual.
+- **Moderación.** Con el modo compartido nada se publica sin tu aprobación. Si algún día
+  se conecta algo que publique directo, conviene mantener ese paso.
+
 ## Las páginas de actividades
 
 Las 28 páginas de `actividades/` y el menú `actividades.html` **no se editan a mano**:
@@ -202,9 +243,17 @@ el menú y en la portada de cada actividad.
 
 ## Módulos siguientes
 
-Para un módulo nuevo, copiá `modulo2.html` a `modulo3.html` y cambiá el
-`data-deck="microbit-modulo3"` del `<body>` — así cada deck recuerda su propia posición
-por separado. Después agregá el enlace en la slide de cierre del módulo anterior.
+Para un módulo nuevo, copiá `modulo2.html` a `modulo4.html` y cambiá el
+`data-deck="microbit-modulo4"` del `<body>` — así cada deck recuerda su propia posición
+por separado. Después agregá su tarjeta en `index.html`.
+
+## Caché del navegador
+
+`index.html` y compañía enlazan los archivos como `css/estilos.css?v=2` y `js/app.js?v=2`.
+Si cambiás alguno de esos dos archivos, **subí el número de versión en todas las páginas**,
+si no los navegadores que ya entraron siguen usando la copia vieja. En `herramientas/` hay
+un `python generar.py && python menu.py` que se encarga de las 28 actividades; el resto
+son cinco archivos y se hace a mano.
 
 ## Los videos
 

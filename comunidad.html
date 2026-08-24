@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comunidad Robótica de Betel</title>
+<link rel="stylesheet" href="css/estilos.css?v=2">
+</head>
+<body class="pagina">
+
+<div class="envoltorio">
+
+  <nav class="migas">
+    <a href="index.html">Menú principal</a> ·
+    <a href="modulo1.html">Módulo 1</a> ·
+    <a href="modulo2.html">Módulo 2</a> ·
+    <span>Comunidad</span>
+  </nav>
+
+  <header class="encabezado-menu">
+    <p style="font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; color:var(--acento); margin-bottom:1.2em;">
+      Módulo 3
+    </p>
+    <h1>Comunidad Robótica de Betel</h1>
+    <p>
+      El lugar para mostrar lo que estás construyendo. Contá tu proyecto: qué problema
+      resuelve, cómo lo armaste, qué se te complicó y cómo lo resolviste.
+      Lo que a vos te costó, a otro compañero le va a servir.
+    </p>
+  </header>
+
+  <!-- Aviso que aparece solo si la página todavía no está conectada
+       a un almacenamiento compartido -->
+  <div id="aviso-local" class="destacado aviso" hidden
+       style="max-width:none; margin:2rem 0;">
+    <h3 style="margin-top:0;">📌 Modo de prueba</h3>
+    <p style="margin:0;">
+      Todavía no está conectada la parte compartida, así que
+      <strong>lo que escribas se guarda solo en este dispositivo</strong>: tus compañeros
+      no lo van a ver. Sirve para ir escribiendo y para probar cómo funciona.
+    </p>
+  </div>
+
+  <!-- ============================================================
+       ZONA DE ESCRITURA
+       ============================================================ -->
+  <section id="zona-escribir" style="margin: 2.5rem 0 3rem;">
+
+    <!-- Paso 1: identificarse -->
+    <div id="paso-identidad" class="caja-form">
+      <h2>Antes de escribir, decinos quién sos</h2>
+      <p class="ayuda-form">
+        Tu nombre aparece firmando la publicación, para que se sepa de quién es el proyecto.
+      </p>
+      <div class="fila-form">
+        <label>
+          <span>Nombre</span>
+          <input type="text" id="campo-nombre" autocomplete="given-name" maxlength="40" placeholder="Tu nombre">
+        </label>
+        <label>
+          <span>Apellido</span>
+          <input type="text" id="campo-apellido" autocomplete="family-name" maxlength="40" placeholder="Tu apellido">
+        </label>
+      </div>
+      <p id="error-identidad" class="error-form" hidden></p>
+      <button class="boton" id="btn-identificar">Continuar</button>
+    </div>
+
+    <!-- Paso 2: escribir -->
+    <div id="paso-publicar" class="caja-form" hidden>
+      <div class="barra-identidad">
+        <span>Escribiendo como <strong id="quien-soy"></strong></span>
+        <button class="enlace-boton" id="btn-cambiar">No soy yo</button>
+      </div>
+
+      <h2>Contá tu proyecto</h2>
+
+      <label class="campo-largo">
+        <span>Título</span>
+        <input type="text" id="campo-titulo" maxlength="90" placeholder="Ej.: Regador automático para las plantas del liceo">
+      </label>
+
+      <label class="campo-largo">
+        <span>¿Qué construiste y cómo?</span>
+        <textarea id="campo-texto" rows="7" maxlength="2000"
+          placeholder="Qué problema resuelve, qué sensores y actuadores usaste, qué se te complicó y cómo lo resolviste…"></textarea>
+        <span class="contador-texto"><span id="contador-caracteres">0</span> / 2000</span>
+      </label>
+
+      <label class="campo-largo">
+        <span>Enlace a tu programa <span class="opcional">(opcional)</span></span>
+        <input type="url" id="campo-enlace" maxlength="300" placeholder="https://makecode.microbit.org/...">
+      </label>
+
+      <p id="error-publicar" class="error-form" hidden></p>
+      <button class="boton" id="btn-publicar">Publicar</button>
+      <p id="exito-publicar" class="exito-form" hidden></p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PUBLICACIONES
+       ============================================================ -->
+  <section>
+    <div class="filtros" style="margin-top:0;">
+      <span class="titulo-filtro">Publicaciones</span>
+      <span id="recuento-posts"></span>
+    </div>
+
+    <div id="lista-posts" class="rejilla-actividades"></div>
+
+    <p id="sin-posts" class="vacio" hidden>
+      Todavía no hay publicaciones. Podés ser la primera persona en contar su proyecto.
+    </p>
+  </section>
+
+</div>
+
+<script>
+/* ============================================================
+   Comunidad Robótica de Betel
+   ------------------------------------------------------------
+   El sitio es estático (GitHub Pages), así que por sí solo no puede
+   guardar lo que escriben los estudiantes. Por eso el guardado está
+   detrás de un "almacen" con dos modos:
+
+     · "local"       → guarda en este navegador. Nadie más lo ve.
+                       Sirve para probar y para escribir el borrador.
+     · "compartido"  → envía a un formulario de Google y lee las
+                       publicaciones aprobadas de una planilla.
+
+   Para pasar a "compartido" hay que completar CONFIG de abajo.
+   Los pasos están en LEEME.md, sección «Comunidad».
+   ============================================================ */
+
+var CONFIG = {
+  modo: "local",          // cambiar a "compartido" cuando esté todo cargado
+
+  // --- Para el modo compartido ---
+  // URL del formulario de Google terminada en /formResponse
+  formularioUrl: "",
+  // Identificadores de cada campo del formulario (entry.XXXXXXX)
+  campos: {
+    nombre:   "",
+    apellido: "",
+    titulo:   "",
+    texto:    "",
+    enlace:   ""
+  },
+  // Planilla publicada como CSV, con las publicaciones ya aprobadas
+  planillaCsv: ""
+};
+
+(function () {
+  "use strict";
+
+  var CLAVE_IDENTIDAD = "betel-identidad";
+  var CLAVE_POSTS     = "betel-posts";
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------------- almacenamiento ---------------- */
+
+  var almacen = {
+    esCompartido: function () {
+      return CONFIG.modo === "compartido" && CONFIG.formularioUrl && CONFIG.planillaCsv;
+    },
+
+    leer: function () {
+      if (this.esCompartido()) return this.leerDePlanilla();
+      return Promise.resolve(this.leerLocal());
+    },
+
+    leerLocal: function () {
+      try { return JSON.parse(localStorage.getItem(CLAVE_POSTS) || "[]"); }
+      catch (e) { return []; }
+    },
+
+    leerDePlanilla: function () {
+      return fetch(CONFIG.planillaCsv, { cache: "no-store" })
+        .then(function (r) { return r.text(); })
+        .then(function (csv) { return filasDeCsv(csv); })
+        .catch(function () { return []; });
+    },
+
+    guardar: function (post) {
+      if (this.esCompartido()) return this.enviarAlFormulario(post);
+      var todos = this.leerLocal();
+      todos.unshift(post);
+      localStorage.setItem(CLAVE_POSTS, JSON.stringify(todos));
+      return Promise.resolve({ local: true });
+    },
+
+    enviarAlFormulario: function (post) {
+      var datos = new FormData();
+      var c = CONFIG.campos;
+      if (c.nombre)   datos.append(c.nombre,   post.nombre);
+      if (c.apellido) datos.append(c.apellido, post.apellido);
+      if (c.titulo)   datos.append(c.titulo,   post.titulo);
+      if (c.texto)    datos.append(c.texto,    post.texto);
+      if (c.enlace)   datos.append(c.enlace,   post.enlace || "");
+      // Google no habilita CORS: se envía a ciegas y se confía en el 200.
+      return fetch(CONFIG.formularioUrl, {
+        method: "POST", mode: "no-cors", body: datos
+      }).then(function () { return { local: false }; });
+    }
+  };
+
+  /* Lector de CSV que respeta las comillas y los saltos de línea
+     dentro de una celda, que es lo normal en textos largos. */
+  function filasDeCsv(csv) {
+    var filas = [], campo = "", fila = [], dentro = false;
+    for (var i = 0; i < csv.length; i++) {
+      var ch = csv[i];
+      if (dentro) {
+        if (ch === '"' && csv[i + 1] === '"') { campo += '"'; i++; }
+        else if (ch === '"') dentro = false;
+        else campo += ch;
+      } else if (ch === '"') dentro = true;
+      else if (ch === ",") { fila.push(campo); campo = ""; }
+      else if (ch === "\n") { fila.push(campo); filas.push(fila); fila = []; campo = ""; }
+      else if (ch !== "\r") campo += ch;
+    }
+    if (campo || fila.length) { fila.push(campo); filas.push(fila); }
+    if (!filas.length) return [];
+
+    var cabecera = filas.shift().map(function (h) {
+      return h.trim().toLowerCase();
+    });
+    var idx = function (nombre) { return cabecera.indexOf(nombre); };
+
+    return filas.filter(function (f) { return f.join("").trim(); }).map(function (f) {
+      var dato = function (nombre) {
+        var k = idx(nombre);
+        return k >= 0 ? (f[k] || "").trim() : "";
+      };
+      return {
+        nombre:   dato("nombre"),
+        apellido: dato("apellido"),
+        titulo:   dato("titulo") || dato("título"),
+        texto:    dato("texto"),
+        enlace:   dato("enlace"),
+        fecha:    dato("marca temporal") || dato("fecha")
+      };
+    }).reverse();
+  }
+
+  /* ---------------- identidad ---------------- */
+
+  function identidadGuardada() {
+    try { return JSON.parse(localStorage.getItem(CLAVE_IDENTIDAD) || "null"); }
+    catch (e) { return null; }
+  }
+
+  function mostrarPasoPublicar(id) {
+    $("quien-soy").textContent = id.nombre + " " + id.apellido;
+    $("paso-identidad").hidden = true;
+    $("paso-publicar").hidden = false;
+  }
+
+  function mostrarPasoIdentidad() {
+    $("paso-identidad").hidden = false;
+    $("paso-publicar").hidden = true;
+  }
+
+  $("btn-identificar").addEventListener("click", function () {
+    var nombre = $("campo-nombre").value.trim();
+    var apellido = $("campo-apellido").value.trim();
+    var error = $("error-identidad");
+
+    if (nombre.length < 2 || apellido.length < 2) {
+      error.textContent = "Hace falta tu nombre y tu apellido para poder publicar.";
+      error.hidden = false;
+      return;
+    }
+    error.hidden = true;
+    var id = { nombre: nombre, apellido: apellido };
+    localStorage.setItem(CLAVE_IDENTIDAD, JSON.stringify(id));
+    mostrarPasoPublicar(id);
+  });
+
+  $("btn-cambiar").addEventListener("click", function () {
+    localStorage.removeItem(CLAVE_IDENTIDAD);
+    $("campo-nombre").value = "";
+    $("campo-apellido").value = "";
+    mostrarPasoIdentidad();
+  });
+
+  /* ---------------- publicar ---------------- */
+
+  $("campo-texto").addEventListener("input", function () {
+    $("contador-caracteres").textContent = this.value.length;
+  });
+
+  $("btn-publicar").addEventListener("click", function () {
+    var id = identidadGuardada();
+    if (!id) { mostrarPasoIdentidad(); return; }
+
+    var titulo = $("campo-titulo").value.trim();
+    var texto  = $("campo-texto").value.trim();
+    var enlace = $("campo-enlace").value.trim();
+    var error  = $("error-publicar");
+
+    if (titulo.length < 5) {
+      error.textContent = "Poné un título que cuente de qué se trata (5 caracteres o más).";
+      error.hidden = false; return;
+    }
+    if (texto.length < 30) {
+      error.textContent = "Contá un poco más: al menos 30 caracteres.";
+      error.hidden = false; return;
+    }
+    if (enlace && !/^https?:\/\//i.test(enlace)) {
+      error.textContent = "El enlace tiene que empezar con http:// o https://";
+      error.hidden = false; return;
+    }
+    error.hidden = true;
+
+    var post = {
+      nombre: id.nombre, apellido: id.apellido,
+      titulo: titulo, texto: texto, enlace: enlace,
+      fecha: new Date().toISOString()
+    };
+
+    var boton = this;
+    boton.disabled = true;
+    boton.textContent = "Publicando…";
+
+    almacen.guardar(post).then(function (res) {
+      $("campo-titulo").value = "";
+      $("campo-texto").value = "";
+      $("campo-enlace").value = "";
+      $("contador-caracteres").textContent = "0";
+
+      var exito = $("exito-publicar");
+      exito.textContent = res.local
+        ? "¡Listo! Quedó guardada en este dispositivo."
+        : "¡Listo! Tu publicación fue enviada. Aparece cuando el profesor la aprueba.";
+      exito.hidden = false;
+      setTimeout(function () { exito.hidden = true; }, 6000);
+
+      pintarPosts();
+    }).catch(function () {
+      error.textContent = "No se pudo publicar. Fijate si tenés internet y probá de nuevo.";
+      error.hidden = false;
+    }).then(function () {
+      boton.disabled = false;
+      boton.textContent = "Publicar";
+    });
+  });
+
+  /* ---------------- pintar publicaciones ---------------- */
+
+  function escapar(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function fechaLinda(iso) {
+    if (!iso) return "";
+    var d = new Date(iso);
+    if (isNaN(d)) return iso;
+    return d.toLocaleDateString("es-UY", { day: "numeric", month: "long", year: "numeric" });
+  }
+
+  function iniciales(nombre, apellido) {
+    return ((nombre || "?")[0] + (apellido || "")[0] || "?").toUpperCase();
+  }
+
+  function pintarPosts() {
+    almacen.leer().then(function (posts) {
+      var cont = $("lista-posts");
+      cont.innerHTML = "";
+      $("sin-posts").hidden = posts.length > 0;
+      $("recuento-posts").textContent = posts.length
+        ? posts.length + (posts.length === 1 ? " publicación" : " publicaciones")
+        : "";
+
+      posts.forEach(function (p) {
+        var art = document.createElement("article");
+        art.className = "post";
+        art.innerHTML =
+          '<div class="post-autor">' +
+            '<span class="avatar">' + escapar(iniciales(p.nombre, p.apellido)) + '</span>' +
+            '<span>' +
+              '<strong>' + escapar(p.nombre + " " + p.apellido) + '</strong>' +
+              '<span class="post-fecha">' + escapar(fechaLinda(p.fecha)) + '</span>' +
+            '</span>' +
+          '</div>' +
+          '<h3>' + escapar(p.titulo) + '</h3>' +
+          '<p class="post-texto">' + escapar(p.texto) + '</p>' +
+          (p.enlace
+            ? '<a class="post-enlace" href="' + escapar(p.enlace) +
+              '" target="_blank" rel="noopener noreferrer">Ver el programa →</a>'
+            : '');
+        cont.appendChild(art);
+      });
+    });
+  }
+
+  /* ---------------- arranque ---------------- */
+
+  $("aviso-local").hidden = almacen.esCompartido();
+
+  var id = identidadGuardada();
+  if (id) mostrarPasoPublicar(id);
+
+  pintarPosts();
+})();
+</script>
+</body>
+</html>

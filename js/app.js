@@ -93,6 +93,19 @@
   /* ---------- Índice de slides ---------- */
   function construirIndice() {
     listaIndice.innerHTML = "";
+
+    /* Primero, la salida al menú principal. Las páginas de actividades
+       viven en una subcarpeta, así que declaran su propia ruta en
+       data-inicio; el resto usa la de la raíz. */
+    var inicio = document.body.dataset.inicio || "index.html";
+    var liInicio = document.createElement("li");
+    var aInicio = document.createElement("a");
+    aInicio.href = inicio;
+    aInicio.className = "ir-inicio";
+    aInicio.innerHTML = '<span class="num">🏠</span><span>Menú principal</span>';
+    liInicio.appendChild(aInicio);
+    listaIndice.appendChild(liInicio);
+
     slides.forEach(function (s, i) {
       var titulo = s.dataset.titulo;
       if (!titulo) {

@@ -46,9 +46,9 @@ CABECERA = """<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{titulo} — Actividad {n}</title>
-<link rel="stylesheet" href="../css/estilos.css">
+<link rel="stylesheet" href="../css/estilos.css?v=2">
 </head>
-<body data-deck="actividad-{n}">
+<body data-deck="actividad-{n}" data-inicio="../index.html">
 
 <div id="barra-progreso"></div>
 
@@ -80,7 +80,7 @@ PIE = """</main>
 <dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
 </dl></div></div>
 
-<script src="../js/app.js"></script>
+<script src="../js/app.js?v=2"></script>
 </body>
 </html>
 """
