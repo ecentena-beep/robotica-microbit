@@ -46,7 +46,7 @@ CABECERA = """<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{titulo} — Actividad {n}</title>
-<link rel="stylesheet" href="../css/estilos.css?v=2">
+<link rel="stylesheet" href="../css/estilos.css?v=3">
 </head>
 <body data-deck="actividad-{n}" data-inicio="../index.html">
 
@@ -60,7 +60,7 @@ PIE = """</main>
 <button class="zona-clic izq" aria-label="Slide anterior"></button>
 <button class="zona-clic der" aria-label="Slide siguiente"></button>
 
-<div id="titulo-deck"><a href="../actividades.html" style="color:inherit;">&larr; Todas las actividades</a></div>
+<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todas las actividades</a></div>
 
 <div id="controles">
   <span id="contador">1 / 1</span>
@@ -80,7 +80,7 @@ PIE = """</main>
 <dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
 </dl></div></div>
 
-<script src="../js/app.js?v=2"></script>
+<script src="../js/app.js?v=3"></script>
 </body>
 </html>
 """
@@ -107,7 +107,7 @@ for d in datos:
 
     # 1 · portada
     epi = f'<blockquote class="cita" style="margin-top:1.4em;max-width:44ch;text-align:left;">{esc(d["epigrafe"])}</blockquote>' if d["epigrafe"] else ""
-    partes.append(f"""  <section class="slide portada" data-titulo="Portada">
+    partes.append(f"""  <section class="slide portada" data-titulo="Actividad {n} · {esc(titulo)}">
     <span class="etiqueta">Actividad {n}</span>
     <h1>{esc(titulo)}</h1>
     {meta_html}

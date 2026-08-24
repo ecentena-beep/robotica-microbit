@@ -102,7 +102,7 @@
     var aInicio = document.createElement("a");
     aInicio.href = inicio;
     aInicio.className = "ir-inicio";
-    aInicio.innerHTML = '<span class="num">🏠</span><span>Menú principal</span>';
+    aInicio.innerHTML = '<span class="num">🏠</span><span>INICIO</span>';
     liInicio.appendChild(aInicio);
     listaIndice.appendChild(liInicio);
 
