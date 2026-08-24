@@ -60,28 +60,39 @@
   <a class="tarjeta-ancha comunidad" href="comunidad.html">
     <span class="ilustracion" aria-hidden="true">
       <!-- Una mano humana y una mano robot dándose la mano -->
-      <svg viewBox="0 0 120 64" xmlns="http://www.w3.org/2000/svg" role="img">
+      <svg viewBox="0 0 140 96" xmlns="http://www.w3.org/2000/svg" role="img">
         <title>Una mano humana y una mano robótica estrechándose</title>
-        <!-- brazo humano -->
-        <path d="M2 30 h22 a4 4 0 0 1 4 4 v6 a4 4 0 0 1-4 4 H2z" fill="var(--acento)" opacity=".55"/>
-        <path d="M24 26 h16 a7 7 0 0 1 7 7 v6 a7 7 0 0 1-7 7 H24z" fill="var(--acento)"/>
-        <!-- dedos humanos entrelazados -->
-        <rect x="44" y="24" width="18" height="7" rx="3.5" fill="var(--acento)"/>
-        <rect x="44" y="33" width="20" height="7" rx="3.5" fill="var(--acento)"/>
-        <rect x="44" y="42" width="16" height="7" rx="3.5" fill="var(--acento)" opacity=".8"/>
-        <!-- brazo robot -->
-        <path d="M118 30 h-22 a4 4 0 0 0-4 4 v6 a4 4 0 0 0 4 4 h22z" fill="var(--acento-2)" opacity=".55"/>
-        <rect x="74" y="26" width="22" height="20" rx="4" fill="var(--acento-2)"/>
-        <!-- tornillos y junta del robot -->
-        <circle cx="85" cy="30.5" r="1.8" fill="#0b1020" opacity=".55"/>
-        <circle cx="85" cy="41.5" r="1.8" fill="#0b1020" opacity=".55"/>
-        <rect x="70" y="29" width="5" height="14" rx="2.5" fill="var(--acento-2)" opacity=".8"/>
-        <!-- dedos robot, articulados -->
-        <rect x="58" y="24" width="14" height="7" rx="2" fill="var(--acento-2)"/>
-        <rect x="56" y="33" width="16" height="7" rx="2" fill="var(--acento-2)"/>
-        <rect x="60" y="42" width="12" height="7" rx="2" fill="var(--acento-2)" opacity=".8"/>
-        <!-- destello del apretón -->
-        <circle cx="60" cy="36" r="20" fill="none" stroke="var(--acento)" stroke-width="1.5" opacity=".25"/>
+
+        <!-- Antebrazos en diagonal, que es como se lee un apretón.
+             El humano entra desde abajo a la izquierda; el robot, desde
+             abajo a la derecha, partido en dos por la articulación. -->
+        <g stroke-linecap="round" fill="none">
+          <path d="M8 88 L52 52" stroke="var(--acento)" stroke-width="26" opacity=".45"/>
+          <path d="M132 88 L108 68" stroke="var(--acento-2)" stroke-width="26" opacity=".45"/>
+          <path d="M100 62 L88 52"  stroke="var(--acento-2)" stroke-width="26" opacity=".75"/>
+        </g>
+        <!-- articulación del robot -->
+        <circle cx="104" cy="65" r="6" fill="var(--acento-2)"/>
+        <circle cx="104" cy="65" r="2.4" fill="#0b1020" opacity=".5"/>
+
+        <!-- Manos agarradas: un bloque central inclinado, partido en dos
+             mitades que encastran. -->
+        <g transform="rotate(-38 70 44)">
+          <!-- mano humana -->
+          <rect x="34" y="26" width="38" height="36" rx="13" fill="var(--acento)"/>
+          <!-- mano robot, encastrada -->
+          <rect x="68" y="26" width="36" height="36" rx="8" fill="var(--acento-2)"/>
+          <circle cx="88" cy="36" r="2.6" fill="#0b1020" opacity=".4"/>
+          <circle cx="88" cy="52" r="2.6" fill="#0b1020" opacity=".4"/>
+          <!-- dedos del robot cerrando sobre la mano humana -->
+          <g fill="var(--acento-2)">
+            <rect x="46" y="27" width="24" height="9" rx="4"/>
+            <rect x="44" y="39" width="26" height="9" rx="4"/>
+            <rect x="48" y="51" width="22" height="9" rx="4"/>
+          </g>
+          <!-- pulgar humano por encima del agarre -->
+          <rect x="58" y="16" width="34" height="13" rx="6.5" fill="var(--acento)"/>
+        </g>
       </svg>
     </span>
     <span class="cuerpo">
