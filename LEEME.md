@@ -9,7 +9,7 @@ doble clic en `index.html`.
 index.html      ← menú principal del sitio
 modulo1.html    ← Módulo 1: la placa micro:bit (29 slides)
 modulo2.html    ← Módulo 2: tipos de proyectos (14 slides)
-comunidad.html  ← Módulo 3: Comunidad Robótica de Betel (el blog)
+comunidad.html  ← Módulo 3: Comunidad Robótica de Bet-el (el blog)
 actividades.html← menú de las 28 actividades del cuaderno
 actividades/    ← una página por actividad (GENERADAS, no editar a mano)
 css/estilos.css ← todo el diseño (colores, tamaños, layouts)
@@ -179,7 +179,7 @@ Los niveles son `baja`, `intermedia` y `avanzada`.
 Todo está al principio de `css/estilos.css`, en `:root`. Cambiando `--acento` cambia el
 color de títulos, viñetas, bordes y barra de progreso en todo el sitio.
 
-## Comunidad Robótica de Betel (Módulo 3)
+## Comunidad Robótica de Bet-el (Módulo 3)
 
 El blog donde los estudiantes cuentan sus proyectos. Antes de escribir tienen que poner
 nombre y apellido, que queda firmando la publicación y guardado en su navegador para no

@@ -5,7 +5,7 @@ presentación navegable.
 
 - **Módulo 1 — La placa programable micro:bit** · 29 slides
 - **Módulo 2 — Tipos de proyectos** · 14 slides
-- **Módulo 3 — Comunidad Robótica de Betel** · blog para compartir proyectos
+- **Módulo 3 — Comunidad Robótica de Bet-el** · blog para compartir proyectos
 - **Las 28 actividades** · una ficha navegable por actividad, con menú y filtros
 
 ## Ver el sitio
@@ -42,7 +42,7 @@ El *Cuaderno de actividades micro:bit* separado en fichas independientes. El men
 sin haber hecho las anteriores. Cada ficha trae objetivo, espacios curriculares,
 contenidos micro:bit, materiales, desarrollo y autoevaluación.
 
-## Módulo 3 — Comunidad Robótica de Betel
+## Módulo 3 — Comunidad Robótica de Bet-el
 
 El espacio donde los estudiantes cuentan qué construyeron. Antes de escribir tienen que
 identificarse con nombre y apellido, que firma la publicación.
