@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cubreasiento inteligente — Actividad 15</title>
-<link rel="stylesheet" href="../css/estilos.css?v=3">
+<link rel="stylesheet" href="../css/estilos.css?v=4">
 </head>
 <body data-deck="actividad-15" data-inicio="../index.html">
 
@@ -12,18 +12,19 @@
 
 <main id="escenario">
   <section class="slide portada" data-titulo="Actividad 15 · Cubreasiento inteligente">
-    <span class="etiqueta">Actividad 15</span>
+    <span class="etiqueta">Prototipo 15</span>
     <h1>Cubreasiento inteligente</h1>
     <div class="meta" style="justify-content:center;"><span class="dato">👥 Grupal</span> <span class="dato">⏱ 90 minutos</span></div>
-    <blockquote class="cita" style="margin-top:1.4em;max-width:44ch;text-align:left;">«El tránsito en tus manos»</blockquote>
+    <blockquote class="cita" style="margin-top:1.2em;max-width:44ch;text-align:left;">«El tránsito en tus manos»</blockquote>
+    <a class="boton-descarga" href="../proyectos/15-cubreasiento-inteligente.pdf" download>⬇ Descargar el PDF del proyecto</a>
   </section>
-  <section class="slide" data-titulo="Objetivo">
-    <span class="etiqueta">Actividad 15</span>
-    <h2>¿Para qué esta actividad?</h2>
+  <section class="slide" data-titulo="¿Para qué es esta actividad?">
+    <span class="etiqueta">Prototipo 15</span>
+    <h2>¿Para qué es esta actividad?</h2>
     <p class="grande">S Estimular la creación de un dispositivo que permita identificar cuando una persona se sienta en el automóvil. Incentivar el uso de la comunicación por radio de las placas micro:bit para iniciar la alerta cinturón (actividad 32, del proyecto 1 «El tránsito en tus manos»).</p>
   </section>
-  <section class="slide" data-titulo="Contenidos">
-    <span class="etiqueta">Actividad 15</span>
+  <section class="slide" data-titulo="Qué se trabaja">
+    <span class="etiqueta">Prototipo 15</span>
     <h2>Qué se trabaja</h2>
     <div class="dos-columnas" style="align-items:start;">
       <div>
@@ -36,50 +37,20 @@
       </div>
     </div>
   </section>
-  <section class="slide" data-titulo="Materiales">
-    <span class="etiqueta">Actividad 15</span>
+  <section class="slide" data-titulo="Qué hay que conseguir">
+    <span class="etiqueta">Prototipo 15</span>
     <h2>Qué hay que conseguir</h2>
     <ul class="materiales"><li>2 placas micro:bit</li><li>Entorno de programación MakeCode (computadora)</li><li>Cables cocodrilo</li><li>Papel aluminio</li><li>Cartón</li><li>Espumaplast 71</li></ul>
   </section>
-  <section class="slide" data-titulo="Desarrollo (1/8)">
-    <span class="etiqueta">Desarrollo (1/8)</span>
-    <h2>Cómo se hace</h2>
-    <p>Esta propuesta enriquece la actividad 32 «Alerta cinturón» al sugerir crear un dispositivo que permita detectar automáticamente a la persona que usará el cinturón de seguridad. Para determinar su presencia , se construirá un sensor de presión mediante la elaboración de un circuito eléctrico con una placa micro:bit. • Si la persona se sienta o se apoya sobre el sensor de presión, el ­circuito se cierra, lo cual activa el envío de una señal por radio. Cuando esta es captada por la micro:bit de la alerta cinturón, se inicia el funcionamiento de la alerta. • Cuando el asiento está vacío, el circuito queda abierto, no se emite señal, por lo que no se inicia la alerta. En una primera etapa, el desafío para cada estudiante estará en el diseño de dicho dispositivo.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (2/8)">
-    <span class="etiqueta">Desarrollo (2/8)</span>
-    <h2>Cómo se hace</h2>
-    <p>Las siguientes preguntas pueden guiar la reflexión: • ¿Dónde se ubicará el dispositivo? Podrá estar colocado en el respaldo o en el asiento de la persona que viaja en el vehículo, activándose al sentir la presión del cuerpo al apoyarse o sentarse. • ¿Qué materiales se utilizarán? Los materiales deberán ser suficientemente resistentes y flexibles para resistir cierta presión y recobrar luego su forma inicial. Asimismo, para armar el circuito eléctrico, algunos materiales deberán ser aislantes (ej.: cartón) y otros conductores de electricidad (ej.: papel aluminio). • ¿Qué partes tendrá el dispositivo y cómo funcionará? Al trabajar en equipos, cada estudiante podrá intercambiar ideas y crear distintos diseños.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (3/8)">
-    <span class="etiqueta">Desarrollo (3/8)</span>
-    <h2>Cómo se hace</h2>
-    <p>Uno posible podría incluir la micro:bit, el portapilas, cables cocodrilo y dos cartones con zonas con papel aluminio. En las siguientes imágenes se explica el funcionamiento de cada parte: 72 cuaderno micro:bit | 2023 Figura 1: Dos cartones con una zona que conduce la electricidad y la otra no. Al colocar un cartón sobre el otro, la espumaplast los mantiene separados cuando no hay presión. Figura 2: Para armar el circuito, se coloca un cable cocodrilo en el PIN 0 de la micro:bit y otro en GND. Los cables se vinculan luego al cartón inferior, pinzando por separado las franjas con aluminio (el circuito se encuentra abierto, ya que las franjas no están en contacto). Figura 3: Circuito finalizado.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (4/8)">
-    <span class="etiqueta">Desarrollo (4/8)</span>
-    <h2>Cómo se hace</h2>
-    <p>Cuando se ejerce presión, el papel aluminio del cartón superior toca las franjas de papel aluminio del cartón inferior cerrando el circuito. En este ejemplo se observa que ambos cables cocodrilo están en el cartón inferior. Por ello, el papel aluminio está dividido para que el circuito se cierre cuando el papel aluminio del cartón superior haga contacto y los una. Otra opción podría ser que ambos cartones tuvieran una única franja de aluminio, en dicho caso sería necesario colocar un cable cocodrilo en el cartón superior y otro en el cartón inferior. NOTA PARA DOCENTES: Para cuidar tanto la comodidad de la persona como los materiales a utilizar, se sugiere diseñar una estructura (cubreasiento) que pueda contener el dispositivo de presión.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (5/8)">
-    <span class="etiqueta">Desarrollo (5/8)</span>
-    <h2>Cómo se hace</h2>
-    <p>Para la programación, se debe tener en cuenta que se van a programar dos placas: la que sensa la presión del pasajero (micro:bit 1, emisor) y la que activa la alerta cinturón (micro:bit 2, receptor). Las placas se comunicarán mediante señales de radio (ver Referencias técnicas: intercambiar mensajes por medio de señales de radio). MICRO:BIT 1: En la categoría RADIO seleccionar el bloque radio establecer grupo y digitar un número por el cual las placas se van a conectar (en este ejemplo se eligió el número 14). Dicho bloque se coloca dentro del bloque al iniciar de la categoría BÁSICO. Esta programación deberá realizarse 73 también en la micro:bit 2 para que ambas placas pertenezcan a un mismo grupo y puedan comunicarse.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (6/8)">
-    <span class="etiqueta">Desarrollo (6/8)</span>
-    <h2>Cómo se hace</h2>
-    <p>Se utiliza también el bloque radio enviar cadena de la categoría RADIO para que al cumplir determinada condición envíe un mensaje a la otra micro:bit. El bloque condicional si verdadero entonces se obtiene de la categoría LÓGICA y la opción «verdadero» se modificará por el bloque si P0 está presionado de la categoría ENTRADA (para que la placa identifique el circuito eléctrico que pasa por el PIN 0). Se sugiere agregar a esta programación un bloque de mostrar ícono (categoría BÁSICO) que indique que el programa se ha iniciado. MICRO:BIT 2: Para que la placa reciba la información e inicie la alerta cinturón se debe modificar parte de la programación realizada en la actividad 32, del proyecto 1 «El tránsito en tus manos».</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (7/8)">
-    <span class="etiqueta">Desarrollo (7/8)</span>
-    <h2>Cómo se hace</h2>
-    <p>Al igual que en la micro:bit 1, en la micro:bit 2 la programación debe iniciar con el bloque radio establecer grupo de la categoría RADIO para que las placas puedan comunicarse. Es muy importante que ambas placas tengan el mismo número. Luego se debe cambiar el bloque para siempre por dos bloques nuevos: • el bloque al recibir radio, de la categoría RADIO; • un condicional si verdadero entonces, de la categoría LÓGICA, donde la opción «verdadero» se va a modificar por el bloque de comparación para cadenas de texto « « = « » sustituyendo las comillas por las opciones que se observan en la imagen: 74 cuaderno micro:bit | 2023 En estos bloques se colocará la programación del cinturón, como se observa en la siguiente imagen: ¿SABÍAS QUE...</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (8/8)">
-    <span class="etiqueta">Desarrollo (8/8)</span>
-    <h2>Cómo se hace</h2>
-    <p>en la revista digital de National Geographic hay una interesante cronología de cómo surge la inteligencia artificial? En 1956 nace este término. El informático John McCarthy es quien lo acuñó por primera vez, durante una conferencia en Darmouth. Fuente: Portal de National Geographic España: Breve historia visual de la inteligencia artificial, agosto de 2019. PLUS: Para seguir mejorando este cubreasiento inteligente se puede pensar cómo hacer para que las luces LED de la micro:bit se apaguen mientras el asiento está desocupado. Para resolverlo se tendrá que investigar el bloque borrar pantalla de la categoría BÁSICO. 75</p>
+  <section class="slide portada" data-titulo="Descargá el proyecto">
+    <span class="etiqueta">El proyecto completo</span>
+    <h2>Descargá el proyecto acá</h2>
+    <p class="subtitulo">El PDF trae el paso a paso, los ejemplos de programa y la ficha
+    de trabajo para completar.</p>
+    <a class="boton-descarga grande" href="../proyectos/15-cubreasiento-inteligente.pdf" download>⬇ Descargar el PDF del proyecto</a>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.8); margin-top:1.4em;">
+      También podés <a href="../proyectos/15-cubreasiento-inteligente.pdf" target="_blank" style="color:var(--acento);">abrirlo sin descargar</a>.
+    </p>
   </section>
   <section class="slide" data-titulo="Autoevaluación">
     <span class="etiqueta">Para cerrar</span>
@@ -93,7 +64,7 @@
       <li>Aprendí y conocí nuevas funciones de la placa.</li>
     </ul>
     <p style="margin-top:1.4em;">
-      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todas las actividades</a>
+      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todos los prototipos</a>
     </p>
   </section>
 </main>
@@ -101,7 +72,7 @@
 <button class="zona-clic izq" aria-label="Slide anterior"></button>
 <button class="zona-clic der" aria-label="Slide siguiente"></button>
 
-<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todas las actividades</a></div>
+<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todos los prototipos</a></div>
 
 <div id="controles">
   <span id="contador">1 / 1</span>
@@ -121,6 +92,6 @@
 <dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
 </dl></div></div>
 
-<script src="../js/app.js?v=3"></script>
+<script src="../js/app.js?v=4"></script>
 </body>
 </html>

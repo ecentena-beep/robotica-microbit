@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Robótica con micro:bit — Menú principal</title>
-<link rel="stylesheet" href="css/estilos.css?v=3">
+<link rel="stylesheet" href="css/estilos.css?v=4">
 </head>
 <body class="pagina">
 
@@ -18,23 +18,24 @@
     </p>
   </header>
 
+  <!-- Los tres módulos -->
   <div class="rejilla-modulos">
 
     <a class="tarjeta-modulo" href="modulo1.html">
       <span class="numero-modulo">Módulo 1</span>
       <span class="icono-modulo">🔌</span>
-      <h2>La placa programable</h2>
+      <h2>micro:bit: la placa programable</h2>
       <p>
         Qué es micro:bit y por qué es una computadora. Entrada, proceso y salida,
         sensores y actuadores, y las partes de la placa.
       </p>
-      <span class="pie-modulo">29 slides</span>
+      <span class="pie-modulo">26 slides</span>
     </a>
 
     <a class="tarjeta-modulo" href="modulo2.html">
       <span class="numero-modulo">Módulo 2</span>
       <span class="icono-modulo">🧭</span>
-      <h2>Tipos de proyectos</h2>
+      <h2>Tipos de proyectos con micro:bit</h2>
       <p>
         De la actividad suelta al proyecto con sentido. Niveles de dificultad y seis
         ideas en video para arrancar hoy.
@@ -42,30 +43,73 @@
       <span class="pie-modulo">14 slides</span>
     </a>
 
-    <a class="tarjeta-modulo destacada" href="comunidad.html">
+    <a class="tarjeta-modulo" href="actividades.html">
       <span class="numero-modulo">Módulo 3</span>
-      <span class="icono-modulo">🤝</span>
+      <span class="icono-modulo">🛠️</span>
+      <h2>Prototipos de proyecto</h2>
+      <p>
+        Veintiocho prototipos para construir, cada uno con lo que hay que conseguir y
+        el PDF del paso a paso para descargar.
+      </p>
+      <span class="pie-modulo">28 prototipos</span>
+    </a>
+
+  </div>
+
+  <!-- Comunidad: ocupa todo el ancho -->
+  <a class="tarjeta-ancha comunidad" href="comunidad.html">
+    <span class="ilustracion" aria-hidden="true">
+      <!-- Una mano humana y una mano robot dándose la mano -->
+      <svg viewBox="0 0 120 64" xmlns="http://www.w3.org/2000/svg" role="img">
+        <title>Una mano humana y una mano robótica estrechándose</title>
+        <!-- brazo humano -->
+        <path d="M2 30 h22 a4 4 0 0 1 4 4 v6 a4 4 0 0 1-4 4 H2z" fill="var(--acento)" opacity=".55"/>
+        <path d="M24 26 h16 a7 7 0 0 1 7 7 v6 a7 7 0 0 1-7 7 H24z" fill="var(--acento)"/>
+        <!-- dedos humanos entrelazados -->
+        <rect x="44" y="24" width="18" height="7" rx="3.5" fill="var(--acento)"/>
+        <rect x="44" y="33" width="20" height="7" rx="3.5" fill="var(--acento)"/>
+        <rect x="44" y="42" width="16" height="7" rx="3.5" fill="var(--acento)" opacity=".8"/>
+        <!-- brazo robot -->
+        <path d="M118 30 h-22 a4 4 0 0 0-4 4 v6 a4 4 0 0 0 4 4 h22z" fill="var(--acento-2)" opacity=".55"/>
+        <rect x="74" y="26" width="22" height="20" rx="4" fill="var(--acento-2)"/>
+        <!-- tornillos y junta del robot -->
+        <circle cx="85" cy="30.5" r="1.8" fill="#0b1020" opacity=".55"/>
+        <circle cx="85" cy="41.5" r="1.8" fill="#0b1020" opacity=".55"/>
+        <rect x="70" y="29" width="5" height="14" rx="2.5" fill="var(--acento-2)" opacity=".8"/>
+        <!-- dedos robot, articulados -->
+        <rect x="58" y="24" width="14" height="7" rx="2" fill="var(--acento-2)"/>
+        <rect x="56" y="33" width="16" height="7" rx="2" fill="var(--acento-2)"/>
+        <rect x="60" y="42" width="12" height="7" rx="2" fill="var(--acento-2)" opacity=".8"/>
+        <!-- destello del apretón -->
+        <circle cx="60" cy="36" r="20" fill="none" stroke="var(--acento)" stroke-width="1.5" opacity=".25"/>
+      </svg>
+    </span>
+    <span class="cuerpo">
+      <span class="numero-modulo">Comunidad</span>
       <h2>Comunidad Robótica de Bet-el</h2>
       <p>
         El espacio para compartir lo que construimos: contá tu proyecto, mostrá cómo lo
         resolviste y mirá lo que están haciendo tus compañeros.
       </p>
       <span class="pie-modulo">Escribí tu publicación</span>
-    </a>
+    </span>
+  </a>
 
-  </div>
-
-  <div class="rejilla-modulos" style="margin-top:1.2rem;">
-    <a class="tarjeta-modulo secundaria" href="actividades.html">
-      <span class="icono-modulo">🗂️</span>
-      <h2>Las 28 actividades</h2>
+  <!-- Materiales: ocupa todo el ancho -->
+  <a class="tarjeta-ancha materiales" href="materiales.html">
+    <span class="ilustracion" aria-hidden="true">
+      <span style="font-size:3rem;">📚</span>
+    </span>
+    <span class="cuerpo">
+      <span class="numero-modulo">Materiales</span>
+      <h2>Materiales de consulta</h2>
       <p>
-        El cuaderno de Ceibal, ficha por ficha: objetivo, materiales y paso a paso.
-        Se pueden hacer sueltas, en una clase.
+        Glosario, referencias técnicas, material complementario y cómo conectar la placa
+        a Scratch. Todo para descargar cuando lo necesites.
       </p>
-      <span class="pie-modulo">Buscar una actividad</span>
-    </a>
-  </div>
+      <span class="pie-modulo">Ver los materiales</span>
+    </span>
+  </a>
 
   <p style="color:var(--texto-suave); font-size:.82rem; margin-top:3.5rem; line-height:1.6; text-align:center;">
     Material basado en los cuadernos y manuales de <strong>Ceibal</strong> y

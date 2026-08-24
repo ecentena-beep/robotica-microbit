@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prevención de incendios — Actividad 16</title>
-<link rel="stylesheet" href="../css/estilos.css?v=3">
+<link rel="stylesheet" href="../css/estilos.css?v=4">
 </head>
 <body data-deck="actividad-16" data-inicio="../index.html">
 
@@ -12,18 +12,19 @@
 
 <main id="escenario">
   <section class="slide portada" data-titulo="Actividad 16 · Prevención de incendios">
-    <span class="etiqueta">Actividad 16</span>
+    <span class="etiqueta">Prototipo 16</span>
     <h1>Prevención de incendios</h1>
     <div class="meta" style="justify-content:center;"><span class="dato">🙋 Individual</span> <span class="dato">⏱ 45 minutos</span></div>
     
+    <a class="boton-descarga" href="../proyectos/16-prevencion-de-incendios.pdf" download>⬇ Descargar el PDF del proyecto</a>
   </section>
-  <section class="slide" data-titulo="Objetivo">
-    <span class="etiqueta">Actividad 16</span>
-    <h2>¿Para qué esta actividad?</h2>
+  <section class="slide" data-titulo="¿Para qué es esta actividad?">
+    <span class="etiqueta">Prototipo 16</span>
+    <h2>¿Para qué es esta actividad?</h2>
     <p class="grande">S Estimular la creación de una alerta para prevenir incendios forestales en áreas protegidas. Incentivar el uso del sensor de temperatura y la comunicación por radio de las placas micro:bit.</p>
   </section>
-  <section class="slide" data-titulo="Contenidos">
-    <span class="etiqueta">Actividad 16</span>
+  <section class="slide" data-titulo="Qué se trabaja">
+    <span class="etiqueta">Prototipo 16</span>
     <h2>Qué se trabaja</h2>
     <div class="dos-columnas" style="align-items:start;">
       <div>
@@ -36,40 +37,20 @@
       </div>
     </div>
   </section>
-  <section class="slide" data-titulo="Materiales">
-    <span class="etiqueta">Actividad 16</span>
+  <section class="slide" data-titulo="Qué hay que conseguir">
+    <span class="etiqueta">Prototipo 16</span>
     <h2>Qué hay que conseguir</h2>
     <ul class="materiales"><li>2 placas micro:bit</li><li>Entorno de programación MakeCode (computadora) 77</li></ul>
   </section>
-  <section class="slide" data-titulo="Desarrollo (1/6)">
-    <span class="etiqueta">Desarrollo (1/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>La prevención, alerta y respuesta a los incendios forestales es una temática para abordar en el momento de considerar posibles acciones para proteger la flora y la fauna de un área protegida. Entre los distintos factores que pueden iniciar un incendio, las altas temperaturas ambientales aumentan el riesgo de que esto ocurra. En esta actividad, se propone crear una alarma de incendio que utilice dos placas: • La placa 1 se colocará en el monte del área protegida, en un árbol próximo al suelo, y medirá la temperatura (ver Glosario: sensor de temperatura). • La placa 2 la tendrá el guardaparque. Mediante señales de radio recibirá el valor de la temperatura sensado por la placa 1 y mostrará en la pantalla LED una advertencia en caso de que exista riesgo de incendio.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (2/6)">
-    <span class="etiqueta">Desarrollo (2/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Aclaración: la distancia máxima de transmisión por radio entre las placas, sin obstáculos que interfieran en la comunicación, es de 70 m. Por lo tanto, se programarán dos placas: la micro:bit 1 o placa emisora, y la micro:bit 2 o placa receptora (ver Referencias técnicas: intercambiar mensajes por medio de señales de radio). MICRO:BIT 1 Como se observa en la imagen, al programar la placa es necesario: • Fijar el grupo de radio, que se repetirá en la placa 2. • Sensar la temperatura y mostrarla utilizando los bloques mostrar número y temperatura (ºC). • Enviar el valor de la temperatura, para lo cual será necesario selec- cionar de la categoría RADIO el bloque radio enviar número y colocar en lugar del 0 el bloque temperatura (ºC).</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (3/6)">
-    <span class="etiqueta">Desarrollo (3/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>• Establecer un intervalo de 1 segundo para sensar la temperatura, utilizando el bloque pausa. 78 cuaderno micro:bit | 2023 MICRO:BIT 2 Al programar la placa es necesario: • Fijar la placa al mismo grupo de radio que la placa 1. • En la categoría RADIO, seleccionar el bloque al recibir radio received- Number para recibir el valor de la temperatura enviado por la placa 1. • La alerta que emitirá la placa dependerá del valor de temperatura elegido como riesgo de incendio. Se seleccionará de la categoría L­ ÓGICA el bloque de comparación si verdadero entonces para establecer dicho rango. La opción «verdadero» se sustituirá por el bloque de comparación mayor que.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (4/6)">
-    <span class="etiqueta">Desarrollo (4/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Los valores a comparar se visualizan en la siguiente imagen: NOTA PARA DOCENTES: La temperatura que define el riesgo de incendio es un aspecto a investigar, ya que variará según distintos factores. Por ejemplo: la ubicación geográfica del área protegida, las condiciones meteorológicas, entre otros (en la imagen se eligió el valor 30 ºC). • Mediante los bloques mostrar número, mostrar LED y mostrar ícono se visualizará la temperatura y se mostrará la alerta correspondiente, según exista o no riesgo de incendio. En la imagen se representó fuego, el cual simula estar en movimiento mediante el uso de dos bloques de pausa.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (5/6)">
-    <span class="etiqueta">Desarrollo (5/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>79 ¿SABÍAS QUE… en Uruguay hay una ley que determina que cada año, desde el 15 de noviembre hasta la segunda quincena de abril del año siguiente, está prohibido realizar fuegos y quemas al aire libre en todo el país? El objetivo de esta ley es prevenir los incendios forestales durante la época en que las condiciones meteorológicas como las altas temperaturas y la baja humedad (entre otros factores) aumentan el riesgo de que ocurran.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (6/6)">
-    <span class="etiqueta">Desarrollo (6/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Fuente: Dirección Nacional de Impresiones y Publicaciones Oficiales: En Uruguay existe una ley donde se regula la prevención de incendios forestales, setiembre de 2021 80 cuaderno micro:bit | 2023 PLUS: Para mejorar esta alerta se podría agregar el uso de un sensor de humedad, el cual, junto con el sensor de temperatura, permitiría al guardaparque estimar con mayor precisión el riesgo de incendio. Para realizar el sensor de humedad, recurre a la actividad 37 «Plantas:bit».</p>
+  <section class="slide portada" data-titulo="Descargá el proyecto">
+    <span class="etiqueta">El proyecto completo</span>
+    <h2>Descargá el proyecto acá</h2>
+    <p class="subtitulo">El PDF trae el paso a paso, los ejemplos de programa y la ficha
+    de trabajo para completar.</p>
+    <a class="boton-descarga grande" href="../proyectos/16-prevencion-de-incendios.pdf" download>⬇ Descargar el PDF del proyecto</a>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.8); margin-top:1.4em;">
+      También podés <a href="../proyectos/16-prevencion-de-incendios.pdf" target="_blank" style="color:var(--acento);">abrirlo sin descargar</a>.
+    </p>
   </section>
   <section class="slide" data-titulo="Autoevaluación">
     <span class="etiqueta">Para cerrar</span>
@@ -83,7 +64,7 @@
       <li>Aprendí y conocí nuevas funciones de la placa.</li>
     </ul>
     <p style="margin-top:1.4em;">
-      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todas las actividades</a>
+      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todos los prototipos</a>
     </p>
   </section>
 </main>
@@ -91,7 +72,7 @@
 <button class="zona-clic izq" aria-label="Slide anterior"></button>
 <button class="zona-clic der" aria-label="Slide siguiente"></button>
 
-<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todas las actividades</a></div>
+<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todos los prototipos</a></div>
 
 <div id="controles">
   <span id="contador">1 / 1</span>
@@ -111,6 +92,6 @@
 <dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
 </dl></div></div>
 
-<script src="../js/app.js?v=3"></script>
+<script src="../js/app.js?v=4"></script>
 </body>
 </html>

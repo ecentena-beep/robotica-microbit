@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>La ruleta del saber — Actividad 17</title>
-<link rel="stylesheet" href="../css/estilos.css?v=3">
+<link rel="stylesheet" href="../css/estilos.css?v=4">
 </head>
 <body data-deck="actividad-17" data-inicio="../index.html">
 
@@ -12,18 +12,19 @@
 
 <main id="escenario">
   <section class="slide portada" data-titulo="Actividad 17 · La ruleta del saber">
-    <span class="etiqueta">Actividad 17</span>
+    <span class="etiqueta">Prototipo 17</span>
     <h1>La ruleta del saber</h1>
     <div class="meta" style="justify-content:center;"><span class="dato">👥 Grupal</span> <span class="dato">⏱ 60 minutos</span></div>
     
+    <a class="boton-descarga" href="../proyectos/17-la-ruleta-del-saber.pdf" download>⬇ Descargar el PDF del proyecto</a>
   </section>
-  <section class="slide" data-titulo="Objetivo">
-    <span class="etiqueta">Actividad 17</span>
-    <h2>¿Para qué esta actividad?</h2>
+  <section class="slide" data-titulo="¿Para qué es esta actividad?">
+    <span class="etiqueta">Prototipo 17</span>
+    <h2>¿Para qué es esta actividad?</h2>
     <p class="grande">S Propiciar la creación de una ruleta que interrogue sobre un tema de estudio. Realizar una primera aproximación al uso de un servo motor.</p>
   </section>
-  <section class="slide" data-titulo="Contenidos">
-    <span class="etiqueta">Actividad 17</span>
+  <section class="slide" data-titulo="Qué se trabaja">
+    <span class="etiqueta">Prototipo 17</span>
     <h2>Qué se trabaja</h2>
     <div class="dos-columnas" style="align-items:start;">
       <div>
@@ -36,40 +37,20 @@
       </div>
     </div>
   </section>
-  <section class="slide" data-titulo="Materiales">
-    <span class="etiqueta">Actividad 17</span>
+  <section class="slide" data-titulo="Qué hay que conseguir">
+    <span class="etiqueta">Prototipo 17</span>
     <h2>Qué hay que conseguir</h2>
     <ul class="materiales"><li>Placa micro:bit</li><li>Entorno de programación MakeCode (computadora)</li><li>Servo motor</li><li>Cable cocodrilo-header pin</li><li>Cartulinas de colores</li><li>Marcadores 82 cuaderno micro:bit | 2023</li></ul>
   </section>
-  <section class="slide" data-titulo="Desarrollo (1/6)">
-    <span class="etiqueta">Desarrollo (1/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Una vez realizadas distintas actividades para profundizar en la temática de áreas protegidas, se propondrá crear una ruleta del saber con la micro:bit, que cumpla las siguientes condiciones: • Tener una superficie dividida en sectores. Cada sector presentará pre- guntas creadas por estudiantes, vinculadas al tema áreas protegidas. NOTA PARA DOCENTES: Se podrá asignar a cada equipo un área protegida, de modo que se generen tantas ruletas como equipos/ áreas protegidas haya en el aula. Se podrá también proponer un área protegida en particular y acordar para cada equipo un animal o vegetal de esta, a partir del cual crear las preguntas. • La flecha que gira debe estar programada de tal forma que elige al azar un sector a señalar.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (2/6)">
-    <span class="etiqueta">Desarrollo (2/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Generar una instancia previa de diseño permitirá a cada estudiante intercambiar ideas y generar acuerdos sobre el material a utilizar y la forma de automatizar el giro. Se presentará entonces un servo motor y se dialogará sobre las características de este. El rango de giro de 0 a 180º determinará entonces la necesidad de crear una ruleta de 180º. A partir de dicha información, podrán decidir la cantidad de preguntas a crear y calcular la amplitud angular que tendrá cada sector. 83 POSIBLE EJEMPLO DE RULETA Una vez creada la ruleta, se realizará la conexión del motor con la placa y en MakeCode se deberá agregar la extensión Servos para comenzar la programación. En las Referencias técnicas (servo motor) se encuentra la descripción de ambos procedimientos.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (3/6)">
-    <span class="etiqueta">Desarrollo (3/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Para iniciar el giro de la ruleta se propondrá utilizar los botones A y B: • Mediante el botón A se establecerá la posición inicial de la flecha en 0º, aspecto que será fundamental conocer para definir en qué posición se colocará el motor. • Mediante el botón B se establecerá el giro al azar. En la categoría SERVOS se seleccionará el bloque set servo P0 angle to 90º. En el valor 90º se ubicará el bloque escoge al azar de 0 a 10 de la categoría MATEMÁTICA. El 10 se sustituirá por el mayor valor de giro posible, el cual será 180º. NOTA PARA DOCENTES: Dado que el giro es al azar, la flecha podría volver a posicionarse en un mismo sector más de una vez.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (4/6)">
-    <span class="etiqueta">Desarrollo (4/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Previendo esta situación, cada sector podría estar referenciado únicamente con un color y tener más de una pregunta para realizar. Esta propuesta se podría utilizar con otras áreas del conocimiento que interese evaluar, para conocer el nivel de conceptualización de cada estudiante sobre los contenidos trabajados. 84 cuaderno micro:bit | 2023 ¿SABÍAS QUE... el casino del Líbano batió el récord Guinness al contar con la ruleta más grande del mundo? Es una ruleta de techo interactiva, con un diámetro de casi 9 metros. Se caracteriza por una interacción técnica directa. La gente puede jugar con ella a través de un botón electrónico que la controla de forma remota (inalámbrica). Fuente: Portal Odiaspora: Casino del Líbano: Ruleta más grande del mundo.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (5/6)">
-    <span class="etiqueta">Desarrollo (5/6)</span>
-    <h2>Cómo se hace</h2>
-    <div class="destacado "><h3 style="margin-top:0;">⭐ Plus</h3><p style="margin:0;">Colocar en el extremo del motor una flecha doble y realizar una ruleta circular que en los extremos tenga los números 1 y 2. Agregar a la programación del motor el bloque mostrar número y el número será un número al azar entre 1 y 2. Entonces, según el número que se visualice en la pantalla LED, se deberá contestar la pregunta del extremo indicado por la flecha que tenga dicho número. Esto permite duplicar la cantidad de preguntas usando un giro de 180º. Otra opción: Se puede crear una ruleta totalmente digital sin usar el motor. Para esto se realiza la ruleta en cartón, señalando las diferentes secciones, y se coloca la micro:bit en el centro. El dibujo de una flecha en la pantalla LED señalará la pregunta en cada oportunidad.</p></div>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (6/6)">
-    <span class="etiqueta">Desarrollo (6/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>PARA SEGUIR TRABAJANDO: En la actividad 35 «Animales con movimiento» del proyecto «Con ojos de guardaparque» se puede continuar profundizando el uso del servo motor.</p>
+  <section class="slide portada" data-titulo="Descargá el proyecto">
+    <span class="etiqueta">El proyecto completo</span>
+    <h2>Descargá el proyecto acá</h2>
+    <p class="subtitulo">El PDF trae el paso a paso, los ejemplos de programa y la ficha
+    de trabajo para completar.</p>
+    <a class="boton-descarga grande" href="../proyectos/17-la-ruleta-del-saber.pdf" download>⬇ Descargar el PDF del proyecto</a>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.8); margin-top:1.4em;">
+      También podés <a href="../proyectos/17-la-ruleta-del-saber.pdf" target="_blank" style="color:var(--acento);">abrirlo sin descargar</a>.
+    </p>
   </section>
   <section class="slide" data-titulo="Autoevaluación">
     <span class="etiqueta">Para cerrar</span>
@@ -83,7 +64,7 @@
       <li>Aprendí y conocí nuevas funciones de la placa.</li>
     </ul>
     <p style="margin-top:1.4em;">
-      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todas las actividades</a>
+      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todos los prototipos</a>
     </p>
   </section>
 </main>
@@ -91,7 +72,7 @@
 <button class="zona-clic izq" aria-label="Slide anterior"></button>
 <button class="zona-clic der" aria-label="Slide siguiente"></button>
 
-<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todas las actividades</a></div>
+<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todos los prototipos</a></div>
 
 <div id="controles">
   <span id="contador">1 / 1</span>
@@ -111,6 +92,6 @@
 <dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
 </dl></div></div>
 
-<script src="../js/app.js?v=3"></script>
+<script src="../js/app.js?v=4"></script>
 </body>
 </html>

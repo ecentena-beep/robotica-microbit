@@ -3,10 +3,11 @@
 Material de clase de robótica para estudiantes de educación media, en formato de
 presentación navegable.
 
-- **Módulo 1 — La placa programable micro:bit** · 29 slides
-- **Módulo 2 — Tipos de proyectos** · 14 slides
-- **Módulo 3 — Comunidad Robótica de Bet-el** · blog para compartir proyectos
-- **Las 28 actividades** · una ficha navegable por actividad, con menú y filtros
+- **Módulo 1 — micro:bit: la placa programable** · 26 slides
+- **Módulo 2 — Tipos de proyectos con micro:bit** · 14 slides
+- **Módulo 3 — Prototipos de proyecto** · 28 prototipos, cada uno con su PDF descargable
+- **Comunidad Robótica de Bet-el** · blog para compartir proyectos
+- **Materiales de consulta** · glosario, referencias técnicas y manuales
 
 ## Ver el sitio
 
@@ -14,7 +15,7 @@ presentación navegable.
 
 También funciona sin conexión: descargá el repositorio y abrí `index.html`.
 
-## Módulo 1 — La placa programable
+## Módulo 1 — micro:bit: la placa programable
 
 - Qué es una placa programable y para qué sirve
 - Historia: de Seymour Papert a Arduino y micro:bit
@@ -25,24 +26,21 @@ También funciona sin conexión: descargá el repositorio y abrí `index.html`.
 - Proyectos con recursos integrados y externos
 - Actividad «Manos en el proyecto»: los espacios verdes y la tecnología
 
-## Módulo 2 — Tipos de proyectos
+## Módulo 2 — Tipos de proyectos con micro:bit
 
 - De la actividad suelta al proyecto: qué los diferencia
-- Los Objetivos de Desarrollo Sostenible como punto de partida
-- Niveles de dificultad y anatomía de una actividad
-- Proyecto «Nuestro centro educativo»: plantas, residuos, accesibilidad y recreación
-- Proyecto «Pulseras que nos cuidan»: temperatura, pasos, alimentación e hidratación
+- Los tres niveles de dificultad y cómo está armado un prototipo
 - Seis ideas cortas en video de Ceibal STEM
-- Rúbrica de evaluación y coevaluación del equipo
+- Consigna de cierre: elegir un proyecto y planificarlo
 
-## Las 28 actividades
+## Módulo 3 — Prototipos de proyecto
 
-El *Cuaderno de actividades micro:bit* separado en fichas independientes. El menú
+El *Cuaderno de actividades micro:bit* separado en 28 prototipos independientes. El menú
 ([actividades.html](actividades.html)) permite filtrar por modalidad y entrar a cualquiera
-sin haber hecho las anteriores. Cada ficha trae objetivo, espacios curriculares,
-contenidos micro:bit, materiales, desarrollo y autoevaluación.
+sin haber hecho los anteriores. Cada prototipo trae para qué es, qué se trabaja, qué hay
+que conseguir, el **PDF del proyecto para descargar** y la autoevaluación.
 
-## Módulo 3 — Comunidad Robótica de Bet-el
+## Comunidad Robótica de Bet-el
 
 El espacio donde los estudiantes cuentan qué construyeron. Antes de escribir tienen que
 identificarse con nombre y apellido, que firma la publicación.

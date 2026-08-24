@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Genera actividades.html: el menú de las 28 actividades del cuaderno."""
+"""Genera actividades.html: el menú del Módulo 3, Prototipos de proyecto."""
 import io, os, json, re
 
 DESTINO = r"C:\Users\ecent\OneDrive - NOVO\DESARROLLO\Pagina robotica"
@@ -27,6 +27,8 @@ for d in datos:
     if niv: pie.append(f'<span class="nivel {niv}">{niv.capitalize()}</span>')
     if not d["encabezado_confiable"]:
         pie.append('<span class="etiqueta-chica dudosa" title="El PDF original no permite leer estos datos">⚠ a confirmar</span>')
+    if d.get("pdf"):
+        pie.append('<span class="etiqueta-chica con-pdf">⬇ PDF</span>')
 
     fichas.append(f'''      <a class="ficha" href="{d["archivo"]}"
          data-modalidad="{esc(mod or "")}" data-nivel="{esc(niv or "")}" data-duracion="{dur or ""}">
@@ -46,7 +48,7 @@ html = f'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Actividades micro:bit — Menú</title>
+<title>Prototipos de proyecto — micro:bit</title>
 <link rel="stylesheet" href="css/estilos.css?v=3">
 </head>
 <body class="pagina">
@@ -57,15 +59,18 @@ html = f'''<!DOCTYPE html>
     <a href="index.html">Inicio</a> ·
     <a href="modulo1.html">Módulo 1</a> ·
     <a href="modulo2.html">Módulo 2</a> ·
-    <span>Actividades</span>
+    <span>Módulo 3</span>
   </nav>
 
   <header class="encabezado-menu">
-    <h1>Las 28 actividades</h1>
+    <p style="font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; color:var(--acento); margin-bottom:1.2em;">
+      Módulo 3
+    </p>
+    <h1>Prototipos de proyecto</h1>
     <p>
-      El <strong>Cuaderno de actividades micro:bit</strong> de Ceibal, separado en fichas.
-      Cada una es independiente: se puede hacer suelta, en una clase, sin haber hecho las anteriores.
-      Entrá a la que quieras y usá las flechas para avanzar.
+      Veintiocho prototipos para construir con micro:bit. Cada uno es independiente: se puede
+      hacer suelto, en una clase, sin haber hecho los anteriores. Entrá al que quieras, mirá
+      qué necesitás y <strong>descargá el PDF con el paso a paso</strong>.
     </p>
   </header>
 
@@ -130,4 +135,4 @@ html = f'''<!DOCTYPE html>
 '''
 
 io.open(os.path.join(DESTINO, "actividades.html"), "w", encoding="utf-8").write(html)
-print("actividades.html generado ·", len(fichas), "fichas ·", len(html), "bytes")
+print("actividades.html generado ·", len(fichas), "prototipos ·", len(html), "bytes")

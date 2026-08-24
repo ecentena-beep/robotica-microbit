@@ -143,13 +143,56 @@ body.pagina{ overflow:auto; height:auto; min-height:100%; }
 }
 .tarjeta-modulo .pie-modulo::after{ content:" →"; }
 
-/* El módulo 3 se destaca: es donde participan */
-.tarjeta-modulo.destacada{
-  background: linear-gradient(140deg, rgba(53,224,200,.14), rgba(108,140,255,.12));
+/* Tarjetas que ocupan todo el ancho, debajo de los módulos */
+.tarjeta-ancha{
+  display:flex; align-items:center; gap:2rem;
+  margin-top:1.4rem;
+  padding:1.8em 2em;
+  background: var(--superficie);
+  border:1px solid var(--borde);
+  border-radius: var(--radio);
+  text-decoration:none; color:inherit;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.tarjeta-ancha:hover{
+  transform: translateY(-4px);
+  border-color: var(--acento);
+  background: rgba(53,224,200,.07);
+}
+.tarjeta-ancha .ilustracion{
+  flex:0 0 auto; width:170px;
+  display:grid; place-items:center;
+}
+.tarjeta-ancha .ilustracion svg{ width:100%; height:auto; display:block; }
+.tarjeta-ancha .cuerpo{ flex:1; }
+.tarjeta-ancha .numero-modulo{
+  display:block;
+  font-size:.76rem; letter-spacing:.18em; text-transform:uppercase;
+  color: var(--acento); margin-bottom:.7em;
+}
+.tarjeta-ancha h2{
+  font-size:1.5rem; line-height:1.2; margin-bottom:.45em; color: var(--texto);
+  overflow-wrap: break-word;
+}
+.tarjeta-ancha p{
+  font-size:.94rem; line-height:1.6; color: var(--texto-suave); margin-bottom:.9em;
+  max-width:70ch;
+}
+.tarjeta-ancha .pie-modulo{ font-size:.82rem; color: var(--acento); }
+.tarjeta-ancha .pie-modulo::after{ content:" →"; }
+
+/* La comunidad es donde participan: se destaca */
+.tarjeta-ancha.comunidad{
+  background: linear-gradient(120deg, rgba(53,224,200,.14), rgba(108,140,255,.12));
   border-color: var(--acento);
 }
-.tarjeta-modulo.secundaria .icono-modulo{ font-size:2rem; }
-.tarjeta-modulo.secundaria h2{ font-size:1.2rem; }
+
+@media (max-width: 700px){
+  .tarjeta-ancha{ flex-direction:column; align-items:flex-start; gap:1.2rem; }
+  .tarjeta-ancha .ilustracion{ width:140px; }
+}
+
+.etiqueta-chica.con-pdf{ border-color: var(--acento); color: var(--acento); }
 
 /* ---------- Rejilla de actividades ---------- */
 .rejilla-actividades{
@@ -562,6 +605,30 @@ pre code{ background:none; border:none; padding:0; }
   position:absolute; left:0;
   color: var(--acento);
 }
+
+/* Botón de descarga del PDF del proyecto */
+.boton-descarga{
+  display:inline-flex; align-items:center; gap:.5em;
+  align-self:flex-start;
+  margin-top:1.2em;
+  font-size: calc(var(--u) * .92);
+  font-weight:600;
+  background: var(--acento);
+  color:#06091a;
+  text-decoration:none;
+  border-radius:999px;
+  padding:.7em 1.6em;
+  transition: transform .15s, box-shadow .15s;
+}
+.boton-descarga:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(53,224,200,.3);
+}
+.boton-descarga.grande{
+  font-size: calc(var(--u) * 1.1);
+  padding:.85em 2em;
+}
+.slide.portada .boton-descarga{ align-self:center; }
 
 /* Cita destacada */
 .cita{

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dado versus dado «arreglado» — Actividad 18</title>
-<link rel="stylesheet" href="../css/estilos.css?v=3">
+<link rel="stylesheet" href="../css/estilos.css?v=4">
 </head>
 <body data-deck="actividad-18" data-inicio="../index.html">
 
@@ -12,18 +12,19 @@
 
 <main id="escenario">
   <section class="slide portada" data-titulo="Actividad 18 · Dado versus dado «arreglado»">
-    <span class="etiqueta">Actividad 18</span>
+    <span class="etiqueta">Prototipo 18</span>
     <h1>Dado versus dado «arreglado»</h1>
     <div class="meta" style="justify-content:center;"><span class="dato">👤👤 Duplas</span> <span class="dato">⏱ 60 minutos</span></div>
     
+    <a class="boton-descarga" href="../proyectos/18-dado-versus-dado-arreglado.pdf" download>⬇ Descargar el PDF del proyecto</a>
   </section>
-  <section class="slide" data-titulo="Objetivo">
-    <span class="etiqueta">Actividad 18</span>
-    <h2>¿Para qué esta actividad?</h2>
+  <section class="slide" data-titulo="¿Para qué es esta actividad?">
+    <span class="etiqueta">Prototipo 18</span>
+    <h2>¿Para qué es esta actividad?</h2>
     <p class="grande">S Estimular la creación de dados virtuales mediante los cuales experimentar, comparar resultados y reflexionar sobre la equiprobabilidad de sucesos. Incentivar el uso de variables y condicionales en MakeCode.</p>
   </section>
-  <section class="slide" data-titulo="Contenidos">
-    <span class="etiqueta">Actividad 18</span>
+  <section class="slide" data-titulo="Qué se trabaja">
+    <span class="etiqueta">Prototipo 18</span>
     <h2>Qué se trabaja</h2>
     <div class="dos-columnas" style="align-items:start;">
       <div>
@@ -36,30 +37,20 @@
       </div>
     </div>
   </section>
-  <section class="slide" data-titulo="Materiales">
-    <span class="etiqueta">Actividad 18</span>
+  <section class="slide" data-titulo="Qué hay que conseguir">
+    <span class="etiqueta">Prototipo 18</span>
     <h2>Qué hay que conseguir</h2>
     <ul class="materiales"><li>Placa micro:bit</li><li>Entorno de programación MakeCode (computadora)</li><li>Cuaderno para hacer matemática en quinto, CEIP 86 cuaderno micro:bit | 2023</li></ul>
   </section>
-  <section class="slide" data-titulo="Desarrollo (1/4)">
-    <span class="etiqueta">Desarrollo (1/4)</span>
-    <h2>Cómo se hace</h2>
-    <p>En forma previa a realizar los experimentos aleatorios con dados propuestos en la pág. 32 del Cuaderno para hacer matemática en quinto, invitar a cada estudiante a programar dos dados: uno común con números y otro «arreglado» con constelaciones (se denomina «arreglado», ya que se mantienen las constelaciones 1, 3, 4, 5, se elimina la correspondiente al 2 y la constelación correspondiente al 6 aparece dos veces). DADO COMÚN: para programarlo, cada estudiante debe ingresar a MakeCode y elegir en la categoría BÁSICO el bloque mostrar número. En la categoría MATEMÁTICA elegirá el bloque escoger al azar de … a …, ingresando los valores 1 y 6 en los espacios destinados para los números. Para activar el dado utilizará el bloque al presionar el botón A de la categoría ENTRADA.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (2/4)">
-    <span class="etiqueta">Desarrollo (2/4)</span>
-    <h2>Cómo se hace</h2>
-    <p>DADO «ARREGLADO»: El dado se activa con un botón distinto a A, pudiendo ser, por ejemplo, B. A diferencia del dado común, en la categoría VARIABLES es necesario crear la variable «número» para obtener el bloque establecer número para… y vincularlo con el bloque escoger al azar. En la categoría LÓGICA se obtiene el condicional si verdadero entonces y la comparación 0 = 0. Se coloca sobre la palabra verdadero el bloque de comparación 0 = 0. Se modifica el primer 0 con la variable «número» y el segundo 0 con el número correspondiente a la constelación. 87 Finalmente, se utiliza el bloque mostrar led de la categoría BÁSICO para crear la constelación. Es necesario repetir este procedimiento para los restantes números del dado o duplicar los bloques y modificarlos.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (3/4)">
-    <span class="etiqueta">Desarrollo (3/4)</span>
-    <h2>Cómo se hace</h2>
-    <p>IMPORTANTE: No debe olvidarse que el dado «arreglado» debe mostrar la constelación 6 tanto con el número 2 como con el número 6. ¿SABÍAS QUE... los dados son viejísimos? Uno de los dados más antiguos se encontró en una tumba mesopotámica datada del siglo XXIV a. C., aunque se cree que en esa época su uso estaba vinculado a ritos adivinatorios, eran objetos mágicos. Otro dato interesante es que el orden de las caras de un dado no es aleatorio, aunque lo parece: las caras opuestas siempre suman siete (6-1, 5-2, 3-4). Fuente: El octavo distrito: 5 curiosidades sobre dados. 88 cuaderno micro:bit | 2023 PLUS: Previo a realizar este dado con 6 opciones se puede programar como si fuera una moneda y verificar qué sucede cuando tenemos dos opciones: cara y número.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (4/4)">
-    <span class="etiqueta">Desarrollo (4/4)</span>
-    <h2>Cómo se hace</h2>
-    <p>Otra idea: Automatizar el dado para una cantidad mayor de tiradas. Para esto deberá agregarse el bloque repetir de la categoría BUCLE para iterar la cantidad de veces deseadas. Considerando que a veces las constelaciones se repiten, se deberá experimentar con la programación para resolver esta dificultad. Pista: revisar la categoría BÁSICO, bloques borrar pantalla y pausa.</p>
+  <section class="slide portada" data-titulo="Descargá el proyecto">
+    <span class="etiqueta">El proyecto completo</span>
+    <h2>Descargá el proyecto acá</h2>
+    <p class="subtitulo">El PDF trae el paso a paso, los ejemplos de programa y la ficha
+    de trabajo para completar.</p>
+    <a class="boton-descarga grande" href="../proyectos/18-dado-versus-dado-arreglado.pdf" download>⬇ Descargar el PDF del proyecto</a>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.8); margin-top:1.4em;">
+      También podés <a href="../proyectos/18-dado-versus-dado-arreglado.pdf" target="_blank" style="color:var(--acento);">abrirlo sin descargar</a>.
+    </p>
   </section>
   <section class="slide" data-titulo="Autoevaluación">
     <span class="etiqueta">Para cerrar</span>
@@ -73,7 +64,7 @@
       <li>Aprendí y conocí nuevas funciones de la placa.</li>
     </ul>
     <p style="margin-top:1.4em;">
-      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todas las actividades</a>
+      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todos los prototipos</a>
     </p>
   </section>
 </main>
@@ -81,7 +72,7 @@
 <button class="zona-clic izq" aria-label="Slide anterior"></button>
 <button class="zona-clic der" aria-label="Slide siguiente"></button>
 
-<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todas las actividades</a></div>
+<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todos los prototipos</a></div>
 
 <div id="controles">
   <span id="contador">1 / 1</span>
@@ -101,6 +92,6 @@
 <dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
 </dl></div></div>
 
-<script src="../js/app.js?v=3"></script>
+<script src="../js/app.js?v=4"></script>
 </body>
 </html>

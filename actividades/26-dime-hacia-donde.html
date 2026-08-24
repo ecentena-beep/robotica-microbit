@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>¡Dime hacia dónde! — Actividad 26</title>
-<link rel="stylesheet" href="../css/estilos.css?v=3">
+<link rel="stylesheet" href="../css/estilos.css?v=4">
 </head>
 <body data-deck="actividad-26" data-inicio="../index.html">
 
@@ -12,18 +12,19 @@
 
 <main id="escenario">
   <section class="slide portada" data-titulo="Actividad 26 · ¡Dime hacia dónde!">
-    <span class="etiqueta">Actividad 26</span>
+    <span class="etiqueta">Prototipo 26</span>
     <h1>¡Dime hacia dónde!</h1>
-    <div class="meta" style="justify-content:center;"><span class="dato" title="El PDF original dibuja las variantes superpuestas y no permite leer cuál corresponde">⚠ A confirmar</span></div>
-    <blockquote class="cita" style="margin-top:1.4em;max-width:44ch;text-align:left;">«A menudo damos a los niños respuestas que recordar en lugar de problemas a resolver» — Roger Lewin OBJETIVO Construir un juego</blockquote>
+    
+    <blockquote class="cita" style="margin-top:1.2em;max-width:44ch;text-align:left;">«A menudo damos a los niños respuestas que recordar en lugar de problemas a resolver» — Roger Lewin OBJETIVO Construir un juego</blockquote>
+    <a class="boton-descarga" href="../proyectos/26-dime-hacia-donde.pdf" download>⬇ Descargar el PDF del proyecto</a>
   </section>
-  <section class="slide" data-titulo="Objetivo">
-    <span class="etiqueta">Actividad 26</span>
-    <h2>¿Para qué esta actividad?</h2>
+  <section class="slide" data-titulo="¿Para qué es esta actividad?">
+    <span class="etiqueta">Prototipo 26</span>
+    <h2>¿Para qué es esta actividad?</h2>
     <p class="grande">Construir un juego que permita desarrollar determinadas capacidades corporales.</p>
   </section>
-  <section class="slide" data-titulo="Contenidos">
-    <span class="etiqueta">Actividad 26</span>
+  <section class="slide" data-titulo="Qué se trabaja">
+    <span class="etiqueta">Prototipo 26</span>
     <h2>Qué se trabaja</h2>
     <div class="dos-columnas" style="align-items:start;">
       <div>
@@ -36,45 +37,20 @@
       </div>
     </div>
   </section>
-  <section class="slide" data-titulo="Materiales">
-    <span class="etiqueta">Actividad 26</span>
+  <section class="slide" data-titulo="Qué hay que conseguir">
+    <span class="etiqueta">Prototipo 26</span>
     <h2>Qué hay que conseguir</h2>
     <ul class="materiales"><li>Entorno de programación MakeCode (computadora o tablet)</li><li>Micro:bit</li><li>Cinta para construir una vincha y ubicar la micro:bit en la frente 126 cuaderno micro:bit | 2023</li></ul>
   </section>
-  <section class="slide" data-titulo="Desarrollo (1/7)">
-    <span class="etiqueta">Desarrollo (1/7)</span>
-    <h2>Cómo se hace</h2>
-    <p>Forma de trabajo: Esta actividad se debe plantear en forma grupal, asignando dos estudiantes por equipo. Se sugiere llevar adelante esta propuesta al aire libre o en un lugar amplio que permita moverse sin interferir con la actividad de los demás. La solución que se brinda es solamente un ejemplo. Es importante que se experimenten y creen soluciones diferentes, además de aprovechar los errores para generar nuevos aprendizajes. Se propone programar en el entorno MakeCode. Actividad: En esta actividad se deberá crear un juego para luego ponerlo en práctica. En dicho juego participarán equipos conformados por dos integrantes, uno será guía y el otro deberá ubicar la micro:bit en su frente utilizando una vincha. Un led encendido representará al personaje del juego.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (2/7)">
-    <span class="etiqueta">Desarrollo (2/7)</span>
-    <h2>Cómo se hace</h2>
-    <p>En la micro:bit es posible simular su desplazamiento a lo largo de la pantalla. Orientado por la persona guía y mediante diferentes movimientos, como inclinar la cabeza, saltar u otros, quien tenga la placa en su frente deberá mover al personaje hasta llegar a la meta, que estará representada por otro led. Cada vez que se inicie una partida, tanto el personaje como la meta aparecerán en una posición aleatoria. Los equipos contarán con diez segundos para llegar a su objetivo. Ganarán un punto solamente si lo logran en ese tiempo. Todos los equipos jugarán en forma simultánea y se podrán realizar todas las partidas que deseen. Se nombrará a una persona delegada que se encargará de medir el tiempo y registrar los puntajes en una hoja.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (3/7)">
-    <span class="etiqueta">Desarrollo (3/7)</span>
-    <h2>Cómo se hace</h2>
-    <p>PROGRAMACIÓN La categoría JUEGO de MakeCode permite crear diferentes objetos que serán representados por led. Estos objetos podrán ser desplazados a lo largo de la pantalla, se podrá controlar la posición en la que se encuentran, será 127 posible sumar o restar puntos, tiempos y muchas cosas más. Para profundizar en el tema se puede consultar el apartado Referencias técnicas. En este caso, será necesario crear dos objetos; uno será el personaje y otro representará la meta a la que se debe llegar. Si se desea que el personaje aparezca en diferentes posiciones al inicio de cada partida, se puede utilizar el bloque escoger al azar que se encuentra en la categoría MATEMÁTICA.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (4/7)">
-    <span class="etiqueta">Desarrollo (4/7)</span>
-    <h2>Cómo se hace</h2>
-    <p>Este programa crea un objeto llamado «personaje» y le asigna una ubicación al azar, tanto en x como en y. Para desplazar al personaje por medio de diferentes movimientos de la placa, se puede utilizar el acelerómetro de la micro:bit. Ejemplo de solución Al inicio de cada partida, tanto el personaje como la meta aparecerán en una ubicación aleatoria. Cada vez que el jugador salte, agitará la placa y logrará que el personaje aumente en 1 su posición en y. Al inclinar la placa a la derecha aumentará en 1 el valor de x, y al inclinarla a la izquierda, lo disminuirá en 1. Cuando incline su cabeza hacia atrás, la pantalla quedará hacia arriba, por lo que el personaje disminuirá en 1 su posición en y. Si el personaje coincide con la meta, la placa desplegará una cara feliz.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (5/7)">
-    <span class="etiqueta">Desarrollo (5/7)</span>
-    <h2>Cómo se hace</h2>
-    <p>En ese caso, el equipo ganará un punto si lo logró dentro del tiempo establecido (10 segundos). 128 cuaderno micro:bit | 2023 PLUS: Modificar el programa de tal forma que la micro:bit controle la duración del juego. Transcurridos 10 segundos, la placa dará por terminado el juego. FICHA DE TRABAJO ¡Dime hacia dónde! Nombre del equipo Integrantes ¡PRUEBA TU VELOCIDAD DE REACCIÓN! Utilizando una micro:bit, se propone crear un juego en el que se podrá medir la velocidad de reacción. En la pantalla de la micro:bit se encenderán dos led, uno representará al personaje del juego y el otro será la meta a la que este personaje debe 129 llegar. Cada vez que se inicie una partida, tanto el personaje como la meta deberán aparecer en lugares aleatorios.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (6/7)">
-    <span class="etiqueta">Desarrollo (6/7)</span>
-    <h2>Cómo se hace</h2>
-    <p>Dicho personaje se desplazará en diferentes direcciones, dependiendo del movimiento que se realice con la micro:bit. Por ejemplo, al agitarla, podría deslizarse un lugar hacia abajo. Cada equipo estará conformado por dos participantes. Una persona oficiará de guía y la otra, llevando la micro:bit en su frente, deberá seguir las instrucciones brindadas por su guía. Quien lleva la placa, siguiendo las indicaciones y por medio de diferentes movimientos como inclinar la cabeza, saltar, mirar hacia arriba y otros, deberá lograr que el personaje llegue a la meta antes de que transcurran 10 segundos. Si lo logra, el equipo obtendrá un punto. Todos los equipos jugarán simultáneamente. Una persona delegada será la encargada de medir el tiempo y registrar los puntajes obtenidos.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (7/7)">
-    <span class="etiqueta">Desarrollo (7/7)</span>
-    <h2>Cómo se hace</h2>
-    <p>Podrán jugar todas las partidas que deseen. ¿CÓMO SERÁ TU PROGRAMA? Movimiento del personaje Bajar un lugar Subir un lugar Desplazarse un lugar hacia la derecha Desplazarse un lugar hacia la izquierda Si el personaje llega a la meta, la micro:bit desplegará ¡Programa y juega! Movimiento de la micro:bit 130 cuaderno micro:bit | 2023</p>
+  <section class="slide portada" data-titulo="Descargá el proyecto">
+    <span class="etiqueta">El proyecto completo</span>
+    <h2>Descargá el proyecto acá</h2>
+    <p class="subtitulo">El PDF trae el paso a paso, los ejemplos de programa y la ficha
+    de trabajo para completar.</p>
+    <a class="boton-descarga grande" href="../proyectos/26-dime-hacia-donde.pdf" download>⬇ Descargar el PDF del proyecto</a>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.8); margin-top:1.4em;">
+      También podés <a href="../proyectos/26-dime-hacia-donde.pdf" target="_blank" style="color:var(--acento);">abrirlo sin descargar</a>.
+    </p>
   </section>
   <section class="slide" data-titulo="Autoevaluación">
     <span class="etiqueta">Para cerrar</span>
@@ -88,7 +64,7 @@
       <li>Aprendí y conocí nuevas funciones de la placa.</li>
     </ul>
     <p style="margin-top:1.4em;">
-      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todas las actividades</a>
+      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todos los prototipos</a>
     </p>
   </section>
 </main>
@@ -96,7 +72,7 @@
 <button class="zona-clic izq" aria-label="Slide anterior"></button>
 <button class="zona-clic der" aria-label="Slide siguiente"></button>
 
-<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todas las actividades</a></div>
+<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todos los prototipos</a></div>
 
 <div id="controles">
   <span id="contador">1 / 1</span>
@@ -116,6 +92,6 @@
 <dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
 </dl></div></div>
 
-<script src="../js/app.js?v=3"></script>
+<script src="../js/app.js?v=4"></script>
 </body>
 </html>

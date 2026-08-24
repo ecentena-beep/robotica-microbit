@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tiro al blanco — Actividad 5</title>
-<link rel="stylesheet" href="../css/estilos.css?v=3">
+<link rel="stylesheet" href="../css/estilos.css?v=4">
 </head>
 <body data-deck="actividad-5" data-inicio="../index.html">
 
@@ -12,18 +12,19 @@
 
 <main id="escenario">
   <section class="slide portada" data-titulo="Actividad 5 · Tiro al blanco">
-    <span class="etiqueta">Actividad 5</span>
+    <span class="etiqueta">Prototipo 5</span>
     <h1>Tiro al blanco</h1>
-    <div class="meta" style="justify-content:center;"><span class="dato" title="El PDF original dibuja las variantes superpuestas y no permite leer cuál corresponde">⚠ A confirmar</span></div>
     
+    
+    <a class="boton-descarga" href="../proyectos/05-tiro-al-blanco.pdf" download>⬇ Descargar el PDF del proyecto</a>
   </section>
-  <section class="slide" data-titulo="Objetivo">
-    <span class="etiqueta">Actividad 5</span>
-    <h2>¿Para qué esta actividad?</h2>
+  <section class="slide" data-titulo="¿Para qué es esta actividad?">
+    <span class="etiqueta">Prototipo 5</span>
+    <h2>¿Para qué es esta actividad?</h2>
     <p class="grande">Promover la producción e interpretación de números de un tiro al blanco representados mediante notación científica.</p>
   </section>
-  <section class="slide" data-titulo="Contenidos">
-    <span class="etiqueta">Actividad 5</span>
+  <section class="slide" data-titulo="Qué se trabaja">
+    <span class="etiqueta">Prototipo 5</span>
     <h2>Qué se trabaja</h2>
     <div class="dos-columnas" style="align-items:start;">
       <div>
@@ -36,40 +37,20 @@
       </div>
     </div>
   </section>
-  <section class="slide" data-titulo="Materiales">
-    <span class="etiqueta">Actividad 5</span>
+  <section class="slide" data-titulo="Qué hay que conseguir">
+    <span class="etiqueta">Prototipo 5</span>
     <h2>Qué hay que conseguir</h2>
     <ul class="materiales"><li>Placa micro:bit</li><li>Entorno de programación MakeCode (computadora)</li><li>Cuaderno para hacer matemática en sexto (Educación Primaria)</li><li>Cartón o cartulina</li><li>Marcadores, papel aluminio</li><li>Cables cocodrilo</li><li>Pelotita pequeña de goma o espumaplast 27</li></ul>
   </section>
-  <section class="slide" data-titulo="Desarrollo (1/6)">
-    <span class="etiqueta">Desarrollo (1/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Forma de trabajo: Se recomienda realizar grupos de 4 a 6 personas. Se propone que, a partir de la actividad de la página 21 del Cuaderno para hacer matemática en sexto, se complemente la propuesta mediante la creación de un juego de tiro al blanco cuyos números estén representados con notación científica. En esta actividad se utilizá cartón ya que es un material aislante y papel de aluminio ya que es un material conductor. Cada estudiante creará con cartón uno de los sectores del tablero. Luego, los equipos reunirán las creaciones individuales para generar un tiro al blanco grupal. La originalidad de este tiro al blanco consiste en que se podrá visualizar el puntaje obtenido integrándole la micro:bit.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (2/6)">
-    <span class="etiqueta">Desarrollo (2/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Con la placa se construirá un circuito eléctrico, el cual estará abierto en la zona donde debe golpear una pelotita. Cuando esta impacta, el circuito se cierra y se visualiza un elemento en la pantalla. Para crear los sectores del tablero, cada estudiante deberá acordar y definir con el equipo los siguientes aspectos: • el número que cada uno representará • qué forma y tamaño tendrá la zona donde golpea la pelotita (sector del tablero) • el material a utilizar (materiales conductores y aislantes) A continuación, se sugiere un ejemplo de tablero posible. Se pliega un cartón y en su parte externa se escribe el número correspondiente utilizando notación científica.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (3/6)">
-    <span class="etiqueta">Desarrollo (3/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Para armar el circuito eléctrico, en la parte interior del cartón se coloca papel aluminio según lo indicado en la figura 1. Finalmente, se coloca un cable cocodrilo en el PIN 0 de la micro:bit y otro en GND. Como se aprecia en la figura 2, cada cable se pinza en una franja de aluminio, de modo que el circuito se encuentra abierto, ya que las franjas 28 cuaderno micro:bit | 2023 no tienen contacto. Cuando la pelotita golpea en el cartón superior, ambos cartones se tocan y el circuito se cierra (el aluminio del cartón superior debe abarcar ambas franjas de aluminio del cartón inferior para poder ­cerrar el circuito). Figura 1 Figura 2 Se reúnen finalmente las creaciones individuales para componer el tablero grupal del tiro al blanco.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (4/6)">
-    <span class="etiqueta">Desarrollo (4/6)</span>
-    <h2>Cómo se hace</h2>
-    <div class="destacado aviso"><h3 style="margin-top:0;">📌 Nota para docentes</h3><p style="margin:0;">Dado que habrá varios cables y que se conectarán las baterías para suministrar energía a la micro:bit, será importante acordar grupalmente dónde ubicar dichos elementos para protegerlos del impacto de la pelotita (abajo, detrás del tablero, etc.). 29 Una vez construidos los sectores del tablero, cada estudiante deberá programar las placas micro:bit. Se podrá sugerir que al acertar el tiro la micro:bit muestre el número correspondiente a la notación científica. Para mostrar el número, se deberá seleccionar el bloque mostrar número de la categoría BÁSICO. Este se ubicará dentro del bloque al presionar pin P0 de la categoría ENTRADA.</p></div>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (5/6)">
-    <span class="etiqueta">Desarrollo (5/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Otra opción es proponer que se complejice la propuesta y sugerir que la micro:bit muestre únicamente un ícono como señal de haber acertado el tiro. De esta forma, al momento de jugar, cada estudiante deberá interpretar autónomamente el número correspondiente a la notación científica que fue golpeada con la pelotita. La programación es similar a la anterior, sustituyendo mostrar número por mostrar ícono. ¿SABÍAS QUE... el deporte de tiro al blanco con dardos tiene sus antecedentes alrededor del año 1314, cuando se los mencionó por primera vez en los libros de historia? Se dice que, entre batalla y batalla, los soldados aburridos se ocupaban de otras tareas, y una de ellas era competir lanzando astillas y otros materiales punzantes a las tapas de los barriles de vino.</p>
-  </section>
-  <section class="slide" data-titulo="Desarrollo (6/6)">
-    <span class="etiqueta">Desarrollo (6/6)</span>
-    <h2>Cómo se hace</h2>
-    <p>Este juego se fue perfeccionando hasta el que se conoce hoy en día y se llama dardo deportivo. Fuente: Wikipedia: Dardos. 30 cuaderno micro:bit | 2023 PLUS: Se podría generar un tablero con más sectores, donde cada estudiante pueda conectar su micro:bit a dos circuitos y, por tanto, a dos números del tablero. Para ello deberá realizar la programación antes explicada para el pin P0 y con otro valor para el pin P1. Se deberá ser cuidadoso en la realización y conexión de cada una de las partes del tablero y será necesario utilizar cuatro cables cocodrilo.</p>
+  <section class="slide portada" data-titulo="Descargá el proyecto">
+    <span class="etiqueta">El proyecto completo</span>
+    <h2>Descargá el proyecto acá</h2>
+    <p class="subtitulo">El PDF trae el paso a paso, los ejemplos de programa y la ficha
+    de trabajo para completar.</p>
+    <a class="boton-descarga grande" href="../proyectos/05-tiro-al-blanco.pdf" download>⬇ Descargar el PDF del proyecto</a>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.8); margin-top:1.4em;">
+      También podés <a href="../proyectos/05-tiro-al-blanco.pdf" target="_blank" style="color:var(--acento);">abrirlo sin descargar</a>.
+    </p>
   </section>
   <section class="slide" data-titulo="Autoevaluación">
     <span class="etiqueta">Para cerrar</span>
@@ -83,7 +64,7 @@
       <li>Aprendí y conocí nuevas funciones de la placa.</li>
     </ul>
     <p style="margin-top:1.4em;">
-      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todas las actividades</a>
+      <a href="../actividades.html" style="color:var(--acento);">&larr; Volver a todos los prototipos</a>
     </p>
   </section>
 </main>
@@ -91,7 +72,7 @@
 <button class="zona-clic izq" aria-label="Slide anterior"></button>
 <button class="zona-clic der" aria-label="Slide siguiente"></button>
 
-<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todas las actividades</a></div>
+<div id="titulo-deck"><a href="../index.html" style="color:inherit;">🏠 Inicio</a> · <a href="../actividades.html" style="color:inherit;">Todos los prototipos</a></div>
 
 <div id="controles">
   <span id="contador">1 / 1</span>
@@ -111,6 +92,6 @@
 <dt><kbd>Esc</kbd></dt><dd>Cerrar</dd>
 </dl></div></div>
 
-<script src="../js/app.js?v=3"></script>
+<script src="../js/app.js?v=4"></script>
 </body>
 </html>

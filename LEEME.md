@@ -6,12 +6,14 @@ doble clic en `index.html`.
 ## Estructura
 
 ```
-index.html      ← menú principal del sitio
-modulo1.html    ← Módulo 1: la placa micro:bit (29 slides)
-modulo2.html    ← Módulo 2: tipos de proyectos (14 slides)
-comunidad.html  ← Módulo 3: Comunidad Robótica de Bet-el (el blog)
-actividades.html← menú de las 28 actividades del cuaderno
-actividades/    ← una página por actividad (GENERADAS, no editar a mano)
+index.html       ← menú principal del sitio
+modulo1.html     ← Módulo 1: micro:bit, la placa programable (26 slides)
+modulo2.html     ← Módulo 2: tipos de proyectos con micro:bit (14 slides)
+actividades.html ← Módulo 3: Prototipos de proyecto (menú de los 28)
+actividades/     ← una página por prototipo (GENERADAS, no editar a mano)
+comunidad.html   ← Comunidad Robótica de Bet-el (el blog)
+materiales.html  ← Materiales de consulta
+proyectos/       ← los PDF de cada prototipo, para descargar
 css/estilos.css ← todo el diseño (colores, tamaños, layouts)
 js/app.js       ← navegación (no hay que tocarlo para agregar contenido)
 media/          ← videos locales (NO se publican; ver nota abajo)
@@ -179,7 +181,23 @@ Los niveles son `baja`, `intermedia` y `avanzada`.
 Todo está al principio de `css/estilos.css`, en `:root`. Cambiando `--acento` cambia el
 color de títulos, viñetas, bordes y barra de progreso en todo el sitio.
 
-## Comunidad Robótica de Bet-el (Módulo 3)
+## Los PDF de los prototipos
+
+Cada prototipo tiene su PDF en `proyectos/NN-slug.pdf`, y el botón de descarga aparece
+dos veces: en la portada del prototipo y en la slide «Descargá el proyecto acá».
+
+El emparejamiento se hace **por título, no por número**: la carpeta original venía con 27
+PDF numerados del 01 al 27, pero el cuaderno tiene 28 actividades, así que a partir de la
+número 10 la numeración estaba corrida. La actividad **10, «Notas musicales», no tiene
+PDF** en la carpeta de origen; su página simplemente no muestra el botón de descarga.
+
+El campo `pdf` de cada actividad en `actividades.json` guarda la ruta. Si agregás el PDF
+que falta, poné ahí `"proyectos/10-notas-musicales.pdf"` y regenerá.
+
+> **No publicado a propósito:** la carpeta de origen incluye
+> `Soluciones de los proyectos.pdf`. Es material docente y quedó fuera del sitio.
+
+## Comunidad Robótica de Bet-el
 
 El blog donde los estudiantes cuentan sus proyectos. Antes de escribir tienen que poner
 nombre y apellido, que queda firmando la publicación y guardado en su navegador para no
