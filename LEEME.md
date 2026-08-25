@@ -212,15 +212,18 @@ El circuito completo:
 
 1. El estudiante escribe en `comunidad.html`. **Nunca ve el formulario de Google.**
 2. La página envía los datos al formulario por detrás.
-3. La respuesta cae en la hoja **«Respuestas de formulario 1»** de la planilla.
-4. Vos escribís **`si`** en la columna **Publicar** de esa fila.
-5. La hoja **«Aprobados»** la levanta sola, y como es la única publicada como CSV,
-   aparece en el sitio.
+3. La respuesta cae en la hoja **«Respuestas de formulario 1»**.
+4. La hoja **«Aprobados»** la levanta sola y **aparece en el sitio, sin aprobación previa**.
 
-**Nada se publica sin ese `si`.** Lo que no apruebes no sale a internet.
+**Para bajar una publicación, borrá su fila** en «Respuestas de formulario 1». Desaparece
+del sitio en el próximo refresco.
 
-Tarda alrededor de **un minuto** en aparecer: Google cachea el CSV publicado. No es un
-error, hay que esperar y recargar.
+Tarda alrededor de **un minuto** en aparecer o desaparecer: Google cachea el CSV
+publicado. No es un error, hay que esperar y recargar.
+
+> Como no hay revisión previa, lo que un estudiante escriba queda visible en internet
+> hasta que alguien lo borre. Si en algún momento querés volver a moderar antes de
+> publicar, es un cambio de una línea en la fórmula de la hoja «Aprobados».
 
 ### Dónde está cada cosa
 
@@ -228,11 +231,15 @@ error, hay que esperar y recargar.
 |---|---|
 | Formulario (editar) | `docs.google.com/forms/d/10JcN6bNWHN8odvNIoP_W_qNoeJvgDsq83_CEzx1HjY8/edit` |
 | Planilla | `docs.google.com/spreadsheets/d/1ukvOp59kcyax3fyQXgEYv8GY6rbTySSz8HDfM2tlrro/edit` |
-| Hoja donde moderás | «Respuestas de formulario 1», columna **Publicar** |
-| Hoja que se publica | «Aprobados» (fórmula, no se edita a mano) |
+| Hoja donde borrás | «Respuestas de formulario 1» |
+| Hoja que se publica | «Aprobados» (una sola fórmula en A2, no se edita a mano) |
 
 El formulario está configurado **sin recolección de correos** y abierto a «cualquiera con
 el enlace», para que los estudiantes no necesiten cuenta de Google.
+
+> **La fórmula usa columnas enteras (`B:B`) a propósito.** Con rangos del tipo `$B$2:$B`,
+> Google desplaza la referencia cada vez que se borra una fila y la hoja empieza a
+> saltearse la primera publicación. Ya pasó dos veces.
 
 > **Si agregás o reordenás preguntas en el formulario**, cambian los identificadores
 > `entry.XXXX` y hay que actualizarlos en el `CONFIG` de `comunidad.html`.
@@ -241,7 +248,7 @@ el enlace», para que los estudiantes no necesiten cuenta de Google.
 
 - **Nombre y apellido completos en un sitio público.** Son menores. Se puede pedir nombre
   y la inicial del apellido, o un apodo de clase. El formulario y el sitio funcionan igual.
-- **Moderación.** Nada se publica sin tu `si` en la planilla. Conviene mantener ese paso.
+- **Moderación.** No hay: se publica solo. Conviene mirar la planilla seguido.
 
 ## Las páginas de actividades
 

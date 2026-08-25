@@ -46,7 +46,7 @@ El espacio donde los estudiantes cuentan qué construyeron. Antes de escribir ti
 identificarse con nombre y apellido, que firma la publicación.
 
 Detrás hay un formulario de Google y una planilla: la publicación llega ahí y aparece en
-el sitio recién cuando el docente la aprueba escribiendo `si` en la columna **Publicar**.
+el sitio automáticamente. Para bajar una, se borra su fila en la planilla.
 El circuito está explicado en [LEEME.md](LEEME.md).
 
 ## Cómo se usa

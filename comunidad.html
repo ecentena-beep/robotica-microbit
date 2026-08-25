@@ -146,9 +146,9 @@ var CONFIG = {
     enlace:   "entry.1260724892"
   },
 
-  // Hoja «Aprobados» publicada como CSV. Trae solo las filas donde el
-  // docente escribió «si» en la columna Publicar de la planilla, así que
-  // nada aparece en el sitio sin pasar por esa aprobación.
+  // Hoja «Aprobados» publicada como CSV. Trae todas las publicaciones:
+  // se muestran automáticamente, sin aprobación previa. Para bajar una,
+  // se borra su fila en la planilla.
   planillaCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7STp2YhL0t90atbNIQWaMnWDmSp9L66Z6eKBTBJd4bOEl1YZH-tty-A38U4QxCdH9ZwD6t65WkoMb/pub?gid=131732253&single=true&output=csv"
 };
 
@@ -335,9 +335,9 @@ var CONFIG = {
       var exito = $("exito-publicar");
       exito.textContent = res.local
         ? "¡Listo! Quedó guardada en este dispositivo."
-        : "¡Listo! Tu publicación fue enviada. Aparece cuando el profesor la aprueba.";
+        : "¡Listo! Tu publicación ya está. Puede tardar un minuto en aparecer acá abajo.";
       exito.hidden = false;
-      setTimeout(function () { exito.hidden = true; }, 6000);
+      setTimeout(function () { exito.hidden = true; }, 8000);
 
       pintarPosts();
     }).catch(function () {
