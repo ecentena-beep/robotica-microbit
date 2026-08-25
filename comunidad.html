@@ -131,21 +131,25 @@
    ============================================================ */
 
 var CONFIG = {
-  modo: "local",          // cambiar a "compartido" cuando esté todo cargado
+  modo: "compartido",
 
-  // --- Para el modo compartido ---
-  // URL del formulario de Google terminada en /formResponse
-  formularioUrl: "",
-  // Identificadores de cada campo del formulario (entry.XXXXXXX)
+  // Formulario de Google que recibe las publicaciones. Los estudiantes
+  // nunca lo ven: escriben acá y la página envía los datos por detrás.
+  formularioUrl: "https://docs.google.com/forms/d/e/1FAIpQLSenJiOEPQsb5LGlryBa25KM2p430_w1YKJ-8zgr48VqTY6TnQ/formResponse",
+
+  // Identificador de cada pregunta del formulario
   campos: {
-    nombre:   "",
-    apellido: "",
-    titulo:   "",
-    texto:    "",
-    enlace:   ""
+    nombre:   "entry.2125593735",
+    apellido: "entry.1686592593",
+    titulo:   "entry.1807448646",
+    texto:    "entry.1465980799",
+    enlace:   "entry.1260724892"
   },
-  // Planilla publicada como CSV, con las publicaciones ya aprobadas
-  planillaCsv: ""
+
+  // Hoja «Aprobados» publicada como CSV. Trae solo las filas donde el
+  // docente escribió «si» en la columna Publicar de la planilla, así que
+  // nada aparece en el sitio sin pasar por esa aprobación.
+  planillaCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7STp2YhL0t90atbNIQWaMnWDmSp9L66Z6eKBTBJd4bOEl1YZH-tty-A38U4QxCdH9ZwD6t65WkoMb/pub?gid=131732253&single=true&output=csv"
 };
 
 (function () {
@@ -355,7 +359,15 @@ var CONFIG = {
 
   function fechaLinda(iso) {
     if (!iso) return "";
-    var d = new Date(iso);
+    var d;
+    // «2026-08-24» a secas lo interpreta el navegador como UTC, y en Uruguay
+    // eso muestra el día anterior. Por eso se arma como fecha local.
+    var soloFecha = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso.trim());
+    if (soloFecha) {
+      d = new Date(+soloFecha[1], +soloFecha[2] - 1, +soloFecha[3]);
+    } else {
+      d = new Date(iso);
+    }
     if (isNaN(d)) return iso;
     return d.toLocaleDateString("es-UY", { day: "numeric", month: "long", year: "numeric" });
   }

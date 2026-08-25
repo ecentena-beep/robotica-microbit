@@ -203,38 +203,45 @@ El blog donde los estudiantes cuentan sus proyectos. Antes de escribir tienen qu
 nombre y apellido, que queda firmando la publicación y guardado en su navegador para no
 tener que repetirlo.
 
-### Cómo está resuelto el guardado
+### Cómo funciona el guardado
 
-GitHub Pages sirve archivos estáticos: **no puede guardar** lo que escriben. Por eso
-`comunidad.html` tiene arriba de todo un bloque `CONFIG` con dos modos:
+GitHub Pages sirve archivos estáticos: **no puede guardar** lo que escriben. Detrás hay
+un formulario de Google y una planilla, ya conectados en el `CONFIG` de `comunidad.html`.
 
-- **`local`** (el que está puesto): guarda en el navegador de cada uno. Cada estudiante ve
-  solo lo suyo. La página muestra un aviso naranja diciéndolo. Sirve para probar y para
-  que escriban el borrador.
-- **`compartido`**: manda cada publicación a un formulario de Google y muestra las que
-  vos aprobaste en una planilla.
+El circuito completo:
 
-### Pasar a modo compartido
+1. El estudiante escribe en `comunidad.html`. **Nunca ve el formulario de Google.**
+2. La página envía los datos al formulario por detrás.
+3. La respuesta cae en la hoja **«Respuestas de formulario 1»** de la planilla.
+4. Vos escribís **`si`** en la columna **Publicar** de esa fila.
+5. La hoja **«Aprobados»** la levanta sola, y como es la única publicada como CSV,
+   aparece en el sitio.
 
-1. Creá un formulario de Google con cinco preguntas de texto, en este orden:
-   **Nombre**, **Apellido**, **Titulo**, **Texto**, **Enlace**.
-2. En el formulario, abrí «Vista previa», clic derecho → «Inspeccionar», y buscá el
-   atributo `name="entry.XXXXXXX"` de cada campo. Anotá los cinco números.
-3. La URL para enviar es la del formulario cambiando `/viewform` por `/formResponse`.
-4. En «Respuestas» → «Vincular a Hojas de cálculo». En esa planilla agregá una columna
-   más y usala para marcar lo aprobado.
-5. Creá una segunda hoja que traiga solo lo aprobado, y publicala:
-   Archivo → Compartir → **Publicar en la web** → esa hoja → formato **CSV**.
-6. Pegá todo en el `CONFIG` de `comunidad.html` y poné `modo: "compartido"`.
+**Nada se publica sin ese `si`.** Lo que no apruebes no sale a internet.
 
-La planilla es tu **filtro de moderación**: nada aparece en el sitio hasta que lo marcás.
+Tarda alrededor de **un minuto** en aparecer: Google cachea el CSV publicado. No es un
+error, hay que esperar y recargar.
+
+### Dónde está cada cosa
+
+| | |
+|---|---|
+| Formulario (editar) | `docs.google.com/forms/d/10JcN6bNWHN8odvNIoP_W_qNoeJvgDsq83_CEzx1HjY8/edit` |
+| Planilla | `docs.google.com/spreadsheets/d/1ukvOp59kcyax3fyQXgEYv8GY6rbTySSz8HDfM2tlrro/edit` |
+| Hoja donde moderás | «Respuestas de formulario 1», columna **Publicar** |
+| Hoja que se publica | «Aprobados» (fórmula, no se edita a mano) |
+
+El formulario está configurado **sin recolección de correos** y abierto a «cualquiera con
+el enlace», para que los estudiantes no necesiten cuenta de Google.
+
+> **Si agregás o reordenás preguntas en el formulario**, cambian los identificadores
+> `entry.XXXX` y hay que actualizarlos en el `CONFIG` de `comunidad.html`.
 
 ### Dos cosas a decidir antes de abrirlo a los estudiantes
 
 - **Nombre y apellido completos en un sitio público.** Son menores. Se puede pedir nombre
   y la inicial del apellido, o un apodo de clase. El formulario y el sitio funcionan igual.
-- **Moderación.** Con el modo compartido nada se publica sin tu aprobación. Si algún día
-  se conecta algo que publique directo, conviene mantener ese paso.
+- **Moderación.** Nada se publica sin tu `si` en la planilla. Conviene mantener ese paso.
 
 ## Las páginas de actividades
 

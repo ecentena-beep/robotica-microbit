@@ -45,9 +45,9 @@ que conseguir, el **PDF del proyecto para descargar** y la autoevaluación.
 El espacio donde los estudiantes cuentan qué construyeron. Antes de escribir tienen que
 identificarse con nombre y apellido, que firma la publicación.
 
-Como GitHub Pages es estático, el guardado compartido necesita un formulario de Google
-detrás; mientras no esté configurado, la página funciona en modo local y lo avisa.
-Los pasos están en [LEEME.md](LEEME.md).
+Detrás hay un formulario de Google y una planilla: la publicación llega ahí y aparece en
+el sitio recién cuando el docente la aprueba escribiendo `si` en la columna **Publicar**.
+El circuito está explicado en [LEEME.md](LEEME.md).
 
 ## Cómo se usa
 
