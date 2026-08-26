@@ -146,10 +146,18 @@ var CONFIG = {
     enlace:   "entry.1260724892"
   },
 
-  // Hoja «Aprobados» publicada como CSV. Trae todas las publicaciones:
-  // se muestran automáticamente, sin aprobación previa. Para bajar una,
-  // se borra su fila en la planilla.
-  planillaCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7STp2YhL0t90atbNIQWaMnWDmSp9L66Z6eKBTBJd4bOEl1YZH-tty-A38U4QxCdH9ZwD6t65WkoMb/pub?gid=131732253&single=true&output=csv"
+  // Hoja «Respuestas de formulario 1» publicada como CSV: la página lee
+  // LAS RESPUESTAS DIRECTO, sin ninguna fórmula en el medio. Las columnas
+  // se emparejan por el nombre del encabezado, no por su posición, así que
+  // agregar columnas o reordenarlas no rompe nada.
+  //
+  // Antes había una hoja «Aprobados» con un FILTER: Google le desplazaba
+  // las referencias al borrar filas y la comunidad dejaba de mostrarse sin
+  // dar ningún error. Por eso se sacó del camino.
+  //
+  // Se publica todo automáticamente. Para bajar una publicación, se borra
+  // su fila en la planilla.
+  planillaCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7STp2YhL0t90atbNIQWaMnWDmSp9L66Z6eKBTBJd4bOEl1YZH-tty-A38U4QxCdH9ZwD6t65WkoMb/pub?gid=1303088063&single=true&output=csv"
 };
 
 (function () {
@@ -357,18 +365,27 @@ var CONFIG = {
       .replace(/"/g, "&quot;");
   }
 
-  function fechaLinda(iso) {
-    if (!iso) return "";
-    var d;
-    // «2026-08-24» a secas lo interpreta el navegador como UTC, y en Uruguay
-    // eso muestra el día anterior. Por eso se arma como fecha local.
-    var soloFecha = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso.trim());
-    if (soloFecha) {
-      d = new Date(+soloFecha[1], +soloFecha[2] - 1, +soloFecha[3]);
+  /* La fecha llega en dos formatos según de dónde se lea la planilla:
+       · «2026-08-24»                de una hoja con fórmula TEXT
+       · «26/08/2026 6:35:29»        de la marca temporal del formulario
+     Los dos se arman como fecha LOCAL a propósito: si se le pasa
+     «2026-08-24» al navegador, lo toma como UTC y en Uruguay muestra el
+     día anterior. */
+  function fechaLinda(valor) {
+    if (!valor) return "";
+    var s = String(valor).trim();
+    var d = null;
+
+    var iso = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(s);
+    if (iso) {
+      d = new Date(+iso[1], +iso[2] - 1, +iso[3]);
     } else {
-      d = new Date(iso);
+      var uy = /^(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(s);   // día/mes/año
+      if (uy) d = new Date(+uy[3], +uy[2] - 1, +uy[1]);
+      else d = new Date(s);
     }
-    if (isNaN(d)) return iso;
+
+    if (!d || isNaN(d)) return s;
     return d.toLocaleDateString("es-UY", { day: "numeric", month: "long", year: "numeric" });
   }
 

@@ -208,22 +208,33 @@ tener que repetirlo.
 GitHub Pages sirve archivos estáticos: **no puede guardar** lo que escriben. Detrás hay
 un formulario de Google y una planilla, ya conectados en el `CONFIG` de `comunidad.html`.
 
-El circuito completo:
+El circuito, que ahora tiene tres pasos y ninguna fórmula:
 
 1. El estudiante escribe en `comunidad.html`. **Nunca ve el formulario de Google.**
 2. La página envía los datos al formulario por detrás.
-3. La respuesta cae en la hoja **«Respuestas de formulario 1»**.
-4. La hoja **«Aprobados»** la levanta sola y **aparece en el sitio, sin aprobación previa**.
+3. La respuesta cae en la hoja **«Respuestas de formulario 1»**, que está publicada como
+   CSV, y **el sitio la lee directo de ahí**.
 
-**Para bajar una publicación, borrá su fila** en «Respuestas de formulario 1». Desaparece
-del sitio en el próximo refresco.
+**Para bajar una publicación, borrá su fila** en esa hoja. Desaparece del sitio.
 
-Tarda alrededor de **un minuto** en aparecer o desaparecer: Google cachea el CSV
-publicado. No es un error, hay que esperar y recargar.
+Tarda unos segundos en aparecer o desaparecer. Si justo mirás en el momento exacto puede
+que veas la versión anterior: el CSV publicado se sirve desde varios servidores de Google
+y tardan un poco en ponerse de acuerdo. Recargá y listo.
 
 > Como no hay revisión previa, lo que un estudiante escriba queda visible en internet
-> hasta que alguien lo borre. Si en algún momento querés volver a moderar antes de
-> publicar, es un cambio de una línea en la fórmula de la hoja «Aprobados».
+> hasta que alguien lo borre.
+
+### Por qué se lee la hoja de respuestas y no otra
+
+Antes había una hoja intermedia, «Aprobados», con una fórmula `FILTER`. **Se rompió tres
+veces**: al borrar filas, Google le desplazaba las referencias y la hoja quedaba vacía.
+La comunidad dejaba de mostrarse sin dar ningún error, ni en la página ni en la planilla.
+
+Ahora el sitio lee la hoja de respuestas tal cual, sin fórmulas en el medio. Las columnas
+se emparejan **por el nombre del encabezado**, no por su posición, así que agregar o
+reordenar columnas tampoco rompe nada.
+
+La hoja «Aprobados» quedó ahí pero **ya no se usa**. Se puede borrar.
 
 ### Dónde está cada cosa
 
@@ -231,15 +242,10 @@ publicado. No es un error, hay que esperar y recargar.
 |---|---|
 | Formulario (editar) | `docs.google.com/forms/d/10JcN6bNWHN8odvNIoP_W_qNoeJvgDsq83_CEzx1HjY8/edit` |
 | Planilla | `docs.google.com/spreadsheets/d/1ukvOp59kcyax3fyQXgEYv8GY6rbTySSz8HDfM2tlrro/edit` |
-| Hoja donde borrás | «Respuestas de formulario 1» |
-| Hoja que se publica | «Aprobados» (una sola fórmula en A2, no se edita a mano) |
+| Hoja que lee el sitio | «Respuestas de formulario 1» — también es donde borrás |
 
 El formulario está configurado **sin recolección de correos** y abierto a «cualquiera con
 el enlace», para que los estudiantes no necesiten cuenta de Google.
-
-> **La fórmula usa columnas enteras (`B:B`) a propósito.** Con rangos del tipo `$B$2:$B`,
-> Google desplaza la referencia cada vez que se borra una fila y la hoja empieza a
-> saltearse la primera publicación. Ya pasó dos veces.
 
 > **Si agregás o reordenás preguntas en el formulario**, cambian los identificadores
 > `entry.XXXX` y hay que actualizarlos en el `CONFIG` de `comunidad.html`.
