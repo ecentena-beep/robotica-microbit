@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Comunidad Robótica de Bet-el</title>
-<link rel="stylesheet" href="css/estilos.css?v=4">
+<link rel="stylesheet" href="css/estilos.css?v=5">
 </head>
 <body class="pagina">
 
@@ -111,6 +111,26 @@
     </p>
   </section>
 
+</div>
+
+<!-- ============================================================
+     VENTANA EMERGENTE: la publicación completa
+     ============================================================ -->
+<div id="modal-post" class="modal" hidden>
+  <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <button class="modal-cerrar" id="modal-cerrar" aria-label="Cerrar">×</button>
+    <div class="post-autor">
+      <span class="avatar" id="modal-avatar"></span>
+      <span>
+        <strong id="modal-autor"></strong>
+        <span class="post-fecha" id="modal-fecha"></span>
+      </span>
+    </div>
+    <h2 id="modal-titulo"></h2>
+    <img class="post-imagen" id="modal-imagen" alt="" hidden>
+    <p class="modal-texto" id="modal-texto"></p>
+    <a class="post-enlace" id="modal-enlace" target="_blank" rel="noopener noreferrer" hidden>Ver el programa →</a>
+  </div>
 </div>
 
 <script>
@@ -237,21 +257,49 @@ var CONFIG = {
       return h.trim().toLowerCase();
     });
     var idx = function (nombre) { return cabecera.indexOf(nombre); };
+    // Busca la primera columna cuyo encabezado contenga la palabra
+    var idxQueContenga = function (palabra) {
+      for (var i = 0; i < cabecera.length; i++) {
+        if (cabecera[i].indexOf(palabra) >= 0) return i;
+      }
+      return -1;
+    };
 
     return filas.filter(function (f) { return f.join("").trim(); }).map(function (f) {
       var dato = function (nombre) {
         var k = idx(nombre);
         return k >= 0 ? (f[k] || "").trim() : "";
       };
+      var datoQueContenga = function (palabra) {
+        var k = idxQueContenga(palabra);
+        return k >= 0 ? (f[k] || "").trim() : "";
+      };
+      var fecha = dato("marca temporal") || dato("fecha");
       return {
+        // La marca temporal identifica la publicación: es única por envío
+        // y es lo que usan los comentarios para saber a cuál pertenecen.
+        id:       fecha,
         nombre:   dato("nombre"),
         apellido: dato("apellido"),
         titulo:   dato("titulo") || dato("título"),
         texto:    dato("texto"),
         enlace:   dato("enlace"),
-        fecha:    dato("marca temporal") || dato("fecha")
+        imagen:   urlDeImagen(datoQueContenga("imagen") || datoQueContenga("foto")),
+        fecha:    fecha
       };
     }).reverse();
+  }
+
+  /* Google Forms guarda las imágenes subidas como enlaces a Drive del tipo
+     «https://drive.google.com/open?id=XXXX». Ese enlace no sirve para un
+     <img>; hay que pedir el archivo por su id. Si el estudiante pegó una
+     URL de imagen común, se deja como está. */
+  function urlDeImagen(valor) {
+    if (!valor) return "";
+    var m = /[?&]id=([A-Za-z0-9_-]{10,})/.exec(valor) ||
+            /\/d\/([A-Za-z0-9_-]{10,})/.exec(valor);
+    if (m) return "https://lh3.googleusercontent.com/d/" + m[1];
+    return /^https?:\/\//i.test(valor) ? valor : "";
   }
 
   /* ---------------- identidad ---------------- */
@@ -393,6 +441,9 @@ var CONFIG = {
     return ((nombre || "?")[0] + (apellido || "")[0] || "?").toUpperCase();
   }
 
+  // Más allá de este largo, la tarjeta muestra un recorte y un «Leer más»
+  var LARGO_RECORTE = 260;
+
   function pintarPosts() {
     almacen.leer().then(function (posts) {
       var cont = $("lista-posts");
@@ -403,6 +454,7 @@ var CONFIG = {
         : "";
 
       posts.forEach(function (p) {
+        var largo = (p.texto || "").length > LARGO_RECORTE || (p.texto || "").split("\n").length > 7;
         var art = document.createElement("article");
         art.className = "post";
         art.innerHTML =
@@ -414,15 +466,70 @@ var CONFIG = {
             '</span>' +
           '</div>' +
           '<h3>' + escapar(p.titulo) + '</h3>' +
-          '<p class="post-texto">' + escapar(p.texto) + '</p>' +
-          (p.enlace
-            ? '<a class="post-enlace" href="' + escapar(p.enlace) +
-              '" target="_blank" rel="noopener noreferrer">Ver el programa →</a>'
-            : '');
+          (p.imagen
+            ? '<img class="post-imagen" src="' + escapar(p.imagen) + '" alt="" loading="lazy">'
+            : '') +
+          '<p class="post-texto' + (largo ? ' recortado' : '') + '">' + escapar(p.texto) + '</p>' +
+          '<div class="post-acciones">' +
+            (largo ? '<button class="ver-mas" type="button">Leer más</button>' : '') +
+            (p.enlace
+              ? '<a class="post-enlace" href="' + escapar(p.enlace) +
+                '" target="_blank" rel="noopener noreferrer">Ver el programa →</a>'
+              : '') +
+          '</div>';
+
+        // Si la imagen no carga (enlace roto, Drive sin permiso), se saca
+        var img = art.querySelector(".post-imagen");
+        if (img) img.addEventListener("error", function () { img.remove(); });
+
+        var boton = art.querySelector(".ver-mas");
+        if (boton) boton.addEventListener("click", function () { abrirModal(p); });
+        // El título también abre la publicación completa
+        art.querySelector("h3").style.cursor = "pointer";
+        art.querySelector("h3").addEventListener("click", function () { abrirModal(p); });
+
         cont.appendChild(art);
       });
     });
   }
+
+  /* ---------------- ventana emergente ---------------- */
+
+  var modal = $("modal-post");
+  var ultimoFoco = null;
+
+  function abrirModal(p) {
+    ultimoFoco = document.activeElement;
+    $("modal-avatar").textContent = iniciales(p.nombre, p.apellido);
+    $("modal-autor").textContent  = p.nombre + " " + p.apellido;
+    $("modal-fecha").textContent  = fechaLinda(p.fecha);
+    $("modal-titulo").textContent = p.titulo;
+    $("modal-texto").textContent  = p.texto;
+
+    var img = $("modal-imagen");
+    img.hidden = !p.imagen;
+    img.src = p.imagen || "";
+
+    var enlace = $("modal-enlace");
+    enlace.hidden = !p.enlace;
+    enlace.href = p.enlace || "#";
+
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    $("modal-cerrar").focus();
+  }
+
+  function cerrarModal() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    if (ultimoFoco && ultimoFoco.focus) ultimoFoco.focus();
+  }
+
+  $("modal-cerrar").addEventListener("click", cerrarModal);
+  modal.addEventListener("click", function (e) { if (e.target === modal) cerrarModal(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.hidden) cerrarModal();
+  });
 
   /* ---------------- arranque ---------------- */
 
