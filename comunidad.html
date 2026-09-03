@@ -130,6 +130,34 @@
     <img class="post-imagen" id="modal-imagen" alt="" hidden>
     <p class="modal-texto" id="modal-texto"></p>
     <a class="post-enlace" id="modal-enlace" target="_blank" rel="noopener noreferrer" hidden>Ver el programa →</a>
+
+    <!-- Comentarios de los compañeros -->
+    <section class="comentarios" id="zona-comentarios" hidden>
+      <h3 id="comentarios-titulo">Comentarios</h3>
+      <div id="lista-comentarios"></div>
+      <p class="vacio chico" id="sin-comentarios" hidden>Todavía nadie comentó. Sé la primera persona.</p>
+
+      <form id="form-comentario" class="form-comentario">
+        <div class="fila-form" id="comentario-identidad" hidden>
+          <label>
+            <span>Nombre</span>
+            <input type="text" id="comentario-nombre" maxlength="40" placeholder="Tu nombre">
+          </label>
+          <label>
+            <span>Apellido</span>
+            <input type="text" id="comentario-apellido" maxlength="40" placeholder="Tu apellido">
+          </label>
+        </div>
+        <label class="campo-largo">
+          <span>Escribí un comentario <span class="opcional" id="comentario-como"></span></span>
+          <textarea id="comentario-texto" rows="3" maxlength="600"
+            placeholder="Una pregunta, una idea, algo que te sirvió…"></textarea>
+        </label>
+        <p id="error-comentario" class="error-form" hidden></p>
+        <button class="boton chico" id="btn-comentar" type="submit">Comentar</button>
+        <p id="exito-comentario" class="exito-form" hidden></p>
+      </form>
+    </section>
   </div>
 </div>
 
@@ -177,7 +205,22 @@ var CONFIG = {
   //
   // Se publica todo automáticamente. Para bajar una publicación, se borra
   // su fila en la planilla.
-  planillaCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7STp2YhL0t90atbNIQWaMnWDmSp9L66Z6eKBTBJd4bOEl1YZH-tty-A38U4QxCdH9ZwD6t65WkoMb/pub?gid=1303088063&single=true&output=csv"
+  planillaCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7STp2YhL0t90atbNIQWaMnWDmSp9L66Z6eKBTBJd4bOEl1YZH-tty-A38U4QxCdH9ZwD6t65WkoMb/pub?gid=1303088063&single=true&output=csv",
+
+  // Comentarios: un segundo formulario y su propia planilla. Cada
+  // comentario lleva el id de la publicación (su marca temporal) para
+  // saber a cuál pertenece. Mientras esté vacío, la sección de comentarios
+  // no se muestra.
+  comentarios: {
+    formularioUrl: "https://docs.google.com/forms/d/e/1FAIpQLScNrwRw4bTVksZaclD-PGsCLYlfaBiXWc8w_Goeg9zyrCrL9Q/formResponse",
+    campos: {
+      publicacion: "entry.1807448646",
+      nombre:      "entry.2125593735",
+      apellido:    "entry.1686592593",
+      comentario:  "entry.1465980799"
+    },
+    planillaCsv: ""
+  }
 };
 
 (function () {
@@ -289,6 +332,148 @@ var CONFIG = {
       };
     }).reverse();
   }
+
+  /* ---------------- comentarios ---------------- */
+
+  // Convierte un CSV en una lista de objetos {encabezado-en-minúscula: valor}
+  function tablaDeCsv(csv) {
+    var filas = [], campo = "", fila = [], dentro = false;
+    for (var i = 0; i < csv.length; i++) {
+      var ch = csv[i];
+      if (dentro) {
+        if (ch === '"' && csv[i + 1] === '"') { campo += '"'; i++; }
+        else if (ch === '"') dentro = false;
+        else campo += ch;
+      } else if (ch === '"') dentro = true;
+      else if (ch === ",") { fila.push(campo); campo = ""; }
+      else if (ch === "\n") { fila.push(campo); filas.push(fila); fila = []; campo = ""; }
+      else if (ch !== "\r") campo += ch;
+    }
+    if (campo || fila.length) { fila.push(campo); filas.push(fila); }
+    if (!filas.length) return [];
+    var cab = filas.shift().map(function (h) { return h.trim().toLowerCase(); });
+    return filas.filter(function (f) { return f.join("").trim(); }).map(function (f) {
+      var o = {};
+      cab.forEach(function (h, k) { o[h] = (f[k] || "").trim(); });
+      return o;
+    });
+  }
+
+  var comentariosPorPost = {};   // id de publicación -> lista de comentarios
+
+  function hayComentarios() {
+    var c = CONFIG.comentarios;
+    return !!(c && c.formularioUrl && c.planillaCsv);
+  }
+
+  function cargarComentarios() {
+    comentariosPorPost = {};
+    if (!hayComentarios()) return Promise.resolve();
+    return fetch(CONFIG.comentarios.planillaCsv, { cache: "no-store" })
+      .then(function (r) { return r.text(); })
+      .then(function (csv) {
+        tablaDeCsv(csv).forEach(function (f) {
+          var id = f["publicacion"] || f["publicación"] || "";
+          if (!id) return;
+          (comentariosPorPost[id] = comentariosPorPost[id] || []).push({
+            nombre:   f["nombre"], apellido: f["apellido"],
+            texto:    f["comentario"] || f["texto"],
+            fecha:    f["marca temporal"] || f["fecha"]
+          });
+        });
+      })
+      .catch(function () { /* sin comentarios, la página sigue */ });
+  }
+
+  function enviarComentario(post, id, texto) {
+    var c = CONFIG.comentarios, datos = new FormData();
+    datos.append(c.campos.publicacion, post.id);
+    datos.append(c.campos.nombre,      id.nombre);
+    datos.append(c.campos.apellido,    id.apellido);
+    datos.append(c.campos.comentario,  texto);
+    return fetch(c.formularioUrl, { method: "POST", mode: "no-cors", body: datos });
+  }
+
+  var postAbierto = null;
+
+  function pintarComentarios(p) {
+    var zona = $("zona-comentarios");
+    if (!hayComentarios()) { zona.hidden = true; return; }
+    zona.hidden = false;
+    postAbierto = p;
+
+    var lista = comentariosPorPost[p.id] || [];
+    $("comentarios-titulo").textContent = lista.length
+      ? lista.length + (lista.length === 1 ? " comentario" : " comentarios")
+      : "Comentarios";
+    $("sin-comentarios").hidden = lista.length > 0;
+
+    var cont = $("lista-comentarios");
+    cont.innerHTML = "";
+    lista.forEach(function (c) {
+      var div = document.createElement("div");
+      div.className = "comentario";
+      div.innerHTML =
+        '<span class="avatar">' + escapar(iniciales(c.nombre, c.apellido)) + '</span>' +
+        '<div class="comentario-cuerpo">' +
+          '<strong>' + escapar(c.nombre + " " + c.apellido) + '</strong>' +
+          '<span class="post-fecha">' + escapar(fechaLinda(c.fecha)) + '</span>' +
+          '<p class="comentario-texto">' + escapar(c.texto) + '</p>' +
+        '</div>';
+      cont.appendChild(div);
+    });
+
+    // Si ya se identificó para publicar, no se le vuelve a pedir el nombre
+    var quien = identidadGuardada();
+    $("comentario-identidad").hidden = !!quien;
+    $("comentario-como").textContent = quien ? "(como " + quien.nombre + " " + quien.apellido + ")" : "";
+    $("comentario-texto").value = "";
+    $("error-comentario").hidden = true;
+    $("exito-comentario").hidden = true;
+  }
+
+  $("form-comentario").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!postAbierto) return;
+    var error = $("error-comentario");
+    var quien = identidadGuardada();
+    if (!quien) {
+      var n = $("comentario-nombre").value.trim(), a = $("comentario-apellido").value.trim();
+      if (n.length < 2 || a.length < 2) {
+        error.textContent = "Poné tu nombre y apellido para comentar.";
+        error.hidden = false; return;
+      }
+      quien = { nombre: n, apellido: a };
+      localStorage.setItem(CLAVE_IDENTIDAD, JSON.stringify(quien));
+      mostrarPasoPublicar(quien);
+    }
+    var texto = $("comentario-texto").value.trim();
+    if (texto.length < 3) {
+      error.textContent = "Escribí algo (3 caracteres o más).";
+      error.hidden = false; return;
+    }
+    error.hidden = true;
+
+    var boton = $("btn-comentar");
+    boton.disabled = true; boton.textContent = "Enviando…";
+    var post = postAbierto;
+    enviarComentario(post, quien, texto).then(function () {
+      // Se muestra enseguida, sin esperar a que Google publique el CSV
+      (comentariosPorPost[post.id] = comentariosPorPost[post.id] || []).push({
+        nombre: quien.nombre, apellido: quien.apellido, texto: texto, fecha: new Date().toISOString()
+      });
+      pintarComentarios(post);
+      $("exito-comentario").textContent = "¡Comentario publicado!";
+      $("exito-comentario").hidden = false;
+      var chip = document.querySelector('.contador-comentarios[data-id="' + CSS.escape(post.id) + '"]');
+      if (chip) chip.textContent = "💬 " + comentariosPorPost[post.id].length;
+    }).catch(function () {
+      error.textContent = "No se pudo enviar. Fijate si tenés internet y probá de nuevo.";
+      error.hidden = false;
+    }).then(function () {
+      boton.disabled = false; boton.textContent = "Comentar";
+    });
+  });
 
   /* Google Forms guarda las imágenes subidas como enlaces a Drive del tipo
      «https://drive.google.com/open?id=XXXX». Ese enlace no sirve para un
@@ -445,7 +630,8 @@ var CONFIG = {
   var LARGO_RECORTE = 260;
 
   function pintarPosts() {
-    almacen.leer().then(function (posts) {
+    Promise.all([almacen.leer(), cargarComentarios()]).then(function (res) {
+      var posts = res[0];
       var cont = $("lista-posts");
       cont.innerHTML = "";
       $("sin-posts").hidden = posts.length > 0;
@@ -472,6 +658,10 @@ var CONFIG = {
           '<p class="post-texto' + (largo ? ' recortado' : '') + '">' + escapar(p.texto) + '</p>' +
           '<div class="post-acciones">' +
             (largo ? '<button class="ver-mas" type="button">Leer más</button>' : '') +
+            (hayComentarios()
+              ? '<button class="contador-comentarios" type="button" data-id="' + escapar(p.id) + '">💬 ' +
+                ((comentariosPorPost[p.id] || []).length || "Comentar") + '</button>'
+              : '') +
             (p.enlace
               ? '<a class="post-enlace" href="' + escapar(p.enlace) +
                 '" target="_blank" rel="noopener noreferrer">Ver el programa →</a>'
@@ -484,6 +674,11 @@ var CONFIG = {
 
         var boton = art.querySelector(".ver-mas");
         if (boton) boton.addEventListener("click", function () { abrirModal(p); });
+        var chip = art.querySelector(".contador-comentarios");
+        if (chip) chip.addEventListener("click", function () {
+          abrirModal(p);
+          $("comentario-texto").focus();
+        });
         // El título también abre la publicación completa
         art.querySelector("h3").style.cursor = "pointer";
         art.querySelector("h3").addEventListener("click", function () { abrirModal(p); });
@@ -513,6 +708,8 @@ var CONFIG = {
     var enlace = $("modal-enlace");
     enlace.hidden = !p.enlace;
     enlace.href = p.enlace || "#";
+
+    pintarComentarios(p);
 
     modal.hidden = false;
     document.body.style.overflow = "hidden";

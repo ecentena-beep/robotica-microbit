@@ -47,7 +47,9 @@ identificarse con nombre y apellido, que firma la publicación.
 
 Detrás hay un formulario de Google y una planilla: la publicación llega ahí y el sitio la
 lee directo, sin fórmulas en el medio. Aparece automáticamente; para bajar una, se borra
-su fila en la planilla. El circuito está explicado en [LEEME.md](LEEME.md).
+su fila en la planilla. Las publicaciones largas se recortan en la tarjeta y se leen
+completas en una ventana, donde además los compañeros pueden dejar comentarios (van a un
+segundo formulario y planilla). El circuito está explicado en [LEEME.md](LEEME.md).
 
 ## Cómo se usa
 

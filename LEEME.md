@@ -236,6 +236,28 @@ reordenar columnas tampoco rompe nada.
 
 La hoja «Aprobados» quedó ahí pero **ya no se usa**. Se puede borrar.
 
+### Comentarios
+
+Cada publicación se abre en una ventana (botón «Leer más» o clic en el título) y ahí
+abajo están los comentarios de los compañeros y el cuadro para escribir uno. En la
+tarjeta aparece un contador «💬 3».
+
+Funciona con **un segundo formulario y su propia planilla**, igual que las
+publicaciones. Cada comentario lleva el campo **Publicacion** con la marca temporal de la
+publicación a la que pertenece; así la página sabe dónde mostrarlo.
+
+| | |
+|---|---|
+| Formulario de comentarios (editar) | `docs.google.com/forms/d/1M4EuXxoNEh8f-Ok4xJXufH2F2nhPOyYEef1CXf2fiCc/edit` |
+| Planilla de comentarios | `docs.google.com/spreadsheets/d/1FanzgSj7eog-DOl0TGSfo5GfHJbqWuhun1aP7Z84hng/edit` |
+
+Para bajar un comentario, borrá su fila en esa planilla. El formulario se hizo como copia
+del de publicaciones, por eso tiene un campo «Enlace» que no se usa: es opcional y queda
+vacío.
+
+> Si el `CONFIG.comentarios` de `comunidad.html` está vacío, la sección de comentarios
+> directamente no se muestra. La página sigue funcionando sin ellos.
+
 ### Dónde está cada cosa
 
 | | |

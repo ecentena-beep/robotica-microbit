@@ -423,6 +423,46 @@ body.pagina{ overflow:auto; height:auto; min-height:100%; }
 }
 .modal-cerrar:hover{ background: rgba(255,255,255,.16); border-color: var(--acento); }
 
+/* ---------- Comentarios dentro de la ventana ---------- */
+.comentarios{
+  margin-top:1.8em; padding-top:1.4em;
+  border-top:1px solid var(--borde);
+}
+.comentarios h3{ font-size:1rem; letter-spacing:.04em; margin-bottom:.9em; color: var(--texto-suave); }
+.comentario{
+  display:flex; gap:.8rem; align-items:flex-start;
+  padding:.8em 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.comentario .avatar{ width:2rem; height:2rem; font-size:.75rem; flex:0 0 auto; }
+.comentario-cuerpo{ flex:1; min-width:0; }
+.comentario-cuerpo strong{ font-size:.9rem; }
+.comentario-cuerpo .post-fecha{ display:inline; margin-left:.5em; }
+.comentario-texto{
+  font-size:.92rem; line-height:1.6; color: var(--texto);
+  white-space:pre-wrap; overflow-wrap:break-word; margin-top:.25em;
+}
+.vacio.chico{ padding:1rem 0; text-align:left; font-size:.9rem; }
+.form-comentario{ margin-top:1.2em; }
+.form-comentario label > span:first-child{
+  display:block; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
+  color: var(--texto-suave); margin-bottom:.45em;
+}
+.form-comentario input, .form-comentario textarea{
+  width:100%; font-family:inherit; font-size:.95rem; color: var(--texto);
+  background: rgba(0,0,0,.28); border:1px solid var(--borde); border-radius:10px;
+  padding:.7em .9em;
+}
+.form-comentario input:focus, .form-comentario textarea:focus{ outline:none; border-color: var(--acento); }
+.form-comentario textarea{ resize:vertical; line-height:1.55; }
+.form-comentario label{ display:block; margin-bottom:.9rem; }
+.boton.chico{ font-size:.9rem; padding:.6em 1.5em; }
+.contador-comentarios{
+  font-size:.82rem; color: var(--texto-suave);
+  background:none; border:0; padding:0; font-family:inherit; cursor:pointer;
+}
+.contador-comentarios:hover{ color: var(--acento); }
+
 @media (max-width: 560px){
   .modal{ padding:0; }
   .modal-caja{ max-width:none; max-height:100vh; min-height:100vh; border-radius:0; padding:3.5em 1.4em 2em; }
