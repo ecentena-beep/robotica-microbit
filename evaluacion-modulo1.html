@@ -89,6 +89,16 @@
 
   .sin-responder{ border-color:var(--alerta) !important; }
 
+  /* El desplegable de grupo, con la misma pinta que los campos de texto */
+  .caja-form select{
+    width:100%; padding:.75em .9em;
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--borde); border-radius:10px;
+    color:var(--texto); font-family:var(--fuente); font-size:1rem;
+  }
+  .caja-form select:focus{ outline:none; border-color:var(--acento); }
+  .caja-form select option{ background:var(--fondo-2); color:var(--texto); }
+
   @media (max-width:640px){
     .pregunta{ padding:1.2rem 1.1rem; }
     .marca{ display:block; margin:.4rem 0 0 auto; padding-left:0; }
@@ -113,7 +123,7 @@
     </p>
     <h1>Módulo 1 — micro:bit: la placa programable</h1>
     <p>
-      Doce preguntas sobre lo que vimos en el módulo. Elegí una opción en cada una
+      Veinte preguntas sobre lo que vimos en el módulo. Elegí una opción en cada una
       y al final vas a ver tu puntaje y la explicación de cada respuesta.
       Si algo no te sale, volvé a las slides del módulo y buscalo: para eso están.
     </p>
@@ -135,7 +145,8 @@
   <section id="paso-identidad" class="caja-form" style="margin:2.5rem 0;">
     <h2>Antes de empezar, decinos quién sos</h2>
     <p class="ayuda-form">
-      Tu nombre va junto al resultado, para que el profesor sepa de quién es.
+      Tu nombre y tu grupo van junto al resultado, para que el profesor sepa de quién es.
+      La fecha y la hora se registran solas.
     </p>
     <div class="fila-form">
       <label>
@@ -147,6 +158,17 @@
         <input type="text" id="campo-apellido" autocomplete="family-name" maxlength="40" placeholder="Tu apellido">
       </label>
     </div>
+    <label>
+      <span>Grupo</span>
+      <select id="campo-grupo">
+        <option value="">Elegí tu grupo…</option>
+        <option value="7.º A">7.º A</option>
+        <option value="7.º B">7.º B</option>
+        <option value="8.º">8.º</option>
+        <option value="9.º">9.º</option>
+        <option value="1.º EMS">1.º EMS</option>
+      </select>
+    </label>
     <p id="error-identidad" class="error-form" hidden></p>
     <button class="boton" type="button" id="btn-empezar">Empezar el test</button>
   </section>
@@ -157,7 +179,7 @@
   <section id="paso-test" hidden>
 
     <div class="barra-progreso-test">
-      <span id="texto-progreso">0 de 12 respondidas</span>
+      <span id="texto-progreso">0 de 20 respondidas</span>
       <span class="riel"><span class="relleno" id="relleno-progreso"></span></span>
       <span id="quien-responde"></span>
     </div>
@@ -177,7 +199,7 @@
   <section id="paso-resultado" hidden>
     <div class="tarjeta-resultado">
       <div class="puntaje" id="puntaje-numero">0</div>
-      <div class="de" id="puntaje-de">de 12 respuestas correctas</div>
+      <div class="de" id="puntaje-de">de 20 respuestas correctas</div>
       <p class="comentario" id="puntaje-comentario"></p>
       <p id="estado-envio" class="exito-form" hidden></p>
     </div>
@@ -201,22 +223,26 @@
      CONFIGURACIÓN DEL ENVÍO
      Mientras esté vacío, el test corrige pero no manda el resultado
      a ningún lado: sirve igual como autoevaluación.
-     Para conectarlo hace falta un formulario de Google con cinco
-     preguntas de texto (nombre, apellido, puntaje, total, detalle)
-     y pegar acá su URL de /formResponse y los entry.XXXX.
+     Para conectarlo hace falta un formulario de Google con seis
+     preguntas de texto (nombre, apellido, grupo, puntaje, total,
+     detalle) y pegar acá su URL de /formResponse y los entry.XXXX.
+     La fecha y la hora las pone Google solo, en la marca temporal.
      ============================================================ */
   var CONFIG = {
     formularioUrl: "",
     campos: {
       nombre:   "",
       apellido: "",
+      grupo:    "",
       puntaje:  "",
       total:    "",
       detalle:  ""
     },
-    // Mezcla el orden de las opciones en cada carga, para que no se
-    // copien «la b» entre compañeros. Poner false para dejarlas fijas.
-    mezclarOpciones: true
+    // Cada estudiante recibe las preguntas en distinto orden y las
+    // opciones también mezcladas, para que no se copien «la b».
+    // Poner false para dejarlas fijas.
+    mezclarPreguntas: true,
+    mezclarOpciones:  true
   };
 
   /* ============================================================
@@ -224,6 +250,9 @@
      Cada una: enunciado, opciones, cuál es la correcta (por índice
      en el orden en que están escritas) y por qué.
      Para editar el test se edita esta lista y nada más.
+     El número que ve el estudiante depende del sorteo, pero en la
+     planilla cada pregunta se identifica por su posición ACÁ, así
+     el detalle de todos los estudiantes se puede comparar.
      ============================================================ */
   var PREGUNTAS = [
     {
@@ -293,28 +322,6 @@
       porque: "Son 25 luces LED en una matriz de 5 por 5. Ahí se muestran los textos y las imágenes simples."
     },
     {
-      pregunta: "¿Cuál de estos componentes tiene la V2 y NO tiene la V1?",
-      opciones: [
-        "El acelerómetro",
-        "Los botones A y B",
-        "El sensor de temperatura",
-        "El micrófono"
-      ],
-      correcta: 3,
-      porque: "La V2 sumó altavoz, micrófono y logo táctil. La matriz de LED, los botones, la brújula, el acelerómetro y los sensores de luz y temperatura están en las dos versiones."
-    },
-    {
-      pregunta: "micro:bit tiene tres formas de entrada. ¿Cuáles?",
-      opciones: [
-        "La matriz de LED, el altavoz y los pines",
-        "Los sensores integrados, los botones y los pines",
-        "El cable USB, la batería y el botón de reinicio",
-        "La antena de radio, el procesador y la brújula"
-      ],
-      correcta: 1,
-      porque: "Los sensores integrados toman datos del entorno, los botones A y B permiten que la persona interactúe, y los pines dejan conectar más dispositivos de entrada."
-    },
-    {
       pregunta: "¿Qué hace un sensor?",
       opciones: [
         "Acciona sobre el entorno mediante movimiento, sonido o luz",
@@ -337,26 +344,136 @@
       porque: "El actuador va de la placa hacia el entorno, así que es la etapa de salida. Los más comunes son LED, buzzers, motores y pantallas LCD."
     },
     {
-      pregunta: "En la luminaria automatizada, el sensor de luz integrado devuelve valores…",
+      pregunta: "¿Qué lugar ocupa la placa dentro de un proyecto de robótica?",
       opciones: [
-        "entre 0 y 100",
-        "entre 0 y 255",
-        "entre -50 y 50",
-        "solo 0 o 1"
+        "Es un accesorio: el proyecto funciona igual sin ella",
+        "Es el componente central, donde se procesan los datos; lo que armamos alrededor le da forma a la creación",
+        "Es solamente la fuente de energía del proyecto",
+        "Es la carcasa que protege a los sensores"
       ],
       correcta: 1,
-      porque: "Es información analógica y va de 0 a 255. En MakeCode, los bloques redondeados de la categoría «Entrada» son justamente los de sensores analógicos."
+      porque: "La placa es el corazón de cualquier proyecto que implique procesamiento de datos. Podemos pensarla como la «inteligencia» que articula lo que construimos, tome o no la forma de un robot."
     },
     {
-      pregunta: "¿Por qué conviene medir el nivel de luz en el lugar real antes de decidir el valor de la condición?",
+      pregunta: "Sin conectarle absolutamente nada más que el cable USB, ¿qué puede hacer una micro:bit?",
       opciones: [
-        "Porque el sensor se descalibra con el uso",
-        "Porque la placa necesita calentarse antes de medir bien",
-        "Porque las lecturas cambian según el contexto: un umbral que anda en el salón puede fallar en el patio",
-        "Porque así se gasta menos batería"
+        "Nada: primero hay que conectarle sensores",
+        "Solo encender las luces",
+        "Encender las luces y medir la luz, la temperatura y la inclinación",
+        "Solo reproducir sonidos"
       ],
       correcta: 2,
-      porque: "Primero se escribe un programa que muestre el nivel de luz, se anotan el máximo y el mínimo en el espacio donde va a funcionar el proyecto, y recién ahí se elige el valor de la condición."
+      porque: "Fue diseñada justamente para eso: con el cable USB y nada más ya se pueden encender los LED y medir luz, temperatura e inclinación, porque esos sensores vienen integrados."
+    },
+    {
+      pregunta: "¿Cuál de estas NO es una de las razones por las que elegimos micro:bit?",
+      opciones: [
+        "Es fácil de programar, con bloques y sin escribir código al inicio",
+        "Trae sensores y actuadores ya integrados",
+        "Tiene una pantalla táctil a color",
+        "Es de bajo costo, así que se puede trabajar en grupo en el aula"
+      ],
+      correcta: 2,
+      porque: "micro:bit no tiene pantalla táctil a color: su salida visual es la matriz de 25 LED. Las otras tres sí son las razones que vimos, junto con lo fácil que es conectarle componentes."
+    },
+    {
+      pregunta: "Imaginá una computadora cuya única tarea es multiplicar dos números. ¿Qué sería la entrada?",
+      opciones: [
+        "El resultado de la multiplicación",
+        "Los dos números que queremos multiplicar",
+        "La operación de multiplicar",
+        "La pantalla donde se muestra el resultado"
+      ],
+      correcta: 1,
+      porque: "La entrada son los datos que ingresamos: los dos números. El proceso es la multiplicación y la salida es el resultado que vemos."
+    },
+    {
+      pregunta: "¿Para qué sirven los pines de micro:bit?",
+      opciones: [
+        "Para sujetar la placa al cartón del proyecto",
+        "Para conectar más dispositivos de entrada y de salida, y así expandir el proyecto",
+        "Para cargar la batería",
+        "Para reiniciar la placa"
+      ],
+      correcta: 1,
+      porque: "Son las tiras doradas de la parte inferior. Por ahí —o por una placa de expansión— se conectan sensores y actuadores que no vienen en la placa."
+    },
+    {
+      pregunta: "En micro:bit, ¿qué corresponde a la etapa de proceso?",
+      opciones: [
+        "Los sensores integrados",
+        "La matriz de LED",
+        "El código que escribimos, que se ejecuta en el microprocesador",
+        "Los botones A y B"
+      ],
+      correcta: 2,
+      porque: "El proceso se da en el microprocesador de la placa, y lo que define qué hace con los datos es el código: ahí se hacen las operaciones lógicas, matemáticas o de comparación."
+    },
+    {
+      pregunta: "¿Cuál de estos componentes de micro:bit es una salida?",
+      opciones: [
+        "El sensor de temperatura",
+        "Los botones A y B",
+        "La matriz de 25 LED",
+        "La brújula"
+      ],
+      correcta: 2,
+      porque: "La matriz de LED muestra el resultado del proceso, así que es salida. El sensor de temperatura, los botones y la brújula aportan datos: son entrada."
+    },
+    {
+      pregunta: "En un sensor, ¿en qué dirección viaja la información?",
+      opciones: [
+        "Del entorno hacia la placa",
+        "De la placa hacia el entorno",
+        "De la placa hacia la computadora",
+        "En las dos direcciones a la vez"
+      ],
+      correcta: 0,
+      porque: "El sensor toma datos del entorno y se los da a la placa: es la etapa de entrada. El actuador hace el camino inverso, de la placa hacia el entorno, y es la salida."
+    },
+    {
+      pregunta: "Querés usar un sensor de humedad que no viene incluido en la placa. ¿Cómo lo conectás?",
+      opciones: [
+        "No se puede: micro:bit solo funciona con sus sensores integrados",
+        "Por el conector USB",
+        "Por los pines o con una placa de expansión",
+        "Por la antena de radio"
+      ],
+      correcta: 2,
+      porque: "Los dispositivos de entrada y de salida pueden estar integrados a la placa o ser externos, y esos externos se conectan mediante los pines o una placa de expansión."
+    },
+    {
+      pregunta: "En la luminaria automatizada, comparar el valor del sensor y decidir si se enciende, ¿a qué etapa corresponde?",
+      opciones: [
+        "A la entrada",
+        "Al proceso",
+        "A la salida",
+        "A ninguna: es parte del armado físico"
+      ],
+      correcta: 1,
+      porque: "La entrada es la lectura del sensor de luz; el proceso es comparar ese valor con la condición que programamos; la salida es que se enciendan los LED."
+    },
+    {
+      pregunta: "El código de la luminaria dice: si (nivel de luz < 50) entonces mostrar LEDs, si no borrar pantalla. Si el nivel de luz es 80, ¿qué hace la placa?",
+      opciones: [
+        "Enciende los LED",
+        "Borra la pantalla: los LED quedan apagados",
+        "Se reinicia",
+        "Muestra el número 80 en la pantalla"
+      ],
+      correcta: 1,
+      porque: "80 no es menor que 50, así que no se cumple la condición y se ejecuta la parte del «si no»: borrar la pantalla. Ese encendido y apagado es la etapa de salida."
+    },
+    {
+      pregunta: "Según la idea de Papert que vimos, ¿hacia dónde queremos correr el foco?",
+      opciones: [
+        "Del consumo pasivo hacia la creación activa",
+        "De la creación activa hacia el consumo pasivo",
+        "Del trabajo en grupo hacia el trabajo individual",
+        "De la programación con bloques hacia la programación con texto"
+      ],
+      correcta: 0,
+      porque: "Que la fabricación a escala personal, la programación y la informática física desplacen el foco del consumo pasivo hacia la creación activa. Es la idea de «Inventar para aprender»."
     }
   ];
 
@@ -394,21 +511,24 @@
     return a;
   }
 
-  /* Prepara las preguntas para esta vuelta: cada opción se guarda con
+  /* Prepara las preguntas para esta vuelta. Cada opción se guarda con
      el índice que tenía originalmente, así el mezclado no pierde de
-     vista cuál era la correcta. */
+     vista cuál era la correcta; y cada pregunta se lleva su número de
+     origen, que es el que va al detalle de la planilla. */
   function armarExamen() {
-    return PREGUNTAS.map(function (p) {
+    var preparadas = PREGUNTAS.map(function (p, n) {
       var opciones = p.opciones.map(function (texto, i) {
         return { texto: texto, original: i };
       });
       return {
+        n: n + 1,
         pregunta: p.pregunta,
         porque: p.porque,
         correcta: p.correcta,
         opciones: CONFIG.mezclarOpciones ? mezclar(opciones) : opciones
       };
     });
+    return CONFIG.mezclarPreguntas ? mezclar(preparadas) : preparadas;
   }
 
   var examen = armarExamen();
@@ -423,6 +543,7 @@
     if (yo && yo.nombre) {
       $("campo-nombre").value = yo.nombre;
       $("campo-apellido").value = yo.apellido || "";
+      if (yo.grupo) $("campo-grupo").value = yo.grupo;
     }
     $("campo-nombre").focus();
   }
@@ -430,6 +551,7 @@
   $("btn-empezar").addEventListener("click", function () {
     var n = $("campo-nombre").value.trim();
     var a = $("campo-apellido").value.trim();
+    var g = $("campo-grupo").value;
     var error = $("error-identidad");
 
     if (!n || !a) {
@@ -438,14 +560,20 @@
       (!n ? $("campo-nombre") : $("campo-apellido")).focus();
       return;
     }
+    if (!g) {
+      error.textContent = "Elegí tu grupo para empezar.";
+      error.hidden = false;
+      $("campo-grupo").focus();
+      return;
+    }
     error.hidden = true;
 
-    identidad = { nombre: n, apellido: a };
+    identidad = { nombre: n, apellido: a, grupo: g };
     guardarIdentidad(identidad);
 
     $("paso-identidad").hidden = true;
     $("aviso-borrador").hidden = true;
-    $("quien-responde").textContent = n + " " + a;
+    $("quien-responde").textContent = n + " " + a + " · " + g;
     $("paso-test").hidden = false;
     pintarPreguntas();
     window.scrollTo(0, 0);
@@ -542,8 +670,15 @@
     examen.forEach(function (p, i) {
       var bien = respuestas[i] === p.correcta;
       if (bien) aciertos++;
-      detalle.push((i + 1) + (bien ? "✔" : "✘"));
+      // Se ordena por el número de origen, no por el del sorteo, así
+      // el detalle de todos los estudiantes se lee igual.
+      detalle.push({ n: p.n, bien: bien });
     });
+
+    detalle.sort(function (a, b) { return a.n - b.n; });
+    var textoDetalle = detalle.map(function (d) {
+      return d.n + (d.bien ? "✔" : "✘");
+    }).join(" ");
 
     $("paso-test").hidden = true;
     $("paso-resultado").hidden = false;
@@ -555,7 +690,7 @@
     pintarRepaso(respuestas);
     window.scrollTo(0, 0);
 
-    if (hayEnvio()) enviarResultado(aciertos, detalle.join(" "));
+    if (hayEnvio()) enviarResultado(aciertos, textoDetalle);
   }
 
   function comentarioPara(aciertos, total) {
@@ -607,6 +742,7 @@
     var c = CONFIG.campos;
     datos.append(c.nombre,   identidad.nombre);
     datos.append(c.apellido, identidad.apellido);
+    if (c.grupo) datos.append(c.grupo, identidad.grupo);
     datos.append(c.puntaje,  String(aciertos));
     datos.append(c.total,    String(examen.length));
     if (c.detalle) datos.append(c.detalle, detalle);
