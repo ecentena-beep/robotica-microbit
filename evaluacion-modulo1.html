@@ -78,12 +78,16 @@
     border:1px solid var(--borde); border-radius:var(--radio);
     background:var(--superficie);
   }
+  .tarjeta-resultado .etiqueta-nota{
+    font-size:.78rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--acento); margin-bottom:.9em;
+  }
   .tarjeta-resultado .puntaje{
-    font-size:clamp(3rem, 9vw, 5rem); font-weight:700; line-height:1;
+    font-size:clamp(3.4rem, 11vw, 6rem); font-weight:700; line-height:1;
     background:linear-gradient(90deg, var(--acento), var(--acento-2));
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  .tarjeta-resultado .de{ color:var(--texto-suave); font-size:1rem; margin-top:.6em; }
+  .tarjeta-resultado .de{ color:var(--texto-suave); font-size:1rem; margin-top:.8em; }
   .tarjeta-resultado .comentario{ margin-top:1.4em; line-height:1.65; max-width:52ch; margin-inline:auto; }
   .acciones-test{ display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2rem; }
 
@@ -124,7 +128,7 @@
     <h1>Módulo 1 — micro:bit: la placa programable</h1>
     <p>
       Veinte preguntas sobre lo que vimos en el módulo. Elegí una opción en cada una
-      y al final vas a ver tu puntaje y la explicación de cada respuesta.
+      y al final vas a ver tu nota y la explicación de cada respuesta.
       Si algo no te sale, volvé a las slides del módulo y buscalo: para eso están.
     </p>
   </header>
@@ -198,8 +202,9 @@
        ============================================================ -->
   <section id="paso-resultado" hidden>
     <div class="tarjeta-resultado">
-      <div class="puntaje" id="puntaje-numero">0</div>
-      <div class="de" id="puntaje-de">de 20 respuestas correctas</div>
+      <div class="etiqueta-nota">Tu nota</div>
+      <div class="puntaje" id="nota-numero">0</div>
+      <div class="de" id="puntaje-de">0 de 20 respuestas correctas</div>
       <p class="comentario" id="puntaje-comentario"></p>
       <p id="estado-envio" class="exito-form" hidden></p>
     </div>
@@ -223,8 +228,8 @@
      CONFIGURACIÓN DEL ENVÍO
      Mientras esté vacío, el test corrige pero no manda el resultado
      a ningún lado: sirve igual como autoevaluación.
-     Para conectarlo hace falta un formulario de Google con seis
-     preguntas de texto (nombre, apellido, grupo, puntaje, total,
+     Para conectarlo hace falta un formulario de Google con siete
+     preguntas de texto (nombre, apellido, grupo, nota, puntaje, total,
      detalle) y pegar acá su URL de /formResponse y los entry.XXXX.
      La fecha y la hora las pone Google solo, en la marca temporal.
      ============================================================ */
@@ -234,6 +239,7 @@
       nombre:   "",
       apellido: "",
       grupo:    "",
+      nota:     "",
       puntaje:  "",
       total:    "",
       detalle:  ""
@@ -683,14 +689,29 @@
     $("paso-test").hidden = true;
     $("paso-resultado").hidden = false;
 
-    $("puntaje-numero").textContent = aciertos;
-    $("puntaje-de").textContent = "de " + examen.length + " respuestas correctas";
+    var nota = notaDe(aciertos, examen.length);
+
+    $("nota-numero").textContent = comoTexto(nota);
+    $("puntaje-de").textContent = aciertos + " de " + examen.length + " respuestas correctas";
     $("puntaje-comentario").textContent = comentarioPara(aciertos, examen.length);
 
     pintarRepaso(respuestas);
     window.scrollTo(0, 0);
 
-    if (hayEnvio()) enviarResultado(aciertos, textoDetalle);
+    if (hayEnvio()) enviarResultado(nota, aciertos, textoDetalle);
+  }
+
+  /* La nota va del 0 al 10: las veinte correctas son un 10, así que
+     cada acierto vale medio punto. */
+  function notaDe(aciertos, total) {
+    return aciertos / total * 10;
+  }
+
+  /* Con veinte preguntas la nota siempre cae en enteros o en medios
+     (3, 3,5, 4…). Se escribe con coma, como se escribe acá. */
+  function comoTexto(nota) {
+    var redondeada = Math.round(nota * 10) / 10;
+    return String(redondeada).replace(".", ",");
   }
 
   function comentarioPara(aciertos, total) {
@@ -737,12 +758,13 @@
 
   /* ---------------- envío del resultado ---------------- */
 
-  function enviarResultado(aciertos, detalle) {
+  function enviarResultado(nota, aciertos, detalle) {
     var datos = new FormData();
     var c = CONFIG.campos;
     datos.append(c.nombre,   identidad.nombre);
     datos.append(c.apellido, identidad.apellido);
     if (c.grupo) datos.append(c.grupo, identidad.grupo);
+    if (c.nota)  datos.append(c.nota,  comoTexto(nota));
     datos.append(c.puntaje,  String(aciertos));
     datos.append(c.total,    String(examen.length));
     if (c.detalle) datos.append(c.detalle, detalle);
