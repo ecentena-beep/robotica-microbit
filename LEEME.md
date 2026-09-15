@@ -278,6 +278,46 @@ el enlace», para que los estudiantes no necesiten cuenta de Google.
   y la inicial del apellido, o un apodo de clase. El formulario y el sitio funcionan igual.
 - **Moderación.** No hay: se publica solo. Conviene mirar la planilla seguido.
 
+## La evaluación del Módulo 1
+
+`evaluacion-modulo1.html` es un test de veinte preguntas de opción múltiple. **No está
+enlazada desde ningún menú**: se llega solo con el link, que el profesor reparte cuando
+toca cada etapa.
+
+Corrige al final, muestra la nota del 0 al 10 —cada acierto vale medio punto— y después
+el repaso pregunta por pregunta con la explicación de cada una. Las preguntas y las
+opciones se sortean en cada carga, así que a dos estudiantes sentados juntos no les toca
+el mismo orden.
+
+**Para cambiar el test se edita la lista `PREGUNTAS`** que está al principio del script,
+y nada más. Cada pregunta lleva su enunciado, sus opciones, cuál es la correcta (por su
+posición en la lista, empezando en 0) y el «por qué» que se muestra en el repaso.
+
+### Dónde caen las notas
+
+| | |
+|---|---|
+| Planilla | `docs.google.com/spreadsheets/d/19YQnb7lqIi9ivQAJWYX9L7Pb4NUTFh6_n9Jgf8n16Ks/edit` |
+| Formulario (editar) | `docs.google.com/forms/d/15ssegeFLAFGV4Q50G_nqpPmVydovxU5AlJn7smLJIuQ/edit` |
+
+Columnas: marca temporal, nombre, apellido, grupo, nota, aciertos y detalle. La fecha la
+pone Google sola.
+
+El **detalle** se lee así: `1✔ 2✘ 3✔ …`, numerado por la pregunta tal como está en la
+lista `PREGUNTAS`, **no** por el orden que le tocó a ese estudiante. Por eso la columna
+se puede leer hacia abajo: si muchos tienen `12✘`, esa pregunta no quedó clara en clase.
+
+A diferencia de la Comunidad, **esta planilla no se publica como CSV**: la página escribe
+pero nunca lee.
+
+> Los estilos del test están dentro del propio archivo mientras el formato se sigue
+> ajustando. Cuando quede firme, se mudan a `css/estilos.css` y ahí sí hay que subirle el
+> número de versión a las 35 páginas.
+
+> **Ojo con esto:** al ser una página estática, las respuestas correctas viajan en su
+> código. Quien abra «Ver código fuente» las ve. Alcanza para un examen de clase, no para
+> uno a prueba de todo.
+
 ## Las páginas de actividades
 
 Las 28 páginas de `actividades/` y el menú `actividades.html` **no se editan a mano**:
