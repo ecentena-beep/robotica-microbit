@@ -228,9 +228,10 @@
      CONFIGURACIÓN DEL ENVÍO
      Mientras esté vacío, el test corrige pero no manda el resultado
      a ningún lado: sirve igual como autoevaluación.
-     Para conectarlo hace falta un formulario de Google con siete
-     preguntas de texto (nombre, apellido, grupo, nota, puntaje, total,
-     detalle) y pegar acá su URL de /formResponse y los entry.XXXX.
+     Para conectarlo hace falta un formulario de Google con seis
+     preguntas de respuesta corta —Nombre, Apellido, Grupo, Nota,
+     Aciertos y Detalle— y pegar acá su URL de /formResponse y el
+     entry.XXXX de cada una.
      La fecha y la hora las pone Google solo, en la marca temporal.
      ============================================================ */
   var CONFIG = {
@@ -240,9 +241,8 @@
       apellido: "",
       grupo:    "",
       nota:     "",
-      puntaje:  "",
-      total:    "",
-      detalle:  ""
+      aciertos: "",   // "4 de 20"
+      detalle:  ""    // "1✔ 2✘ 3✔ …", numerado por la pregunta de origen
     },
     // Cada estudiante recibe las preguntas en distinto orden y las
     // opciones también mezcladas, para que no se copien «la b».
@@ -763,11 +763,10 @@
     var c = CONFIG.campos;
     datos.append(c.nombre,   identidad.nombre);
     datos.append(c.apellido, identidad.apellido);
-    if (c.grupo) datos.append(c.grupo, identidad.grupo);
-    if (c.nota)  datos.append(c.nota,  comoTexto(nota));
-    datos.append(c.puntaje,  String(aciertos));
-    datos.append(c.total,    String(examen.length));
-    if (c.detalle) datos.append(c.detalle, detalle);
+    if (c.grupo)    datos.append(c.grupo,    identidad.grupo);
+    if (c.nota)     datos.append(c.nota,     comoTexto(nota));
+    if (c.aciertos) datos.append(c.aciertos, aciertos + " de " + examen.length);
+    if (c.detalle)  datos.append(c.detalle,  detalle);
 
     var estado = $("estado-envio");
     // Google no habilita CORS: se envía a ciegas y se confía en el 200.
