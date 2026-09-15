@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evaluación · Módulo 1 — micro:bit</title>
+<link rel="stylesheet" href="css/estilos.css?v=5">
+
+<!-- Los estilos del test viven acá mientras lo estamos probando.
+     Cuando el formato quede firme se mudan a css/estilos.css. -->
+<style>
+  .barra-progreso-test{
+    position:sticky; top:0; z-index:5;
+    background:rgba(11,16,32,.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--borde);
+    padding:.9rem 0; margin-bottom:2rem;
+    display:flex; align-items:center; gap:1rem;
+    font-size:.9rem; color:var(--texto-suave);
+  }
+  .barra-progreso-test .riel{
+    flex:1; height:6px; border-radius:99px;
+    background:rgba(255,255,255,.08); overflow:hidden;
+  }
+  .barra-progreso-test .relleno{
+    height:100%; width:0%; border-radius:99px;
+    background:linear-gradient(90deg, var(--acento), var(--acento-2));
+    transition:width .25s ease;
+  }
+
+  .pregunta{
+    background:var(--superficie);
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    padding:1.6rem 1.7rem;
+    margin-bottom:1.2rem;
+  }
+  .pregunta .numero{
+    display:block; font-size:.72rem; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--acento); margin-bottom:.7em;
+  }
+  .pregunta h3{ font-size:1.1rem; line-height:1.5; margin-bottom:1.1rem; font-weight:600; }
+
+  .opcion{
+    display:flex; align-items:flex-start; gap:.8rem;
+    padding:.8rem 1rem; margin-bottom:.55rem;
+    border:1px solid var(--borde); border-radius:12px;
+    cursor:pointer; line-height:1.5;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .opcion:hover{ border-color:var(--acento-2); background:rgba(255,255,255,.03); }
+  .opcion input{ margin-top:.28em; accent-color:var(--acento); flex-shrink:0; }
+  .opcion.elegida{ border-color:var(--acento-2); background:rgba(108,140,255,.10); }
+
+  /* Después de corregir */
+  .pregunta.bien{ border-color:rgba(53,224,200,.55); }
+  .pregunta.mal{ border-color:rgba(255,180,84,.55); }
+  .opcion.correcta{ border-color:var(--acento); background:rgba(53,224,200,.12); }
+  .opcion.equivocada{ border-color:var(--alerta); background:rgba(255,180,84,.12); }
+  .marca{ margin-left:auto; font-size:.78rem; white-space:nowrap; padding-left:.8rem; }
+  .marca.ok{ color:var(--acento); }
+  .marca.no{ color:var(--alerta); }
+  .corregido .opcion{ cursor:default; }
+  .corregido .opcion:hover{ border-color:var(--borde); background:none; }
+  .corregido .opcion.correcta:hover{ border-color:var(--acento); background:rgba(53,224,200,.12); }
+  .corregido .opcion.equivocada:hover{ border-color:var(--alerta); background:rgba(255,180,84,.12); }
+
+  .explicacion{
+    margin-top:1rem; padding:.9rem 1.1rem;
+    border-left:3px solid var(--acento-2);
+    background:rgba(108,140,255,.07);
+    border-radius:0 10px 10px 0;
+    font-size:.92rem; line-height:1.6; color:var(--texto-suave);
+  }
+  .explicacion strong{ color:var(--texto); }
+
+  .tarjeta-resultado{
+    text-align:center; padding:3rem 2rem; margin-bottom:2rem;
+    border:1px solid var(--borde); border-radius:var(--radio);
+    background:var(--superficie);
+  }
+  .tarjeta-resultado .etiqueta-nota{
+    font-size:.78rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--acento); margin-bottom:.9em;
+  }
+  .tarjeta-resultado .puntaje{
+    font-size:clamp(3.4rem, 11vw, 6rem); font-weight:700; line-height:1;
+    background:linear-gradient(90deg, var(--acento), var(--acento-2));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .tarjeta-resultado .de{ color:var(--texto-suave); font-size:1rem; margin-top:.8em; }
+  .tarjeta-resultado .comentario{ margin-top:1.4em; line-height:1.65; max-width:52ch; margin-inline:auto; }
+  .acciones-test{ display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2rem; }
+
+  .sin-responder{ border-color:var(--alerta) !important; }
+
+  /* El desplegable de grupo, con la misma pinta que los campos de texto */
+  .caja-form select{
+    width:100%; padding:.75em .9em;
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--borde); border-radius:10px;
+    color:var(--texto); font-family:var(--fuente); font-size:1rem;
+  }
+  .caja-form select:focus{ outline:none; border-color:var(--acento); }
+  .caja-form select option{ background:var(--fondo-2); color:var(--texto); }
+
+  @media (max-width:640px){
+    .pregunta{ padding:1.2rem 1.1rem; }
+    .marca{ display:block; margin:.4rem 0 0 auto; padding-left:0; }
+    /* En el celular el nombre le come el lugar a la barra: se va */
+    #quien-responde{ display:none; }
+  }
+</style>
+</head>
+<body class="pagina">
+
+<div class="envoltorio">
+
+  <nav class="migas">
+    <a href="index.html">Inicio</a> ·
+    <a href="modulo1.html">Módulo 1</a> ·
+    <span>Evaluación</span>
+  </nav>
+
+  <header class="encabezado-menu">
+    <p style="font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; color:var(--acento); margin-bottom:1.2em;">
+      Evaluación
+    </p>
+    <h1>Módulo 1 — micro:bit: la placa programable</h1>
+    <p>
+      Veinte preguntas sobre lo que vimos en el módulo. Elegí una opción en cada una
+      y al final vas a ver tu nota y la explicación de cada respuesta.
+      Si algo no te sale, volvé a las slides del módulo y buscalo: para eso están.
+    </p>
+  </header>
+
+  <!-- Aviso mientras el envío a la planilla no está conectado -->
+  <div id="aviso-borrador" class="destacado aviso" hidden
+       style="max-width:none; margin:2rem 0;">
+    <h3 style="margin-top:0;">📌 Modo de prueba</h3>
+    <p style="margin:0;">
+      Todavía no está conectada la parte que le envía el resultado al profesor.
+      El test funciona y te corrige, pero <strong>la nota no se registra en ningún lado</strong>.
+    </p>
+  </div>
+
+  <!-- ============================================================
+       PASO 1 · IDENTIFICARSE
+       ============================================================ -->
+  <section id="paso-identidad" class="caja-form" style="margin:2.5rem 0;">
+    <h2>Antes de empezar, decinos quién sos</h2>
+    <p class="ayuda-form">
+      Tu nombre y tu grupo van junto al resultado, para que el profesor sepa de quién es.
+      La fecha y la hora se registran solas.
+    </p>
+    <div class="fila-form">
+      <label>
+        <span>Nombre</span>
+        <input type="text" id="campo-nombre" autocomplete="given-name" maxlength="40" placeholder="Tu nombre">
+      </label>
+      <label>
+        <span>Apellido</span>
+        <input type="text" id="campo-apellido" autocomplete="family-name" maxlength="40" placeholder="Tu apellido">
+      </label>
+    </div>
+    <label>
+      <span>Grupo</span>
+      <select id="campo-grupo">
+        <option value="">Elegí tu grupo…</option>
+        <option value="7.º A">7.º A</option>
+        <option value="7.º B">7.º B</option>
+        <option value="8.º">8.º</option>
+        <option value="9.º">9.º</option>
+        <option value="1.º EMS">1.º EMS</option>
+      </select>
+    </label>
+    <p id="error-identidad" class="error-form" hidden></p>
+    <button class="boton" type="button" id="btn-empezar">Empezar el test</button>
+  </section>
+
+  <!-- ============================================================
+       PASO 2 · LAS PREGUNTAS
+       ============================================================ -->
+  <section id="paso-test" hidden>
+
+    <div class="barra-progreso-test">
+      <span id="texto-progreso">0 de 20 respondidas</span>
+      <span class="riel"><span class="relleno" id="relleno-progreso"></span></span>
+      <span id="quien-responde"></span>
+    </div>
+
+    <form id="form-test">
+      <div id="preguntas"></div>
+      <p id="error-test" class="error-form" hidden></p>
+      <div class="acciones-test">
+        <button class="boton" type="submit" id="btn-corregir">Terminar y ver mi resultado</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ============================================================
+       PASO 3 · RESULTADO
+       ============================================================ -->
+  <section id="paso-resultado" hidden>
+    <div class="tarjeta-resultado">
+      <div class="etiqueta-nota">Tu nota</div>
+      <div class="puntaje" id="nota-numero">0</div>
+      <div class="de" id="puntaje-de">0 de 20 respuestas correctas</div>
+      <p class="comentario" id="puntaje-comentario"></p>
+      <p id="estado-envio" class="exito-form" hidden></p>
+    </div>
+
+    <h2 style="margin:2.5rem 0 1.2rem; font-size:1.3rem;">Repaso pregunta por pregunta</h2>
+    <div id="repaso"></div>
+
+    <div class="acciones-test">
+      <a class="boton" href="modulo1.html">Volver al Módulo 1</a>
+      <button class="boton chico" type="button" id="btn-reintentar">Hacerlo de nuevo</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ============================================================
+     CONFIGURACIÓN DEL ENVÍO
+     Mientras esté vacío, el test corrige pero no manda el resultado
+     a ningún lado: sirve igual como autoevaluación.
+     Para conectarlo hace falta un formulario de Google con siete
+     preguntas de texto (nombre, apellido, grupo, nota, puntaje, total,
+     detalle) y pegar acá su URL de /formResponse y los entry.XXXX.
+     La fecha y la hora las pone Google solo, en la marca temporal.
+     ============================================================ */
+  var CONFIG = {
+    formularioUrl: "",
+    campos: {
+      nombre:   "",
+      apellido: "",
+      grupo:    "",
+      nota:     "",
+      puntaje:  "",
+      total:    "",
+      detalle:  ""
+    },
+    // Cada estudiante recibe las preguntas en distinto orden y las
+    // opciones también mezcladas, para que no se copien «la b».
+    // Poner false para dejarlas fijas.
+    mezclarPreguntas: true,
+    mezclarOpciones:  true
+  };
+
+  /* ============================================================
+     LAS PREGUNTAS
+     Cada una: enunciado, opciones, cuál es la correcta (por índice
+     en el orden en que están escritas) y por qué.
+     Para editar el test se edita esta lista y nada más.
+     El número que ve el estudiante depende del sorteo, pero en la
+     planilla cada pregunta se identifica por su posición ACÁ, así
+     el detalle de todos los estudiantes se puede comparar.
+     ============================================================ */
+  var PREGUNTAS = [
+    {
+      pregunta: "¿Qué es, exactamente, una placa programable?",
+      opciones: [
+        "Un dispositivo con un microcontrolador que ejecuta las instrucciones que nosotros le escribimos",
+        "Una batería que le da energía a un robot",
+        "Un programa de computadora para diseñar circuitos",
+        "Una pantalla donde se muestran los resultados de un programa"
+      ],
+      correcta: 0,
+      porque: "Contiene un microchip capaz de ejecutar instrucciones escritas desde un entorno de programación. Como procesa información, se la considera una micro computadora."
+    },
+    {
+      pregunta: "Las placas programables hacen tres cosas. ¿Cuáles son, y en qué orden?",
+      opciones: [
+        "Encender, apagar y reiniciar",
+        "Leer el entorno, procesar la información y operar sobre el entorno",
+        "Guardar datos, enviarlos por internet y borrarlos",
+        "Recibir energía, distribuirla y almacenarla"
+      ],
+      correcta: 1,
+      porque: "Sensan variables como la luz o la temperatura, el controlador trabaja con esa información, y después actúan: encienden un LED, emiten un sonido, mueven un motor. Eso las convierte en un sistema de control que automatiza un proceso."
+    },
+    {
+      pregunta: "A fines de los años sesenta, ¿quién empezó a preguntarse si la computadora programa al niño o el niño programa a la computadora?",
+      opciones: [
+        "Alan Turing",
+        "Steve Jobs",
+        "Seymour Papert",
+        "Ada Lovelace"
+      ],
+      correcta: 2,
+      porque: "Papert fue el referente de los primeros dispositivos programables para chicos. Su pregunta corre el foco del consumo pasivo hacia la creación activa."
+    },
+    {
+      pregunta: "¿Qué fue lo que hizo distinta a Arduino?",
+      opciones: [
+        "Fue la primera placa con pantalla incorporada",
+        "Era hardware y software libre, así que muchos fabricantes pudieron adoptarla",
+        "Solo se podía programar con bloques",
+        "Fue diseñada exclusivamente para las escuelas"
+      ],
+      correcta: 1,
+      porque: "Al ser una plataforma libre, se expandió más allá del ámbito educativo y la adoptaron múltiples fabricantes."
+    },
+    {
+      pregunta: "Según lo que vimos, ¿qué convierte a un aparato en una computadora?",
+      opciones: [
+        "Tener teclado, pantalla y mouse",
+        "Estar conectado a internet",
+        "Permitir una entrada de datos, procesarlos y presentar el resultado por una salida",
+        "Funcionar con electricidad"
+      ],
+      correcta: 2,
+      porque: "Por eso un horno programable, un reloj inteligente o un celular también son computadoras, aunque no se parezcan a una notebook. Y por eso micro:bit lo es."
+    },
+    {
+      pregunta: "¿Cuántos LED tiene micro:bit al frente y cómo están ordenados?",
+      opciones: [
+        "25, en una matriz de 5×5",
+        "16, en una matriz de 4×4",
+        "25, en una sola fila",
+        "10, repartidos por los bordes"
+      ],
+      correcta: 0,
+      porque: "Son 25 luces LED en una matriz de 5 por 5. Ahí se muestran los textos y las imágenes simples."
+    },
+    {
+      pregunta: "¿Qué hace un sensor?",
+      opciones: [
+        "Acciona sobre el entorno mediante movimiento, sonido o luz",
+        "Registra cambios del entorno y los transforma en valores numéricos",
+        "Guarda el programa que escribimos",
+        "Reparte la energía entre los componentes de la placa"
+      ],
+      correcta: 1,
+      porque: "El sensor convierte fenómenos del entorno —luz, temperatura, sonido, movimiento— en números que el procesador puede manipular. Lo que acciona sobre el entorno es el actuador."
+    },
+    {
+      pregunta: "Un actuador, entonces, ¿a qué etapa corresponde y cuál sería un ejemplo?",
+      opciones: [
+        "A la entrada; por ejemplo, el sensor de luz",
+        "Al proceso; por ejemplo, el microprocesador",
+        "A la salida; por ejemplo, un motor o un buzzer",
+        "A la entrada; por ejemplo, los pines"
+      ],
+      correcta: 2,
+      porque: "El actuador va de la placa hacia el entorno, así que es la etapa de salida. Los más comunes son LED, buzzers, motores y pantallas LCD."
+    },
+    {
+      pregunta: "¿Qué lugar ocupa la placa dentro de un proyecto de robótica?",
+      opciones: [
+        "Es un accesorio: el proyecto funciona igual sin ella",
+        "Es el componente central, donde se procesan los datos; lo que armamos alrededor le da forma a la creación",
+        "Es solamente la fuente de energía del proyecto",
+        "Es la carcasa que protege a los sensores"
+      ],
+      correcta: 1,
+      porque: "La placa es el corazón de cualquier proyecto que implique procesamiento de datos. Podemos pensarla como la «inteligencia» que articula lo que construimos, tome o no la forma de un robot."
+    },
+    {
+      pregunta: "Sin conectarle absolutamente nada más que el cable USB, ¿qué puede hacer una micro:bit?",
+      opciones: [
+        "Nada: primero hay que conectarle sensores",
+        "Solo encender las luces",
+        "Encender las luces y medir la luz, la temperatura y la inclinación",
+        "Solo reproducir sonidos"
+      ],
+      correcta: 2,
+      porque: "Fue diseñada justamente para eso: con el cable USB y nada más ya se pueden encender los LED y medir luz, temperatura e inclinación, porque esos sensores vienen integrados."
+    },
+    {
+      pregunta: "¿Cuál de estas NO es una de las razones por las que elegimos micro:bit?",
+      opciones: [
+        "Es fácil de programar, con bloques y sin escribir código al inicio",
+        "Trae sensores y actuadores ya integrados",
+        "Tiene una pantalla táctil a color",
+        "Es de bajo costo, así que se puede trabajar en grupo en el aula"
+      ],
+      correcta: 2,
+      porque: "micro:bit no tiene pantalla táctil a color: su salida visual es la matriz de 25 LED. Las otras tres sí son las razones que vimos, junto con lo fácil que es conectarle componentes."
+    },
+    {
+      pregunta: "Imaginá una computadora cuya única tarea es multiplicar dos números. ¿Qué sería la entrada?",
+      opciones: [
+        "El resultado de la multiplicación",
+        "Los dos números que queremos multiplicar",
+        "La operación de multiplicar",
+        "La pantalla donde se muestra el resultado"
+      ],
+      correcta: 1,
+      porque: "La entrada son los datos que ingresamos: los dos números. El proceso es la multiplicación y la salida es el resultado que vemos."
+    },
+    {
+      pregunta: "¿Para qué sirven los pines de micro:bit?",
+      opciones: [
+        "Para sujetar la placa al cartón del proyecto",
+        "Para conectar más dispositivos de entrada y de salida, y así expandir el proyecto",
+        "Para cargar la batería",
+        "Para reiniciar la placa"
+      ],
+      correcta: 1,
+      porque: "Son las tiras doradas de la parte inferior. Por ahí —o por una placa de expansión— se conectan sensores y actuadores que no vienen en la placa."
+    },
+    {
+      pregunta: "En micro:bit, ¿qué corresponde a la etapa de proceso?",
+      opciones: [
+        "Los sensores integrados",
+        "La matriz de LED",
+        "El código que escribimos, que se ejecuta en el microprocesador",
+        "Los botones A y B"
+      ],
+      correcta: 2,
+      porque: "El proceso se da en el microprocesador de la placa, y lo que define qué hace con los datos es el código: ahí se hacen las operaciones lógicas, matemáticas o de comparación."
+    },
+    {
+      pregunta: "¿Cuál de estos componentes de micro:bit es una salida?",
+      opciones: [
+        "El sensor de temperatura",
+        "Los botones A y B",
+        "La matriz de 25 LED",
+        "La brújula"
+      ],
+      correcta: 2,
+      porque: "La matriz de LED muestra el resultado del proceso, así que es salida. El sensor de temperatura, los botones y la brújula aportan datos: son entrada."
+    },
+    {
+      pregunta: "En un sensor, ¿en qué dirección viaja la información?",
+      opciones: [
+        "Del entorno hacia la placa",
+        "De la placa hacia el entorno",
+        "De la placa hacia la computadora",
+        "En las dos direcciones a la vez"
+      ],
+      correcta: 0,
+      porque: "El sensor toma datos del entorno y se los da a la placa: es la etapa de entrada. El actuador hace el camino inverso, de la placa hacia el entorno, y es la salida."
+    },
+    {
+      pregunta: "Querés usar un sensor de humedad que no viene incluido en la placa. ¿Cómo lo conectás?",
+      opciones: [
+        "No se puede: micro:bit solo funciona con sus sensores integrados",
+        "Por el conector USB",
+        "Por los pines o con una placa de expansión",
+        "Por la antena de radio"
+      ],
+      correcta: 2,
+      porque: "Los dispositivos de entrada y de salida pueden estar integrados a la placa o ser externos, y esos externos se conectan mediante los pines o una placa de expansión."
+    },
+    {
+      pregunta: "En la luminaria automatizada, comparar el valor del sensor y decidir si se enciende, ¿a qué etapa corresponde?",
+      opciones: [
+        "A la entrada",
+        "Al proceso",
+        "A la salida",
+        "A ninguna: es parte del armado físico"
+      ],
+      correcta: 1,
+      porque: "La entrada es la lectura del sensor de luz; el proceso es comparar ese valor con la condición que programamos; la salida es que se enciendan los LED."
+    },
+    {
+      pregunta: "El código de la luminaria dice: si (nivel de luz < 50) entonces mostrar LEDs, si no borrar pantalla. Si el nivel de luz es 80, ¿qué hace la placa?",
+      opciones: [
+        "Enciende los LED",
+        "Borra la pantalla: los LED quedan apagados",
+        "Se reinicia",
+        "Muestra el número 80 en la pantalla"
+      ],
+      correcta: 1,
+      porque: "80 no es menor que 50, así que no se cumple la condición y se ejecuta la parte del «si no»: borrar la pantalla. Ese encendido y apagado es la etapa de salida."
+    },
+    {
+      pregunta: "Según la idea de Papert que vimos, ¿hacia dónde queremos correr el foco?",
+      opciones: [
+        "Del consumo pasivo hacia la creación activa",
+        "De la creación activa hacia el consumo pasivo",
+        "Del trabajo en grupo hacia el trabajo individual",
+        "De la programación con bloques hacia la programación con texto"
+      ],
+      correcta: 0,
+      porque: "Que la fabricación a escala personal, la programación y la informática física desplacen el foco del consumo pasivo hacia la creación activa. Es la idea de «Inventar para aprender»."
+    }
+  ];
+
+  /* ============================================================ */
+
+  var CLAVE_IDENTIDAD = "bet-el-identidad";
+  var $ = function (id) { return document.getElementById(id); };
+
+  function escapar(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function quienSoy() {
+    try { return JSON.parse(localStorage.getItem(CLAVE_IDENTIDAD) || "null"); }
+    catch (e) { return null; }
+  }
+
+  function guardarIdentidad(id) {
+    try { localStorage.setItem(CLAVE_IDENTIDAD, JSON.stringify(id)); } catch (e) {}
+  }
+
+  function hayEnvio() {
+    return !!(CONFIG.formularioUrl && CONFIG.campos.nombre);
+  }
+
+  /* Mezcla una copia del arreglo (Fisher-Yates) */
+  function mezclar(lista) {
+    var a = lista.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  /* Prepara las preguntas para esta vuelta. Cada opción se guarda con
+     el índice que tenía originalmente, así el mezclado no pierde de
+     vista cuál era la correcta; y cada pregunta se lleva su número de
+     origen, que es el que va al detalle de la planilla. */
+  function armarExamen() {
+    var preparadas = PREGUNTAS.map(function (p, n) {
+      var opciones = p.opciones.map(function (texto, i) {
+        return { texto: texto, original: i };
+      });
+      return {
+        n: n + 1,
+        pregunta: p.pregunta,
+        porque: p.porque,
+        correcta: p.correcta,
+        opciones: CONFIG.mezclarOpciones ? mezclar(opciones) : opciones
+      };
+    });
+    return CONFIG.mezclarPreguntas ? mezclar(preparadas) : preparadas;
+  }
+
+  var examen = armarExamen();
+  var identidad = null;
+
+  /* ---------------- paso 1: identidad ---------------- */
+
+  function iniciar() {
+    $("aviso-borrador").hidden = hayEnvio();
+
+    var yo = quienSoy();
+    if (yo && yo.nombre) {
+      $("campo-nombre").value = yo.nombre;
+      $("campo-apellido").value = yo.apellido || "";
+      if (yo.grupo) $("campo-grupo").value = yo.grupo;
+    }
+    $("campo-nombre").focus();
+  }
+
+  $("btn-empezar").addEventListener("click", function () {
+    var n = $("campo-nombre").value.trim();
+    var a = $("campo-apellido").value.trim();
+    var g = $("campo-grupo").value;
+    var error = $("error-identidad");
+
+    if (!n || !a) {
+      error.textContent = "Poné tu nombre y tu apellido para empezar.";
+      error.hidden = false;
+      (!n ? $("campo-nombre") : $("campo-apellido")).focus();
+      return;
+    }
+    if (!g) {
+      error.textContent = "Elegí tu grupo para empezar.";
+      error.hidden = false;
+      $("campo-grupo").focus();
+      return;
+    }
+    error.hidden = true;
+
+    identidad = { nombre: n, apellido: a, grupo: g };
+    guardarIdentidad(identidad);
+
+    $("paso-identidad").hidden = true;
+    $("aviso-borrador").hidden = true;
+    $("quien-responde").textContent = n + " " + a + " · " + g;
+    $("paso-test").hidden = false;
+    pintarPreguntas();
+    window.scrollTo(0, 0);
+  });
+
+  /* ---------------- paso 2: las preguntas ---------------- */
+
+  function pintarPreguntas() {
+    var cont = $("preguntas");
+    cont.innerHTML = "";
+
+    examen.forEach(function (p, i) {
+      var art = document.createElement("article");
+      art.className = "pregunta";
+      art.id = "pregunta-" + i;
+
+      var html = '<span class="numero">Pregunta ' + (i + 1) + ' de ' + examen.length + '</span>' +
+                 '<h3>' + escapar(p.pregunta) + '</h3>';
+
+      p.opciones.forEach(function (o, j) {
+        var idOpcion = "p" + i + "o" + j;
+        html += '<label class="opcion" for="' + idOpcion + '">' +
+                  '<input type="radio" name="pregunta-' + i + '" id="' + idOpcion + '" value="' + o.original + '">' +
+                  '<span>' + escapar(o.texto) + '</span>' +
+                '</label>';
+      });
+
+      art.innerHTML = html;
+      cont.appendChild(art);
+    });
+
+    actualizarProgreso();
+  }
+
+  /* Un solo escuchador para todas las opciones: se pone una vez y
+     sirve también para las preguntas que se vuelven a dibujar. */
+  $("preguntas").addEventListener("change", function (e) {
+    if (e.target.type !== "radio") return;
+    var caja = e.target.closest(".pregunta");
+    caja.classList.remove("sin-responder");
+    [].forEach.call(caja.querySelectorAll(".opcion"), function (l) {
+      l.classList.toggle("elegida", l.querySelector("input").checked);
+    });
+    actualizarProgreso();
+  });
+
+  function respondidas() {
+    var n = 0;
+    examen.forEach(function (p, i) {
+      if (document.querySelector('input[name="pregunta-' + i + '"]:checked')) n++;
+    });
+    return n;
+  }
+
+  function actualizarProgreso() {
+    var n = respondidas();
+    $("texto-progreso").textContent = n + " de " + examen.length + " respondidas";
+    $("relleno-progreso").style.width = (n / examen.length * 100) + "%";
+  }
+
+  /* ---------------- corrección ---------------- */
+
+  $("form-test").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var faltan = [];
+    var respuestas = examen.map(function (p, i) {
+      var elegida = document.querySelector('input[name="pregunta-' + i + '"]:checked');
+      if (!elegida) faltan.push(i);
+      return elegida ? parseInt(elegida.value, 10) : null;
+    });
+
+    var error = $("error-test");
+    if (faltan.length) {
+      error.textContent = faltan.length === 1
+        ? "Te falta responder la pregunta " + (faltan[0] + 1) + "."
+        : "Te faltan " + faltan.length + " preguntas por responder.";
+      error.hidden = false;
+      faltan.forEach(function (i) {
+        $("pregunta-" + i).classList.add("sin-responder");
+      });
+      $("pregunta-" + faltan[0]).scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    error.hidden = true;
+
+    corregir(respuestas);
+  });
+
+  function corregir(respuestas) {
+    var aciertos = 0;
+    var detalle = [];
+
+    examen.forEach(function (p, i) {
+      var bien = respuestas[i] === p.correcta;
+      if (bien) aciertos++;
+      // Se ordena por el número de origen, no por el del sorteo, así
+      // el detalle de todos los estudiantes se lee igual.
+      detalle.push({ n: p.n, bien: bien });
+    });
+
+    detalle.sort(function (a, b) { return a.n - b.n; });
+    var textoDetalle = detalle.map(function (d) {
+      return d.n + (d.bien ? "✔" : "✘");
+    }).join(" ");
+
+    $("paso-test").hidden = true;
+    $("paso-resultado").hidden = false;
+
+    var nota = notaDe(aciertos, examen.length);
+
+    $("nota-numero").textContent = comoTexto(nota);
+    $("puntaje-de").textContent = aciertos + " de " + examen.length + " respuestas correctas";
+    $("puntaje-comentario").textContent = comentarioPara(aciertos, examen.length);
+
+    pintarRepaso(respuestas);
+    window.scrollTo(0, 0);
+
+    if (hayEnvio()) enviarResultado(nota, aciertos, textoDetalle);
+  }
+
+  /* La nota va del 0 al 10: las veinte correctas son un 10, así que
+     cada acierto vale medio punto. */
+  function notaDe(aciertos, total) {
+    return aciertos / total * 10;
+  }
+
+  /* Con veinte preguntas la nota siempre cae en enteros o en medios
+     (3, 3,5, 4…). Se escribe con coma, como se escribe acá. */
+  function comoTexto(nota) {
+    var redondeada = Math.round(nota * 10) / 10;
+    return String(redondeada).replace(".", ",");
+  }
+
+  function comentarioPara(aciertos, total) {
+    var p = aciertos / total;
+    if (p === 1)   return "Perfecto. Entendiste el módulo completo.";
+    if (p >= 0.75) return "Muy bien. Mirá abajo las que erraste: son detalles, no conceptos.";
+    if (p >= 0.5)  return "Vas por buen camino, pero hay cosas para repasar. Fijate abajo cuáles y volvé a esas slides del módulo.";
+    return "Conviene volver a recorrer el módulo antes de seguir. Abajo tenés la explicación de cada pregunta: leelas con calma y probá de nuevo.";
+  }
+
+  function pintarRepaso(respuestas) {
+    var cont = $("repaso");
+    cont.innerHTML = "";
+
+    examen.forEach(function (p, i) {
+      var bien = respuestas[i] === p.correcta;
+
+      var art = document.createElement("article");
+      art.className = "pregunta corregido " + (bien ? "bien" : "mal");
+
+      var html = '<span class="numero">Pregunta ' + (i + 1) +
+                 (bien ? " · correcta" : " · para repasar") + '</span>' +
+                 '<h3>' + escapar(p.pregunta) + '</h3>';
+
+      p.opciones.forEach(function (o) {
+        var esCorrecta = o.original === p.correcta;
+        var laTuya     = o.original === respuestas[i];
+        var clase = "opcion";
+        var marca = "";
+
+        if (esCorrecta) { clase += " correcta"; marca = '<span class="marca ok">Correcta</span>'; }
+        if (laTuya && !esCorrecta) { clase += " equivocada"; marca = '<span class="marca no">Tu respuesta</span>'; }
+        if (laTuya && esCorrecta) { marca = '<span class="marca ok">Tu respuesta ✓</span>'; }
+
+        html += '<div class="' + clase + '"><span>' + escapar(o.texto) + '</span>' + marca + '</div>';
+      });
+
+      html += '<div class="explicacion"><strong>Por qué:</strong> ' + escapar(p.porque) + '</div>';
+
+      art.innerHTML = html;
+      cont.appendChild(art);
+    });
+  }
+
+  /* ---------------- envío del resultado ---------------- */
+
+  function enviarResultado(nota, aciertos, detalle) {
+    var datos = new FormData();
+    var c = CONFIG.campos;
+    datos.append(c.nombre,   identidad.nombre);
+    datos.append(c.apellido, identidad.apellido);
+    if (c.grupo) datos.append(c.grupo, identidad.grupo);
+    if (c.nota)  datos.append(c.nota,  comoTexto(nota));
+    datos.append(c.puntaje,  String(aciertos));
+    datos.append(c.total,    String(examen.length));
+    if (c.detalle) datos.append(c.detalle, detalle);
+
+    var estado = $("estado-envio");
+    // Google no habilita CORS: se envía a ciegas y se confía en el 200.
+    fetch(CONFIG.formularioUrl, { method: "POST", mode: "no-cors", body: datos })
+      .then(function () {
+        estado.className = "exito-form";
+        estado.textContent = "Tu resultado le llegó al profesor.";
+        estado.hidden = false;
+      })
+      .catch(function () {
+        estado.className = "error-form";
+        estado.textContent = "No pudimos enviar tu resultado. Avisale al profesor.";
+        estado.hidden = false;
+      });
+  }
+
+  /* ---------------- volver a intentar ---------------- */
+
+  $("btn-reintentar").addEventListener("click", function () {
+    examen = armarExamen();
+    $("paso-resultado").hidden = true;
+    $("estado-envio").hidden = true;
+    $("paso-test").hidden = false;
+    pintarPreguntas();
+    window.scrollTo(0, 0);
+  });
+
+  iniciar();
+})();
+</script>
+
+</body>
+</html>
