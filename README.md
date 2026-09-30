@@ -6,6 +6,7 @@ presentación navegable.
 - **Módulo 1 — micro:bit: la placa programable** · 26 slides
 - **Módulo 2 — Tipos de proyectos con micro:bit** · 14 slides
 - **Módulo 3 — Prototipos de proyecto** · 28 prototipos, cada uno con su PDF descargable
+- **Módulo 4 — Presentación del proyecto con micro:bit** · 16 slides y la plantilla de entrega en Word
 - **Comunidad Robótica de Bet-el** · blog para compartir proyectos
 - **Materiales de consulta** · glosario, referencias técnicas y manuales
 
@@ -39,6 +40,13 @@ El *Cuaderno de actividades micro:bit* separado en 28 prototipos independientes.
 ([actividades.html](actividades.html)) permite filtrar por modalidad y entrar a cualquiera
 sin haber hecho los anteriores. Cada prototipo trae para qué es, qué se trabaja, qué hay
 que conseguir, el **PDF del proyecto para descargar** y la autoevaluación.
+
+## Módulo 4 — Presentación del proyecto con micro:bit
+
+- Descargar la plantilla (`docs/Proyecto_microbit_plantilla.docx`) y dónde completarla
+- Las 6 partes: título, contexto, qué hice, cómo lo hice, demostración y conclusión
+- Cómo sacar la captura del código, las fotos y el video, y cómo compartir su enlace
+- Lista de control y entrega paso a paso en Google Classroom
 
 ## Comunidad Robótica de Bet-el
 

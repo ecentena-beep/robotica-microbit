@@ -110,6 +110,8 @@ body.pagina{ overflow:auto; height:auto; min-height:100%; }
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap:1.4rem;
 }
+/* Con cuatro módulos: rejilla de 2 × 2 en pantallas anchas */
+.rejilla-modulos.cuatro{ grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 .tarjeta-modulo{
   display:flex; flex-direction:column;
   background: var(--superficie);

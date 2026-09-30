@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robótica con micro:bit — Módulo 4</title>
+<link rel="stylesheet" href="css/estilos.css?v=6">
+</head>
+<body data-deck="microbit-modulo4">
+
+<div id="barra-progreso"></div>
+
+<main id="escenario">
+
+  <!-- ========================================================
+       1 · PORTADA
+       ======================================================== -->
+  <section class="slide portada" data-titulo="Módulo 4 · Presentación del proyecto con micro:bit">
+    <span class="etiqueta">Módulo 4</span>
+    <h1>Presentación del proyecto con micro:bit</h1>
+    <p class="subtitulo">Ya construiste y programaste tu proyecto. Ahora vamos a contarlo, mostrarlo
+    y entregarlo, paso a paso.</p>
+    <p style="color:var(--texto-suave); font-size:calc(var(--u)*.85); margin-top:2em;">
+      Usá las flechas <kbd>&larr;</kbd> <kbd>&rarr;</kbd> para avanzar &nbsp;·&nbsp; <kbd>H</kbd> para ver la ayuda
+    </p>
+  </section>
+
+  <!-- ========================================================
+       2 · RECORRIDO
+       ======================================================== -->
+  <section class="slide" data-titulo="Qué vamos a ver">
+    <span class="etiqueta">Recorrido</span>
+    <h2>Qué vamos a ver</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <span class="icono">📄</span>
+        <h3>La plantilla</h3>
+        <p>Dónde descargarla y cómo guardarla con tu nombre.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🧩</span>
+        <h3>Las 6 partes</h3>
+        <p>Qué escribir en cada una, con ejemplos.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">📸</span>
+        <h3>Fotos y video</h3>
+        <p>Cómo mostrar tu proyecto funcionando.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">📤</span>
+        <h3>La entrega</h3>
+        <p>Cómo subirlo a Google Classroom sin que falte nada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3 · DESCARGAR LA PLANTILLA
+       ======================================================== -->
+  <section class="slide portada" data-titulo="Paso 1 · Descargá la plantilla">
+    <span class="etiqueta">Paso 1</span>
+    <h2>Descargá la plantilla</h2>
+    <p class="subtitulo">Es un documento de Word con todas las partes del proyecto y recuadros para completar.</p>
+    <a class="boton-descarga grande" href="docs/Proyecto_microbit_plantilla.docx" download>⬇ Descargar la plantilla del proyecto</a>
+    <div class="destacado compacto" style="margin-top:1.6em;">
+      <p style="margin:0;">Guardala con tu nombre, así:
+      <strong>Proyecto_microbit_Apellido_Grupo.docx</strong><br>
+      Ejemplo: <em>Proyecto_microbit_Pérez_8B.docx</em></p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4 · DÓNDE COMPLETARLA
+       ======================================================== -->
+  <section class="slide" data-titulo="Dónde completar la plantilla">
+    <span class="etiqueta">Paso 1</span>
+    <h2>¿Dónde la completo?</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>💻 En Word</h3>
+        <ul class="limpia">
+          <li>Abrí el archivo descargado.</li>
+          <li>Escribí dentro de cada recuadro, borrando el «Escribe aquí…».</li>
+          <li>Guardá seguido: <kbd>Ctrl</kbd> + <kbd>S</kbd>.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>🌐 En Google Docs</h3>
+        <ul class="limpia">
+          <li>Subí el archivo a tu Google Drive.</li>
+          <li>Clic derecho → <strong>Abrir con</strong> → <strong>Documentos de Google</strong>.</li>
+          <li>Se guarda solo, mientras escribís.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="destacado compacto">
+      <p style="margin:0;">Las preguntas en <em>cursiva</em> son una guía para pensar: no hay que
+      responderlas todas, pero cada parte tiene que quedar clara.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       5 · LAS 6 PARTES
+       ======================================================== -->
+  <section class="slide" data-titulo="Las 6 partes del proyecto">
+    <span class="etiqueta">Paso 2</span>
+    <h2>Tu proyecto tiene 6 partes</h2>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="icono">🏷️</span><h3>1. Título</h3><p>El nombre de tu proyecto.</p></div>
+      <div class="tarjeta"><span class="icono">🌍</span><h3>2. Contexto</h3><p>Qué problema o necesidad quisiste resolver.</p></div>
+      <div class="tarjeta"><span class="icono">🎯</span><h3>3. ¿Qué hice?</h3><p>Qué es tu proyecto y qué hace.</p></div>
+      <div class="tarjeta"><span class="icono">🛠️</span><h3>4. ¿Cómo lo hice?</h3><p>Materiales, paso a paso y código.</p></div>
+      <div class="tarjeta"><span class="icono">📸</span><h3>5. Demostración</h3><p>Fotos y video funcionando.</p></div>
+      <div class="tarjeta"><span class="icono">💭</span><h3>6. Conclusión</h3><p>Qué sentiste, qué aprendiste y qué más podrías crear.</p></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       6 · TÍTULO Y CONTEXTO
+       ======================================================== -->
+  <section class="slide" data-titulo="Partes 1 y 2 · Título y contexto">
+    <span class="etiqueta">Partes 1 y 2</span>
+    <h2>Título y contexto</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>🏷️ Título</h3>
+        <p>Corto, claro y creativo. Que alguien lo lea y se imagine qué hace tu proyecto.</p>
+        <ul class="limpia">
+          <li>«Alarma anti-hermanitos para mi cuarto»</li>
+          <li>«Termómetro inteligente para el mate»</li>
+        </ul>
+      </div>
+      <div>
+        <h3>🌍 Contexto</h3>
+        <p>Contá la situación que te inspiró:</p>
+        <ul class="limpia">
+          <li>¿Qué problema o necesidad detectaste? (en tu casa, el liceo, tu barrio, tu deporte…)</li>
+          <li>¿Por qué elegiste este proyecto?</li>
+          <li>¿A quién le sirve o a quién podría ayudar?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       7 · QUÉ HICE
+       ======================================================== -->
+  <section class="slide" data-titulo="Parte 3 · ¿Qué hice?">
+    <span class="etiqueta">Parte 3</span>
+    <h2>¿Qué hice?</h2>
+    <p>Describí tu proyecto como si se lo explicaras a alguien que <strong>nunca vio una micro:bit</strong>.
+    Después completá el cuadro de entrada, procesamiento y salida. Un ejemplo:</p>
+    <table>
+      <thead><tr><th>Parte</th><th>Pregunta</th><th>Ejemplo: alarma para mi cuarto</th></tr></thead>
+      <tbody>
+        <tr><td>⬅️ <strong>Entrada</strong></td><td>¿Qué información recibe?</td><td>El acelerómetro detecta que se movió la puerta.</td></tr>
+        <tr><td>⚙️ <strong>Procesamiento</strong></td><td>¿Qué decide el programa?</td><td>Si hay movimiento y la alarma está activada, entonces avisa.</td></tr>
+        <tr><td>➡️ <strong>Salida</strong></td><td>¿Cómo responde?</td><td>Suena una melodía y aparece una ✖ en los LEDs.</td></tr>
+      </tbody>
+    </table>
+    <div class="destacado compacto">
+      <p style="margin:0;">¿No te acordás? Repasá entrada, proceso y salida en el
+      <a href="modulo1.html" style="color:var(--acento);">Módulo 1</a>.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       8 · CÓMO LO HICE
+       ======================================================== -->
+  <section class="slide" data-titulo="Parte 4 · ¿Cómo lo hice?">
+    <span class="etiqueta">Parte 4</span>
+    <h2>¿Cómo lo hice?</h2>
+    <p>Contalo como un <strong>algoritmo</strong>: que otra persona pueda seguir tus pasos y repetir tu proyecto.</p>
+    <ol class="pasos">
+      <li><p style="margin:0;"><strong>Materiales</strong> — la placa, cables, cartón, pilas, parlante… todo lo que usaste.</p></li>
+      <li><p style="margin:0;"><strong>Paso a paso</strong> — hasta 6 pasos, en orden, desde la idea hasta que funcionó.</p></li>
+      <li><p style="margin:0;"><strong>Mi código</strong> — una captura de tus bloques de MakeCode y qué hace cada parte.</p></li>
+      <li><p style="margin:0;"><strong>Problemas y soluciones</strong> — qué salió mal y cómo lo arreglaste. ¡Esto también es aprender!</p></li>
+    </ol>
+  </section>
+
+  <!-- ========================================================
+       9 · CAPTURA DEL CÓDIGO
+       ======================================================== -->
+  <section class="slide" data-titulo="Cómo sacar la captura del código">
+    <span class="etiqueta">Parte 4</span>
+    <h2>Cómo sacar la captura de tu código</h2>
+    <p>Abrí tu programa en <a href="https://makecode.microbit.org" target="_blank" style="color:var(--acento);">makecode.microbit.org</a>
+    y acomodá los bloques para que se vean todos. Después:</p>
+    <table>
+      <thead><tr><th>En…</th><th>Presioná</th><th>Y después</th></tr></thead>
+      <tbody>
+        <tr><td>💻 Windows</td><td><kbd>Windows</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></td><td>Marcá la zona de los bloques y pegala en la plantilla con <kbd>Ctrl</kbd> + <kbd>V</kbd>.</td></tr>
+        <tr><td>💻 Chromebook</td><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>▭||</kbd></td><td>Marcá la zona; la imagen queda copiada y en Descargas.</td></tr>
+        <tr><td>📱 Celular</td><td>Sacale una foto a la pantalla</td><td>Que se lea bien: sin reflejos y derecha.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ========================================================
+       10 · FOTOS
+       ======================================================== -->
+  <section class="slide" data-titulo="Parte 5 · Las fotos">
+    <span class="etiqueta">Parte 5</span>
+    <h2>Demostración: las fotos</h2>
+    <div class="dos-columnas" style="align-items:start;">
+      <div>
+        <h3>📸 Qué fotografiar</h3>
+        <ul class="limpia">
+          <li>El <strong>armado</strong>: materiales y conexiones.</li>
+          <li>La <strong>programación</strong>: vos trabajando en MakeCode.</li>
+          <li>El <strong>resultado final</strong>: el proyecto funcionando.</li>
+        </ul>
+        <p>Mínimo <strong>2 fotos</strong>, cada una con su «Esta foto muestra…».</p>
+      </div>
+      <div>
+        <h3>💡 Para que salgan bien</h3>
+        <ul class="limpia">
+          <li>Buena luz, mejor de día o cerca de una ventana.</li>
+          <li>Que la placa se vea clara y en foco.</li>
+          <li>Para pegarla: <strong>Insertar → Imágenes</strong> (Word) o <strong>Insertar → Imagen</strong> (Google Docs).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       11 · EL VIDEO
+       ======================================================== -->
+  <section class="slide" data-titulo="Parte 5 · El video">
+    <span class="etiqueta">Parte 5</span>
+    <h2>Demostración: el video</h2>
+    <p>Un video corto, de <strong>1 a 3 minutos</strong>, donde se vea tu proyecto funcionando.</p>
+    <ol class="pasos">
+      <li><p style="margin:0;"><strong>Presentá</strong> el nombre del proyecto y qué problema resuelve.</p></li>
+      <li><p style="margin:0;"><strong>Mostralo funcionando</strong>: tocá los botones, movelo, tapá el sensor… lo que haga falta.</p></li>
+      <li><p style="margin:0;"><strong>Explicá con tus palabras</strong> qué está pasando: qué entra, qué decide y qué sale.</p></li>
+    </ol>
+    <div class="destacado compacto">
+      <p style="margin:0;">No hace falta que salga tu cara: alcanza con tus manos, el proyecto y tu voz.
+      Grabá con el celular en horizontal y en un lugar sin ruido.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       12 · COMPARTIR EL VIDEO
+       ======================================================== -->
+  <section class="slide" data-titulo="Cómo compartir el enlace del video">
+    <span class="etiqueta">Parte 5</span>
+    <h2>Cómo pegar el enlace del video</h2>
+    <ol class="pasos">
+      <li><p style="margin:0;">Subí el video a tu <strong>Google Drive</strong> (con la cuenta del liceo).</p></li>
+      <li><p style="margin:0;">Clic derecho en el video → <strong>Compartir</strong>.</p></li>
+      <li><p style="margin:0;">En «Acceso general» elegí <strong>Cualquier persona que tenga el vínculo</strong>.</p></li>
+      <li><p style="margin:0;">Tocá <strong>Copiar vínculo</strong> y pegalo en la plantilla, en «🔗 Enlace del video».</p></li>
+    </ol>
+    <div class="destacado aviso compacto">
+      <p style="margin:0;">⚠️ Probá el enlace antes de entregar: abrilo en una ventana de incógnito
+      (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd>). Si ahí te pide permiso, el profe tampoco lo va a poder ver.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       13 · CONCLUSIÓN
+       ======================================================== -->
+  <section class="slide" data-titulo="Parte 6 · Conclusión">
+    <span class="etiqueta">Parte 6</span>
+    <h2>Conclusión</h2>
+    <p>Respondé con sinceridad: no hay respuestas incorrectas, lo que importa es lo que viviste.</p>
+    <div class="tarjetas">
+      <div class="tarjeta"><span class="icono">😊</span><p>¿Cómo me sentí haciendo este proyecto?</p></div>
+      <div class="tarjeta"><span class="icono">🧠</span><p>¿Qué aprendí? ¿Qué experiencias nuevas tuve?</p></div>
+      <div class="tarjeta"><span class="icono">🧗</span><p>¿Qué fue lo más difícil y cómo lo superé?</p></div>
+      <div class="tarjeta"><span class="icono">🔧</span><p>Si tuviera más tiempo, ¿cómo lo mejoraría?</p></div>
+      <div class="tarjeta"><span class="icono">🚀</span><p>¿Qué otras cosas podría crear con micro:bit?</p></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       14 · ANTES DE ENTREGAR
+       ======================================================== -->
+  <section class="slide" data-titulo="Antes de entregar, revisá">
+    <span class="etiqueta">Paso 3</span>
+    <h2>Antes de entregar, revisá</h2>
+    <ul class="limpia" style="columns:2; column-gap:3vw;">
+      <li>Mi proyecto tiene un título claro.</li>
+      <li>Expliqué el contexto: qué problema quise resolver.</li>
+      <li>Describí qué hace y completé entrada → procesamiento → salida.</li>
+      <li>Conté el paso a paso y los materiales.</li>
+      <li>Pegué la captura de mi código.</li>
+      <li>Pegué al menos 2 fotos con su descripción.</li>
+      <li>Pegué el enlace del video y comprobé que se abre.</li>
+      <li>Escribí mi conclusión.</li>
+      <li>Revisé la ortografía.</li>
+      <li>Completé mis datos al inicio.</li>
+    </ul>
+  </section>
+
+  <!-- ========================================================
+       15 · ENTREGA EN CLASSROOM
+       ======================================================== -->
+  <section class="slide" data-titulo="Paso 4 · Entregar en Google Classroom">
+    <span class="etiqueta">Paso 4</span>
+    <h2>Entregar en Google Classroom</h2>
+    <ol class="pasos">
+      <li><p style="margin:0;">Entrá a <a href="https://classroom.google.com" target="_blank" style="color:var(--acento);">classroom.google.com</a> y abrí la clase de tu grupo.</p></li>
+      <li><p style="margin:0;">Andá a <strong>Trabajo en clase</strong> y abrí la tarea <strong>«Proyecto micro:bit»</strong>.</p></li>
+      <li><p style="margin:0;">En «Tu trabajo», tocá <strong>+ Agregar o crear</strong> → <strong>Archivo</strong> (o <strong>Google Drive</strong> si la hiciste en Google Docs).</p></li>
+      <li><p style="margin:0;">Elegí tu <em>Proyecto_microbit_Apellido_Grupo</em> y comprobá que quedó adjunto.</p></li>
+      <li><p style="margin:0;">Tocá <strong>Entregar</strong>. ¡Listo! 🎉</p></li>
+    </ol>
+    <div class="destacado compacto">
+      <p style="margin:0;">El video <strong>no se adjunta</strong>: va como enlace dentro de la plantilla. Así la entrega no pesa y se sube rápido.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       16 · CIERRE
+       ======================================================== -->
+  <section class="slide portada cierre" data-titulo="Para seguir">
+    <span class="etiqueta">A presentar</span>
+    <h1>¡Mostrá tu invento!</h1>
+    <p class="subtitulo">Tu idea puede ser el comienzo de un gran invento. 🤖</p>
+    <div class="tarjetas" style="max-width:900px; margin-top:.8em;">
+      <div class="tarjeta">
+        <span class="icono">📄</span>
+        <h3>Plantilla</h3>
+        <p><a href="docs/Proyecto_microbit_plantilla.docx" download style="color:var(--acento);">Descargar la plantilla (Word)</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🗂️</span>
+        <h3>Prototipos</h3>
+        <p><a href="actividades.html" style="color:var(--acento);">Los 28 prototipos para inspirarte</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🧭</span>
+        <h3>Módulo 2</h3>
+        <p><a href="modulo2.html" style="color:var(--acento);">Tipos de proyectos con micro:bit</a></p>
+      </div>
+      <div class="tarjeta">
+        <span class="icono">🏠</span>
+        <h3>Inicio</h3>
+        <p><a href="index.html" style="color:var(--acento);">Volver al menú del curso</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     INTERFAZ DE NAVEGACIÓN
+     ============================================================ -->
+
+<button class="zona-clic izq" aria-label="Slide anterior"></button>
+<button class="zona-clic der" aria-label="Slide siguiente"></button>
+
+<div id="titulo-deck"><a href="index.html" style="color:inherit;">🏠 Inicio</a> · Módulo 4</div>
+
+<div id="controles">
+  <span id="contador">1 / 1</span>
+  <button class="btn" id="btn-indice"   title="Índice (O)"          aria-label="Índice">☰</button>
+  <button class="btn" id="btn-anterior" title="Anterior (&larr;)"   aria-label="Anterior">‹</button>
+  <button class="btn" id="btn-siguiente" title="Siguiente (&rarr;)" aria-label="Siguiente">›</button>
+  <button class="btn" id="btn-pantalla" title="Pantalla completa (F)" aria-label="Pantalla completa">⛶</button>
+</div>
+
+<!-- Índice -->
+<div id="indice">
+  <h2>Índice del módulo</h2>
+  <ul id="lista-indice"></ul>
+</div>
+
+<!-- Ayuda de teclado -->
+<div id="ayuda">
+  <div class="panel">
+    <h2>Atajos de teclado</h2>
+    <dl>
+      <dt><kbd>&rarr;</kbd> <kbd>espacio</kbd></dt><dd>Siguiente slide</dd>
+      <dt><kbd>&larr;</kbd></dt><dd>Slide anterior</dd>
+      <dt><kbd>Inicio</kbd> / <kbd>Fin</kbd></dt><dd>Primera / última slide</dd>
+      <dt><kbd>O</kbd></dt><dd>Abrir el índice</dd>
+      <dt><kbd>F</kbd></dt><dd>Pantalla completa</dd>
+      <dt><kbd>H</kbd></dt><dd>Mostrar esta ayuda</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Cerrar paneles</dd>
+      <dt><kbd>Ctrl</kbd>+<kbd>P</kbd></dt><dd>Guardar todo como PDF</dd>
+    </dl>
+  </div>
+</div>
+
+<script src="js/app.js?v=5"></script>
+</body>
+</html>

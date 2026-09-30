@@ -10,6 +10,7 @@ index.html       ← menú principal del sitio
 modulo1.html     ← Módulo 1: micro:bit, la placa programable (26 slides)
 modulo2.html     ← Módulo 2: tipos de proyectos con micro:bit (14 slides)
 actividades.html ← Módulo 3: Prototipos de proyecto (menú de los 28)
+modulo4.html     ← Módulo 4: presentación del proyecto con micro:bit (16 slides)
 actividades/     ← una página por prototipo (GENERADAS, no editar a mano)
 comunidad.html   ← Comunidad Robótica de Bet-el (el blog)
 materiales.html  ← Materiales de consulta
