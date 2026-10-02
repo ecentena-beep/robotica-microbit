@@ -311,6 +311,28 @@ se puede leer hacia abajo: si muchos tienen `12✘`, esa pregunta no quedó clar
 A diferencia de la Comunidad, **esta planilla no se publica como CSV**: la página escribe
 pero nunca lee.
 
+### La Evaluación N.º 2
+
+`evaluacion-modulo1-n2.html` es el segundo escrito del mismo módulo, para quienes no
+estuvieron en el primero. Mismo molde y mismo código, con otra lista `PREGUNTAS`:
+**veinticinco preguntas, un punto cada una**, y la nota lleva los 25 puntos a la escala
+del 1 al 10 (25 puntos = 10, así que puede tener un decimal: 6,8, 7,2…). La columna
+«aciertos» de la planilla guarda los puntos (`18 de 25`).
+
+Respecto del primer escrito: se sacó la pregunta de Arduino; se dieron vuelta las de
+«qué sería la entrada» (ahora la salida), «cuál NO es una razón» (ahora cuál SÍ) y «cuál
+es una salida» (ahora cuál es una entrada); «qué es un actuador» se pregunta como
+definición; la de la luminaria muestra el pseudocódigo en un bloque aparte (campo
+`codigo` de la pregunta) y cambia el valor de luz; y se agregaron qué es un sensor,
+MakeCode, la etapa de entrada, la de salida, las tres entradas y el rango 0–255.
+
+Envía a un formulario aparte, copia del primero (por eso los `entry.` son los mismos):
+
+| | |
+|---|---|
+| Formulario (editar) | `docs.google.com/forms/d/1TclWA0wW37qEB3BxhG4knYlCdcHe9nhuVgEHdjaYGpc/edit` |
+| Planilla | la que se vincule desde el formulario: Respuestas → Vincular con Sheets |
+
 > Los estilos del test están dentro del propio archivo mientras el formato se sigue
 > ajustando. Cuando quede firme, se mudan a `css/estilos.css` y ahí sí hay que subirle el
 > número de versión a las 35 páginas.
