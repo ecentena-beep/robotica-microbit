@@ -1,0 +1,29 @@
+# Temporal: prueba desde un runner de GitHub (que sí llega a Google) si el
+# formulario de la Evaluación N.º 2 acepta envíos. Se borra al terminar.
+name: prueba-formulario
+on:
+  push:
+    branches: [main-sdxtks]
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: viewform
+        run: |
+          URL="https://docs.google.com/forms/d/e/1FAIpQLSdyJf5kxUNfZcyTTmUEzSQzIsZrDq2dKMHqkoernxYFPTH1Iw/viewform"
+          echo "== estado =="; curl -sS -o vf.html -w '%{http_code} %{redirect_url}\n' "$URL"
+          echo "== tamaño =="; wc -c vf.html
+          echo "== entradas =="; grep -o 'entry\.[0-9]*' vf.html | sort -u
+          echo "== action =="; grep -o 'action="[^"]*"' vf.html | head -3
+          echo "== ids FB =="; grep -o '\[\[[0-9]\{8,12\},null,0\]\]' vf.html | sort -u
+          echo "== títulos =="; grep -o '"\(Nombre\|Apellido\|Grupo\|Nota\|Aciertos\|Detalle\)"' vf.html | sort | uniq -c
+          echo "== pistas =="; grep -o -i 'accounts\.google\|iniciar sesión\|no acepta\|closed\|pageHistory\|fvv\|fbzx' vf.html | sort | uniq -c
+      - name: formResponse
+        run: |
+          URL="https://docs.google.com/forms/d/e/1FAIpQLSdyJf5kxUNfZcyTTmUEzSQzIsZrDq2dKMHqkoernxYFPTH1Iw/formResponse"
+          curl -sS -o fr.html -w 'estado %{http_code} redir %{redirect_url}\n' \
+            -F entry.2125593735=Prueba -F entry.1686592593=Runner -F entry.1807448646="8.º" \
+            -F entry.1465980799=7,2 -F entry.1260724892="18 de 25" -F entry.490072709="1✔ 2✘" "$URL"
+          echo "== tamaño =="; wc -c fr.html
+          echo "== pistas =="; grep -o -i 'registrad[ao]\|recorded\|error\|iniciar sesión\|accounts\.google\|freebirdFormviewerViewResponseConfirmationMessage' fr.html | sort | uniq -c
+          echo "== título =="; grep -o '<title>[^<]*</title>' fr.html
