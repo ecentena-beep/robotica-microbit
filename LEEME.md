@@ -333,6 +333,14 @@ Envía a un formulario aparte, copia del primero (por eso los `entry.` son los m
 | Formulario (editar) | `docs.google.com/forms/d/1TclWA0wW37qEB3BxhG4knYlCdcHe9nhuVgEHdjaYGpc/edit` |
 | Planilla | `docs.google.com/spreadsheets/d/1E3aO2lsWhxE4E8OraaRFDJ6FD19up5GYdhLr65hPP6k/edit` |
 
+> **Si se copia un formulario para una evaluación nueva:** los formularios nuevos de Google
+> nacen **sin publicar**, y un formulario sin publicar rechaza todos los envíos (responde
+> 401) aunque la página diga «Tu resultado le llegó al profesor», porque Google no le
+> devuelve el motivo. Hay que tocar **Publicar** arriba a la derecha, y en Configuración →
+> Respuestas dejar «No recopilar» correos y «Limitar a 1 respuesta» apagado, igual que el
+> original. La URL de envío es la pública (`/forms/d/e/…/formResponse`), que se saca del
+> «vínculo previamente completado», no la de edición de Drive.
+
 > Los estilos del test están dentro del propio archivo mientras el formato se sigue
 > ajustando. Cuando quede firme, se mudan a `css/estilos.css` y ahí sí hay que subirle el
 > número de versión a las 35 páginas.
