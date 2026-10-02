@@ -1,5 +1,6 @@
 # Temporal: prueba desde un runner de GitHub (que sí llega a Google) si el
 # formulario de la Evaluación N.º 2 acepta envíos anónimos. Se borra al terminar.
+# Corrida 3: después de publicar el formulario.
 name: prueba-formulario
 on:
   workflow_dispatch:
