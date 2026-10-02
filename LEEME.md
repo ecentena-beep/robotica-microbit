@@ -331,7 +331,7 @@ Envía a un formulario aparte, copia del primero (por eso los `entry.` son los m
 | | |
 |---|---|
 | Formulario (editar) | `docs.google.com/forms/d/1TclWA0wW37qEB3BxhG4knYlCdcHe9nhuVgEHdjaYGpc/edit` |
-| Planilla | la que se vincule desde el formulario: Respuestas → Vincular con Sheets |
+| Planilla | `docs.google.com/spreadsheets/d/1E3aO2lsWhxE4E8OraaRFDJ6FD19up5GYdhLr65hPP6k/edit` |
 
 > Los estilos del test están dentro del propio archivo mientras el formato se sigue
 > ajustando. Cuando quede firme, se mudan a `css/estilos.css` y ahí sí hay que subirle el
